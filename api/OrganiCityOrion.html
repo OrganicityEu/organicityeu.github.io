@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OrganiCity API</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="oc.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
+  </script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">
+  </script>
+  <![endif]-->
+</head>
+<body>
+  <div id="top" class="container oc-page-wrapper">
+  <div class="row">
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand active" href="http://organicity.eu/">
+            <img src="static/img/oc_logo.png">
+          </a>
+          <button class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" aria-expanded="false">
+          <span class="oc-left-links-wrapper">
+          </span>
+          <ul class="nav navbar-nav navbar-right">
+            <li role="presentation">
+              <a href="index.html" aria-selected="false">Overview
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <h1>Orion Context Broker API</h1>
+    <p></p>
+    
+    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        
+    </div>
+    
+        <h2 id="swagger--summary-no-tags">Summary</h2>
+        
+            <div class="panel">
+              <div class="panel-body">
+        
+        <table class="table table-condensed swagger--summary">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--contextEntities">/contextEntities</a>
+                            </td>
+                        <td>
+                            <a href="#operation--contextEntities-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        
+              </div>
+            </div>
+    
+    
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--contextEntities"></span>
+            <div id="operation--contextEntities-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/contextEntities</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retrieves information about context entities.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                limit
+                                            <td><p>Size of array</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(double)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>Successful response</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                            <section class="json-schema-properties">
+                                                                <dl>
+                                                                        <dt data-property-name="contextElements">
+                                                                            <span class="json-property-name">contextElements:</span>
+                                                                            <span class="json-property-type">object[]</span>
+                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                            
+                                                                        </dt>
+                                                                        <dd>
+                                                                            
+                                                                            <div class="json-inner-schema">
+                                                                                
+                                                                                                <section class="json-schema-array-items">
+                                                                                                    <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/ContextElement">ContextElement</a>
+                                                                                                    </span>
+                                                                                                    <span class="json-property-range" title="Value limits"></span>
+                                                                                                    
+                                                                                                    <div class="json-inner-schema">
+                                                                                                        
+                                                                                                    </div>
+                                                                                                </section>                </div>
+                                                                        </dd>
+                                                                </dl>
+                                                            </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Attribute" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Attribute"></a>
+                          Attribute:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>The Attributes can be used to provide information about the available sensor measurements, </p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="name">
+                                              <span class="json-property-name">name:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                              <span class="json-property-enum-item">name</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">description</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">position</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">TimeInstant</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">.*</span>
+                                                          
+                                                      }
+                                                      </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>Name of this attribute.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                              <span class="json-property-enum-item">urn:oc:attributeType:name</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">urn:oc:attributeType:description</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">coords</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">urn:oc:datatype:ISO8601</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">urn:oc:attributeType:.*</span>
+                                                          
+                                                      }
+                                                      </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>Data type of this attribute.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="value">
+                                              <span class="json-property-name">value:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>The value of this attribute.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="metadatas">
+                                              <span class="json-property-name">metadatas:</span>
+                                              <span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>A list of Metadata assosiated with this Attribute.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                                  <section class="json-schema-array-items">
+                                                                      <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Metadata">Metadata</a>
+                                                                      </span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                          
+                                                                      </div>
+                                                                  </section>                </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-ContextElement" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/ContextElement"></a>
+                          ContextElement:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>The UUID of the ContextElement.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                              <span class="json-property-enum-item">urn:oc:entityType:iotdevice</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">urn:oc:entityType:smartphone</span>
+                                                          
+                                                      }
+                                                      </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>The type of the ContextElement.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="isPattern">
+                                              <span class="json-property-name">isPattern:</span>
+                                              <span class="json-property-type">boolean</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                              <span class="json-property-enum-item">true</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">false</span>
+                                                          
+                                                      }
+                                                      </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>Type of the ContextElement description. When isPattern is true in queries multiple ContextElements can be queried.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="attributes">
+                                              <span class="json-property-name">attributes:</span>
+                                              <span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>A list of Attributes assosiated with this ContextElement.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                                  <section class="json-schema-array-items">
+                                                                      <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Attribute">Attribute</a>
+                                                                      </span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                          
+                                                                      </div>
+                                                                  </section>                </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-Metadata" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Metadata"></a>
+                          Metadata:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>Metadata can be used to provide information about the units of measurements of the provided sensor measurements.</p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="name">
+                                              <span class="json-property-name">name:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                              <span class="json-property-enum-item">unit</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">datatype</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">location</span>
+                                                          
+                                                      }
+                                                      </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>Name of the metadata</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-enum" title="Possible values">, x &isin; {
+                                                              <span class="json-property-enum-item">string</span>
+                                                          ,
+                                                              <span class="json-property-enum-item">urn:oc:datatype:numeric</span>
+                                                          
+                                                      }
+                                                      </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>Data type of the metadata.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="value">
+                                              <span class="json-property-name">value:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>value of metadata</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+    
+  </div>
+  
+  <div class="oc-footers">
+    <div class="row oc-footer-large">
+      <h1 class="oc-home-view-title">Follow us
+      </h1>
+      <div class="oc-footer-large-social-links">
+        <a href="https://twitter.com/organicity_eu">
+          <span class="fa fa-twitter">
+          </span>
+        </a>
+        <a href="https://www.facebook.com/OrganiCities">
+          <span class="fa fa-facebook-official">
+          </span>
+        </a>
+      </div>
+      <img class="oc-footer-large-eu-logo" src="static/img/logo_eu.png">
+      </div>
+      <div class="row oc-footer-small">
+        <div class="col-md-2">&copy; OrganiCity 2015
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4">
+          <a class="oc-link" href="http://organicity.eu/">VISIT ORGANICITY.EU TO FIND OUT MORE
+          </a>
+        </div>
+        <div class="col-md-5">
+          <div>
+            <h4>Contact Us
+            </h4>
+              <a href="mailto:info@organicity.eu">info@organicity.eu
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

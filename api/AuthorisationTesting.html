@@ -69,10 +69,11 @@
     <li>a OrganiCity service that wants to check if a user is allowed to
     perform a certain action.</li>
     </ul>
-    <p>Usually, this authentication token corresponds to the access token
-    that a user gets issued during the OpenID Connect authentication
-    step, and is thus guaranteed to be unique. Consequently, services
-    and experiments may use this token as an identifier for the user.</p>
+    <p>Authentication tokens are granted by the authentication server
+    upon login, and are usually valid only for the current session. To
+    obtain a unique user identifier, a service has to query the
+    <a href="Authentication.html">authentication service</a> for the user
+    profile.</p>
     <h2 id="general-workflow-for-authorisation">General Workflow for Authorisation</h2>
     <p>We assume that a user (that is, human or technical users) has already
     <a href="Authentication.html">authenticated to the authentication server</a>,
@@ -85,10 +86,10 @@
     <p>The functionality provider now checks if this user is authorised
     to access its functionality by asking the authorisation server,
     supplying the authentication token and an functionality
-    identifier. For example, if the user <code>fbuether</code> wants to read data
-    from a Santander data source, the following authorisation check
-    description may be used:</p>
-    <pre><code>{<br>  "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-string">"fbuether"</span></span>,<br>  "<span class="hljs-attribute">action</span>": <span class="hljs-value"><span class="hljs-string">"read:Santander"</span><br></span>}
+    identifier. For example, if a user with authentication token
+    <code>Fwxfy9mXE</code> wants to read data from a Santander data source, the
+    following authorisation check description may be used:</p>
+    <pre><code>{<br>  "<span class="hljs-attribute">user</span>": <span class="hljs-value"><span class="hljs-string">"Fwxfy9mXE"</span></span>,<br>  "<span class="hljs-attribute">action</span>": <span class="hljs-value"><span class="hljs-string">"read:Santander"</span><br></span>}
     </code></pre><p>The authorisation server may in turn ask the authentication server
     for more detailed information about the user, e.g. to check if the
     user has a specific role that might grant authorisation, and replies
@@ -200,7 +201,7 @@
                                                               </dt>
                                                               <dd>
                                                                   <p>The user authentication token, as supplied by the
-                                                  OrganiCity authentication server (TODO: add link).</p>
+                                                  OrganiCity <a href="Authentication.html">authentication server</a>.</p>
                                                   
                                                                   <div class="json-inner-schema">
                                                                       
@@ -346,8 +347,8 @@
                                 
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <p>The caller requesting is not allowed to perform authorisation
-                                checks.</p>
+                                    <p>The requesting caller is not allowed to perform
+                                authorisation checks.</p>
                                 
                                   </div>
                                 </div>

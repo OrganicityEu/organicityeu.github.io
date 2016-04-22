@@ -1,0 +1,2349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OrganiCity API</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="oc.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
+  </script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">
+  </script>
+  <![endif]-->
+</head>
+<body>
+  <div id="top" class="container oc-page-wrapper">
+  <div class="row">
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand active" href="http://organicity.eu/">
+            <img src="static/img/oc_logo.png">
+          </a>
+          <button class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" aria-expanded="false">
+          <span class="oc-left-links-wrapper">
+          </span>
+          <ul class="nav navbar-nav navbar-right">
+            <li role="presentation">
+              <a href="index.html" aria-selected="false">Overview
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <h1>OrganiCity Platform Management API</h1>
+    <p><p>Connect new sites to the OrganiCity platform, as well as perform the management of its related attributes</p>
+    </p>
+    
+    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        https
+    </div>
+    
+        <h2 id="swagger--summary-no-tags">Summary</h2>
+        
+            <div class="panel">
+              <div class="panel-body">
+        
+        <table class="table table-condensed swagger--summary">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="2">
+                                <a href="#path--sites">/sites</a>
+                            </td>
+                        <td>
+                            <a href="#operation--sites-get">GET</a>
+                        </td>
+                        <td>
+                            <p>retrieve the list of sites.</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--sites-post">POST</a>
+                        </td>
+                        <td>
+                            <p>register a new OrganiCity site</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="3">
+                                <a href="#path--sites--siteId-">/sites/{siteId}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--sites--siteId--delete">DELETE</a>
+                        </td>
+                        <td>
+                            <p>deletes a site</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--sites--siteId--get">GET</a>
+                        </td>
+                        <td>
+                            <p>find site by ID</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--sites--siteId--post">POST</a>
+                        </td>
+                        <td>
+                            <p>updates a site in the facility</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="2">
+                                <a href="#path--sites--siteId--services">/sites/{siteId}/services</a>
+                            </td>
+                        <td>
+                            <a href="#operation--sites--siteId--services-get">GET</a>
+                        </td>
+                        <td>
+                            <p>retrieve the list of services for a given site.</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--sites--siteId--services-post">POST</a>
+                        </td>
+                        <td>
+                            <p>register a new OrganiCity service for a given site</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="3">
+                                <a href="#path--sites--siteId--services--serviceId-">/sites/{siteId}/services/{serviceId}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--sites--siteId--services--serviceId--delete">DELETE</a>
+                        </td>
+                        <td>
+                            <p>deletes a service</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--sites--siteId--services--serviceId--get">GET</a>
+                        </td>
+                        <td>
+                            <p>find service by ID</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--sites--siteId--services--serviceId--post">POST</a>
+                        </td>
+                        <td>
+                            <p>updates a service in the facility</p>
+        
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        
+              </div>
+            </div>
+    
+    
+    <h2>Security</h2>
+    
+    <div id="security-definition-oauth" class="panel panel-security-definition panel-security-definition-oauth2">
+      <div class="panel-heading">
+        <h3 class="panel-title"><span class="security-name">oauth</span> <strong><span class="sw-security-definition-oauth2"></span></strong></h3>
+      </div>
+      <div class="panel-body">
+        <section class="sw-security-properties">
+          <dl>
+          </dt>
+          <dl>
+            <dt class="security-property-name">flow:</dt>
+            <dd class="security-property-type">
+              implicit
+            </dd>
+          </dt>
+          <dl>
+            <dt class="security-property-name">authorizationUrl:</dt>
+            <dd class="security-property-type">
+              https://organicity.eu/oauth/authorize/?client_id=CLIENT-ID&amp;redirect_uri=REDIRECT-URI&amp;response_type=token
+            </dd>
+          </dt>
+          <dl>
+            <dt class="security-property-name">scopes:</dt>
+            <dd class="security-property-type">
+              <ul>
+                <li><p><strong>basic</strong>: to read any and all data related to OrganiCity</p></li>
+              </ul>
+            </dd>
+          </dt>
+        </section>
+      </div>
+    </div>
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--sites"></span>
+            <div id="operation--sites-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">retrieve the list of sites.</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/sites</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                    
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>an array of OC sites</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/sitedesc">sitedesc</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>  </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--sites-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">register a new OrganiCity site</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/sites</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                        
+                        <section class="sw-request-body">
+                          
+                            <p><span class="label label-default">application/json</span> 
+                        </p>
+                             <p><p>site object that needs to be added to the facility</p>
+                        </p>
+                              <div class="row body-content">
+                               <div class="col-md-6 sw-request-model">
+                                
+                                    <div id="definition-site" class="panel panel-definition">
+                                        <div class="panel-heading">
+                                          <h3 class="panel-title">
+                                              site
+                                          </h3>
+                                        </div>
+                                      <div class="panel-body">
+                                              Reference: <a class="json-schema-ref" href="#/definitions/site">site</a>
+                                      </div>
+                                    </div>
+                               </div>
+                              </div>
+                        </section>
+                    
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site added</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/sitedesc">sitedesc</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--sites--siteId-"></span>
+            <div id="operation--sites--siteId--delete" class="swagger--panel-operation-delete panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">deletes a site</div>
+                    <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/sites/{siteId}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>site ID to delete</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site removed</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site not found</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--sites--siteId--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">find site by ID</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/sites/{siteId}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>ID of site that needs to be fetched</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>successful operation</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/sitedesc">sitedesc</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site not found</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--sites--siteId--post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">updates a site in the facility</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/sites/{siteId}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                        
+                        <section class="sw-request-body">
+                          
+                            <p><span class="label label-default">application/json</span> 
+                        </p>
+                             <p><p>site object that needs to be updated</p>
+                        </p>
+                              <div class="row body-content">
+                               <div class="col-md-6 sw-request-model">
+                                
+                                    <div id="definition-site" class="panel panel-definition">
+                                        <div class="panel-heading">
+                                          <h3 class="panel-title">
+                                              site
+                                          </h3>
+                                        </div>
+                                      <div class="panel-body">
+                                              Reference: <a class="json-schema-ref" href="#/definitions/site">site</a>
+                                      </div>
+                                    </div>
+                               </div>
+                              </div>
+                        </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>ID of site that needs to be updated. It MUST be the same ID as the one in the body</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site updated</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/sitedesc">sitedesc</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site not found</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--sites--siteId--services"></span>
+            <div id="operation--sites--siteId--services-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">retrieve the list of services for a given site.</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/sites/{siteId}/services</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>site ID</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>an array of OC services</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/servicedesc">servicedesc</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>  </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--sites--siteId--services-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">register a new OrganiCity service for a given site</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/sites/{siteId}/services</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                        
+                        <section class="sw-request-body">
+                          
+                            <p><span class="label label-default">application/json</span> 
+                        </p>
+                             <p><p>service that needs to be added to the facility</p>
+                        </p>
+                              <div class="row body-content">
+                               <div class="col-md-6 sw-request-model">
+                                
+                                    <div id="definition-site" class="panel panel-definition">
+                                        <div class="panel-heading">
+                                          <h3 class="panel-title">
+                                              site
+                                          </h3>
+                                        </div>
+                                      <div class="panel-body">
+                                              Reference: <a class="json-schema-ref" href="#/definitions/service">service</a>
+                                      </div>
+                                    </div>
+                               </div>
+                              </div>
+                        </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>site ID</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site added</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/servicedesc">servicedesc</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--sites--siteId--services--serviceId-"></span>
+            <div id="operation--sites--siteId--services--serviceId--delete" class="swagger--panel-operation-delete panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">deletes a service</div>
+                    <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/sites/{siteId}/services/{serviceId}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>site id</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                serviceId
+                                            <td><p>service id to be delete</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>service removed</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site or service not found</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--sites--siteId--services--serviceId--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">find service by ID</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/sites/{siteId}/services/{serviceId}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>site ID</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                serviceId
+                                            <td><p>ID of service that needs to be fetched</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>successful operation</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/servicedesc">servicedesc</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site or service not found</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--sites--siteId--services--serviceId--post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">updates a service in the facility</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/sites/{siteId}/services/{serviceId}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        
+                    </section>
+                        
+                        <section class="sw-request-body">
+                          
+                            <p><span class="label label-default">application/json</span> 
+                        </p>
+                             <p><p>service that needs to be updated</p>
+                        </p>
+                              <div class="row body-content">
+                               <div class="col-md-6 sw-request-model">
+                                
+                                    <div id="definition-site" class="panel panel-definition">
+                                        <div class="panel-heading">
+                                          <h3 class="panel-title">
+                                              site
+                                          </h3>
+                                        </div>
+                                      <div class="panel-body">
+                                              Reference: <a class="json-schema-ref" href="#/definitions/service">service</a>
+                                      </div>
+                                    </div>
+                               </div>
+                              </div>
+                        </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                siteId
+                                            <td><p>site ID</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                serviceId
+                                            <td><p>ID of service that needs to be updated. It MUST be the same ID as the one in the body</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>service updated</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/servicedesc">servicedesc</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>authentication error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>site or service not found</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-default">
+                              default 
+                    
+                            </dt>
+                            <dd class="sw-response-default">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>unexpected error</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oauth">oauth</a></td>
+                                            <td>
+                                                    basic
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Error" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Error"></a>
+                          Error:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="code">
+                                              <span class="json-property-name">code:</span>
+                                              <span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="message">
+                                              <span class="json-property-name">message:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-service" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/service"></a>
+                          service:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>one of context, historic or open_dataset</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="implem">
+                                              <span class="json-property-name">implem:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>implementation used to provide this service</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="url">
+                                              <span class="json-property-name">url:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>endpoint URL</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="public">
+                                              <span class="json-property-name">public:</span>
+                                              <span class="json-property-type">boolean</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-servicedesc" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/servicedesc"></a>
+                          servicedesc:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">integer</span>    <span class="json-property-format">(int64)</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>a unique ID</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>one of context, historic or open_dataset</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="implem">
+                                              <span class="json-property-name">implem:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>implementation used to provide this service</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="url">
+                                              <span class="json-property-name">url:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>endpoint URL</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="since">
+                                              <span class="json-property-name">since:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>service registration date, ie 2014-01-01T00:00Z</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="public">
+                                              <span class="json-property-name">public:</span>
+                                              <span class="json-property-type">boolean</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-site" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/site"></a>
+                          site:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>unique identifier representing a specific OC site. Only lowercases allowed</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="name">
+                                              <span class="json-property-name">name:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>full site name</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="contact">
+                                              <span class="json-property-name">contact:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-format">(email)</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>contact email address</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-sitedesc" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/sitedesc"></a>
+                          sitedesc:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>unique identifier representing a specific OC site. Only lowercases allowed</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="name">
+                                              <span class="json-property-name">name:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>full site name</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="contact">
+                                              <span class="json-property-name">contact:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-format">(email)</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>contact email address</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="prefix">
+                                              <span class="json-property-name">prefix:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>urn</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="since">
+                                              <span class="json-property-name">since:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>site registration date, i.e. 2014-01-01 T00:00Z</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+    
+  </div>
+  
+  <div class="oc-footers">
+    <div class="row oc-footer-large">
+      <h1 class="oc-home-view-title">Follow us
+      </h1>
+      <div class="oc-footer-large-social-links">
+        <a href="https://twitter.com/organicity_eu">
+          <span class="fa fa-twitter">
+          </span>
+        </a>
+        <a href="https://www.facebook.com/OrganiCities">
+          <span class="fa fa-facebook-official">
+          </span>
+        </a>
+      </div>
+      <img class="oc-footer-large-eu-logo" src="static/img/logo_eu.png">
+      </div>
+      <div class="row oc-footer-small">
+        <div class="col-md-2">&copy; OrganiCity 2015
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4">
+          <a class="oc-link" href="http://organicity.eu/">VISIT ORGANICITY.EU TO FIND OUT MORE
+          </a>
+        </div>
+        <div class="col-md-5">
+          <div>
+            <h4>Contact Us
+            </h4>
+              <a href="mailto:info@organicity.eu">info@organicity.eu
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

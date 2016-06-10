@@ -8647,4 +8647,11 @@ ul {
   display: block;
   font-size: 0.95em;
 }
+/* Design of index page. */
+.apiBlock {
+  border: 1px solid #bbb;
+  background: white;
+  padding: 0.7rem 1.4rem 1.0rem;
+  margin: 1.2rem 0rem;
+}
 /*# sourceMappingURL=../assets/less/oc.less.css.map */

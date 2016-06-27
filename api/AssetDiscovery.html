@@ -50,8 +50,17 @@
     </nav>
   </div>
   <div class="container">
-    <h1>AssetDiscovery</h1>
-    <p></p>
+    <h1>Organicity Assets Discovery Service</h1>
+    <p><p>This API aims to create the foundations for a novel urban data observatory in the form of a service that allow various stakeholders (data scientists, city decision makers, organisations and citizens) to explore, with the intent to act, mixed static and real-time urban and social data streams and their exploitation in experimentation.</p>
+    <p>It comprises the following functionalities:</p>
+    <ul>
+    <li>Searching and filtering assets using multiple options</li>
+    <li>Retrieving information about: services, sites and providers</li>
+    <li>Retrieving assets data</li>
+    <li>Retrieving experiments and the associated assets</li>
+    </ul>
+    <p><em>This API is the core engine of the <a href="http://observatory.organicity.eu/">Organicity Urban Data Observatory</a> and it is designed following the <a href="http://oascities.org/">OASC</a> principles, as an extension of the <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FI-WARE_NGSI-10_Open_RESTful_API_Specification">NGSI 9/10</a> standard, specially following the new <a href="http://telefonicaid.github.io/fiware-orion/api/v2/latest/">FIWARE-NGSI v2 Specification</a></em></p>
+    </p>
     
     
     <div id="sw-schemes" class="sw-default-value">
@@ -75,10 +84,153 @@
             <tbody>
                     <tr>
                             <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--discovery--type-">/discovery/{type}</a>
+                                <a href="#path--assets-geo-search--lat---long---radius---query---points---ip---city-">/assets/geo/search?{lat}&amp;{long}&amp;{radius}&amp;{query}&amp;{points}&amp;{ip}&amp;{city}</a>
                             </td>
                         <td>
-                            <a href="#operation--discovery--type--get">GET</a>
+                            <a href="#operation--assets-geo-search--lat---long---radius---query---points---ip---city--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets-metadata--query-">/assets/metadata?{query}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets-metadata--query--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets-providers">/assets/providers</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets-providers-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets-providers--provider-">/assets/providers/{provider}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets-providers--provider--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets-services">/assets/services</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets-services-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets-services--service-">/assets/services/{service}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets-services--service--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets-sites">/assets/sites</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets-sites-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets-sites--site-">/assets/sites/{site}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets-sites--site--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets--asset_urn-">/assets/{asset_urn}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets--asset_urn--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets--asset_urn--data">/assets/{asset_urn}/data</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets--asset_urn--data-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets--asset_urn--data-v2">/assets/{asset_urn}/data/v2</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets--asset_urn--data-v2-get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets--asset_urn--nearby--radius---city---query---points-">/assets/{asset_urn}/nearby?{radius}&amp;{city}&amp;{query}&amp;{points}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets--asset_urn--nearby--radius---city---query---points--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query-">/assets?{asset_urn}&amp;{last_updated}&amp;{type}&amp;{sort}&amp;{filter}&amp;{order}&amp;{offset}&amp;{page}&amp;{per}&amp;{sample}&amp;{query}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query--get">GET</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--experiments--experiment_id-">/experiments/{experiment_id}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--experiments--experiment_id--get">GET</a>
                         </td>
                         <td>
                             
@@ -91,19 +243,21 @@
             </div>
     
     
+    <h2>Security</h2>
+    
     
     <h2>Paths</h2>
     
         
-        <span id="path--discovery--type-"></span>
-            <div id="operation--discovery--type--get" class="swagger--panel-operation-get panel">
+        <span id="path--assets-geo-search--lat---long---radius---query---points---ip---city-"></span>
+            <div id="operation--assets-geo-search--lat---long---radius---query---points---ip---city--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/discovery/{type}</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/geo/search?{lat}&amp;{long}&amp;{radius}&amp;{query}&amp;{points}&amp;{ip}&amp;{city}</strong></h3>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Searchs for assets by type...</p>
+                        <p>Return a list of assets filtered by geolocation</p>
             
                     </section>
                     
@@ -121,11 +275,95 @@
                                 <tbody>
                                         <tr>
                                             <td>
-                                                type
-                                            <td><p>The type of the asset</p>
+                                                lat
+                                            <td><p>Center latitude for geographical queries</p>
                                         </td>
                                             <td>path</td>
-                                            <td><span class="json-property-type">string</span>    <span class="json-property-format">(string)</span>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                long
+                                            <td><p>Center longitude for geographical queries</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                radius
+                                            <td><p>Spherical radius for geographical queries</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                query
+                                            <td><p>At the moment only query=&quot;polygon&quot; is supported</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                points
+                                            <td><p>Array of geographical coordinates</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                ip
+                                            <td><p>IP address</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                city
+                                            <td><p>City name for geographical queries</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
@@ -151,8 +389,7 @@
                                 
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <p>Successful response</p>
-                                
+                                    
                                   </div>
                                 </div>
                                 <div class="row">
@@ -160,76 +397,77 @@
                                 
                                   <div class="row body-content">
                                     <div class="col-md-6 sw-response-model">
-                                        
-                                            <div id="definition-AssetDiscovery" class="panel panel-definition">
-                                                <div class="panel-heading">
-                                                  <h3 class="panel-title">
-                                                      AssetDiscovery:
-                                                      <span class="json-property-type"><span class="json-property-type">object</span>
-                                            <span class="json-property-range" title="Value limits"></span>
-                                            
-                                            </span>
-                                                  </h3>
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/ListAssetsProviderresponse">ListAssetsProviderresponse</a>
                                                 </div>
-                                              <div class="panel-body">
-                                                  
-                                                          <section class="json-schema-properties">
-                                                              <dl>
-                                                                      <dt data-property-name="type">
-                                                                          <span class="json-property-name">type:</span>
-                                                                          <span class="json-property-type">string</span>
-                                                                          <span class="json-property-range" title="Value limits"></span>
-                                                                          
-                                                                      </dt>
-                                                                      <dd>
-                                                                          
-                                                                          <div class="json-inner-schema">
-                                                                              
-                                                                          </div>
-                                                                      </dd>
-                                                                      <dt data-property-name="reading">
-                                                                          <span class="json-property-name">reading:</span>
-                                                                          <span class="json-property-type">string</span>
-                                                                          <span class="json-property-range" title="Value limits"></span>
-                                                                          
-                                                                      </dt>
-                                                                      <dd>
-                                                                          
-                                                                          <div class="json-inner-schema">
-                                                                              
-                                                                          </div>
-                                                                      </dd>
-                                                                      <dt data-property-name="score">
-                                                                          <span class="json-property-name">score:</span>
-                                                                          <span class="json-property-type">string</span>
-                                                                          <span class="json-property-range" title="Value limits"></span>
-                                                                          
-                                                                      </dt>
-                                                                      <dd>
-                                                                          
-                                                                          <div class="json-inner-schema">
-                                                                              
-                                                                          </div>
-                                                                      </dd>
-                                                              </dl>
-                                                          </section>
                                               </div>
-                                            </div>
                                     </div>
                                   </div>
                                 
                             </dd>
-                            <dt class="sw-response-400">
-                              400 Bad Request
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-metadata--query-"></span>
+            <div id="operation--assets-metadata--query--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/metadata?{query}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return a list of assets filtered by specific metadata</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                query
+                                            <td><p>metadata query string</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
                     
                             </dt>
-                            <dd class="sw-response-400">
+                            <dd class="sw-response-200">
                                 
                                 
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <p>Bad Request Response</p>
-                                
+                                    
                                   </div>
                                 </div>
                                 <div class="row">
@@ -237,64 +475,48 @@
                                 
                                   <div class="row body-content">
                                     <div class="col-md-6 sw-response-model">
-                                        
-                                            <div id="definition-AssetDiscovery" class="panel panel-definition">
-                                                <div class="panel-heading">
-                                                  <h3 class="panel-title">
-                                                      AssetDiscovery:
-                                                      <span class="json-property-type"><span class="json-property-type">object</span>
-                                            <span class="json-property-range" title="Value limits"></span>
-                                            
-                                            </span>
-                                                  </h3>
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/RetrieveAssetbyURNresponse">RetrieveAssetbyURNresponse</a>
                                                 </div>
-                                              <div class="panel-body">
-                                                  
-                                                          <section class="json-schema-properties">
-                                                              <dl>
-                                                                      <dt data-property-name="type">
-                                                                          <span class="json-property-name">type:</span>
-                                                                          <span class="json-property-type">string</span>
-                                                                          <span class="json-property-range" title="Value limits"></span>
-                                                                          
-                                                                      </dt>
-                                                                      <dd>
-                                                                          
-                                                                          <div class="json-inner-schema">
-                                                                              
-                                                                          </div>
-                                                                      </dd>
-                                                                      <dt data-property-name="reading">
-                                                                          <span class="json-property-name">reading:</span>
-                                                                          <span class="json-property-type">string</span>
-                                                                          <span class="json-property-range" title="Value limits"></span>
-                                                                          
-                                                                      </dt>
-                                                                      <dd>
-                                                                          
-                                                                          <div class="json-inner-schema">
-                                                                              
-                                                                          </div>
-                                                                      </dd>
-                                                              </dl>
-                                                          </section>
                                               </div>
-                                            </div>
                                     </div>
                                   </div>
                                 
                             </dd>
-                            <dt class="sw-response-404">
-                              404 Not Found
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-providers"></span>
+            <div id="operation--assets-providers-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/providers</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return the providers the assets belong to</p>
+            
+                    </section>
+                    
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
                     
                             </dt>
-                            <dd class="sw-response-404">
+                            <dd class="sw-response-200">
                                 
                                 
                                 <div class="row">
                                   <div class="col-md-12">
-                                    <p>Not Found Response</p>
-                                
+                                    
                                   </div>
                                 </div>
                                 <div class="row">
@@ -302,49 +524,1043 @@
                                 
                                   <div class="row body-content">
                                     <div class="col-md-6 sw-response-model">
-                                        
-                                            <div id="definition-AssetDiscovery" class="panel panel-definition">
-                                                <div class="panel-heading">
-                                                  <h3 class="panel-title">
-                                                      AssetDiscovery:
-                                                      <span class="json-property-type"><span class="json-property-type">object</span>
-                                            <span class="json-property-range" title="Value limits"></span>
-                                            
-                                            </span>
-                                                  </h3>
-                                                </div>
-                                              <div class="panel-body">
-                                                  
-                                                          <section class="json-schema-properties">
-                                                              <dl>
-                                                                      <dt data-property-name="type">
-                                                                          <span class="json-property-name">type:</span>
-                                                                          <span class="json-property-type">string</span>
-                                                                          <span class="json-property-range" title="Value limits"></span>
-                                                                          
-                                                                      </dt>
-                                                                      <dd>
-                                                                          
-                                                                          <div class="json-inner-schema">
-                                                                              
-                                                                          </div>
-                                                                      </dd>
-                                                                      <dt data-property-name="reading">
-                                                                          <span class="json-property-name">reading:</span>
-                                                                          <span class="json-property-type">string</span>
-                                                                          <span class="json-property-range" title="Value limits"></span>
-                                                                          
-                                                                      </dt>
-                                                                      <dd>
-                                                                          
-                                                                          <div class="json-inner-schema">
-                                                                              
-                                                                          </div>
-                                                                      </dd>
-                                                              </dl>
-                                                          </section>
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/ListAllAssetsProvidersresponse">ListAllAssetsProvidersresponse</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>  </div>
                                               </div>
-                                            </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-providers--provider-"></span>
+            <div id="operation--assets-providers--provider--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/providers/{provider}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return a specific provider</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                provider
+                                            <td><p>Filter access by provider</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/ListAssetsProviderresponse">ListAssetsProviderresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-services"></span>
+            <div id="operation--assets-services-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/services</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return the services the assets belong to</p>
+            
+                    </section>
+                    
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/ListAssetsServiceresponse">ListAssetsServiceresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-services--service-"></span>
+            <div id="operation--assets-services--service--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/services/{service}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return a specific service</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                service
+                                            <td><p>Filter assets by service</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/ListAssetsServiceresponse">ListAssetsServiceresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-sites"></span>
+            <div id="operation--assets-sites-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/sites</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return the sites the assets belong to</p>
+            
+                    </section>
+                    
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/ListAssetsSiteresponse">ListAssetsSiteresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-sites--site-"></span>
+            <div id="operation--assets-sites--site--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/sites/{site}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return a specific site</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                site
+                                            <td><p>Filter access by site</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/ListAssetsSiteresponse">ListAssetsSiteresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets--asset_urn-"></span>
+            <div id="operation--assets--asset_urn--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return an assets by URN</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                asset_urn
+                                            <td><p>Unique Resource Name of the asset</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/RetrieveAssetbyURNresponse">RetrieveAssetbyURNresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets--asset_urn--data"></span>
+            <div id="operation--assets--asset_urn--data-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}/data</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>The data model follows NGSI 9/10 model defined in Organicity Assets Directory.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                asset_urn
+                                            <td><p>Unique Resource Name of the asset</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/RetrieveAssetbyURNresponse">RetrieveAssetbyURNresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets--asset_urn--data-v2"></span>
+            <div id="operation--assets--asset_urn--data-v2-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}/data/v2</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>The data model follows NGSI v2 approach removing the original XML legacy. It also groups the data based on the Assets structure defined in D2.1 Section 4.5.1, this improve performance on data parsing and presentation.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                asset_urn
+                                            <td><p>Unique Resource Name of the asset</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/RetrieveAssetbyURNresponse">RetrieveAssetbyURNresponse</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets--asset_urn--nearby--radius---city---query---points-"></span>
+            <div id="operation--assets--asset_urn--nearby--radius---city---query---points--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}/nearby?{radius}&amp;{city}&amp;{query}&amp;{points}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retrieve assets geograpically close to other assets</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                asset_urn
+                                            <td><p>Unique Resource Name of the asset</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                radius
+                                            <td><p>Spherical radius for geographical queries</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                query
+                                            <td><p>At the moment only query=&quot;polygon&quot; is supported</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                points
+                                            <td><p>Array of geographical coordinates. Assets lat and long are taken as starting point.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                city
+                                            <td><p>City name for geographical queries</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query-"></span>
+            <div id="operation--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets?{asset_urn}&amp;{last_updated}&amp;{type}&amp;{sort}&amp;{filter}&amp;{order}&amp;{offset}&amp;{page}&amp;{per}&amp;{sample}&amp;{query}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retrieve an assets using multiple criteria</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                asset_urn
+                                            <td><p>Filter assets by their Unique Resource Name</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                last_updated
+                                            <td><p>Filter assets by last updated date</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                type
+                                            <td><p>Filter access by type</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                sort
+                                            <td><p>Sort assets. Supported values are to be defined.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                filter
+                                            <td><p>Filter assets. Supported values are to be defined.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                order
+                                            <td><p>Order assets DESC or ASC.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                offset
+                                            <td><p>Return assets with the given offset of N results.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                page
+                                            <td><p>Return assets for the given page.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                per
+                                            <td><p>Return N assets per page.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                sample
+                                            <td><p>Return a random sample of N assets.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                query
+                                            <td><p>Return a list of assets based on metadatadatatata search</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--experiments--experiment_id-"></span>
+            <div id="operation--experiments--experiment_id--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/experiments/{experiment_id}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retrieve an experiment by the experiment id</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                experiment_id
+                                            <td><p>Unique Resource Name of the experiment</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/RetrieveAssetbyExperiment">RetrieveAssetbyExperiment</a>
+                                                </div>
+                                              </div>
                                     </div>
                                   </div>
                                 
@@ -356,6 +1572,617 @@
      
     
                        
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-ListAllAssetsProvidersresponse" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/ListAllAssetsProvidersresponse"></a>
+                          ListAllAssetsProvidersresponse:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="links">
+                                              <span class="json-property-name">links:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="related">
+                                              <span class="json-property-name">related:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-ListAssetsProviderresponse" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/ListAssetsProviderresponse"></a>
+                          ListAssetsProviderresponse:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="links">
+                                              <span class="json-property-name">links:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="related">
+                                              <span class="json-property-name">related:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-ListAssetsServiceresponse" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/ListAssetsServiceresponse"></a>
+                          ListAssetsServiceresponse:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="related">
+                                              <span class="json-property-name">related:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-ListAssetsSiteresponse" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/ListAssetsSiteresponse"></a>
+                          ListAssetsSiteresponse:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="context">
+                                              <span class="json-property-name">context:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="attributes">
+                                              <span class="json-property-name">attributes:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="links">
+                                              <span class="json-property-name">links:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-RetrieveAssetbyExperiment" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/RetrieveAssetbyExperiment"></a>
+                          RetrieveAssetbyExperiment:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="context">
+                                              <span class="json-property-name">context:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="experimenterId">
+                                              <span class="json-property-name">experimenterId:</span>
+                                              <span class="json-property-type">integer</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="registered">
+                                              <span class="json-property-name">registered:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="expirationTime">
+                                              <span class="json-property-name">expirationTime:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="startingTime">
+                                              <span class="json-property-name">startingTime:</span>
+                                              <span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="status">
+                                              <span class="json-property-name">status:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="experimentArea">
+                                              <span class="json-property-name">experimentArea:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                          <section class="json-schema-properties">
+                                                              <dl>
+                                                                      <dt data-property-name="latitude">
+                                                                          <span class="json-property-name">latitude:</span>
+                                                                          <span class="json-property-type">string</span>
+                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                          
+                                                                      </dt>
+                                                                      <dd>
+                                                                          
+                                                                          <div class="json-inner-schema">
+                                                                              
+                                                                          </div>
+                                                                      </dd>
+                                                                      <dt data-property-name="longitude">
+                                                                          <span class="json-property-name">longitude:</span>
+                                                                          <span class="json-property-type">string</span>
+                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                          
+                                                                      </dt>
+                                                                      <dd>
+                                                                          
+                                                                          <div class="json-inner-schema">
+                                                                              
+                                                                          </div>
+                                                                      </dd>
+                                                              </dl>
+                                                          </section>
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="keywords">
+                                              <span class="json-property-name">keywords:</span>
+                                              <span class="json-property-type">string[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                                  <section class="json-schema-array-items">
+                                                                      <span class="json-property-type">string</span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                          
+                                                                      </div>
+                                                                  </section>                </div>
+                                          </dd>
+                                          <dt data-property-name="assets">
+                                              <span class="json-property-name">assets:</span>
+                                              <span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                                  <section class="json-schema-array-items">
+                                                                      <span class="json-property-type">object</span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                          
+                                                                                  <section class="json-schema-properties">
+                                                                                      <dl>
+                                                                                              <dt data-property-name="id">
+                                                                                                  <span class="json-property-name">id:</span>
+                                                                                                  <span class="json-property-type">string</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                  </div>
+                                                                                              </dd>
+                                                                                              <dt data-property-name="type">
+                                                                                                  <span class="json-property-name">type:</span>
+                                                                                                  <span class="json-property-type">string</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                  </div>
+                                                                                              </dd>
+                                                                                              <dt data-property-name="context">
+                                                                                                  <span class="json-property-name">context:</span>
+                                                                                                  <span class="json-property-type">object</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                  </div>
+                                                                                              </dd>
+                                                                                              <dt data-property-name="related">
+                                                                                                  <span class="json-property-name">related:</span>
+                                                                                                  <span class="json-property-type">object</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                  </div>
+                                                                                              </dd>
+                                                                                      </dl>
+                                                                                  </section>
+                                                                      </div>
+                                                                  </section>                </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-RetrieveAssetbyURNresponse" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/RetrieveAssetbyURNresponse"></a>
+                          RetrieveAssetbyURNresponse:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="context">
+                                              <span class="json-property-name">context:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="related">
+                                              <span class="json-property-name">related:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
     
   </div>
   

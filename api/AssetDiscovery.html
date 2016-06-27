@@ -50,7 +50,7 @@
     </nav>
   </div>
   <div class="container">
-    <h1>Organicity Assets Discovery Service</h1>
+    <h1>Assets Discovery Service</h1>
     <p><p>This API aims to create the foundations for a novel urban data observatory in the form of a service that allow various stakeholders (data scientists, city decision makers, organisations and citizens) to explore, with the intent to act, mixed static and real-time urban and social data streams and their exploitation in experimentation.</p>
     <p>It comprises the following functionalities:</p>
     <ul>
@@ -65,193 +65,111 @@
     
     <div id="sw-schemes" class="sw-default-value">
         <span class="sw-default-value-header">Schemes:</span>
-        
+        http, https
     </div>
     
-        <h2 id="swagger--summary-no-tags">Summary</h2>
         
-            <div class="panel">
+        <h2 id="swagger--summary-tags">Summary</h2>
+            <h3 id="tag-Assets" class="swagger-summary-tag">Tag: Assets</h3>
+            <p></p>
+        
+            <div class="panel panel-tags">
               <div class="panel-body">
         
-        <table class="table table-condensed swagger--summary">
-            <thead>
-            <tr>
-                <th>Path</th>
-                <th>Operation</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
+            <table class="table table-responsive table-condensed swagger--summary">
+                <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-geo-search--lat---long---radius---query---points---ip---city-">/assets/geo/search?{lat}&amp;{long}&amp;{radius}&amp;{query}&amp;{points}&amp;{ip}&amp;{city}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-geo-search--lat---long---radius---query---points---ip---city--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-urn-----last_updated-----type-----sort-----filter-----order-----offset-----page-----per-----sample-----query-get">GET /assets?urn=###&amp;last_updated=###&amp;type=###&amp;sort=###&amp;filter=###&amp;order=###&amp;offset=###&amp;page=###&amp;per=###&amp;sample=###&amp;query</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-metadata--query-">/assets/metadata?{query}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-metadata--query--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-services-get">GET /assets/services</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-providers">/assets/providers</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-providers-get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-services--service--get">GET /assets/services/{service}</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-providers--provider-">/assets/providers/{provider}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-providers--provider--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-sites-get">GET /assets/sites</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-services">/assets/services</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-services-get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-sites--site--get">GET /assets/sites/{site}</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-services--service-">/assets/services/{service}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-services--service--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-providers-get">GET /assets/providers</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-sites">/assets/sites</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-sites-get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-providers--provider--get">GET /assets/providers/{provider}</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets-sites--site-">/assets/sites/{site}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets-sites--site--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-geo-search-lat-----long-----radius-----query-----points-----ip-----city-----get">GET /assets/geo/search?lat=###&amp;long=###&amp;radius=###&amp;query=###&amp;points=###&amp;ip=###&amp;city=###</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets--asset_urn-">/assets/{asset_urn}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets--asset_urn--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets-metadata--query--get">GET /assets/metadata?{query}</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets--asset_urn--data">/assets/{asset_urn}/data</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets--asset_urn--data-get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets--asset_urn--get">GET /assets/{asset_urn}</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets--asset_urn--data-v2">/assets/{asset_urn}/data/v2</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets--asset_urn--data-v2-get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets--asset_urn--data-get">GET /assets/{asset_urn}/data</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets--asset_urn--nearby--radius---city---query---points-">/assets/{asset_urn}/nearby?{radius}&amp;{city}&amp;{query}&amp;{points}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets--asset_urn--nearby--radius---city---query---points--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets--asset_urn--data-v2-get">GET /assets/{asset_urn}/data/v2</a></td>
+                        <td></td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query-">/assets?{asset_urn}&amp;{last_updated}&amp;{type}&amp;{sort}&amp;{filter}&amp;{order}&amp;{offset}&amp;{page}&amp;{per}&amp;{sample}&amp;{query}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
+                        <td><a href="#operation--assets--asset_urn--nearby-radius-----city-----query-----points-----get">GET /assets/{asset_urn}/nearby?radius=###&amp;city=###&amp;query=###&amp;points=###</a></td>
+                        <td></td>
                     </tr>
-                    <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--experiments-">/experiments/</a>
-                            </td>
-                        <td>
-                            <a href="#operation--experiments--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--experiments--experiment_id-">/experiments/{experiment_id}</a>
-                            </td>
-                        <td>
-                            <a href="#operation--experiments--experiment_id--get">GET</a>
-                        </td>
-                        <td>
-                            
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
         
               </div>
             </div>
+        
+            <h3 id="tag-Experiments" class="swagger-summary-tag">Tag: Experiments</h3>
+            <p></p>
+        
+            <div class="panel panel-tags">
+              <div class="panel-body">
+        
+            <table class="table table-responsive table-condensed swagger--summary">
+                <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#operation--experiments--get">GET /experiments/</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--experiments--experiment_id--get">GET /experiments/{experiment_id}</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        
+              </div>
+            </div>
+        
     
     
     <h2>Security</h2>
@@ -290,11 +208,13 @@
     <h2>Paths</h2>
     
         
-        <span id="path--assets-geo-search--lat---long---radius---query---points---ip---city-"></span>
-            <div id="operation--assets-geo-search--lat---long---radius---query---points---ip---city--get" class="swagger--panel-operation-get panel">
+        <span id="path--assets-geo-search-lat-----long-----radius-----query-----points-----ip-----city----"></span>
+            <div id="operation--assets-geo-search-lat-----long-----radius-----query-----points-----ip-----city-----get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/geo/search?{lat}&amp;{long}&amp;{radius}&amp;{query}&amp;{points}&amp;{ip}&amp;{city}</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/geo/search?lat=###&amp;long=###&amp;radius=###&amp;query=###&amp;points=###&amp;ip=###&amp;city=###</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -319,13 +239,12 @@
                                                 lat
                                             <td><p>Center latitude for geographical queries</p>
                                         </td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -333,13 +252,12 @@
                                                 long
                                             <td><p>Center longitude for geographical queries</p>
                                         </td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -347,13 +265,12 @@
                                                 radius
                                             <td><p>Spherical radius for geographical queries</p>
                                         </td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -361,13 +278,12 @@
                                                 query
                                             <td><p>At the moment only query=&quot;polygon&quot; is supported</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -375,13 +291,12 @@
                                                 points
                                             <td><p>Array of geographical coordinates</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -389,13 +304,12 @@
                                                 ip
                                             <td><p>IP address</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -403,13 +317,12 @@
                                                 city
                                             <td><p>City name for geographical queries</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                 </tbody>
@@ -474,6 +387,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/metadata?{query}</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -569,6 +484,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/providers</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -604,7 +521,7 @@
                                                   <div class="panel-heading">
                                                     <h3 class="panel-title">
                                                         Body Schema:
-                                                        <span class="json-property-type"><span class="json-property-type">object[][]</span>
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
                                               </span>
@@ -613,20 +530,13 @@
                                                 <div class="panel-body">
                                                     
                                                                     <section class="json-schema-array-items">
-                                                                        <span class="json-property-type">object[]</span>
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Provider">Provider</a>
+                                                                        </span>
                                                                         <span class="json-property-range" title="Value limits"></span>
                                                                         
                                                                         <div class="json-inner-schema">
                                                                             
-                                                                                            <section class="json-schema-array-items">
-                                                                                                <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Provider">Provider</a>
-                                                                                                </span>
-                                                                                                <span class="json-property-range" title="Value limits"></span>
-                                                                                                
-                                                                                                <div class="json-inner-schema">
-                                                                                                    
-                                                                                                </div>
-                                                                                            </section>    </div>
+                                                                        </div>
                                                                     </section>  </div>
                                               </div>
                                     </div>
@@ -642,6 +552,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/providers/{provider}</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -720,6 +632,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/services</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -786,6 +700,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/services/{service}</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -864,6 +780,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/sites</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -930,6 +848,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/sites/{site}</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1008,6 +928,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1086,6 +1008,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}/data</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1148,7 +1072,7 @@
                                           
                                               <div  class="panel panel-definition">
                                                 <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Asset">Asset</a>
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/AssetData">AssetData</a>
                                                 </div>
                                               </div>
                                     </div>
@@ -1164,6 +1088,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}/data/v2</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1226,7 +1152,7 @@
                                           
                                               <div  class="panel panel-definition">
                                                 <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Asset">Asset</a>
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/AssetData_v2">AssetData_v2</a>
                                                 </div>
                                               </div>
                                     </div>
@@ -1237,11 +1163,13 @@
                       </section>
                 </div>
             </div>    
-        <span id="path--assets--asset_urn--nearby--radius---city---query---points-"></span>
-            <div id="operation--assets--asset_urn--nearby--radius---city---query---points--get" class="swagger--panel-operation-get panel">
+        <span id="path--assets--asset_urn--nearby-radius-----city-----query-----points----"></span>
+            <div id="operation--assets--asset_urn--nearby-radius-----city-----query-----points-----get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}/nearby?{radius}&amp;{city}&amp;{query}&amp;{points}</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{asset_urn}/nearby?radius=###&amp;city=###&amp;query=###&amp;points=###</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1280,13 +1208,12 @@
                                                 radius
                                             <td><p>Spherical radius for geographical queries</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1294,13 +1221,12 @@
                                                 query
                                             <td><p>At the moment only query=&quot;polygon&quot; is supported</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1308,13 +1234,12 @@
                                                 points
                                             <td><p>Array of geographical coordinates. Assets lat and long are taken as starting point.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1322,13 +1247,12 @@
                                                 city
                                             <td><p>City name for geographical queries</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                 </tbody>
@@ -1362,7 +1286,7 @@
                                                   <div class="panel-heading">
                                                     <h3 class="panel-title">
                                                         Body Schema:
-                                                        <span class="json-property-type"><span class="json-property-type">object</span>
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
                                               </span>
@@ -1370,7 +1294,15 @@
                                                   </div>
                                                 <div class="panel-body">
                                                     
-                                                </div>
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Asset">Asset</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </section>  </div>
                                               </div>
                                     </div>
                                   </div>
@@ -1380,11 +1312,13 @@
                       </section>
                 </div>
             </div>    
-        <span id="path--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query-"></span>
-            <div id="operation--assets--asset_urn---last_updated---type---sort---filter---order---offset---page---per---sample---query--get" class="swagger--panel-operation-get panel">
+        <span id="path--assets-urn-----last_updated-----type-----sort-----filter-----order-----offset-----page-----per-----sample-----query"></span>
+            <div id="operation--assets-urn-----last_updated-----type-----sort-----filter-----order-----offset-----page-----per-----sample-----query-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets?{asset_urn}&amp;{last_updated}&amp;{type}&amp;{sort}&amp;{filter}&amp;{order}&amp;{offset}&amp;{page}&amp;{per}&amp;{sample}&amp;{query}</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets?urn=###&amp;last_updated=###&amp;type=###&amp;sort=###&amp;filter=###&amp;order=###&amp;offset=###&amp;page=###&amp;per=###&amp;sample=###&amp;query</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1406,16 +1340,15 @@
                                 <tbody>
                                         <tr>
                                             <td>
-                                                asset_urn
+                                                urn
                                             <td><p>Filter assets by their Unique Resource Name</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1423,13 +1356,12 @@
                                                 last_updated
                                             <td><p>Filter assets by last updated date</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1437,13 +1369,12 @@
                                                 type
                                             <td><p>Filter access by type</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1451,13 +1382,12 @@
                                                 sort
                                             <td><p>Sort assets. Supported values are to be defined.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1465,13 +1395,12 @@
                                                 filter
                                             <td><p>Filter assets. Supported values are to be defined.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1479,13 +1408,12 @@
                                                 order
                                             <td><p>Order assets DESC or ASC.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1493,13 +1421,12 @@
                                                 offset
                                             <td><p>Return assets with the given offset of N results.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1507,13 +1434,12 @@
                                                 page
                                             <td><p>Return assets for the given page.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1521,13 +1447,12 @@
                                                 per
                                             <td><p>Return N assets per page.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1535,13 +1460,12 @@
                                                 sample
                                             <td><p>Return a random sample of N assets.</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1549,13 +1473,12 @@
                                                 query
                                             <td><p>Return a list of assets based on metadatadatatata search</p>
                                         </td>
-                                            <td>path</td>
+                                            <td>query</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
                                             <td>
-                                                    <span class="json-property-required"></span>
                                             </td>
                                         </tr>
                                 </tbody>
@@ -1637,6 +1560,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/experiments/</strong></h3>
+                        Tags:
+                            <a href="#tag-Experiments">Experiments</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1703,6 +1628,8 @@
                 <div class="panel-heading">
                     <div class="operation-summary"></div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/experiments/{experiment_id}</strong></h3>
+                        Tags:
+                            <a href="#tag-Experiments">Experiments</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1795,7 +1722,7 @@
                     </div>
                   <div class="panel-body">
                           <section class="json-schema-example">
-                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">context</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span></span>,<br>        &quot;<span class="hljs-attribute">last_reading_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;9&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>            &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:smartphone:phone:9&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">links</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://www.greatexperiment.org/organicity&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">self</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;/experiments/56991853005557f52f277a88&quot;</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;audio&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">site</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">links</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">avatar</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://cliparts.co/cliparts/LTd/jL4/LTdjL4djc.jpg&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://en.wikipedia.org/wiki/London&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">self</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;/assets/sites/urn:oc:entity:london&quot;</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>                &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;city&quot;</span><br>        </span>}<br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br></span>}
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">context</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">last_reading_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;9&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>            &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:smartphone:phone:9&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">links</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://www.greatexperiment.org/organicity&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">self</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;/experiments/56991853005557f52f277a88&quot;</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;audio&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">site</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">links</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">avatar</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://cliparts.co/cliparts/LTd/jL4/LTdjL4djc.jpg&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://en.wikipedia.org/wiki/London&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">self</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;/assets/sites/urn:oc:entity:london&quot;</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>                &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;city&quot;</span><br>        </span>}<br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br></span>}
                       </code></pre>
                       
                           </section>
@@ -1807,7 +1734,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -1820,7 +1746,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -1830,10 +1755,10 @@
                                           </dd>
                                           <dt data-property-name="context">
                                               <span class="json-property-name">context:</span>
-                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Context">Context</a>
+                                              </span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -1846,12 +1771,507 @@
                                               <span class="json-property-type">object</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
                                               <div class="json-inner-schema">
                                                   
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-AssetData" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/AssetData"></a>
+                          AssetData:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>The Assets data following the NGSI 9/10 definition</p>
+                      
+                          </section>
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">attributes</span>&quot;: <span class="hljs-value">[<br>        {<br>            &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">[<br>                {<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;internal&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span><br>                </span>},<br>                {<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;documentation&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;string&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://developer.transportapi.com/&quot;</span><br>                </span>}<br>            ]</span>,<br>            &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;historicdata&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;string&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://api.transportapi.com/v1/&quot;</span><br>        </span>},<br>        {<br>            &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">[<br>                {<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;internal&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;true&quot;</span><br>                </span>}<br>            ]</span>,<br>            &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;historicdata&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;string&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://santander.organicity.eu/entities/&quot;</span><br>        </span>},<br>        {<br>            &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">[<br>                {<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;internal&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span><br>                </span>},<br>                {<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;mediatype&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;string&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;XML&quot;</span><br>                </span>}<br>            ]</span>,<br>            &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;historicdata&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;string&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://datos.santander.es/resource?ds=sensores-parking-superficie&amp;id=3b9de218-9678-4ebe-9390-b2bad7cfe6cb&amp;ft=XML&quot;</span><br>        </span>},<br>        {<br>            &quot;<span class="hljs-attribute">attributes</span>&quot;: <span class="hljs-value">[<br>                {<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;description&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:description&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Edison - IC Room 5&quot;</span><br>                </span>},<br>                {<br>                    &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">[<br>                        {<br>                            &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;unit&quot;</span></span>,<br>                            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:uom:decibel&quot;</span></span>,<br>                            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;decibel&quot;</span><br>                        </span>},<br>                        {<br>                            &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;datatype&quot;</span></span>,<br>                            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:datatype:numeric&quot;</span></span>,<br>                            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;numeric&quot;</span><br>                        </span>}<br>                    ]</span>,<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;soundPressureLevel:ambient&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:soundPressureLevel:ambient&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;60.0&quot;</span><br>                </span>}<br>            ]</span>,<br>            &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:enableiot:fixed:02&#x2010;00&#x2010;86&#x2010;76&#x2010;97&#x2010;26&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">isPattern</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;soundPressureLevel:ambient&quot;</span><br>        </span>}<br>    ]</span>,<br>    &quot;<span class="hljs-attribute">context</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span></span>,<br>        &quot;<span class="hljs-attribute">last_reading_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;9&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>            &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">recorded_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:smartphone:phone:9&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;rawdata&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="context">
+                                              <span class="json-property-name">context:</span>
+                                              <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Context">Context</a>
+                                              </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="related">
+                                              <span class="json-property-name">related:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="attributes">
+                                              <span class="json-property-name">attributes:</span>
+                                              <span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                                  <section class="json-schema-array-items">
+                                                                      <span class="json-property-type">object</span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                          
+                                                                                  <section class="json-schema-properties">
+                                                                                      <dl>
+                                                                                              <dt data-property-name="type">
+                                                                                                  <span class="json-property-name">type:</span>
+                                                                                                  <span class="json-property-type">string</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                  </div>
+                                                                                              </dd>
+                                                                                              <dt data-property-name="name">
+                                                                                                  <span class="json-property-name">name:</span>
+                                                                                                  <span class="json-property-type">string</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                  </div>
+                                                                                              </dd>
+                                                                                              <dt data-property-name="value">
+                                                                                                  <span class="json-property-name">value:</span>
+                                                                                                  <span class="json-property-type">string</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                  </div>
+                                                                                              </dd>
+                                                                                              <dt data-property-name="metadata">
+                                                                                                  <span class="json-property-name">metadata:</span>
+                                                                                                  <span class="json-property-type">object[]</span>
+                                                                                                  <span class="json-property-range" title="Value limits"></span>
+                                                                                                  
+                                                                                              </dt>
+                                                                                              <dd>
+                                                                                                  
+                                                                                                  <div class="json-inner-schema">
+                                                                                                      
+                                                                                                                      <section class="json-schema-array-items">
+                                                                                                                          <span class="json-property-type">object</span>
+                                                                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                                                                          
+                                                                                                                          <div class="json-inner-schema">
+                                                                                                                              
+                                                                                                                                      <section class="json-schema-properties">
+                                                                                                                                          <dl>
+                                                                                                                                                  <dt data-property-name="type">
+                                                                                                                                                      <span class="json-property-name">type:</span>
+                                                                                                                                                      <span class="json-property-type">string</span>
+                                                                                                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                                                                                                      
+                                                                                                                                                  </dt>
+                                                                                                                                                  <dd>
+                                                                                                                                                      
+                                                                                                                                                      <div class="json-inner-schema">
+                                                                                                                                                          
+                                                                                                                                                      </div>
+                                                                                                                                                  </dd>
+                                                                                                                                                  <dt data-property-name="name">
+                                                                                                                                                      <span class="json-property-name">name:</span>
+                                                                                                                                                      <span class="json-property-type">string</span>
+                                                                                                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                                                                                                      
+                                                                                                                                                  </dt>
+                                                                                                                                                  <dd>
+                                                                                                                                                      
+                                                                                                                                                      <div class="json-inner-schema">
+                                                                                                                                                          
+                                                                                                                                                      </div>
+                                                                                                                                                  </dd>
+                                                                                                                                                  <dt data-property-name="value">
+                                                                                                                                                      <span class="json-property-name">value:</span>
+                                                                                                                                                      <span class="json-property-type">string</span>
+                                                                                                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                                                                                                      
+                                                                                                                                                  </dt>
+                                                                                                                                                  <dd>
+                                                                                                                                                      
+                                                                                                                                                      <div class="json-inner-schema">
+                                                                                                                                                          
+                                                                                                                                                      </div>
+                                                                                                                                                  </dd>
+                                                                                                                                          </dl>
+                                                                                                                                      </section>
+                                                                                                                          </div>
+                                                                                                                      </section>                </div>
+                                                                                              </dd>
+                                                                                      </dl>
+                                                                                  </section>
+                                                                      </div>
+                                                                  </section>                </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-AssetData_v2" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/AssetData_v2"></a>
+                          AssetData_v2:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p><strong>This is in beta, documentation is not stable!</strong>
+                      <em>The data model follows NGSI v2 approach removing the original XML legacy. 
+                      It also groups the data based on the Assets structure defined in D2.1 Section 4.5.1, 
+                      this improve performance on data parsing and presentation.</em></p>
+                      
+                          </section>
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">attributes</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">historic</span>&quot;: <span class="hljs-value">[<br>            {<br>                &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">documentation</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;href&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://developer.transportapi.com/&quot;</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">internal</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;dataset&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://api.transportapi.com/v1/&quot;</span><br>            </span>},<br>            {<br>                &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">internal</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;true&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;raw&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://santander.organicity.eu/entities/&quot;</span><br>            </span>},<br>            {<br>                &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">internal</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">mediatype</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;d&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;XML&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;dataservice&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://datos.santander.es/resource?ds=sensores-parking-superficie&amp;id=3b9de218-9678-4ebe-9390-b2bad7cfe6cb&amp;ft=XML&quot;</span><br>            </span>}<br>        ]</span>,<br>        &quot;<span class="hljs-attribute">observations</span>&quot;: <span class="hljs-value">[<br>            {<br>                &quot;<span class="hljs-attribute">attributes</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:description&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Edison - IC Room 5&quot;</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">soundPressureLevel:ambient</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                            &quot;<span class="hljs-attribute">datatype</span>&quot;: <span class="hljs-value">{<br>                                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:datatype:numeric&quot;</span></span>,<br>                                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;numeric&quot;</span><br>                            </span>}</span>,<br>                            &quot;<span class="hljs-attribute">unit</span>&quot;: <span class="hljs-value">{<br>                                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:uom:decibel&quot;</span></span>,<br>                                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;decibel&quot;</span><br>                            </span>}<br>                        </span>}</span>,<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:soundPressureLevel:ambient&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;60.0&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:enableiot:fixed:02&#x2010;00&#x2010;86&#x2010;76&#x2010;97&#x2010;26&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">isPattern</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;soundPressureLevel:ambient&quot;</span><br>            </span>}<br>        ]<br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">context</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span></span>,<br>        &quot;<span class="hljs-attribute">last_reading_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;9&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>            &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">recorded_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:smartphone:phone:9&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;rawdata&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="type">
+                                              <span class="json-property-name">type:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="context">
+                                              <span class="json-property-name">context:</span>
+                                              <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Context">Context</a>
+                                              </span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="attributes">
+                                              <span class="json-property-name">attributes:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                      <section class="json-schema-properties">
+                                                          <dl>
+                                                                  <dt data-property-name="historic">
+                                                                      <span class="json-property-name">historic:</span>
+                                                                      <span class="json-property-type">object[]</span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                  </dt>
+                                                                  <dd>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                          
+                                                                                          <section class="json-schema-array-items">
+                                                                                              <span class="json-property-type">object</span>
+                                                                                              <span class="json-property-range" title="Value limits"></span>
+                                                                                              
+                                                                                              <div class="json-inner-schema">
+                                                                                                  
+                                                                                              </div>
+                                                                                          </section>                </div>
+                                                                  </dd>
+                                                                  <dt data-property-name="observations">
+                                                                      <span class="json-property-name">observations:</span>
+                                                                      <span class="json-property-type">object[]</span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                  </dt>
+                                                                  <dd>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                          
+                                                                                          <section class="json-schema-array-items">
+                                                                                              <span class="json-property-type">object</span>
+                                                                                              <span class="json-property-range" title="Value limits"></span>
+                                                                                              
+                                                                                              <div class="json-inner-schema">
+                                                                                                  
+                                                                                                          <section class="json-schema-properties">
+                                                                                                              <dl>
+                                                                                                                      <dt data-property-name="type">
+                                                                                                                          <span class="json-property-name">type:</span>
+                                                                                                                          <span class="json-property-type">string</span>
+                                                                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                                                                          
+                                                                                                                      </dt>
+                                                                                                                      <dd>
+                                                                                                                          
+                                                                                                                          <div class="json-inner-schema">
+                                                                                                                              
+                                                                                                                          </div>
+                                                                                                                      </dd>
+                                                                                                                      <dt data-property-name="value">
+                                                                                                                          <span class="json-property-name">value:</span>
+                                                                                                                          <span class="json-property-type">string</span>
+                                                                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                                                                          
+                                                                                                                      </dt>
+                                                                                                                      <dd>
+                                                                                                                          
+                                                                                                                          <div class="json-inner-schema">
+                                                                                                                              
+                                                                                                                          </div>
+                                                                                                                      </dd>
+                                                                                                                      <dt data-property-name="metadata">
+                                                                                                                          <span class="json-property-name">metadata:</span>
+                                                                                                                          <span class="json-property-type">object</span>
+                                                                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                                                                          
+                                                                                                                      </dt>
+                                                                                                                      <dd>
+                                                                                                                          
+                                                                                                                          <div class="json-inner-schema">
+                                                                                                                              
+                                                                                                                          </div>
+                                                                                                                      </dd>
+                                                                                                              </dl>
+                                                                                                          </section>
+                                                                                              </div>
+                                                                                          </section>                </div>
+                                                                  </dd>
+                                                          </dl>
+                                                      </section>
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                  </div>
+                </div>
+            
+                <div id="definition-Context" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Context"></a>
+                          Context:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;9&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>        &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="service">
+                                              <span class="json-property-name">service:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="provider">
+                                              <span class="json-property-name">provider:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="name">
+                                              <span class="json-property-name">name:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="location">
+                                              <span class="json-property-name">location:</span>
+                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                          <section class="json-schema-properties">
+                                                              <dl>
+                                                                      <dt data-property-name="latitude">
+                                                                          <span class="json-property-name">latitude:</span>
+                                                                          <span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
+                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                          
+                                                                      </dt>
+                                                                      <dd>
+                                                                          
+                                                                          <div class="json-inner-schema">
+                                                                              
+                                                                          </div>
+                                                                      </dd>
+                                                                      <dt data-property-name="longitude">
+                                                                          <span class="json-property-name">longitude:</span>
+                                                                          <span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
+                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                          
+                                                                      </dt>
+                                                                      <dd>
+                                                                          
+                                                                          <div class="json-inner-schema">
+                                                                              
+                                                                          </div>
+                                                                      </dd>
+                                                                      <dt data-property-name="city">
+                                                                          <span class="json-property-name">city:</span>
+                                                                          <span class="json-property-type">string</span>
+                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                          
+                                                                      </dt>
+                                                                      <dd>
+                                                                          
+                                                                          <div class="json-inner-schema">
+                                                                              
+                                                                          </div>
+                                                                      </dd>
+                                                                      <dt data-property-name="country_code">
+                                                                          <span class="json-property-name">country_code:</span>
+                                                                          <span class="json-property-type">string</span>
+                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                          
+                                                                      </dt>
+                                                                      <dd>
+                                                                          
+                                                                          <div class="json-inner-schema">
+                                                                              
+                                                                          </div>
+                                                                      </dd>
+                                                                      <dt data-property-name="country">
+                                                                          <span class="json-property-name">country:</span>
+                                                                          <span class="json-property-type">string</span>
+                                                                          <span class="json-property-range" title="Value limits"></span>
+                                                                          
+                                                                      </dt>
+                                                                      <dd>
+                                                                          
+                                                                          <div class="json-inner-schema">
+                                                                              
+                                                                          </div>
+                                                                      </dd>
+                                                              </dl>
+                                                          </section>
                                               </div>
                                           </dd>
                                   </dl>
@@ -1884,7 +2304,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -1897,7 +2316,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -1907,10 +2325,10 @@
                                           </dd>
                                           <dt data-property-name="context">
                                               <span class="json-property-name">context:</span>
-                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Context">Context</a>
+                                              </span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -1992,7 +2410,7 @@
                                                               <dl>
                                                                       <dt data-property-name="latitude">
                                                                           <span class="json-property-name">latitude:</span>
-                                                                          <span class="json-property-type">string</span>
+                                                                          <span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
                                                                           <span class="json-property-range" title="Value limits"></span>
                                                                           
                                                                       </dt>
@@ -2004,7 +2422,7 @@
                                                                       </dd>
                                                                       <dt data-property-name="longitude">
                                                                           <span class="json-property-name">longitude:</span>
-                                                                          <span class="json-property-type">string</span>
+                                                                          <span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
                                                                           <span class="json-property-range" title="Value limits"></span>
                                                                           
                                                                       </dt>
@@ -2087,7 +2505,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2100,7 +2517,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2113,7 +2529,6 @@
                                               <span class="json-property-type">object</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2126,7 +2541,6 @@
                                               <span class="json-property-type">object</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2164,7 +2578,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2177,7 +2590,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2190,7 +2602,6 @@
                                               <span class="json-property-type">object</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2228,7 +2639,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2241,7 +2651,6 @@
                                               <span class="json-property-type">string</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2251,10 +2660,10 @@
                                           </dd>
                                           <dt data-property-name="context">
                                               <span class="json-property-name">context:</span>
-                                              <span class="json-property-type">object</span>
+                                              <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Context">Context</a>
+                                              </span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2267,7 +2676,6 @@
                                               <span class="json-property-type">object</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               
@@ -2280,7 +2688,6 @@
                                               <span class="json-property-type">object</span>
                                               <span class="json-property-range" title="Value limits"></span>
                                               
-                                                  <span class="json-property-required"></span>
                                           </dt>
                                           <dd>
                                               

@@ -51,18 +51,28 @@
   </div>
   <div class="container">
     <h1>Smartphone Experimentation API</h1>
+    <p class="sw-info-version">Version: <span>0.1.1-testing</span></p>
     <p><p>API for interacting with the Smartphone Experimentation Platform</p>
     </p>
     
-        <div id="sw-default-produces" class="sw-default-value">
+        <p class="sw-default-value">
             <span class="sw-default-value-header">Default response content-types:</span>
             application/json
-        </div>
+        </p>
     
-    <div id="sw-schemes" class="sw-default-value">
+    <p class="sw-default-value">
         <span class="sw-default-value-header">Schemes:</span>
         http
-    </div>
+    </p>
+    
+      <p>
+      <span class="sw-default-value-header">Base URL:</span>
+      <a href="http://api.smartphone-experimentation.eu/api/v1">
+      http://api.smartphone-experimentation.eu/api/v1
+      </a>
+      </p>
+    
+    
     
         
         <h2 id="swagger--summary-tags">Summary</h2>
@@ -82,6 +92,10 @@
                 <tbody>
                     <tr>
                         <td><a href="#operation--smartphone-post">POST /smartphone</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--smartphone-message-post">POST /smartphone/message</a></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -132,6 +146,10 @@
                     </tr>
                     <tr>
                         <td><a href="#operation--experiment--experiment_id--delete">DELETE /experiment/{experiment_id}</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--experiment-message-post">POST /experiment/message</a></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -981,6 +999,139 @@
                                                                             
                                                                         </div>
                                                                     </section>  </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--experiment-message"></span>
+            <div id="operation--experiment-message-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/experiment/message</strong></h3>
+                        Tags:
+                            <a href="#tag-experiment">experiment</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Send a message to OC users running the experiment specified.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                experimentId
+                                            <td><p>the id of the experiment</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                message
+                                            <td><p>the message to send to OC users</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><a href="#sw-default-produces">Uses default content-types: </a>
+                            <span class="label label-default">application/json</span> 
+                          </p>
+                        
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>OK</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                            <section class="json-schema-properties">
+                                                                <dl>
+                                                                        <dt data-property-name="status">
+                                                                            <span class="json-property-name">status:</span>
+                                                                            <span class="json-property-type">string</span>
+                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                            
+                                                                        </dt>
+                                                                        <dd>
+                                                                            
+                                                                            <div class="json-inner-schema">
+                                                                                
+                                                                            </div>
+                                                                        </dd>
+                                                                        <dt data-property-name="code">
+                                                                            <span class="json-property-name">code:</span>
+                                                                            <span class="json-property-type">integer</span>
+                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                            
+                                                                        </dt>
+                                                                        <dd>
+                                                                            
+                                                                            <div class="json-inner-schema">
+                                                                                
+                                                                            </div>
+                                                                        </dd>
+                                                                </dl>
+                                                            </section>
+                                                </div>
                                               </div>
                                     </div>
                                   </div>
@@ -2942,6 +3093,139 @@
                                               <div  class="panel panel-definition">
                                                 <div class="panel-body">
                                                         Reference: <a class="json-schema-ref" href="#/definitions/Smartphone">Smartphone</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--smartphone-message"></span>
+            <div id="operation--smartphone-message-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary"></div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/smartphone/message</strong></h3>
+                        Tags:
+                            <a href="#tag-smartphone">smartphone</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Send a message to the OC user that owns the smartphone specified.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                smartphoneId
+                                            <td><p>the id of the smartphone</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                message
+                                            <td><p>the message to send to OC user</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><a href="#sw-default-produces">Uses default content-types: </a>
+                            <span class="label label-default">application/json</span> 
+                          </p>
+                        
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>OK</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                            <section class="json-schema-properties">
+                                                                <dl>
+                                                                        <dt data-property-name="status">
+                                                                            <span class="json-property-name">status:</span>
+                                                                            <span class="json-property-type">string</span>
+                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                            
+                                                                        </dt>
+                                                                        <dd>
+                                                                            
+                                                                            <div class="json-inner-schema">
+                                                                                
+                                                                            </div>
+                                                                        </dd>
+                                                                        <dt data-property-name="code">
+                                                                            <span class="json-property-name">code:</span>
+                                                                            <span class="json-property-type">integer</span>
+                                                                            <span class="json-property-range" title="Value limits"></span>
+                                                                            
+                                                                        </dt>
+                                                                        <dd>
+                                                                            
+                                                                            <div class="json-inner-schema">
+                                                                                
+                                                                            </div>
+                                                                        </dd>
+                                                                </dl>
+                                                            </section>
                                                 </div>
                                               </div>
                                     </div>

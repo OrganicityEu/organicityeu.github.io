@@ -8042,23 +8042,13 @@ input[type="submit"] .badge {
   border-bottom-color: #a2a2a2;
 }
 .json-schema-description:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Description";
-  padding-bottom: .5em;
-  display: block;
 }
 .json-schema-description:not(:last-child) {
   padding-bottom: 1.5em;
 }
 .json-schema-properties:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Properties";
-  padding-bottom: .5em;
-  display: block;
 }
 .json-schema-properties:not(:last-child) {
   padding-bottom: 1.5em;
@@ -8070,34 +8060,19 @@ input[type="submit"] .badge {
   margin: 0;
 }
 .json-schema-example:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Example";
-  padding-bottom: .5em;
-  display: block;
 }
 .json-schema-example:not(:last-child) {
   padding-bottom: 1.5em;
 }
 .json-schema-array-items:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Items";
-  padding-bottom: .5em;
-  display: block;
 }
 .json-schema-array-items:not(:last-child) {
   padding-bottom: 1.5em;
 }
 .json-schema-allOf-inherited:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Inherited";
-  padding-bottom: .5em;
-  display: block;
 }
 .json-schema-allOf-inherited:not(:last-child) {
   padding-bottom: 1.5em;
@@ -8117,12 +8092,7 @@ input[type="submit"] .badge {
   content: "either ";
 }
 .json-schema-additionalProperties:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Additional properties";
-  padding-bottom: .5em;
-  display: block;
 }
 .json-schema-additionalProperties:not(:last-child) {
   padding-bottom: 1.5em;
@@ -8436,45 +8406,25 @@ a.json-property-read-only:before:focus {
   float: right !important;
 }
 .sw-operation-description:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Description";
-  padding-bottom: .5em;
-  display: block;
 }
 .sw-operation-description:not(:last-child) {
   padding-bottom: 1.5em;
 }
 .sw-request-params:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Request parameters";
-  padding-bottom: .5em;
-  display: block;
 }
 .sw-request-params:not(:last-child) {
   padding-bottom: 1.5em;
 }
 .sw-request-body:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Request body";
-  padding-bottom: .5em;
-  display: block;
 }
 .sw-request-body:not(:last-child) {
   padding-bottom: 1.5em;
 }
 .sw-responses:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Responses";
-  padding-bottom: .5em;
-  display: block;
 }
 .sw-responses:not(:last-child) {
   padding-bottom: 1.5em;
@@ -8598,12 +8548,7 @@ code.highlight {
   border-bottom-color: #a2a2a2;
 }
 .sw-request-security:before {
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
   content: "Security";
-  padding-bottom: .5em;
-  display: block;
 }
 .sw-request-security:not(:last-child) {
   padding-bottom: 1.5em;
@@ -8626,6 +8571,32 @@ span.sw-default-value-header {
 }
 .panel.panel-tags {
   border-color: #A2A2A2;
+}
+.panel section {
+  border-top: 2px solid #ccc;
+  padding-top: 12px;
+}
+.panel section:first-child {
+  border-top: 0px solid transparent;
+  padding-top: 0px;
+}
+.json-schema-description:before,
+.json-schema-properties:before,
+.json-schema-example:before,
+.json-schema-array-items:before,
+.json-schema-allOf-inherited:before,
+.json-schema-additionalProperties:before,
+.sw-operation-description:before,
+.sw-request-params:before,
+.sw-request-body:before,
+.sw-responses:before,
+.sw-request-security:before {
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  padding-bottom: 0.5em;
+  display: block;
+  font-size: 17px;
 }
 table.table.swagger--summary {
   margin-bottom: 0;

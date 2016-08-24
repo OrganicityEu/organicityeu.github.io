@@ -51,7 +51,7 @@
   </div>
   <div class="container">
     <h1>Organicity Accounts - Permission Component</h1>
-    <p class="sw-info-version">Version: <span>0.1.3-development</span></p>
+    <p class="sw-info-version">Version: <span>0.2.1-development</span></p>
     <p><p>Several functions of Organicity are not available to any user, but
     require additional permissions to be executed. This component
     streamlines the handling of reading, editing and assigning roles
@@ -69,6 +69,8 @@
     <li><code>accounts-permissions:editLocalRoles</code>, which allows adding or
     removing roles specific to the requesting client to or from a
     user.</li>
+    <li><code>accounts-permissions:listUsers</code>, which allows listing of all
+    users.</li>
     </ul>
     </p>
     
@@ -101,6 +103,18 @@
             </tr>
             </thead>
             <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--users">/users</a>
+                            </td>
+                        <td>
+                            <a href="#operation--users-get">GET</a>
+                        </td>
+                        <td>
+                            <p>Retrieve a list of users</p>
+        
+                        </td>
+                    </tr>
                     <tr>
                             <td class="swagger--summary-path" rowspan="2">
                                 <a href="#path--users--userId--roles">/users/{userId}/roles</a>
@@ -185,6 +199,226 @@
     <h2>Paths</h2>
     
         
+        <span id="path--users"></span>
+            <div id="operation--users-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Retrieve a list of users</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/users</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>This endpoint supplies a list of available user names and
+            userIds that can be used for the more detailed actions.</p>
+            <p>Due to privacy resons, this endpoint only returns these two
+            fields; more data can only be obtained when the respective
+            user performs a successful login through the client and
+            supplies an ID Token.</p>
+            <p>The endpoint always only returns a part of the list of users
+            (paginated), given by the offset (which defaults to <code>0</code>) and
+            the page length (which defaults to the maximum value of <code>50</code>).
+            If you want to query for more users, you have to make multiple
+            calls to the api.</p>
+            <p>The list of users is always sorted alphabetically with regard
+            to the user name. The offset into a list is thus not
+            guaranteed to always return a list starting with the same
+            user, as new users might shift the offset. However, as long as
+            the list of users itself does not change, the returned list is
+            constant as well.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                offset
+                                            <td><p>The offset in the list of users, given as the amount of
+                                        users to skip. Defaults to <code>0</code>, thus returning the start
+                                        of the list.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | x ≥ 0 }</span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                count
+                                            <td><p>The maximum amount of users to return as the result of the
+                                        call. Only values between 1 and 50 are allowed, in order
+                                        to limit the result size. Defaults to <code>50</code>.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 1 ≤ x ≤ 50 }</span>
+                                        
+                                                <span class="json-property-default-value">50</span>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requested list of users has been extracted and is
+                                returned as the body of the reply. If no users matched
+                                the query (i.e. the offset is too high), an empty
+                                array may be returned.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">[<br>    {<br>        &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;cf2c1723-3369-4123-8b32-49abe71c0e57&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;fbuether&quot;</span><br>    </span>},<br>    {<br>        &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;0dfc01f7-a234-4cbc-8e70-7ae361127dd4&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;jackie&quot;</span><br>    </span>}<br>]
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                        <section class="json-schema-description">
+                                                            <p>An array of user identifiers, along with the
+                                                    human-readable user name.</p>
+                                                    
+                                                        </section>
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/UserIdentifier">UserIdentifier</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client did not supply identify information
+                                (see <a href="#security-definition-OrganicityPermissions">Security
+                                Definitions</a>).</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-403">
+                              403 Forbidden
+                    
+                            </dt>
+                            <dd class="sw-response-403">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client does not have sufficient permissions
+                                to list users.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-422">
+                              422 Unprocessable Entity
+                    
+                            </dt>
+                            <dd class="sw-response-422">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The given query parameters where not valid. This might
+                                occur if either the given offset or count where negative,
+                                or if count was too large.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;The given count is too large.&quot;</span><br></span>}
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
         <span id="path--users--userId--roles"></span>
             <div id="operation--users--userId--roles-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -1087,6 +1321,69 @@
                       
                           <section class="json-schema-example">
                               <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">role</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;createAsset&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+            
+                <div id="definition-UserIdentifier" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/UserIdentifier"></a>
+                          UserIdentifier:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>This is a simple record of only user id and name, to group
+                      a system-unique identifier together with a human-readable
+                      name of a user. This record is deliberatly kept small to
+                      not leak any privacy-related information.</p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The unique and permanent user identifier.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="name">
+                                              <span class="json-property-name">name:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The self-appointed user name.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;0dfc01f7-a234-4cbc-8e70-7ae361127dd4&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;jackie&quot;</span><br></span>}
                       </code></pre>
                       
                           </section>

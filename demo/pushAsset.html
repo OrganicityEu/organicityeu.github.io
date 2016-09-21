@@ -1,0 +1,52 @@
+<h1>Organicity Asset Creation (with XMLHttpRequest)</h1>
+
+<p>
+	See <a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/HowToPushAnAsset.md">Tutoiral</a> for details.
+</p>
+
+Access Token: <br><input id="token" style="width:800px;"><br>
+Application ID: <br><input id="application" style="width:800px;"><br>
+Experiment ID: <br><input id="experiment" style="width:800px;"><br>
+Asset: <br><textarea style="width:800px;height:175px;" id="asset"></textarea><br>
+<button id="btn">Create Asset</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+<script>
+// A $( document ).ready() block.
+$( document ).ready(function() {
+
+	var accessToken = localStorage.getItem('accessToken');
+	var application = localStorage.getItem('application');
+	var experiment = localStorage.getItem('experiment');
+	var asset = localStorage.getItem('asset');
+
+	$('#token').val(accessToken);
+	$('#application').val(application);
+	$('#experiment').val(experiment);
+	$('#asset').val(asset);
+
+	$('#btn').click(function() {
+		var accessToken = $('#token').val();
+		var application = $('#application').val();
+		var experiment = $('#experiment').val();
+		var asset = $('#asset').val();
+
+		console.log(asset);
+
+		localStorage.setItem('accessToken', accessToken);
+		localStorage.setItem('application', application);
+		localStorage.setItem('experiment', experiment);
+		localStorage.setItem('asset', asset);
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "https://exp.orion.organicity.eu/v2/entities", true);
+		xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+		xhr.setRequestHeader("Content-type", "application/json");
+		xhr.setRequestHeader("Accept", "application/json");
+		xhr.setRequestHeader("x-organicity-application", application);
+		xhr.setRequestHeader("x-organicity-experiment", experiment);
+		xhr.send(asset);
+
+	});
+
+});
+</script>

@@ -26,7 +26,7 @@ In the next steps, we need that IDs.
 
 Go back to the **[EXPERIMENTS]** and start the experiment by clicking on `STOPPED` in the state column. The state is `running` afterwards.
 
-## POST a new asset
+## Push a new asset
 
 The Asset endpoint is located under [https://exp.orion.organicity.eu/v2/entities](https://exp.orion.organicity.eu/v2/entities).
 
@@ -155,3 +155,9 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 ```
 
 The response is a `204 No Content`, which tells you that assed was deleted.
+
+## Demo
+
+### Push a new asset
+
+An XMLHTTPRequest-based example can be found here: https://organicityeu.github.io/demo/pushAsset.html

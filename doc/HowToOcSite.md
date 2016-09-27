@@ -1,16 +1,20 @@
-![alt text](../images/organicity_logo_pink_100.png)
+![Organicity Logo](../images/organicity_logo_pink_100.png)
 
 [Back to the Guidlines Overview page](https://organicityeu.github.io/).
 
 # Tutorial: OC Site Federation - How to be an OC Site
 
-**Preconditions**: To be able to push assets to the **Organicity Central Orion** you need a `client_id` and a `client_secret`, which has the `ocsite` role assigned.
+**Preconditions**: To be able to push assets to the *Organicity Central Orion* you need a `client_id` and a `client_secret`, which has the `ocsite` role assigned.
 
-In this tutorial we will configure the subscription of a local Orion with a Asset-Subscription-Proxy.
+The core component of the federation is the [Asset-Subscription-Proxy](https://github.com/OrganicityEu/Asset-Subscription-Proxy), which subscribes itself at an Orion. Thus, the Orion notifies the Asset-Subscription-Proxy about new Assets. As soon the Asset-Subscription-Proxy gets notified, it forwards the asset to the Organicity Central Orion in am authorized way. This architecture can be seen below:
+
+![Architecture: OC Site + OC Central Orion](../images/oc-site-central.png)
+
 
 ## Install the Asset-Subscription-Proxy
 
-To push assets to the **Organicity Central Orion**, please clone the repository of the Asset-Subscription-Proxy
+
+To push assets to the Organicity Central Orion, please clone the repository of the Asset-Subscription-Proxy
  and configure it:
 
 ```
@@ -24,6 +28,8 @@ Next, install the Dependencies:
 ```
 npm install
 ```
+
+## Configure the Asset-Subscription-Proxy
 
 Edit the `config.js` by applying your `client_id` and `client_secret`.
 
@@ -89,11 +95,11 @@ Next step is to test the federation. Keep the log of the Asset-Subscription-Prox
 * HTTP header `Fiware-Service: organicity`
 * The AssetID must correspond to your Site, e.g., `urn:oc:entity:<OCSITENAME>:<AssetID>`
 
-The local Orion should send a notification to the Asset-Subscription-Proxy, which pushes the asset to the **Organicity Central Orion**. You should see a message like
+The local Orion should send a notification to the Asset-Subscription-Proxy, which pushes the asset to the Organicity Central Orion. You should see a message like
 
 ```
 2016-09-27 06:37:05.265  - INFO: Organicity-subscription-proxy - Asset Creating: urn:oc:entity:<OCSITENAME>:<AssetID>
 2016-09-27 06:37:08.303  - INFO: Organicity-subscription-proxy - Asset Created: urn:oc:entity:<OCSITENAME>:<AssetID>
 ```
 
-The second line indicates, that the creation at the **Organicity Central Orion** was successful.
+The second line indicates, that the creation at the Organicity Central Orion was successful.

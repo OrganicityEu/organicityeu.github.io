@@ -6,6 +6,8 @@
 
 **Preconditions**: To be able to push assets to the **Organicity Central Orion** you need a `client_id` and a `client_secret`, which has the `ocsite` role assigned.
 
+In this tutorial we will configure the subscription of a local Orion with a Asset-Subscription-Proxy.
+
 ## Install the Asset-Subscription-Proxy
 
 To push assets to the **Organicity Central Orion**, please clone the repository of the Asset-Subscription-Proxy
@@ -70,7 +72,7 @@ If it was successful, you wll get the Subscription of your Orion:
 Successful: /v2/subscriptions/57ea49394735cf79905858c0
 ```
 
-## Verify subscription at yout local Orion
+## Verify subscription at your local Orion
 
 Now you can verify your subscription:
 

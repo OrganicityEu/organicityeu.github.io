@@ -59,6 +59,7 @@
     <li>Retrieving information about: services, sites and providers</li>
     <li>Retrieving assets data</li>
     <li>Retrieving experiments and the associated assets</li>
+    <li>Support for <a href="http://geojson.org/geojson-spec.html">GeoJSON</a></li>
     </ul>
     <p><em>This API is the core engine of the <a href="http://observatory.organicity.eu/">Organicity Urban Data Observatory</a> and it is designed following the <a href="http://oascities.org/">OASC</a> principles, as an extension of the <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FI-WARE_NGSI-10_Open_RESTful_API_Specification">NGSI 9/10</a> standard, specially following the new <a href="http://telefonicaid.github.io/fiware-orion/api/v2/latest/">FIWARE-NGSI v2 Specification</a></em></p>
     </p>
@@ -100,6 +101,16 @@
         </td>
                     </tr>
                     <tr>
+                        <td><a href="#operation--assets-v2-get">GET /assets/v2</a></td>
+                        <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
+        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--assets--urn--v2-get">GET /assets/{urn}/v2</a></td>
+                        <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
+        </td>
+                    </tr>
+                    <tr>
                         <td><a href="#operation--assets-services-get">GET /assets/services</a></td>
                         <td><p>Return the services the assets belong to</p>
         </td>
@@ -130,6 +141,11 @@
         </td>
                     </tr>
                     <tr>
+                        <td><a href="#operation--assets-geo--get">GET /assets/geo/</a></td>
+                        <td><p>Return a list of assets as a GeoJSON Feature Collection</p>
+        </td>
+                    </tr>
+                    <tr>
                         <td><a href="#operation--assets-geo-search-get">GET /assets/geo/search</a></td>
                         <td><p>Return a list of assets filtered by geolocation</p>
         </td>
@@ -157,6 +173,41 @@
                     <tr>
                         <td><a href="#operation--assets--assetUrn--nearby-get">GET /assets/{assetUrn}/nearby</a></td>
                         <td><p>Retrieve assets geograpically</p>
+        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+              </div>
+            </div>
+        
+            <h3 id="tag-NGSI-v2" class="swagger-summary-tag">Tag: NGSI v2</h3>
+            <p></p>
+        
+            <div class="panel panel-tags">
+              <div class="panel-body">
+        
+            <table class="table table-responsive table-condensed swagger--summary">
+                <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#operation--assets-v2-get">GET /assets/v2</a></td>
+                        <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
+        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--assets--urn--v2-get">GET /assets/{urn}/v2</a></td>
+                        <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
+        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--assets--assetUrn--data-v2-get">GET /assets/{assetUrn}/data/v2</a></td>
+                        <td><p>The Asset data by Unique Resource Name. Temp beta model!</p>
         </td>
                     </tr>
                 </tbody>
@@ -197,6 +248,36 @@
                     <tr>
                         <td><a href="#operation--assets-attributes-types-get">GET /assets/attributes/types</a></td>
                         <td><p>Return the attributes types the assets belong to</p>
+        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+              </div>
+            </div>
+        
+            <h3 id="tag-Geo" class="swagger-summary-tag">Tag: Geo</h3>
+            <p></p>
+        
+            <div class="panel panel-tags">
+              <div class="panel-body">
+        
+            <table class="table table-responsive table-condensed swagger--summary">
+                <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#operation--assets-geo--get">GET /assets/geo/</a></td>
+                        <td><p>Return a list of assets as a GeoJSON Feature Collection</p>
+        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--assets-geo-search-get">GET /assets/geo/search</a></td>
+                        <td><p>Return a list of assets filtered by geolocation</p>
         </td>
                     </tr>
                 </tbody>
@@ -651,17 +732,89 @@
                       </section>
                 </div>
             </div>    
+        <span id="path--assets-geo-"></span>
+            <div id="operation--assets-geo--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Return a list of assets as a GeoJSON Feature Collection</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/geo/</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>, 
+                            <a href="#tag-Geo">Geo</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return a list of assets as an array of GeoJSON Feature Collections grouped by Asset Types</p>
+            
+                    </section>
+                    
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/geojson</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/GeoJSONAssets">GeoJSONAssets</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
         <span id="path--assets-geo-search"></span>
             <div id="operation--assets-geo-search-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary">Return a list of assets filtered by geolocation</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/geo/search</strong></h3>
                         Tags:
-                            <a href="#tag-Assets">Assets</a>
+                            <a href="#tag-Assets">Assets</a>, 
+                            <a href="#tag-Geo">Geo</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Return a list of assets filtered by geolocation</p>
+                        <p>Return a list of assets filtered by geolocation as an array of GeoJSON Feature Collections grouped by Asset Types</p>
             
                     </section>
                     
@@ -773,7 +926,7 @@
                         </section>
                     
                       <section class="sw-responses">
-                          <p><span class="label label-default">application/json</span> 
+                          <p><span class="label label-default">application/geojson</span> 
                     </p>
                     
                         <dl>
@@ -808,7 +961,7 @@
                                                 <div class="panel-body">
                                                     
                                                                     <section class="json-schema-array-items">
-                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Asset">Asset</a>
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/GeoJSONAssets">GeoJSONAssets</a>
                                                                         </span>
                                                                         <span class="json-property-range" title="Value limits"></span>
                                                                         
@@ -1526,6 +1679,265 @@
                       </section>
                 </div>
             </div>    
+        <span id="path--assets-v2"></span>
+            <div id="operation--assets-v2-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Retrieve an assets using multiple criteria in NGSI V2</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/v2</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>, 
+                            <a href="#tag-NGSI-v2">NGSI v2</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retrieve an assets using multiple criteria in NGSI V2</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                urn
+                                            <td><p>Filter assets by their Unique Resource Name</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                lastUpdated
+                                            <td><p>Filter assets by last updated date</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                type
+                                            <td><p>Filter assets by type</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                sort
+                                            <td><p>Sort assets. Supported values are to be defined.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                filter
+                                            <td><p>Filter assets. Supported values are to be defined.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                order
+                                            <td><p>Order assets DESC or ASC.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                offset
+                                            <td><p>Return assets with the given offset of N results.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                page
+                                            <td><p>Return assets for the given page.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                per
+                                            <td><p>Return N assets per page.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                sample
+                                            <td><p>Return a random sample of N assets.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                query
+                                            <td><p>Return a list of assets based on metadatadatatata search</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                experimentId
+                                            <td><p>Return a list of assets used on an experiment</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/AssetV2/">AssetV2/</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oAuth">oAuth</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
         <span id="path--assets--assetUrn-"></span>
             <div id="operation--assets--assetUrn--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -1692,7 +2104,8 @@
                     <div class="operation-summary">The Asset data by Unique Resource Name. Temp beta model!</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{assetUrn}/data/v2</strong></h3>
                         Tags:
-                            <a href="#tag-Assets">Assets</a>
+                            <a href="#tag-Assets">Assets</a>, 
+                            <a href="#tag-NGSI-v2">NGSI v2</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
@@ -1915,6 +2328,123 @@
                             </dd>
                         </dl>
                       </section>
+                </div>
+            </div>    
+        <span id="path--assets--urn--v2"></span>
+            <div id="operation--assets--urn--v2-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Retrieve an assets using multiple criteria in NGSI V2</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{urn}/v2</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>, 
+                            <a href="#tag-NGSI-v2">NGSI v2</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retrieve an assets using multiple criteria in NGSI V2</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                urn
+                                            <td><p>Filter assets by their Unique Resource Name</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/AssetV2/">AssetV2/</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oAuth">oAuth</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
                 </div>
             </div>
      
@@ -2382,6 +2912,28 @@
                       
                           <section class="json-schema-example">
                               <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">attributes</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">historic</span>&quot;: <span class="hljs-value">[<br>            {<br>                &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">documentation</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;href&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://developer.transportapi.com/&quot;</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">internal</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;dataset&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://api.transportapi.com/v1/&quot;</span><br>            </span>},<br>            {<br>                &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">internal</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;true&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;raw&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://santander.organicity.eu/entities/&quot;</span><br>            </span>},<br>            {<br>                &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">internal</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;boolean&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">mediatype</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;d&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;XML&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;dataservice&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://datos.santander.es/resource?ds=sensores-parking-superficie&amp;id=3b9de218-9678-4ebe-9390-b2bad7cfe6cb&amp;ft=XML&quot;</span><br>            </span>}<br>        ]</span>,<br>        &quot;<span class="hljs-attribute">observations</span>&quot;: <span class="hljs-value">[<br>            {<br>                &quot;<span class="hljs-attribute">attributes</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:description&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Edison - IC Room 5&quot;</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">soundPressureLevel:ambient</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>                            &quot;<span class="hljs-attribute">datatype</span>&quot;: <span class="hljs-value">{<br>                                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:datatype:numeric&quot;</span></span>,<br>                                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;numeric&quot;</span><br>                            </span>}</span>,<br>                            &quot;<span class="hljs-attribute">unit</span>&quot;: <span class="hljs-value">{<br>                                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:uom:decibel&quot;</span></span>,<br>                                &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;decibel&quot;</span><br>                            </span>}<br>                        </span>}</span>,<br>                        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:soundPressureLevel:ambient&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;60.0&quot;</span><br>                    </span>}<br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:enableiot:fixed:02&#x2010;00&#x2010;86&#x2010;76&#x2010;97&#x2010;26&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">isPattern</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;false&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;soundPressureLevel:ambient&quot;</span><br>            </span>}<br>        ]<br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">context</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span></span>,<br>        &quot;<span class="hljs-attribute">last_reading_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;9&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>            &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">recorded_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:smartphone:phone:9&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;rawdata&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+            
+                <div id="definition-AssetV2" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/AssetV2"></a>
+                          AssetV2:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">doc</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">TimeInstant</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>            }</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:ISO8601&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2015-11-25T13:55:03.000Z&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">batteryLevel</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>            }</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:batteryLevel&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;80.00&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:santander:environmental:fixed:81&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>            }</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;coords&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;43.47137,-3.80053&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">temperature:ambient</span>&quot;: <span class="hljs-value">{<br>            &quot;<span class="hljs-attribute">metadata</span>&quot;: <span class="hljs-value">{<br>            }</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:temperature:ambient&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;12.83&quot;</span><br>        </span>}</span>,<br>        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entityType:iotdevice&quot;</span><br>    </span>}<br></span>}
                       </code></pre>
                       
                           </section>
@@ -2862,6 +3414,32 @@
                       
                           <section class="json-schema-example">
                               <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">assets</span>&quot;: <span class="hljs-value">[<br>        {<br>            &quot;<span class="hljs-attribute">context</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">experiment</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span></span>,<br>                &quot;<span class="hljs-attribute">last_reading_at</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;9&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>                    &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:smartphone:phone:9&quot;</span></span>,<br>            &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-literal">null</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;phone&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>                </span>}</span>,<br>                &quot;<span class="hljs-attribute">site</span>&quot;: <span class="hljs-value">{<br>                    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">links</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">avatar</span>&quot;: <span class="hljs-value">{<br>                            &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://cliparts.co/cliparts/LTd/jL4/LTdjL4djc.jpg&quot;</span><br>                        </span>}</span>,<br>                        &quot;<span class="hljs-attribute">related</span>&quot;: <span class="hljs-value">{<br>                            &quot;<span class="hljs-attribute">href</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;https://en.wikipedia.org/wiki/London&quot;</span><br>                        </span>}</span>,<br>                        &quot;<span class="hljs-attribute">self</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;/assets/sites/urn:oc:entity:london&quot;</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>                    &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>                        &quot;<span class="hljs-attribute">city</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;London&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">country</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Great Britain&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">country_code</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;GB&quot;</span></span>,<br>                        &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>                        &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>                    </span>}</span>,<br>                    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;city&quot;</span><br>                </span>}<br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;smartphone&quot;</span><br>        </span>}<br>    ]</span>,<br>    &quot;<span class="hljs-attribute">experimentArea</span>&quot;: <span class="hljs-value">[<br>        {<br>            &quot;<span class="hljs-attribute">position</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">latitude</span>&quot;: <span class="hljs-value"><span class="hljs-number">51.52209641</span></span>,<br>                &quot;<span class="hljs-attribute">longitude</span>&quot;: <span class="hljs-value">-<span class="hljs-number">0.10705951</span><br>            </span>}<br>        </span>}<br>    ]</span>,<br>    &quot;<span class="hljs-attribute">experimenterId</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;da41542651515151514141&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">expirationTime</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-10-10T18:03:05.000Z&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;56991853005557f52f277a88&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">keywords</span>&quot;: <span class="hljs-value">[<br>        <span class="hljs-string">&quot;sound&quot;</span>,<br>        <span class="hljs-string">&quot;device&quot;</span>,<br>        <span class="hljs-string">&quot;iot&quot;</span><br>    ]</span>,<br>    &quot;<span class="hljs-attribute">registered</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-03-10T18:03:05.000Z&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">startingTime</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-04-10T18:03:05.000Z&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">status</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;active&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;audio&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+            
+                <div id="definition-GeoJSONAssets" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/GeoJSONAssets"></a>
+                          GeoJSONAssets:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>A GeoJSON Feature Collections <a href="http://geojson.org/geojson-spec.html#feature-collection-objects">http://geojson.org/geojson-spec.html#feature-collection-objects</a> </p>
+                      
+                          </section>
+                      
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">features</span>&quot;: <span class="hljs-value">[<br>        {<br>            &quot;<span class="hljs-attribute">geometry</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">coordinates</span>&quot;: <span class="hljs-value">[<br>                    <span class="hljs-number">38.2587374</span>,<br>                    <span class="hljs-number">21.7463555</span><br>                ]</span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Point&quot;</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">properties</span>&quot;: <span class="hljs-value">{<br>                &quot;<span class="hljs-attribute">group</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;null&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:patras:dev:fixed:1&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">last_update_at</span>&quot;: <span class="hljs-value"><span class="hljs-number">1448979138</span></span>,<br>                &quot;<span class="hljs-attribute">origin</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;null&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">provider</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;null&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">service</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;null&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">site</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;patras&quot;</span></span>,<br>                &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entitytype:iotdevice&quot;</span><br>            </span>}</span>,<br>            &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Feature&quot;</span><br>        </span>}<br>    ]</span>,<br>    &quot;<span class="hljs-attribute">properties</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entitytype:iotdevice&quot;</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;FeatureCollection&quot;</span><br></span>}
                       </code></pre>
                       
                           </section>

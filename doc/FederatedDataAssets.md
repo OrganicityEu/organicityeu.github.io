@@ -4,7 +4,7 @@
 
 # Federated Data Assets
 
-This is a WIP documentation on the Organcity Assets Data Model
+....
 
 ## Aarhus
 

@@ -10,8 +10,8 @@
 
 ## London
 
-### London Borough and Neighbourhood Profiles
-Greater London is divided into 33 Boroughs. For each Borough and Neighbourhood we gather aggregate statistics related to mobility, air quality and communities. Some statistics are based on census that is collected every 10 years, while other statistics are updated more frequently. Example statistics include population density, average income, average house price, fraction of greenspace and average number of cars per household. The data is gathered from the [London Datastore](http://data.london.gov.uk/), [Public Health England](http://phe.gov.uk/) and other sources.
+### London Borough Profiles
+Greater London is divided into 33 Boroughs. For each Borough we gather aggregate statistics related to mobility, air quality and communities. Some statistics are based on census that is collected every 10 years, while other statistics are updated more frequently. Example statistics include population density, average income, average house price, fraction of greenspace and average number of cars per household. The data is gathered from the [London Datastore](http://data.london.gov.uk/), [Public Health England](http://phe.gov.uk/) and other sources.
 
 ```json
 {
@@ -194,7 +194,116 @@ Note: The area attribute has been simplified in this example due to space reason
 ### London Traffic Counts
 In October every year the [Department for Transport](http://dft.gov.uk/) performs an extensive [traffic count](http://www.dft.gov.uk/traffic-counts/) throughout thousands for locations in England. The traffic counts are presented as daily averages of different vehicle types (bicycles, motorcycles, cars, vans, trucks, etc.) that pass through a certain point.
 
-ACTION for Borkur: Add example. 
+Example:
+```json
+{
+	"id": "urn:oc:entity:london:trafficCount:uk.gov.dft:DfT-TrafficCounter-6000",
+	"type": "urn:oc:entityType:trafficstats",
+	"location": {
+		"type": "geo:point",
+		"value": "-0.23795282516501054,51.587519079277754",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Street-level traffic count data from UK Department for Transport.",
+		"metadata": {
+			"unit": {
+				"type": "NOT_APPLIED",
+				"value": "NOT_APPLIED"
+			},
+			"urls": {
+				"type": "url",
+				"value": "http://www.dft.gov.uk/traffic-counts/"
+			}
+		}
+	},
+	"trafficIntensity:bicycle": {
+		"type": "urn:oc:attributeType:trafficIntensity:bicycle",
+		"value": "0.0",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:vehiclePerDay",
+				"value": "vehiclePerDay"
+			},
+			"TimeInstant": {
+				"type": "ISO8601",
+				"value": "2015-12-31T23:59:59"
+			}
+		}
+	},
+	"trafficIntensity:bus": {
+		"type": "urn:oc:attributeType:trafficIntensity:bus",
+		"value": "320.0",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:vehiclePerDay",
+				"value": "vehiclePerDay"
+			},
+			"TimeInstant": {
+				"type": "ISO8601",
+				"value": "2015-12-31T23:59:59"
+			}
+		}
+	},
+	"trafficIntensity:car": {
+		"type": "urn:oc:attributeType:trafficIntensity:car",
+		"value": "35237.0",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:vehiclePerDay",
+				"value": "vehiclePerDay"
+			},
+			"TimeInstant": {
+				"type": "ISO8601",
+				"value": "2015-12-31T23:59:59"
+			}
+		}
+	},
+	"trafficIntensity:heavyGoodsVehicle": {
+		"type": "urn:oc:attributeType:trafficIntensity:heavyGoodsVehicle",
+		"value": "3271.0",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:vehiclePerDay",
+				"value": "vehiclePerDay"
+			},
+			"TimeInstant": {
+				"type": "ISO8601",
+				"value": "2015-12-31T23:59:59"
+			}
+		}
+	},
+	"trafficIntensity:lightGoodsVehicle": {
+		"type": "urn:oc:attributeType:trafficIntensity:lightGoodsVehicle",
+		"value": "7204.0",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:vehiclePerDay",
+				"value": "vehiclePerDay"
+			},
+			"TimeInstant": {
+				"type": "ISO8601",
+				"value": "2015-12-31T23:59:59"
+			}
+		}
+	},
+	"trafficIntensity:motorcycle": {
+		"type": "urn:oc:attributeType:trafficIntensity:motorcycle",
+		"value": "493.0",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:vehiclePerDay",
+				"value": "vehiclePerDay"
+			},
+			"TimeInstant": {
+				"type": "ISO8601",
+				"value": "2015-12-31T23:59:59"
+			}
+		}
+	}
+}
+```
 
 ### Transport
 [Transport for London](http://api.tfl.gov.uk) and [Transport API](http://www.transportapi.com/) provide API endpoints for getting information about the London public transport network, tube stations, bus stops, citybicycle rental stations, tube lines and bus lines. In the first round of experimentation we 

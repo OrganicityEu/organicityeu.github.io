@@ -13,30 +13,14 @@
 ### London Borough Profiles
 Greater London is divided into 33 Boroughs. For each Borough we gather aggregate statistics related to mobility, air quality and communities. Some statistics are based on census that is collected every 10 years, while other statistics are updated more frequently. Example statistics include population density, average income, average house price, fraction of greenspace and average number of cars per household. The data is gathered from the [London Datastore](http://data.london.gov.uk/), [Public Health England](http://phe.gov.uk/) and other sources.
 
+Example:
 ```json
 {
-	"id": "urn:oc:entity:london:districtProfile:uk.gov.london:E09000016",
+	"id": "urn:oc:entity:london:districtProfile:uk.gov.london:E09000013",
 	"type": "urn:oc:entityType:districtProfile",
-	"area": {
-		"type": "json",
-		"value": {
-			"coordinates": [
-				[
-					[
-						[0.2321, 51.6272],
-						[0.1431, 51.6183],
-						[0.1496, 51.5681],
-						[0.2321, 51.6272]
-					]
-				]
-			],
-			"type": "MultiPolygon"
-		},
-		"metadata": {}
-	},
 	"carbonEmission": {
 		"type": "urn:oc:attributeType:carbonEmission",
-		"value": "1161.2066312322656",
+		"value": "971.336623467994",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:kilotonne",
@@ -50,7 +34,7 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 	},
 	"cyclingFrequency": {
 		"type": "urn:oc:attributeType:cyclingFrequency",
-		"value": "5.231047848497513",
+		"value": "19.882866745828885",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:percent",
@@ -62,9 +46,26 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 			}
 		}
 	},
+	"geometry": {
+		"type": "oc:geo:json",
+		"value": {
+			"coordinates": [
+				[
+					[
+						[-0.2333, 51.532],
+						[-0.2456, 51.4908],
+						[-0.203, 51.4933],
+						[-0.2333, 51.532]
+					]
+				]
+			],
+			"type": "MultiPolygon"
+		},
+		"metadata": {}
+	},
 	"greenspace": {
 		"type": "urn:oc:attributeType:greenspace",
-		"value": "59.3",
+		"value": "19.1",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:percent",
@@ -78,7 +79,7 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 	},
 	"housePrice": {
 		"type": "urn:oc:attributeType:housePrice",
-		"value": "250000.0",
+		"value": "661000.0",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:monetaryValuePounds",
@@ -92,7 +93,7 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 	},
 	"householdCarOwnership": {
 		"type": "urn:oc:attributeType:householdCarOwnership",
-		"value": "1.210238788464902",
+		"value": "0.544025313314307",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:count",
@@ -106,7 +107,7 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 	},
 	"householdIncome": {
 		"type": "urn:oc:attributeType:householdIncome",
-		"value": "44430.0",
+		"value": "62910.0",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:monetaryValuePounds",
@@ -120,12 +121,12 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 	},
 	"location": {
 		"type": "geo:point",
-		"value": "0.2204196305373867,51.56312098009648",
+		"value": "-0.22078893731921054,51.49501040208028",
 		"metadata": {}
 	},
 	"obesity": {
 		"type": "urn:oc:attributeType:obesity",
-		"value": "0.24429498205867556",
+		"value": "14.918342434625048",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:percent",
@@ -145,23 +146,15 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 				"type": "NOT_APPLIED",
 				"value": "NOT_APPLIED"
 			},
-			"origin:url:3": {
+			"urls": {
 				"type": "url",
-				"value": "http://www.noo.org.uk/visualisation"
-			},
-			"origin:url:1": {
-				"type": "url",
-				"value": "http://data.london.gov.uk/dataset/london-borough-profiles"
-			},
-			"origin:url:2": {
-				"type": "url",
-				"value": "http://data.london.gov.uk/dataset/walking-and-cycling-borough"
+				"value": "http://data.london.gov.uk/dataset/london-borough-profiles,http://data.london.gov.uk/dataset/walking-and-cycling-borough,http://www.noo.org.uk/visualisation"
 			}
 		}
 	},
 	"populationDensity": {
 		"type": "urn:oc:attributeType:populationDensity",
-		"value": "22.047239552986298",
+		"value": "110.80989224363077",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:peoplePerHectare",
@@ -175,7 +168,7 @@ Greater London is divided into 33 Boroughs. For each Borough we gather aggregate
 	},
 	"walkingFrequency": {
 		"type": "urn:oc:attributeType:walkingFrequency",
-		"value": "46.500102208112395",
+		"value": "61.00442050708806",
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:uom:percent",
@@ -308,7 +301,55 @@ Example:
 ### Transport
 [Transport for London](http://api.tfl.gov.uk) and [Transport API](http://www.transportapi.com/) provide API endpoints for getting information about the London public transport network, tube stations, bus stops, citybicycle rental stations, tube lines and bus lines. In the first round of experimentation we 
 
-ACTION for Borkur: Add example. 
+Example:
+```json
+{
+	"id": "urn:oc:entity:london:transportService:TransportAPI:VIC",
+	"type": "urn:oc:entityType:transportStation",
+	"access:scope": {
+		"type": "urn:oc:attributeType:access:scope",
+		"value": "public",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-0.144544,51.495256",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Train station performance indicators from the TransportAPI",
+		"metadata": {
+			"unit": {
+				"type": "NOT_APPLIED",
+				"value": "NOT_APPLIED"
+			},
+			"urls": {
+				"type": "url",
+				"value": "http://fcc.transportapi.com/"
+			},
+			"origin:url:1": {
+				"type": "url",
+				"value": "http://fcc.transportapi.com/"
+			}
+		}
+	},
+	"transportServicePerformance": {
+		"type": "urn:oc:attributeType:transportServicePerformance",
+		"value": "96.0",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:percent",
+				"value": "percent"
+			},
+			"TimeInstant": {
+				"type": "ISO8601",
+				"value": "2016-09-29T16:17:38+01:00"
+			}
+		}
+	}
+}
+```
 
 ### London Air Quality Network
 The [London Air Quality Network](http://www.londonair.org.uk/) (LAQN) provides pollution measurements that are essential to underpin air quality management and health studies. The majority of London’s 33 boroughs supply measurements to the network and in addition these data are increasingly being supplemented by measurements from local authorities surrounding London, thereby providing an overall perspective of air pollution in London. The LAQN is operated and managed by the Environmental Research Group (ERG) at King’s College London. QA/QC audits are carried out by the National Physical Laboratory (NPL).

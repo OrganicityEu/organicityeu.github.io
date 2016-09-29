@@ -327,10 +327,6 @@ Example:
 			"urls": {
 				"type": "url",
 				"value": "http://fcc.transportapi.com/"
-			},
-			"origin:url:1": {
-				"type": "url",
-				"value": "http://fcc.transportapi.com/"
 			}
 		}
 	},

@@ -1,10 +1,14 @@
-### Access Token
+![Organicity logo](../images/organicity_logo_pink_100.png)
+
+[Back to the Guidlines Overview page](https://organicityeu.github.io/).
+
+# Tutorial: How to Access Token
 
 Access Tokens issued by Organicity Accounts are valid for 5 minutes. It can be used in the backend or in the frontend of the web-application.
-The Access Token is not just a random token, Organicity Accounts returns **OpenID Connect Tokens**.
+The Access Tokens are not just a random tokens, Organicity Accounts returns **OpenID Connect Tokens**.
 [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) is an extention for OAuth2.
 
-#### OpenID Connect Tokens
+## OpenID Connect Tokens + JSON Web Tokens
 
 OpenID Connect Tokens are represented as [JSON Web Tokens](https://tools.ietf.org/html/rfc7519) (JWT).
 A JWT is represented as a sequence of BASE64-encoded parts, separated by a dot. An example:
@@ -55,4 +59,5 @@ An example:
 
 You're application can decode and verify the JWT and use that informations.
 
-This **Access Token** can be used to call different [Organicity APIs](https://organicityeu.github.io/api/).
+These **Access Tokens** can be used to call different [Organicity APIs](https://organicityeu.github.io/api/) and to
+[push an Assets to the Organicity Experimenter Site](HowToPushAnAsset.md).

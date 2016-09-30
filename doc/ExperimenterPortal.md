@@ -1,4 +1,6 @@
-![Organicity Logo](../images/organicity_logo_pink_100.png)
+![Organicity logo](../images/organicity_logo_pink_100.png)
+
+[Back to the Guidlines Overview page](https://organicityeu.github.io/).
 
 # Experimenter Portal
 
@@ -15,20 +17,20 @@ In the main view, it is also shown the list of current experiments indicating wh
 
 ## Creating new experiment
 In order to create a new experiment, the portal will request general information about the experiment such as its name and description (Figure 2). It is recommended to use a catchy name and a detailed description in order to encourage people to take part on it. The experimenter also defines the time during which the experiment will be available. After that period of time the experiment cannot be used by participants, but still exist in the EP. Besides, for each experiment, it is defined the assets, or information sources, it can handle. Such assets could be public, this means that assets created by this experiment will be visible for everyone, otherwise only this experiment, and their applications, will be allowed to use them.
- 
+
 > **Figure 2:**
 
 ![alt text](../images/02-Create_experiment.png)
 
 After providing basic information about the new experiment, the portal will request define the experiment area (Figure 3), which consisting of a set of regions where the experiment will take place. This area will be used as a first filter to select, by using some UDO functionalities, the assets used along the experiment. If you do not define an area, the experiment will be considered worldwide.
- 
+
 > **Figure 3**
 
 ![alt text](../images/03-Define_area.png)
 
 ## Getting detailed info about experiment
 Once the experimenter selects an experiment from the list, the details of experiment is presented. Firstly, the information provided during the experiment creation process is displayed, as shown in Figure 4, allowing the portal user modify it. By this way, an experimenter might modify the experiment settings during its lifecycle: extending or limiting the area of the experiment, modifying its timespan or editing the experiment tags to better indicate its aim.
- 
+
 > **Figure 4**
 
 ![alt text](../images/04-Exp_info.png)
@@ -39,7 +41,7 @@ In the most of cases, the experiment will include the development of some kind o
 > **Figure 5**
 
 ![alt text](../images/05-Create_assets.png)
- 
+
 ## Managing experiment applications
 Experimenter Portal also provides the functionality to manage applications. The detailed information of the applications, such as links to download them, can be edited during the whole experiment lifecycle and will be advertised to the OrganiCity participants so as to facilitate their use. As the application is constrained to the characteristics of the experiment, the application scope is also limited by spatio-temporal dimension of the experiment, as well as by the assets that the application can use.
 

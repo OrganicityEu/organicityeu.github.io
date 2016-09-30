@@ -1,18 +1,22 @@
+![Organicity logo](../images/organicity_logo_pink_100.png)
+
+[Back to the Guidlines Overview page](https://organicityeu.github.io/).
+
 # Asset-Annotation-Service
 
 ## General Information
 Data annotation service is a service for storing annotations/taggings of
-Organicity Assets. It is possible experimenters to define a set of 
-labels under the scope of the experiment and then collect annotation 
-on data assets from the participants. 
- 
-- Annotation Service Endpoint: http://annotations.organicity.eu:8084/ 
-- Annotation Service Swagger UI: http://annotations.organicity.eu:8084/swagger-ui.html 
-- Annotation Service Swagger Documentation: https://organicityeu.github.io/api/Annotation.html 
- 
+Organicity Assets. It is possible experimenters to define a set of
+labels under the scope of the experiment and then collect annotation
+on data assets from the participants.
+
+- Annotation Service Endpoint: http://annotations.organicity.eu:8084/
+- Annotation Service Swagger UI: http://annotations.organicity.eu:8084/swagger-ui.html
+- Annotation Service Swagger Documentation: https://organicityeu.github.io/api/Annotation.html
+
 ## Data Model
 
-Data Model Entities: 
+Data Model Entities:
 ![alt text](annotation_model.png "Logo Title Text 1")
 
 
@@ -110,9 +114,9 @@ Example:
     }
 
 ### Asset
-   
+
     {
-      "id": 0,   
+      "id": 0,
       "urn": "string"
     }
 
@@ -135,8 +139,8 @@ Example:
 
 Operations:
 - TagDomain Management: Service, TagDomain, Tag
-- Application Management: Application, TagDomain 
-- Annotations: Asset, Tag 
+- Application Management: Application, TagDomain
+- Annotations: Asset, Tag
 
 
 User Roles:
@@ -152,7 +156,7 @@ Restricions at Operations:
 2. Application Management
  + OC-E can CRUD on Application, TagDomain
 3. Annotation
- + OC-A can CRUR all Annotations 
+ + OC-A can CRUR all Annotations
  + OC-E can CRUR all annotations of his applications
  + OC-P can CRUD only his annotations
  + OC-AN can R only COUNT aggregations of annotations

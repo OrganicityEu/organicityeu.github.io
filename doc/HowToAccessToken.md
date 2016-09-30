@@ -61,3 +61,5 @@ You're application can decode and verify the JWT and use that informations.
 
 These **Access Tokens** can be used to call different [Organicity APIs](https://organicityeu.github.io/api/) and to
 [push an Assets to the Organicity Experimenter Site](HowToPushAnAsset.md).
+
+We recommend to use https://jwt.io to decode your tokens during the development.

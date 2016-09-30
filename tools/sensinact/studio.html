@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SensiNact | OrganiCity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Standard Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="http://organicity.eu/wp-content/themes/organicity/favicon.ico">
+  <!-- For iPhone: -->
+  <link rel="apple-touch-icon-precomposed" href="http://organicity.eu/wp-content/themes/organicity/apple-touch-icon-precomposed.png">
+  <link rel="stylesheet" href="stylesheets/stylesheet.css">
+</head>
+
+<body>
+
+<header>
+  <a href="http://organicity.eu/" title="OrganiCity - link to homepage">
+    <img src="images/organicity_logo.png" alt="Organicity">
+  </a>
+</header>
+
+<div class="title">
+  <h1>SensiNact</h1>
+  <nav>
+			<a href="index.html">Introduction</a> |
+      <a href="install.html">Installation</a> |
+      <a href="studio.html">Studio</a> |
+      <a href="application.html">Application creation</a>
+		</nav>
+</div>
+
+<div class="content">
+
+<h2>Studio</h2>
+
+<img src="images/sensinact.png"/>
+
+<p>The central part of the Studio is the database of available devices. The content of this database is kept synchronized with the gateway using two mechanisms.</p>
+
+<p>Actively, the database can query the gateway through the HTTP client to obtain up to date information. This facility is used when the studio starts, to get an up to date devices database. Then, the Studio registers to gateway. When the state or the availability of a device changes, the gateway sends a notification to the studio. This notification is received by the HTTP server, processed by the model manager which updates the database accordingly.</p>
+
+<p>Two views allow the user to interact with devices: the Devices List View and the Device Location Map.</p>
+
+<p>The devices List View offers a tree view for browsing all the devices available on the gateway. This view also allows basic interaction with devices, such as getting the current value of variables (ie, the temperature of a thermometer) or acting on them (ie, turning on a light). When such an interaction is asked by the user, a request is sent to the gateway through the HTTP client.</p>
+
+<p>Device Location Map puts a pinpoint on a worldwide map for the device for which the position is known. This is a very convenient way to understand the geographical distribution of devices. Clicking on the pinpoint, a pop up displays device related information, such as its current internal state. The pinpoints can also be dragged and dropped on the map from the device list to update the device location. This interaction is managed by the device Location Manger, which updates the devices database, which then sends a position update request to the gateway.</p>
+
+<p>The other part of the studio is dedicated to application creation, management and monitoring. To interact with the studio, the user can edit “*.sna” files in a dedicated editor: the application editor. The content of the files is continually checked by a grammar checker, to ensure the content is written according to a domain specific language. When the file describing the application is well formed, it can be deployed to the gateway using the app manager.</p>
+
+
+</div>
+
+<footer>&copy; Organicity 2016</footer>
+
+</body>
+
+</html>

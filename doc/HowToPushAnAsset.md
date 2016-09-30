@@ -1,4 +1,4 @@
-![alt text](../images/organicity_logo_pink_100.png)
+![Organicity logo](../images/organicity_logo_pink_100.png)
 
 [Back to the Guidlines Overview page](https://organicityeu.github.io/).
 
@@ -8,9 +8,8 @@
 
 ### TODO in this documentation
 
-* Specify, how to get an AuthToken
-* Must be experimenter or participant token
 * Include *Assets Discovery Service* to test **central orion**
+* Public/Private
 
 ## Create an Experiment and an Application
 
@@ -35,7 +34,7 @@ The Asset endpoint is located under [https://exp.orion.organicity.eu/v2/entities
 To create a new asset, please do an HTTP POST on https://exp.orion.organicity.eu/v2/entities with the following HTTP headers:
 
 ```
-Authorization: Bearer <AuthToken>
+Authorization: Bearer <AccessToken>
 X-Organicity-Application: <ApplicationID>
 X-Organicity-Experiment: <ExperimentID>
 Content-Type: application/json
@@ -44,12 +43,14 @@ Accept: application/json
 <Asset in JSON>
 ```
 
+Here, you must use an [Access Token](HowToAuthenticateAnUser.md) which is [issued for you](HowToAuthenticateAnUser.md).
+
 For the above IDs it looks like this:
 
 ```
 POST https://exp.orion.organicity.eu/v2/entities
 
-Authorization: Bearer <AuthToken>
+Authorization: Bearer <AccessToken>
 Content-Type: application/json
 Accept: application/json
 X-Organicity-Application: 57e1285a10590cb31ca82aa7
@@ -93,7 +94,7 @@ Next, we wire everthing together: The HTTP headers and the asset:
 ```
 POST https://exp.orion.organicity.eu/v2/entities
 
-Authorization: Bearer <AuthToken>
+Authorization: Bearer <AccessToken>
 Content-Type: application/json
 Accept: application/json
 X-Organicity-Application: 57e1285a10590cb31ca82aa7
@@ -130,13 +131,17 @@ You must add the `Authorization`, `X-Organicity-Application` and `X-Organicity-E
 ```
 GET https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entitytype:demo
 
-Authorization: Bearer <AuthToken>
+Authorization: Bearer <AccessToken>
 Accept: application/json
 X-Organicity-Application: 57e1285a10590cb31ca82aa7
 X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 ```
 
 The response is a `200 OK`, which includes the created asset.
+
+### Test with the Urban Data Obervatory
+
+TODO: Urban Data Obervatory (UDO)
 
 ### Delete an asset
 
@@ -148,13 +153,21 @@ You must add the `Authorization`, `X-Organicity-Application` and `X-Organicity-E
 ```
 DELETE https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entitytype:demo
 
-Authorization: Bearer <AuthToken>
+Authorization: Bearer <AccessToken>
 Accept: application/json
 X-Organicity-Application: 57e1285a10590cb31ca82aa7
 X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 ```
 
 The response is a `204 No Content`, which tells you that assed was deleted.
+
+## Push as an Participant
+
+To push an asset as an participant, the participant must be part of you experiment. A participant can be invited
+with the [Experimenter Portal](http://experimenters.organicity.eu/). If a participant logs in to your application,
+the `participant` role will be assigned. The pushing itself works as abobe.
+
+**HINT**: In the AssetID, you keep the `<ExperimenterId>`!
 
 ## Demo
 

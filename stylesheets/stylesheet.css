@@ -57,10 +57,10 @@ a:hover {
   font-family: freight-text-pro,serif;
   font-size: 1.8rem;
   line-height: 3rem;
-
+ text-align: justify;
   margin: 8rem;
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: 2%;
+  margin-left: 2%;
   padding: 6rem 18rem;
 }
 

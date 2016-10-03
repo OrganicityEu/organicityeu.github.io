@@ -2,7 +2,7 @@
 
 [Back to the Guidlines Overview page](https://organicityeu.github.io/).
 
-# Assets Data Model
+# Asset Data Model
 
 This is a WIP documentation on the Organcity Assets Data Model.
 

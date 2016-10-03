@@ -17,7 +17,7 @@ on data assets from the participants.
 ## Data Model
 
 Data Model Entities:
-![alt text](annotation_model.png "Logo Title Text 1")
+![alt text](./figs/annotation_model.png "Logo Title Text 1")
 
 
 ### Tag

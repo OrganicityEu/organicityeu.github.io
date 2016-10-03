@@ -4,7 +4,13 @@
 
 # Assets Data Model
 
-This is a WIP documentation on the Organcity Assets Data Model
+This is a WIP documentation on the Organcity Assets Data Model.
+
+For the organization and discovery of data sources, OC is relying on the NGSI 9/10
+[NGSI9/10](https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/NGSI-9/NGSI-10_information_model) information model. As depicted in the following diagram, the underlying data model of NGSI
+9/10 consists of Asset Element, Asset Attributes and Metadata
+
+![Asset Data Model](./figs/data_model.png "Asset Data Model")
 
 ## Geospatial properties
  

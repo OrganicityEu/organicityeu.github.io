@@ -228,7 +228,7 @@ Example:
 ```
 
 
-## Annotation Service API
+## Annotation Service API Overview
 
 - Annotation Service Swagger UI: http://annotations.organicity.eu/swagger-ui.html
 - Annotation Service Swagger Documentation: https://organicityeu.github.io/api/Annotation.html
@@ -239,6 +239,7 @@ Annotation API is organized in three major parts
 - **Annotation Parameters Management**: creating, deleting, updating Application,Service, TagDomain, Tag entities
 - **Annotation Management**: Getting/setting annotations on Organicity Assets
 
+### Application, Tag Domain and Tag browsing
 |Method| Path | Operation|
 |---|---|---|
 |GET| /applications                                 |Get All Applications|
@@ -249,6 +250,26 @@ Annotation API is organized in three major parts
 |GET| /tagDomains/{tagDomainUrn}/tags               |Get Tags of a Tag Domain|
 |GET| /tags/{tagUrn}                                |Get a Tag|
 
- 
+### Annotation Parameters Management
+|Method| Path | Operation|
+|---|---|---| 
+|POST   |/admin/applications                                |Create an Application/Experiment |
+|DELETE |/admin/applications/{applicationUrn}               |Delete an Application/Experiment |
+|DELETE |/admin/applications/{applicationUrn}/tagDomains    |Disassociate a TagDomain of an Application |
+|GET    |/admin/applications/{applicationUrn}/tagDomains    |Get TagDomains of an Application|
+|POST   |/admin/applications/{applicationUrn}/tagDomains    |Associate a TagDomain with an Application|
+|---|---|---| 
+|POST   |/admin/services                                    |Create a Service|
+|DELETE |/admin/services/{serviceUrn}                       |Delete a Service| 
+|GET    |/admin/services/{serviceUrn}/tagDomains            |Get associated Tag Domains with a Service |
+|---|---|---| 
+|POST   |/admin/tagDomains                                  |Get TagDomains|
+|DELETE |/admin/tagDomains/{tagDomainUrn}                   |Delete a TagDomains|
+|POST   |/admin/tagDomains/{tagDomainUrn}                   |Update a TagDomains|
+|DELETE |/admin/tagDomains/{tagDomainUrn}/services          |Disassociate a TagDomain with a Service |
+|GET    |/admin/tagDomains/{tagDomainUrn}/services          |Get associated services with a Tag Domain  |
+|POST   |/admin/tagDomains/{tagDomainUrn}/services          |Associate a TagDomain with a Service|
+|DELETE |/admin/tagDomains/{tagDomainUrn}/tags              |Delete a Tag from a Tag Domain |
+|POST   |/admin/tagDomains/{tagDomainUrn}/tags              |Add a Tag in a Tag Domain|
 
 ## Sample Calls

@@ -60,6 +60,7 @@
     <li>Retrieving assets data</li>
     <li>Retrieving experiments and the associated assets</li>
     <li>Support for <a href="http://geojson.org/geojson-spec.html">GeoJSON</a></li>
+    <li>For more info an examples visit the <a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/AssetDiscoveryService.md">readme documentation</a></li>
     </ul>
     <p><em>This API is the core engine of the <a href="http://observatory.organicity.eu/">Organicity Urban Data Observatory</a> and it is designed following the <a href="http://oascities.org/">OASC</a> principles, as an extension of the <a href="https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FI-WARE_NGSI-10_Open_RESTful_API_Specification">NGSI 9/10</a> standard, specially following the new <a href="http://telefonicaid.github.io/fiware-orion/api/v2/latest/">FIWARE-NGSI v2 Specification</a></em></p>
     </p>
@@ -112,12 +113,12 @@
                     </tr>
                     <tr>
                         <td><a href="#operation--assets-services-get">GET /assets/services</a></td>
-                        <td><p>Return the services the assets belong to</p>
+                        <td><p>Return the services the assets belong to (under development)</p>
         </td>
                     </tr>
                     <tr>
                         <td><a href="#operation--assets-service--service--get">GET /assets/service/{service}</a></td>
-                        <td><p>Return a specific service</p>
+                        <td><p>Return a specific service (under development)</p>
         </td>
                     </tr>
                     <tr>
@@ -151,7 +152,7 @@
         </td>
                     </tr>
                     <tr>
-                        <td><a href="#operation--assets-metadata-get">GET /assets/metadata</a></td>
+                        <td><a href="#operation--assets-metadata-search-get">GET /assets/metadata/search</a></td>
                         <td><p>Return a list of assets filtered by specific metadata</p>
         </td>
                     </tr>
@@ -167,7 +168,7 @@
                     </tr>
                     <tr>
                         <td><a href="#operation--assets--assetUrn--data-v2-get">GET /assets/{assetUrn}/data/v2</a></td>
-                        <td><p>The Asset data by Unique Resource Name. Temp beta model!</p>
+                        <td><p>The Asset data by Unique Resource Name.</p>
         </td>
                     </tr>
                     <tr>
@@ -207,7 +208,7 @@
                     </tr>
                     <tr>
                         <td><a href="#operation--assets--assetUrn--data-v2-get">GET /assets/{assetUrn}/data/v2</a></td>
-                        <td><p>The Asset data by Unique Resource Name. Temp beta model!</p>
+                        <td><p>The Asset data by Unique Resource Name.</p>
         </td>
                     </tr>
                 </tbody>
@@ -313,7 +314,7 @@
           <dl>
             <dt class="security-property-name">description:</dt>
             <dd class="security-property-type">
-              The Scenario Tool requires setting up an oAuth prior to performing actions that require authorisation.
+              The Urban Discovery API requires setting up an oAuth prior to performing certain actions that require authorisation. More info: https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/HowToAccessToken.md
     
             </dd>
           </dt>
@@ -474,19 +475,6 @@
                                         </td>
                                             <td>query</td>
                                             <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                query
-                                            <td><p>Return a list of assets based on metadatadatatata search</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
@@ -980,11 +968,11 @@
                       </section>
                 </div>
             </div>    
-        <span id="path--assets-metadata"></span>
-            <div id="operation--assets-metadata-get" class="swagger--panel-operation-get panel">
+        <span id="path--assets-metadata-search"></span>
+            <div id="operation--assets-metadata-search-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary">Return a list of assets filtered by specific metadata</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/metadata</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/metadata/search</strong></h3>
                         Tags:
                             <a href="#tag-Assets">Assets</a>
                 </div>
@@ -1009,7 +997,7 @@
                                         <tr>
                                             <td>
                                                 query
-                                            <td><p>metadata query string</p>
+                                            <td><p>metadata query string (use + to include multiple queries)</p>
                                         </td>
                                             <td>query</td>
                                             <td><span class="json-property-type">string</span>
@@ -1232,14 +1220,14 @@
         <span id="path--assets-service--service-"></span>
             <div id="operation--assets-service--service--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary">Return a specific service</div>
+                    <div class="operation-summary">Return a specific service (under development)</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/service/{service}</strong></h3>
                         Tags:
                             <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Return a specific service</p>
+                        <p>Return a specific service (under development)</p>
             
                     </section>
                     
@@ -1312,14 +1300,14 @@
         <span id="path--assets-services"></span>
             <div id="operation--assets-services-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary">Return the services the assets belong to</div>
+                    <div class="operation-summary">Return the services the assets belong to (under development)</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/services</strong></h3>
                         Tags:
                             <a href="#tag-Assets">Assets</a>
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        <p>Return the services the assets belong to</p>
+                        <p>Return the services the assets belong to (under development)</p>
             
                     </section>
                     
@@ -1487,6 +1475,19 @@
                                             </td>
                                             <td>
                                                     <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                type
+                                            <td><p>Filter site assets by asset type</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
                                             </td>
                                         </tr>
                                 </tbody>
@@ -2101,7 +2102,7 @@
         <span id="path--assets--assetUrn--data-v2"></span>
             <div id="operation--assets--assetUrn--data-v2-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
-                    <div class="operation-summary">The Asset data by Unique Resource Name. Temp beta model!</div>
+                    <div class="operation-summary">The Asset data by Unique Resource Name.</div>
                     <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{assetUrn}/data/v2</strong></h3>
                         Tags:
                             <a href="#tag-Assets">Assets</a>, 

@@ -66,7 +66,7 @@ in meters and temperature in degrees Centigrade).
 
 During the federation of various assets from the Organicity City Sites (Aarhus, London, Santader) a list 
 of common urn names for Asset Types, Attribute Types and Metadata has been created (Get [XLS](./figs/Organicity_URNs.xlsx) file).
-It is recommended to have a use the available names when you are creating your assets.
+It is recommended to use the available names when you are creating your assets.
 
 
 ### Types and Identification of Assets

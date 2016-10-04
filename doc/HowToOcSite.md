@@ -4,9 +4,13 @@
 
 # Tutorial: OC Site Federation - How to be an OC Site
 
-**Goal of this tutorial**: Push an asset (as experimenter) to the Organicity Central Orion.
+**Goal of this tutorial**:
 
-**Preconditions**: To be able to push assets to the *Organicity Central Orion* you need a `client_id` and a `client_secret`, which has the `ocsite` role assigned.
+* Push an asset (as OC Site) to the Organicity Central Orion.
+
+**Precondition**:
+
+* To be able to push assets to the *Organicity Central Orion* you need a `client_id` and a `client_secret`, which has the `ocsite` role assigned.
 
 The core component of the federation is the [Asset-Subscription-Proxy](https://github.com/OrganicityEu/Asset-Subscription-Proxy), which subscribes itself at an Orion. Thus, the Orion notifies the Asset-Subscription-Proxy about new Assets. As soon the Asset-Subscription-Proxy gets notified, it forwards the asset to the Organicity Central Orion in am authorized way. This architecture can be seen below:
 

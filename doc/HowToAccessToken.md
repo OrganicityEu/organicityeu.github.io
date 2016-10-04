@@ -4,9 +4,9 @@
 
 # Tutorial: How to Access Token
 
-Access Tokens issued by Organicity Accounts are valid for 5 minutes. It can be used in the backend or in the frontend of the web-application.
+Access Tokens issued by Organicity Accounts are **valid for 5 minutes**. They can be used in the backend or in the frontend of the web-application.
 The Access Tokens are not just a random tokens, Organicity Accounts returns **OpenID Connect Tokens**.
-[OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) is an extention for OAuth2.
+The [OpenID Connect Protocol](https://openid.net/specs/openid-connect-core-1_0.html) is an extention for OAuth2.
 
 ## OpenID Connect Tokens + JSON Web Tokens
 
@@ -59,7 +59,29 @@ An example:
 
 You're application can decode and verify the JWT and use that informations.
 
-These **Access Tokens** can be used to call different [Organicity APIs](https://organicityeu.github.io/api/) and to
-[push an Assets to the Organicity Experimenter Site](HowToPushAnAsset.md).
+## Verify Access Tokens
 
-We recommend to use https://jwt.io to decode your tokens during the development.
+### jwt.io
+
+Access Tokens can be verified by using http://jwt.io during the development. Check, if the JSON attribute `preferred_username` equals your `username`. Thus, the application performs **actions in name of the user** (e.g., you).
+
+### Libraries
+
+If you have to work with the Access Tokens within your code, there are some nice JWT libraries:
+
+* Node: [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+* Java/Android: [jjwt](https://github.com/jwtk/jjwt)
+    * Based on this, we already created a simple tool, which [can be found here](https://github.com/OrganicityEu/java-jwt-parser).
+* PHP: [php-jwt](https://github.com/OrganicityEu/accounts-demo-php/blob/master/firebase/php-jwt)
+
+To verirfy the token, you need the public certificate, which is [available here](https://github.com/OrganicityEu/accounts-security-credentials).
+
+
+## Organicity APIs
+
+These **Access Tokens** can be used as Bearer Token to call different [Organicity APIs](https://organicityeu.github.io/api/), e.g., to
+[push an Assets to the Organicity Experimenter Site](HowToPushAnAsset.md). An HTTP header example:
+
+```
+Authorization: Bearer <ACCCESS_TOKEN>
+```

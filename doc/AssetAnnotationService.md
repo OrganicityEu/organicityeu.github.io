@@ -37,80 +37,127 @@ References to the specification of the Asset Annotation Service
 
 ## Data Model
 
-Data Model Entities:
-![alt text](./figs/annotation_model.png "Logo Title Text 1")
+The underlying data model of the annotation service is depicted in the following figure.
+![Annotation Model](./figs/annotation_model.png "Annotation Model")
 
+- **Service Entities** represent utility/urban services or in general urban processes. An example of a service might be Garbage Collection, Noise Monitoring etc. The basic usage of 
+service entities is the organization and discovery of tag collections (e.g. what tags are usually used for characterizing the noise level sensors etc.)
+- **TagDomains Entities** represent collections of tags. Usually a tag domain is associated with a service and experiment/application specify which tag domains they will use.
+- **Tag Entities** represent the actual labels to be used by end-user using an annotation client (application or experiment) 
+- **Application Entities** (a.k.a. experiments) represent the client applications used by end-users during the annotation process. 
+- **Asset Entities** are the assets of Urban data observatory that are annotated (associated by user with an existing tag/label) 
+
+
+There are some underlying restriction and rules to Organicity users on accessing and using the annotation service. For the following Organicity roles:
+User Roles:
+- OC Admin (OC-A):
+    - can create, read, update and delete (CRUD) Service, TagDomain, Tag, Application and Annotatation entities
+- OC Experimenter (OC-E):
+    - can only Read Service, TagDomain, Tag entities that are public 
+    - CRUD the ones involved in their experiment
+    - OC-E can CRUD all annotations of his applications
+- OC Participant (OC-P): 
+    - can only Read Service, TagDomain, Tag entities that are public 
+    - OC-P can CRUD only his annotations
+- OC Anonymous (OC-AN)
+    - OC-AN can R only COUNT aggregations of annotations
+
+### Entity Description 
+
+The objects of the entities are comply with the following schema:
 
 ### Tag
 
-    {
-      "id": 0,
-      "name": "string",
-      "urn": "string"
-    }
+```
+{
+    "id": 0,
+    "name": "string",
+    "urn": "string"
+}
+```
+Example: 
+```
+{
+    id: 106,
+    urn: "urn:tag:faulty",
+    name: "faulty reading"
+}
+```
 
 ### TagDomain
 
+```
+{
+"description": "string",
+"id": 0,
+"urn": "string",
+"services": [
     {
-      "description": "string",
-      "id": 0,
-      "services": [
-        {
-          "description": "string",
-          "id": 0,
-          "urn": "string"
-        }
-      ],
-      "tags": [
-        {
-          "id": 0,
-          "name": "string",
-          "urn": "string"
-        }
-      ],
-      "urn": "string"
+        "description": "string",
+        "id": 0,
+        "urn": "string"
     }
-
+ ],
+ "tags": [
+    {
+    "id": 0,
+       "name": "string",
+       "urn": "string"
+    }
+ ]
+}
+```
+ 
 Example:
-
+```
     {
     id: 104,
-    urn: "urn:tagDomain:td1",
-    description: "description",
+    urn: "urn:tagDomain:faultyReadings",
+    description: "This is tag domain to classify readings into faulty or normal",
     tags: [
         {
-        id: 106,
-        urn: "urn:tag:t2",
-        name: null
+            id: 106,
+            urn: "urn:tag:faulty",
+            name: faulty reading
         },
         {
-        id: 105,
-        urn: "urn:tag:t1",
-        name: null
+            id: 105,
+            urn: "urn:tag:normal",
+            name: "normal reading"
         }
      ],
     services: [
         {
-        id: 107,
-        urn: "urn:service:s1",
-        description: null
+            id: 107,
+            urn: "urn:service:environmentalMonitoring",
+            description: "environmental monitoring"
         }
      ]
     }
-
+```
 ### Service
-
-      {
-        "description": "string",
-        "id": 0,
-        "urn": "string"
-      }
+```
+{
+    "description": "string",
+    "id": 0,
+    "urn": "string"
+}
+```
+Example:
+```
+{
+    id: 107,
+    urn: "urn:service:environmentalMonitoring",
+    description: "environmental monitoring"
+}
+```
 
 ### Application (a.k.a. Experiment)
-    {
-      "description": "string",
-      "id": 0,
-      "tagDomains": [
+```
+{
+    "description": "string",
+    "id": 0,
+    "tagDomains": [
         {
           "description": "string",
           "id": 0,
@@ -131,29 +178,54 @@ Example:
           "urn": "string"
         }
       ],
-      "urn": "string"
-    }
+    "urn": "string"
+}
+```
 
 ### Asset
 
-    {
-      "id": 0,
-      "urn": "string"
-    }
+```
+{
+    "id": 0,
+    "urn": "string"
+}
+```
+Example:
+```
+{
+    "id": 12 ,
+    "urn": "urn:oc:entity:london:enableiot:fixed:98-4F-EE-00-0F-76"
+}
+```
+
 
 ### Annotation
 
-    {
-      "annotationId": 0,
-      "application": "string",
-      "assetUrn": "string",
-      "datetime": "string",
-      "numericValue": 0,
-      "tagUrn": "string",
-      "textValue": "string",
-      "user": "string"
-    }
-
+```
+{
+    "annotationId": 0,
+    "application": "string",
+    "assetUrn": "string",
+    "datetime": "string",
+    "numericValue": 0,
+    "tagUrn": "string",
+    "textValue": "string",
+    "user": "string"
+}
+```
+Example:
+```
+{
+    "annotationId": 0,
+    "application": "57eab2c2ad0302ad0b5c92c6",
+    "assetUrn": "urn:oc:entity:london:enableiot:fixed:98-4F-EE-00-0F-76",
+    "datetime": "2016-10-21 09:01:12:123",
+    "numericValue": 0,
+    "tagUrn": "urn:tag:faulty",
+    "textValue": "string",
+    "user": "86d7edce-5092-44c0-bed8-da4beaa3fbc6"
+}
+```
 
 
 ## Annotation Service API

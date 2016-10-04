@@ -258,11 +258,11 @@ Annotation API is organized in three major parts
 |DELETE |/admin/applications/{applicationUrn}/tagDomains    |Disassociate a TagDomain of an Application |
 |GET    |/admin/applications/{applicationUrn}/tagDomains    |Get TagDomains of an Application|
 |POST   |/admin/applications/{applicationUrn}/tagDomains    |Associate a TagDomain with an Application|
-|---|---|---| 
+| | | | 
 |POST   |/admin/services                                    |Create a Service|
 |DELETE |/admin/services/{serviceUrn}                       |Delete a Service| 
 |GET    |/admin/services/{serviceUrn}/tagDomains            |Get associated Tag Domains with a Service |
-|---|---|---| 
+| | | | 
 |POST   |/admin/tagDomains                                  |Get TagDomains|
 |DELETE |/admin/tagDomains/{tagDomainUrn}                   |Delete a TagDomains|
 |POST   |/admin/tagDomains/{tagDomainUrn}                   |Update a TagDomains|
@@ -271,5 +271,16 @@ Annotation API is organized in three major parts
 |POST   |/admin/tagDomains/{tagDomainUrn}/services          |Associate a TagDomain with a Service|
 |DELETE |/admin/tagDomains/{tagDomainUrn}/tags              |Delete a Tag from a Tag Domain |
 |POST   |/admin/tagDomains/{tagDomainUrn}/tags              |Add a Tag in a Tag Domain|
+
+
+### Annotation Management
+|Method| Path | Operation|
+|---|---|---| 
+|GET    |/admin/annotations/delete/{assetUrn} |Delete Annotation of an Asset |
+|GET    |/annotations/                        |Get Annotation for Application, User and Tag | 
+|DELETE |/annotations/{assetUrn}              |deleteAnnotation|
+|POST   |/annotations/{assetUrn}              |Create Annotation |
+|GET    |/annotations/{assetUrn}/all          |Get Annotations of an Asset|
+|GET    |/annotations/{tagDomain}             |Get Annotation of a TagDomain|
 
 ## Sample Calls

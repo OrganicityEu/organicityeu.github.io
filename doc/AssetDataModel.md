@@ -321,3 +321,7 @@ origin: {
     }
 }
 ```
+
+# Related Material
+
+[Organicity Java Entities](https://github.com/OrganicityEu/OrganicityEntities) A project for creating and parsing Organicity Asset with Java.

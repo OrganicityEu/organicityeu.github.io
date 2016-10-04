@@ -230,29 +230,25 @@ Example:
 
 ## Annotation Service API
 
-Operations:
-- TagDomain Management: Service, TagDomain, Tag
-- Application Management: Application, TagDomain
-- Annotations: Asset, Tag
+- Annotation Service Swagger UI: http://annotations.organicity.eu/swagger-ui.html
+- Annotation Service Swagger Documentation: https://organicityeu.github.io/api/Annotation.html
 
+Annotation API is organized in three major parts 
+ 
+- **Tag and Tag Domain browsing**: for reading Application,Service, TagDomain, Tag entities
+- **Annotation Parameters Management**: creating, deleting, updating Application,Service, TagDomain, Tag entities
+- **Annotation Management**: Getting/setting annotations on Organicity Assets
 
-User Roles:
-- OC Admin (OC-A)
-- OC Experimenter (OC-E)
-- OC Participant (OC-P)
-- OC Anonymous (OC-AN)
+|Method| Path | Operation|
+|---|---|---|
+|GET| /applications                                 |Get All Applications|
+|GET| /applications/{applicationUrn}                |Get an Application|
+|GET| /applications/{applicationUrn}/tagDomains     |Get Tag Domains of an Application|
+|GET| /tagDomains                                   |Get Tag Domains|
+|GET| /tagDomains/{tagDomainUrn}                    |Get a Tag Domain|
+|GET| /tagDomains/{tagDomainUrn}/tags               |Get Tags of a Tag Domain|
+|GET| /tags/{tagUrn}                                |Get a Tag|
 
-Restricions at Operations:
-1. TagDomain Management
- + OC-A can CRUD on Service, TagDomain, Tag
- + OC-E, OC-P, OC-AN can R on Service, TagDomain, Tag
-2. Application Management
- + OC-E can CRUD on Application, TagDomain
-3. Annotation
- + OC-A can CRUR all Annotations
- + OC-E can CRUR all annotations of his applications
- + OC-P can CRUD only his annotations
- + OC-AN can R only COUNT aggregations of annotations
-
+ 
 
 ## Sample Calls

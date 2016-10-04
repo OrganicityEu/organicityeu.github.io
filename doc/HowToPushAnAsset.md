@@ -4,12 +4,13 @@
 
 # Tutorial: How to push an Assets to the Organicity Experimenter Site
 
-**Precondition**: To be able to push an asset to the Organicity Experimenter Site (OC-Exp. Site), you need the **experimenter** role. This will be assigned to you by the Organicity team.
+## TODO in this documentation
 
-### TODO in this documentation
-
-* Include *Assets Discovery Service* to test **central orion**
 * Public/Private
+
+**Precondition**:
+
+* To be able to push an asset to the Organicity Experimenter Site (OC-Exp. Site), you need the **experimenter** role. This will be assigned to you by the Organicity team.
 
 ## Create an Experiment and an Application
 
@@ -61,13 +62,13 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 
 ### HTTP body
 
-The HTTP body is an asset in JSON format as described here. Important for the creation is the correct asset ID. An asset ID has the form:
+The HTTP body is an asset in JSON format as described here. Important for the creation is the correct Asset ID. An Asset ID has the form:
 
 ```
 urn:oc:entity:experimenters:<ExperimenterId>:<ExperimentId>:<AssetId>
 ```
 
-The `<ExperimenterId>` and `<ExpeirmentID>` are the one from above. The `<assetID>` is application specifc. Thus, you decide how they look like. In our example, we wil just use an `1` as the asset ID. In our example, it looks as follows:
+The `<ExperimenterId>` and `<ExpeirmentID>` are the one from above. The `<assetID>` is application specifc. Thus, you decide how they look like. In our example, we wil just use an `1` as the Asset ID. In our example, it looks as follows:
 
 ```
 urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
@@ -79,10 +80,10 @@ A simple valid asset could be:
 {
 	"id": "urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1",
 	"type": "urn:oc:entitytype:demo",
-	"name": {
-		"type": "urn:oc:attributeType:name",
-		"value": "Demo asset"
-	}
+  "TimeInstant": {
+    "type": "urn:oc:attributeType:ISO8601",
+    "value": "2016-10-04T13:45:00.000Z"
+  }
 }
 ```
 
@@ -103,10 +104,10 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 {
 	"id": "urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1",
 	"type": "urn:oc:entitytype:demo",
-	"name": {
-		"type": "urn:oc:attributeType:name",
-		"value": "Demo asset"
-	}
+  "TimeInstant": {
+    "type": "urn:oc:attributeType:ISO8601",
+    "value": "2016-10-04T13:45:00.000Z"
+  }
 }
 ```
 
@@ -125,11 +126,11 @@ Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe
 
 ### Validate, that the asset was created successfully
 
-To verify, that the asset was created in Organicity Experimenter Site, you must do an HTTP **GET** with the path from the `location` header.
+To verify, that the asset was created in Organicity Experimenter Site, you must do an HTTP **GET** with the path from the `location` header (you're Asset ID)
 You must add the `Authorization`, `X-Organicity-Application` and `X-Organicity-Experiment` headers as well:
 
 ```
-GET https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entitytype:demo
+GET https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
 
 Authorization: Bearer <AccessToken>
 Accept: application/json
@@ -141,7 +142,11 @@ The response is a `200 OK`, which includes the created asset.
 
 ### Test with the Urban Data Obervatory
 
-TODO: Urban Data Obervatory (UDO)
+To verify, that the asset was created in Organicity Experimenter Site, you must use the [Asset Discovery Service](https://organicityeu.github.io/api/AssetDiscovery.html):
+
+```
+GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+```
 
 ### Delete an asset
 
@@ -167,7 +172,7 @@ To push an asset as an participant, the participant must be part of you experime
 with the [Experimenter Portal](http://experimenters.organicity.eu/). If a participant logs in to your application,
 the `participant` role will be assigned. The pushing itself works as abobe.
 
-**HINT**: In the AssetID, you keep the `<ExperimenterId>`!
+**HINT**: In the Asset ID, you keep the `<ExperimenterId>`!
 
 ## Demo
 

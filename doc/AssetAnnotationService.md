@@ -17,7 +17,7 @@ of labels from online resources on the Web, social media and references to rich 
  to free-text labels or numeric values. A set of methods has been created for maintaining dynamic label 
  categories, labels and labelling of data.  
   
-![UDO and Annotations](./figs/udo-annotations.png=120x "UDO and Annotations") 
+![UDO and Annotations](./figs/udo-annotations.png=120x100 "UDO and Annotations") 
 
 Acquiring labels for a specific set of data sources can be parameterized under the scope of an experiment. Experimenters can define a set 
 of label categories to be used by the applications associated with their experiment. Moreover, experimenters, or other end-users, 

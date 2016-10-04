@@ -57,22 +57,22 @@ a:hover {
   font-family: freight-text-pro,serif;
   font-size: 1.8rem;
   line-height: 3rem;
-
+ text-align: justify;
   margin: 8rem;
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 2%;
+  margin-left: 2%;
   padding: 6rem 18rem;
 }
 
 @media screen and (max-width: 1024px) {
   .content {
-    padding: 4rem;
-    margin: 4rem;
+    padding: 1rem;
+    margin: 1rem;
   }
 }
 
 .content h2 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
 }

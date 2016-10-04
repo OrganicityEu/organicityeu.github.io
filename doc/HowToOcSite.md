@@ -1,6 +1,6 @@
 ![Organicity Logo](../images/organicity_logo_pink_100.png)
 
-[Back to the Guidlines Overview page](https://organicityeu.github.io/).
+[Back to the Guidelines Overview page](https://organicityeu.github.io/).
 
 # Tutorial: OC Site Federation - How to be an OC Site
 

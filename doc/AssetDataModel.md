@@ -1,6 +1,6 @@
 ![Organicity Logo](../images/organicity_logo_pink_100.png)
 
-[Back to the Guidlines Overview page](https://organicityeu.github.io/).
+[Back to the Guidelines Overview page](https://organicityeu.github.io/).
 
 # Asset Data Model
 
@@ -64,7 +64,7 @@ Common attribute types (e.g., observation types) should be described with same f
 by the Organicity sites and values should be represented at the same set of units (e.g., distance
 in meters and temperature in degrees Centigrade).
 
-During the federation of various assets from the Organicity City Sites (Aarhus, London, Santader) a list 
+During the federation of various assets from the Organicity City Sites (Aarhus, London, Santader) a list
 of common urn names for Asset Types, Attribute Types and Metadata has been created (Get [XLS](./figs/Organicity_URNs.xlsx) file).
 It is recommended to use the available names when you are creating your assets.
 
@@ -78,7 +78,7 @@ urn:oc:entity:[site]:[service]:[provider]:[group]:[entityName]
 where:
 - **urn:oc:entity:[site]:[service]:[provider]:[group]:[entityName]** ​ should be
 unique across the whole Organicity facility.
-- **[site]** is representing the federated Organicity site (e.g., London, Santader, Aarhus, Experimenters etc.). During the creation of your experiment you are going 
+- **[site]** is representing the federated Organicity site (e.g., London, Santader, Aarhus, Experimenters etc.). During the creation of your experiment you are going
  to aquire the proper prefixes for your assets.
 - **[service]** ​ is representing a smart city service/application domain for example
 parking, garbage, environmental etc.
@@ -96,14 +96,14 @@ corresponding Organicity Site, service and provider. The same applies at the sco
 Assets could represent devices, places, buildings, and many other entities (including virtual
 objects). In Organicity, we define a set of OC Entity Types that can be extended in the future to
 include more complex installations. Each entity has a specific resource type in the form
-of ​ 
+of ​
 ```
 urn:oc:entityType:[Type]:[Name]​
 ```
 where
 - **[Type]** ​ could express the context type of the context representation of the asset
 for example IoT device, smartphone, bicycle­station, weather­station etc.
-- **[Name]** ​ is optional and can express some specialization of the used type. E.g. ...:iotdevice:noise  
+- **[Name]** ​ is optional and can express some specialization of the used type. E.g. ...:iotdevice:noise
 
 See [XLS](./figs/Organicity_URNs.xlsx) for a recommendation list of asset types.
 
@@ -128,7 +128,7 @@ contextElement": {
 
 Asset attributes can represent either various urban observations or other things like properties of the asset creating the observations.
 Attributes can  have a name, a type and a value (**<name, type, value>​ **). Each attribute might represent:
- - in the case of an IoT device or a smartphone: 
+ - in the case of an IoT device or a smartphone:
     - a ​ capability ​ of the device (sensing or actuation)
     - a ​ device attribute​ like:
         - description of device
@@ -155,15 +155,15 @@ Attributes can  have a name, a type and a value (**<name, type, value>​ **). E
     - the url to retrieve documentation
     - the type of the web service (REST, SOAP)
     - etc.
-    
+
 **Attribute names**​ ​ might be a human readable strings.
- 
-**Attribute types** should follow the format: ​ 
+
+**Attribute types** should follow the format: ​
 ```
 urn:oc:attributeType:[type]​
 ```
-The type should encode the type of observation shared in Organicity. Its quite important to describe only the type of observation that is 
-represented and not other details  (like the period of observation, the method of observation etc.) in order to facilitate the discovery process and the joining of 
+The type should encode the type of observation shared in Organicity. Its quite important to describe only the type of observation that is
+represented and not other details  (like the period of observation, the method of observation etc.) in order to facilitate the discovery process and the joining of
 information. For example is the attribute expressed the speed of vehicles its recommended to use urn:oc:attributeType:speed and then express in metadata level if the speed is per hour or per minute etc.
 
 **Attribute MetaData:** Some of the aforementioned attribute types might require a specific set of
@@ -199,9 +199,9 @@ carbonEmission: {
 See [XLS](./figs/Organicity_URNs.xlsx) for a recommendation list of asset types.
 
 ### Geospatial Asset Attributes
- 
-Asset can have spatial-information attached. It is recommended each assets to have a spatial attribute. For assets that are having a location the asset location format 
-should be used, while other assets with more complex geometries (e.g. polygons for boroughs in the city) the complex geometry format can be used.  
+
+Asset can have spatial-information attached. It is recommended each assets to have a spatial attribute. For assets that are having a location the asset location format
+should be used, while other assets with more complex geometries (e.g. polygons for boroughs in the city) the complex geometry format can be used.
 
 ####Asset Location Format
 
@@ -228,7 +228,7 @@ This is model supports complex assets geometries representations by supporting s
   "geometry": {
     "value": {
       "type": "Point",
-      "coordinates": [2.186447514, 41.3763726] 
+      "coordinates": [2.186447514, 41.3763726]
     },
     "type": "oc:geo:json"
   }
@@ -252,7 +252,7 @@ TimeInstant: {
 ```
 
 ####Comments and general asset description
- 
+
 ```
 {
   "description": {
@@ -262,8 +262,8 @@ TimeInstant: {
 }
 ```
 
-####Ranking 
- 
+####Ranking
+
 * This attribute is set by Organicity platform only. Posting an asset with this attribute will be rejected *
 
 ```
@@ -276,10 +276,10 @@ TimeInstant: {
 ```
 
 
-####Origin 
+####Origin
 
 This attribute encodes the origin of information described in the asset.
- 
+
 
 ```
 origin: {
@@ -301,14 +301,14 @@ origin: {
 ```
 "origin": {
     "type": "urn:oc:attributeType:origin"
-    "value": "http://www.londonair.org.uk/LondonAir/API/"     
+    "value": "http://www.londonair.org.uk/LondonAir/API/"
 }
 ```
 
 ####Organicity datasource endpoint
  This attribute should describe if an Organicity client could retrieve historic   data through the OC
  platform of by consuming an external API service or  accessing an online file
- 
+
 ```
 "datasource": {
     "type": "urn:oc:attributeType:datasource"

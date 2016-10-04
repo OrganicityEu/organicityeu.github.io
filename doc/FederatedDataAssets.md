@@ -1,6 +1,6 @@
 ![Organicity Logo](../images/organicity_logo_pink_100.png)
 
-[Back to the Guidlines Overview page](https://organicityeu.github.io/).
+[Back to the Guidelines Overview page](https://organicityeu.github.io/).
 
 # Federated Data Assets
 
@@ -299,7 +299,7 @@ Example:
 ```
 
 ### Transport
-[Transport for London](http://api.tfl.gov.uk) and [Transport API](http://www.transportapi.com/) provide API endpoints for getting information about the London public transport network, tube stations, bus stops, citybicycle rental stations, tube lines and bus lines. In the first round of experimentation we 
+[Transport for London](http://api.tfl.gov.uk) and [Transport API](http://www.transportapi.com/) provide API endpoints for getting information about the London public transport network, tube stations, bus stops, citybicycle rental stations, tube lines and bus lines. In the first round of experimentation we
 
 Example:
 ```json
@@ -352,15 +352,15 @@ The [London Air Quality Network](http://www.londonair.org.uk/) (LAQN) provides p
 
 Based on the 2014 [LAQN report](http://www.londonair.org.uk/london/reports/2014_LAQN_Summary_Report.pdf), the air quality observations made are Carbon Monoxide (CO), Nitrogen Dioxide (NO2), Sulphur dioxide (SO2), Ozone (O3), Particles (PM10) and Particles (PM2.5) along with environmental observations like Wind Speed, Temperature, Rainfall, etc. in over 60 monitoring sites.
 
-ACTION for Borkur: Add example. 
+ACTION for Borkur: Add example.
 
 ### Environmental Sensors - QEOP
 A number of environmental stations (3 weather stations) have been deployed in Queen Elizabeth Olympic Park (QEOP) measuring environmental conditions of the park like: temperature, rain levels, wind direction and intensity, humidity, barometric pressure and light intensity.
 
-Moreover, there are recorded data from 10 distinct points in the city (Temperature, Humidity, Nitrogen Oxide, Nitrogen Dioxide, Carbon Dioxide) for year 2015. 
+Moreover, there are recorded data from 10 distinct points in the city (Temperature, Humidity, Nitrogen Oxide, Nitrogen Dioxide, Carbon Dioxide) for year 2015.
 
-ACTION for Borkur: Add example. 
+ACTION for Borkur: Add example.
 
 ## Santander
- 
-  
+
+

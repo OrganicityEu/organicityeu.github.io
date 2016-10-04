@@ -1,12 +1,8 @@
 ![Organicity logo](../images/organicity_logo_pink_100.png)
 
-[Back to the Guidlines Overview page](https://organicityeu.github.io/).
+[Back to the Guidelines Overview page](https://organicityeu.github.io/).
 
 # Tutorial: How to push an Assets to the Organicity Experimenter Site
-
-## TODO in this documentation
-
-* Public/Private
 
 **Precondition**:
 
@@ -179,3 +175,7 @@ the `participant` role will be assigned. The pushing itself works as abobe.
 ### Push a new asset
 
 An XMLHTTPRequest-based example can be found here: https://organicityeu.github.io/demo/pushAsset.html
+
+## TODO in this documentation
+
+* Public/Private

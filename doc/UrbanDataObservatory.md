@@ -4,7 +4,7 @@
 
 # Urban Data Observatory
 
-The Urban Data Observatory is the main entry point to the OrganiCity facility assets.
+The [Urban Data Observatory](http://observatory.organicity.eu/) is the main entry point to the OrganiCity platform assets.
 
 ```
 Please notice some features might be under development at the time.

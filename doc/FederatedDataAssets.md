@@ -615,6 +615,58 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 
 ## Santander
 
+### Traffic
+#### Traffic cameras. 
+Four traffic cameras in the city provide real time images about the status of the traffic in different areas of the city.
+```json
+```
+#### Vehicle count sensors
+Placed at the main entrance of the city, a set of 48 sensors, provides information about the occupancy, the count of vehicles, the median and average speed in the different lanes of these main roads.
+```json
+```
+#### Vehicle speed sensors 
+```json
+```
+#### Traffic congestion information in the city.  
+Based on the deployment of the inductive loops existing in the city of Santander, real time information about the traffic congestion in the city is provided. To this end, the streets of the city are represented by different polylines, including information on how congested this particular path is.
+```json
+```
+#### 30 zone areas. 
+Within the city, different areas have been limited to a maximum speed of 30km/h. Assets for each zone have been created, defined by the polygon of the particular areas.
+```json
+```
+### Parking
+Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
+```json
+```
+#### Indoor parking. 
+Along the city of Santander, 12 indoor public parking facilities managed by private companies can be found. For every parking facility, a singular asset is created, including information about the occupancy of parking spots and also other extra information.
+```json
+```
+#### Load and unload areas. 
+```json
+```
+
+### Transport
+#### Bus lines. 
+It provides information about the existing buses lines in the city, a set of 20 assets, one for each bus line have been integrated.
+#### Bus stops. 
+A set of 415 assets, one per bus stop in the city, have been created. Those assets provide real time information about next buses reaching the bus stop, including the distance to reach the bus stop as well as the estimated time of arrival for the first and second bus coming.
+```json
+```
+#### Bus routes. 
+For each one of the bus lines, different routes are implemented. These assets provide information related to the routes of a particular line.
+```json
+```
+
+#### Taxi stops. 
+These assets provide real time information about taxi availability in each particular stop, based on the information provided by the fleet management systems deployed by the two taxi associations.
+```json
+```
+#### Bike stops. 
+A set of 16 assets has been created, providing information about the number of available public-hire bikes and also the number of places to return such bikes.
+```json
+```
 ### Environmental 
 #### Noise repeaters
 ```json
@@ -632,24 +684,34 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 ```json
 ```
 
-### Parking sensors 
-```json
-```
-### Traffic
-#### Vehicle count sensors 
-```json
-```
-#### Vehicle speed sensors 
-```json
-```
-#### Traffic congestion polylines
-
 ### Districts and sections 
+#### Districts
 ```json
 ```
-### Beaches 
+#### Sections
 ```json
 ```
-### Park and gardens
+### Pace of the city events
 ```json
 ```
+### Points of Interest
+
+#### Beaches 
+```json
+```
+#### Park and gardens
+```json
+```
+### Shops
+```json
+```
+### Cultural agenda events 
+```json
+```
+
+### News in the city
+```json
+```
+
+
+

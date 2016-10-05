@@ -615,4 +615,41 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 
 ## Santander
 
+### Environmental 
+#### Noise repeaters
+```json
+```
+#### Temperature repeaters
+```json
+```
+#### Luminosity repeaters
+```json
+```
+#### Air repeaters
+```json
+```
+#### Mobile nodes
+```json
+```
 
+### Parking sensors 
+```json
+```
+### Traffic
+#### Vehicle count sensors 
+```json
+```
+#### Vehicle speed sensors 
+```json
+```
+#### Traffic congestion polylines
+
+### Districts and sections 
+```json
+```
+### Beaches 
+```json
+```
+### Park and gardens
+```json
+```

@@ -821,10 +821,6 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 Based on the deployment of the inductive loops existing in the city of Santander, real time information about the traffic congestion in the city is provided. To this end, the streets of the city are represented by different polylines, including information on how congested this particular path is.
 ```json
 ```
-#### 30 zone areas. 
-Within the city, different areas have been limited to a maximum speed of 30km/h. Assets for each zone have been created, defined by the polygon of the particular areas.
-```json
-```
 ### Parking
 Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
 ```json
@@ -886,8 +882,42 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 Along the city of Santander, 12 indoor public parking facilities managed by private companies can be found. For every parking facility, a singular asset is created, including information about the occupancy of parking spots and also other extra information.
 ```json
 ```
-#### Load and unload areas. 
+#### Parking reserved for people with dissabilities. 
 ```json
+{
+	"id": "urn:oc:entity:santander:parking:disabledpeople:24189",
+	"type": "parkingSpot:disabledPeople",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-09-05T22:35:01.000Z",
+		"metadata": {}
+	},
+	"coordinates:utmx": {
+		"type": "urn:oc:attributeType:coordinates:utmx",
+		"value": "434340.745908154",
+		"metadata": {}
+	},
+	"coordinates:utmy": {
+		"type": "urn:oc::attributeType:coordinates:utmy",
+		"value": "4811961.04121813",
+		"metadata": {}
+	},
+	"parkingspots:angled": {
+		"type": "urn:oc:attributeType:parkingspots:angled",
+		"value": "",
+		"metadata": {}
+	},
+	"parkingspots:inline": {
+		"type": "urn:oc:attributeType:parkingspots:inline",
+		"value": "1",
+		"metadata": {}
+	},
+	"street:name": {
+		"type": "urn:oc::attributeType:street:name",
+		"value": "CL/ FEDERICO VIAL",
+		"metadata": {}
+	}
+}
 ```
 
 ### Transport
@@ -926,14 +956,30 @@ A set of 415 assets, one per bus stop in the city, have been created. Those asse
 	}
 }
 ```
-#### Bus routes. 
-For each one of the bus lines, different routes are implemented. These assets provide information related to the routes of a particular line.
-```json
-```
+
 
 #### Taxi stops. 
 These assets provide real time information about taxi availability in each particular stop, based on the information provided by the fleet management systems deployed by the two taxi associations.
 ```json
+{
+	"id": "urn:oc:entity:santander:transport:taxis:stop:1",
+	"type": "urn:oc:entityType:taxis:stop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T00:01:01.000Z",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.7886569,43.463448",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:taxis:stops:name",
+		"value": "SAN MARTIN",
+		"metadata": {}
+	}
+}
 ```
 #### Bike stops. 
 A set of 16 assets has been created, providing information about the number of available public-hire bikes and also the number of places to return such bikes.

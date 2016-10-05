@@ -817,10 +817,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	}
 }
 ```
-#### Traffic congestion information in the city.  
-Based on the deployment of the inductive loops existing in the city of Santander, real time information about the traffic congestion in the city is provided. To this end, the streets of the city are represented by different polylines, including information on how congested this particular path is.
-```json
-```
+
 ### Parking
 Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
 ```json
@@ -878,10 +875,7 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 	}
 }
 ```
-#### Indoor parking. 
-Along the city of Santander, 12 indoor public parking facilities managed by private companies can be found. For every parking facility, a singular asset is created, including information about the occupancy of parking spots and also other extra information.
-```json
-```
+
 #### Parking reserved for people with dissabilities. 
 ```json
 {
@@ -921,8 +915,7 @@ Along the city of Santander, 12 indoor public parking facilities managed by priv
 ```
 
 ### Transport
-#### Bus lines. 
-It provides information about the existing buses lines in the city, a set of 20 assets, one for each bus line have been integrated.
+
 #### Bus stops. 
 A set of 415 assets, one per bus stop in the city, have been created. Those assets provide real time information about next buses reaching the bus stop, including the distance to reach the bus stop as well as the estimated time of arrival for the first and second bus coming.
 ```json
@@ -985,22 +978,7 @@ These assets provide real time information about taxi availability in each parti
 A set of 16 assets has been created, providing information about the number of available public-hire bikes and also the number of places to return such bikes.
 ```json
 ```
-### Environmental 
-#### Noise repeaters
-```json
-```
-#### Temperature repeaters
-```json
-```
-#### Luminosity repeaters
-```json
-```
-#### Air repeaters
-```json
-```
-#### Mobile nodes
-```json
-```
+
 
 ### Districts and sections 
 #### Districts

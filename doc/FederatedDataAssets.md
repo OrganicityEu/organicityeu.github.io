@@ -18,6 +18,42 @@ Example:
 {
 	"id": "urn:oc:entity:london:districtProfile:uk.gov.london:E09000013",
 	"type": "urn:oc:entityType:districtProfile",
+	"geometry": {
+		"type": "oc:geo:json",
+		"value": {
+			"coordinates": [
+				[
+					[
+						[-0.2333, 51.532],
+						[-0.2456, 51.4908],
+						[-0.203, 51.4933],
+						[-0.2333, 51.532]
+					]
+				]
+			],
+			"type": "MultiPolygon"
+		},
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-0.22078893731921054,51.49501040208028",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "The London Borough profile is a combination of data from the London Datastore and Public Health England.",
+		"metadata": {
+			"unit": {
+				"type": "NOT_APPLIED",
+				"value": "NOT_APPLIED"
+			},
+			"urls": {
+				"type": "url",
+				"value": "http://data.london.gov.uk/dataset/london-borough-profiles,http://data.london.gov.uk/dataset/walking-and-cycling-borough,http://www.noo.org.uk/visualisation"
+			}
+		}
+	},
 	"carbonEmission": {
 		"type": "urn:oc:attributeType:carbonEmission",
 		"value": "971.336623467994",
@@ -45,23 +81,6 @@ Example:
 				"value": "2014-12-31T23:59:59"
 			}
 		}
-	},
-	"geometry": {
-		"type": "oc:geo:json",
-		"value": {
-			"coordinates": [
-				[
-					[
-						[-0.2333, 51.532],
-						[-0.2456, 51.4908],
-						[-0.203, 51.4933],
-						[-0.2333, 51.532]
-					]
-				]
-			],
-			"type": "MultiPolygon"
-		},
-		"metadata": {}
 	},
 	"greenspace": {
 		"type": "urn:oc:attributeType:greenspace",
@@ -119,11 +138,6 @@ Example:
 			}
 		}
 	},
-	"location": {
-		"type": "geo:point",
-		"value": "-0.22078893731921054,51.49501040208028",
-		"metadata": {}
-	},
 	"obesity": {
 		"type": "urn:oc:attributeType:obesity",
 		"value": "14.918342434625048",
@@ -135,20 +149,6 @@ Example:
 			"TimeInstant": {
 				"type": "ISO8601",
 				"value": "2014-12-31T23:59:59"
-			}
-		}
-	},
-	"origin": {
-		"type": "urn:oc:attributeType:origin",
-		"value": "The London Borough profile is a combination of data from the London Datastore and Public Health England.",
-		"metadata": {
-			"unit": {
-				"type": "NOT_APPLIED",
-				"value": "NOT_APPLIED"
-			},
-			"urls": {
-				"type": "url",
-				"value": "http://data.london.gov.uk/dataset/london-borough-profiles,http://data.london.gov.uk/dataset/walking-and-cycling-borough,http://www.noo.org.uk/visualisation"
 			}
 		}
 	},

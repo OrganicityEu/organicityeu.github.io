@@ -612,7 +612,6 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 	}
 }
 ```
-ACTION for Borkur: Add example.
 
 ## Santander
 

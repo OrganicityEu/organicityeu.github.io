@@ -896,6 +896,35 @@ It provides information about the existing buses lines in the city, a set of 20 
 #### Bus stops. 
 A set of 415 assets, one per bus stop in the city, have been created. Those assets provide real time information about next buses reaching the bus stop, including the distance to reach the bus stop as well as the estimated time of arrival for the first and second bus coming.
 ```json
+{
+	"id": "urn:oc:entity:santander:publictransport:bus:stop:103",
+	"type": "urn:oc:entityType:busStop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-04T22:20:00.000Z",
+		"metadata": {}
+	},
+	"address": {
+		"type": "urn:oc:attributeType:address",
+		"value": "Plaza de las Estaciones S/N",
+		"metadata": {}
+	},
+	"bus:direction": {
+		"type": "urn:oc:attributeType:bus:direction",
+		"value": "Bº Pesquero",
+		"metadata": {}
+	},
+	"bus:stopName": {
+		"type": "urn:oc:attributeType:bus:stopName",
+		"value": "Las Estaciones",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.8107700513716405,43.45908154114637",
+		"metadata": {}
+	}
+}
 ```
 #### Bus routes. 
 For each one of the bus lines, different routes are implemented. These assets provide information related to the routes of a particular line.
@@ -933,17 +962,141 @@ A set of 16 assets has been created, providing information about the number of a
 ```
 #### Sections
 ```json
+{
+	"id": "urn:oc:entity:santander:sections:D07:S22",
+	"type": "section",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T13:21:07.000Z",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[-3.81032, 43.4696],
+					[-3.81078, 43.4695],
+					[-3.81128, 43.4694],
+					[-3.81175, 43.4694],
+					[-3.81226, 43.4693],
+					[-3.81301, 43.4691],
+					[-3.81383, 43.4689],
+					[-3.81385, 43.4689],
+					[-3.81385, 43.4689],
+					[-3.81387, 43.4689],
+					[-3.81353, 43.4686],
+					[-3.81347, 43.4686],
+					[-3.81342, 43.4685],
+					[-3.8134, 43.4685],
+					[-3.81339, 43.4685],
+					[-3.81339, 43.4684],
+					[-3.81341, 43.4679],
+					[-3.8134, 43.4677],
+					[-3.81341, 43.4676],
+					[-3.81028, 43.4676],
+					[-3.80995, 43.4676],
+					[-3.80992, 43.4676],
+					[-3.8102, 43.4684],
+					[-3.81022, 43.4685],
+					[-3.81021, 43.4686],
+					[-3.81017, 43.4687],
+					[-3.81011, 43.4688],
+					[-3.80993, 43.4689],
+					[-3.8098, 43.4691],
+					[-3.80972, 43.4691],
+					[-3.80967, 43.4692],
+					[-3.80964, 43.4692],
+					[-3.80964, 43.4692],
+					[-3.80965, 43.4692],
+					[-3.80966, 43.4692],
+					[-3.80973, 43.4693],
+					[-3.80983, 43.4694],
+					[-3.80989, 43.4695],
+					[-3.80991, 43.4696],
+					[-3.81002, 43.4696],
+					[-3.81032, 43.4696]
+				]
+			]
+		},
+		"metadata": {}
+	}
+}
 ```
 ### Pace of the city events
 ```json
 ```
-### Points of Interest
+### Tourism:Points of Interest
 
 #### Beaches 
 ```json
+{
+	"id": "urn:oc:santander:tourism:poi:beach:6",
+	"type": "poi:park",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T13:13:51.000Z",
+		"metadata": {}
+	},
+	"description:long": {
+		"type": "urn:oc:attributeType:description",
+		"value": "",
+		"metadata": {}
+	},
+	"description:short": {
+		"type": "urn:oc:attributeType:description",
+		"value": "Debe su nombre a la roca con esta forma que hay en la orilla",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:imageURL",
+		"value": "http://ra.smartsantander.eu/images/playas/camello.jpg",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "43.4694983127,-3.7752789259",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "Playa de El Camello",
+		"metadata": {}
+	}
+}
 ```
 #### Park and gardens
 ```json
+{
+	"id": "urn:oc:santander:tourism:poi:park:9",
+	"type": "poi:park",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T13:13:51.000Z",
+		"metadata": {}
+	},
+	"description:short": {
+		"type": "urn:oc:attributeType:description",
+		"value": "175.000 m2 de parque con ejemplares arbóreos destacados ",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:imageURL",
+		"value": "http://ra.smartsantander.eu/images/parques/ParqueMorales.jpg",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "43.4557850000,-3.8407950000",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "Parque Dr Morales",
+		"metadata": {}
+	}
+}
 ```
 ### Shops
 ```json
@@ -954,6 +1107,30 @@ A set of 16 assets has been created, providing information about the number of a
 
 ### News in the city
 ```json
+{
+	"id": "urn:oc:entity:santander:news:c35672836c31190ad2badb057cee6ad4",
+	"type": "urn:oc:entityType:news",
+	"date": {
+		"type": "urn:oc:attributeType:date",
+		"value": "08-09-2016 15:41",
+		"metadata": {}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "La imagen más icónica de la nueva exposición del centro es la fotografía que se hicieron un grupo de artistas españoles en Roma con motivo de la visita que les hizo el escritor Pedro Antonio de Alarcón en las Navidades de 1860",
+		"metadata": {}
+	},
+	"news:title": {
+		"type": "urn:oc:attributeType:title",
+		"value": "El CDIS recorre el proceso de formación del artista a través de la figura de Dióscoro Puebla",
+		"metadata": {}
+	},
+	"url": {
+		"type": "urn:oc:attributeType:url",
+		"value": "http://santander.es/noticia/cultura/cdis-recorre-proceso-formacion-del-artista-traves-figura-diascoro-puebla",
+		"metadata": {}
+	}
+}
 ```
 
 

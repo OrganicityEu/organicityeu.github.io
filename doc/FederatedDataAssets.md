@@ -619,13 +619,203 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 #### Traffic cameras. 
 Four traffic cameras in the city provide real time images about the status of the traffic in different areas of the city.
 ```json
+{
+	"id": "urn:oc:entity:santander:traffic:camera:01",
+	"type": "urn:oc:entityType:camera",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T12:57:29.000Z",
+		"metadata": {}
+	},
+	"image": {
+		"type": "urn:oc:attributeType:image",
+		"value": "http://datos.santander.es/files/camara_cuatro_caminos/cuatro_caminos_20161005145728.jpg",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "Cuatro Caminos",
+		"metadata": {}
+	}
+}
 ```
 #### Vehicle count sensors
 Placed at the main entrance of the city, a set of 48 sensors, provides information about the occupancy, the count of vehicles, the median and average speed in the different lanes of these main roads.
 ```json
+{
+	"id": "urn:oc:entity:santander:traffic:fixed:3306",
+	"type": "urn:oc:entityType:vehicleCounter",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T06:08:08.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.82782,43.45135",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantander",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"roadOccupancy": {
+		"type": "urn:oc:attributeType:speed:roadOccupancy",
+		"value": "44",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:vehiclesPerMinute"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "Measurements calculated in the last minute"
+			}
+		}
+	},
+	"trafficIntensity": {
+		"type": "urn:oc:attributeType:trafficIntensity",
+		"value": "14",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:vehiclesPerMinute"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "Measurements calculated in the last minute"
+			}
+		}
+	}
+}
+
 ```
 #### Vehicle speed sensors 
 ```json
+{
+	"id": "urn:oc:entity:santander:traffic:fixed:3337",
+	"type": "urn:oc:entityType:vehicleSpeed",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T06:08:08.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.83322,43.46699",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantander",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"roadOccupancy": {
+		"type": "urn:oc:attributeType:speed:roadOccupancy",
+		"value": "56",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:vehiclesPerMinute"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "Measurements calculated in the last minute"
+			}
+		}
+	},
+	"speed:average": {
+		"type": "urn:oc:attributeType:speed:average",
+		"value": "53",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:kilometrePerHour"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "Measurements calculated in the last minute"
+			}
+		}
+	},
+	"speed:median": {
+		"type": "urn:oc:attributeType:speed:median",
+		"value": "46",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:kilometrePerHour"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "Measurements calculated in the last minute"
+			}
+		}
+	},
+	"trafficIntensity": {
+		"type": "urn:oc:attributeType:trafficIntensity",
+		"value": "14",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:vehiclesPerMinute"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "Measurements calculated in the last minute"
+			}
+		}
+	}
+}
 ```
 #### Traffic congestion information in the city.  
 Based on the deployment of the inductive loops existing in the city of Santander, real time information about the traffic congestion in the city is provided. To this end, the streets of the city are represented by different polylines, including information on how congested this particular path is.
@@ -638,6 +828,59 @@ Within the city, different areas have been limited to a maximum speed of 30km/h.
 ### Parking
 Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
 ```json
+{
+	"id": "urn:oc:entity:santander:parking:np3922",
+	"type": "parkingSensor",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-05T12:00:32.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.799430501,43.463917645",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantander",
+		"metadata": {}
+	},
+	"presenceStatus:parking": {
+		"type": "urn:oc:attributeType:presenceStatus:parking",
+		"value": "true",
+		"metadata": {
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "True means that the parking spot is occupied while false it is available"
+			}
+		}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	}
+}
 ```
 #### Indoor parking. 
 Along the city of Santander, 12 indoor public parking facilities managed by private companies can be found. For every parking facility, a singular asset is created, including information about the occupancy of parking spots and also other extra information.

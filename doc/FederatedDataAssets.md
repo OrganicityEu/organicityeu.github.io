@@ -356,6 +356,36 @@ Based on the 2014 [LAQN report](http://www.londonair.org.uk/london/reports/2014_
 {
 	"id": "urn:oc:entity:london:aqn:CD9",
 	"type": "urn:oc:entityType:iotdevice",
+	"location": {
+		"type": "geo:point",
+		"value": "-0.129053205282516,51.5277066194645",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "http://www.londonair.org.uk/LondonAir/API/",
+		"metadata": {
+			"unit": {
+				"type": "NOT_APPLIED",
+				"value": "NOT_APPLIED"
+			}
+		}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://london.site.organicity.eu:8081/api/v1/entities/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:datatype:boolean",
+				"value": "true"
+			}
+		}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "CD9",
+		"metadata": {}
+	},
 	"chemicalAgentAtmosphericConcentration:NO": {
 		"type": "urn:oc:attributeType:chemicalAgentAtmosphericConcentration:NO",
 		"value": "46.2",
@@ -397,36 +427,6 @@ Based on the 2014 [LAQN report](http://www.londonair.org.uk/london/reports/2014_
 				"value": "numeric"
 			}
 		}
-	},
-	"datasource": {
-		"type": "urn:oc:attributeType:datasource",
-		"value": "http://london.site.organicity.eu:8081/api/v1/entities/",
-		"metadata": {
-			"datasourceInternal": {
-				"type": "urn:oc:datatype:boolean",
-				"value": "true"
-			}
-		}
-	},
-	"description": {
-		"type": "urn:oc:attributeType:description",
-		"value": "CD9",
-		"metadata": {}
-	},
-	"location": {
-		"type": "geo:point",
-		"value": "-0.129053205282516,51.5277066194645",
-		"metadata": {}
-	},
-	"origin": {
-		"type": "urn:oc:attributeType:origin",
-		"value": "http://www.londonair.org.uk/LondonAir/API/",
-		"metadata": {
-			"unit": {
-				"type": "NOT_APPLIED",
-				"value": "NOT_APPLIED"
-			}
-		}
 	}
 }
 ```
@@ -440,6 +440,36 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 {
 	"id": "urn:oc:entity:london:enableiot:fixed:ICRI-QEOP-0002",
 	"type": "urn:oc:entityType:iotdevice",
+	"location": {
+		"type": "geo:point",
+		"value": "-0.014934,51.547581",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Intel QeoP Deployments",
+		"metadata": {
+			"unit": {
+				"type": "NOT_APPLIED",
+				"value": "NOT_APPLIED"
+			}
+		}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://london.site.organicity.eu:8081/api/v1/entities",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:datatype:boolean",
+				"value": "true"
+			}
+		}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "ICRI-QEOP-0002active",
+		"metadata": {}
+	},
 	"10_Min_Avg_Wind_Speed": {
 		"type": "urn:oc:attributeType:windSpeed",
 		"value": "4.83",
@@ -577,36 +607,6 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 			"datatype": {
 				"type": "urn:oc:datatype:numeric",
 				"value": "numeric"
-			}
-		}
-	},
-	"datasource": {
-		"type": "urn:oc:attributeType:datasource",
-		"value": "http://london.site.organicity.eu:8081/api/v1/entities",
-		"metadata": {
-			"datasourceInternal": {
-				"type": "urn:oc:datatype:boolean",
-				"value": "true"
-			}
-		}
-	},
-	"description": {
-		"type": "urn:oc:attributeType:description",
-		"value": "ICRI-QEOP-0002active",
-		"metadata": {}
-	},
-	"location": {
-		"type": "geo:point",
-		"value": "-0.014934,51.547581",
-		"metadata": {}
-	},
-	"origin": {
-		"type": "urn:oc:attributeType:origin",
-		"value": "Intel QeoP Deployments",
-		"metadata": {
-			"unit": {
-				"type": "NOT_APPLIED",
-				"value": "NOT_APPLIED"
 			}
 		}
 	}

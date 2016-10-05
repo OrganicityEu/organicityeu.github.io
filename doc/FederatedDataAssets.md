@@ -352,13 +352,266 @@ The [London Air Quality Network](http://www.londonair.org.uk/) (LAQN) provides p
 
 Based on the 2014 [LAQN report](http://www.londonair.org.uk/london/reports/2014_LAQN_Summary_Report.pdf), the air quality observations made are Carbon Monoxide (CO), Nitrogen Dioxide (NO2), Sulphur dioxide (SO2), Ozone (O3), Particles (PM10) and Particles (PM2.5) along with environmental observations like Wind Speed, Temperature, Rainfall, etc. in over 60 monitoring sites.
 
-ACTION for Borkur: Add example.
+```json
+{
+	"id": "urn:oc:entity:london:aqn:CD9",
+	"type": "urn:oc:entityType:iotdevice",
+	"chemicalAgentAtmosphericConcentration:NO": {
+		"type": "urn:oc:attributeType:chemicalAgentAtmosphericConcentration:NO",
+		"value": "46.2",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:microgramPerCubicMetre",
+				"value": "microgramPerCubicMetre"
+			},
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"chemicalAgentAtmosphericConcentration:airParticlesPM10": {
+		"type": "urn:oc:attributeType:chemicalAgentAtmosphericConcentration:airParticlesPM10",
+		"value": "25.8",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:miligramPerCubicMetre",
+				"value": "miligramPerCubicMetre"
+			},
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"chemicalAgentAtmosphericConcentration:airParticlesPM25": {
+		"type": "urn:oc:attributeType:chemicalAgentAtmosphericConcentration:airParticlesPM25",
+		"value": "17.5",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:uom:miligramPerCubicMetre",
+				"value": "miligramPerCubicMetre"
+			},
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://london.site.organicity.eu:8081/api/v1/entities/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:datatype:boolean",
+				"value": "true"
+			}
+		}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "CD9",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-0.129053205282516,51.5277066194645",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "http://www.londonair.org.uk/LondonAir/API/",
+		"metadata": {
+			"unit": {
+				"type": "NOT_APPLIED",
+				"value": "NOT_APPLIED"
+			}
+		}
+	}
+}
+```
 
 ### Environmental Sensors - QEOP
 A number of environmental stations (3 weather stations) have been deployed in Queen Elizabeth Olympic Park (QEOP) measuring environmental conditions of the park like: temperature, rain levels, wind direction and intensity, humidity, barometric pressure and light intensity.
 
 Moreover, there are recorded data from 10 distinct points in the city (Temperature, Humidity, Nitrogen Oxide, Nitrogen Dioxide, Carbon Dioxide) for year 2015.
 
+```json
+{
+	"id": "urn:oc:entity:london:enableiot:fixed:ICRI-QEOP-0002",
+	"type": "urn:oc:entityType:iotdevice",
+	"10_Min_Avg_Wind_Speed": {
+		"type": "urn:oc:attributeType:windSpeed",
+		"value": "4.83",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Barometer": {
+		"type": "urn:oc:attributeType:atmosphericPressure",
+		"value": "771.9568",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Day_ET": {
+		"type": "urn:oc:attributeType:rainfall",
+		"value": "0.0",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Day_Rain": {
+		"type": "urn:oc:attributeType:rainfall",
+		"value": "0.0",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Inside_Humidity": {
+		"type": "urn:oc:attributeType:relativeHumidity",
+		"value": "0.34",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Inside_Temperature": {
+		"type": "urn:oc:attributeType:temperature:ambient",
+		"value": "28.72222",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Month_ET": {
+		"type": "urn:oc:attributeType:rainfall",
+		"value": "0.0",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Month_Rain": {
+		"type": "urn:oc:attributeType:rainfall",
+		"value": "1.05",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Outside_Humidity": {
+		"type": "urn:oc:attributeType:relativeHumidity",
+		"value": "0.71",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Outside_Temperature": {
+		"type": "urn:oc:attributeType:temperature:ambient",
+		"value": "13.61111",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Wind_Direction": {
+		"type": "urn:oc:attributeType:windDirection",
+		"value": "37.0",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Wind_Speed": {
+		"type": "urn:oc:attributeType:windSpeed",
+		"value": "11.27",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Year_ET": {
+		"type": "urn:oc:attributeType:rainfall",
+		"value": "0.0",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"Year_Rain": {
+		"type": "urn:oc:attributeType:rainfall",
+		"value": "110.8",
+		"metadata": {
+			"datatype": {
+				"type": "urn:oc:datatype:numeric",
+				"value": "numeric"
+			}
+		}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://london.site.organicity.eu:8081/api/v1/entities",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:datatype:boolean",
+				"value": "true"
+			}
+		}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "ICRI-QEOP-0002active",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-0.014934,51.547581",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Intel QeoP Deployments",
+		"metadata": {
+			"unit": {
+				"type": "NOT_APPLIED",
+				"value": "NOT_APPLIED"
+			}
+		}
+	}
+}
+```
 ACTION for Borkur: Add example.
 
 ## Santander

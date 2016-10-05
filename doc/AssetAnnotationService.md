@@ -283,4 +283,74 @@ Annotation API is organized in three major parts
 |GET    |/annotations/{assetUrn}/all          |Get Annotations of an Asset|
 |GET    |/annotations/{tagDomain}             |Get Annotation of a TagDomain|
 
-## Sample Calls
+## Example
+
+Let userId=86d7edce-5092-44c0-bed8-da4beaa3fbc6 and experimentId=57eab2c2ad0302ad0b5c92c6
+
+Creation of a Tag Domain
+ 
+ 
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "description": "a tag domain for faulty noise level",
+  "services":  null,
+  "tags": [
+    {
+      "id": 123,
+      "name": "faulty",
+      "urn": "urn:tag:faulty"
+    },
+    {
+          "id": 132,
+          "name": "normal",
+          "urn": "urn:tag:normal"
+    }
+  ],
+  "urn": "urn:tagDomain:86d7edce-5092-44c0-bed8-da4beaa3fbc6:malfunctioning"
+}' 'https://annotations.organicity.eu/admin/tagDomains'
+```
+
+Get of Tag Domain
+```
+curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/tagDomains/urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
+```
+
+Get Tags of TagDomain
+```
+curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/tagDomains/urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning/tags'
+```
+
+Create Application/Experiment
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '
+{
+  "description": "Experiment 86d7edce-5092-44c0-bed8-da4beaa3fbc6",
+  "urn": "urn:application:86d7edce-5092-44c0-bed8-da4beaa3fbc6"
+}' 'https://annotations.organicity.eu/admin/applications'
+```
+
+Associate Experiment with an Application Domain
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' 'https://annotations.organicity.eu/admin/applications/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6/tagDomains?tagDomainUrn=urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
+```
+
+
+Post an Annotation
+
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+ 
+  "application": "urn:application:86d7edce-5092-44c0-bed8-da4beaa3fbc6",
+  "assetUrn": "urn:oc:entity:london:weatherstation1",
+ 
+    "numericValue": 0,
+    "tagUrn": "urn:tag:faulty",
+    "textValue": "string",
+    "user": "86d7edce-5092-44c0-bed8-da4beaa3fbc6"
+}' 'https://annotations.organicity.eu/annotations/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6'
+```
+
+Get All Annotations
+```
+curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/annotations/urn%3Aoc%3Aentity%3Alondon%3Aweatherstation1/all'
+```

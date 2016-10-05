@@ -13,28 +13,82 @@
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
   <link rel="stylesheet" href="stylesheets/stylesheet.css">
 </head>
-
 <body>
-
 <header>
   <a href="http://organicity.eu/" title="OrganiCity - link to homepage">
     <img src="images/organicity_logo.png" alt="Organicity">
   </a>
 </header>
-
 <div class="title">
   <h1>OrganiCity GitHub</h1>
 </div>
-
 <div class="content">
-  <p>Welcome to the <a href="http://organicity.eu">OrganiCity</a> GitHub account. This web page will give you a comprehensive view of all the repositories made available.</p>
-
-<h1>UNDER CONSTRUCTION</h1>
-
-  
-
+  <p>Welcome to the <a href="http://organicity.eu">OrganiCity</a> GitHub account. This web page will give you a comprehensive view of all the tools and APIs made available within the facility.</p>
+<h1>Experimentation as a Service Facility</h1>
+<p align="justify">OrganiCity project has built an Experimentation-as-a-Service (EssS) framework that supports the co-creation and validation of a large set of smart city services and applications under real conditions in a powerful innovation ecosystem. It provides functionality to both advanced users/developers, as well as more "casual" end-users like citizens or even activists, decision makers or politicians (Organicitizens). The idea behind this objective is that any Organicitizen, might develop and deploy its own services (e.g., a website, a web service, a desktop application or a smartphone application) that interact with the platform through the different APIs exposed by Organicity facility.</p>
+<h2>High level architecture of the facility</h2>
+<p>As it can be seen in the following figure, three different tiers can be distinguished within the OC facility architecture: 
+</p><p align="center"><img src="./images/facility.png"  width="80%"><br><strong>Figure 1. </strong>OrganiCity facility high level architecture</p><br>
+<ul>
+<li><strong><em>OC Experimentation tier.</em></strong>The OrganiCity Experimentation tier consists of various components (deployed services and applications, template applications or libraries) that facilitate the building of applications and services for experimentation with them. At this level, any Organicitizen with the experimenter role might develop and deploy its own services (e.g., a website, a web service, a desktop application or a smartphone application) that interact with the platform through the different APIs.</li>
+<li><strong><em>OC Platform tier.</em></strong> It is represented by the OC platform and its components that permits platform managers to adminstrate and control it. It exposed different services that can be used by the experimenters to interact with the platform exploring data assets, annotating them or even creating new ones within the scope of their experiment. </li>
+<li><strong><em>OC Site tier.</em></strong> It consists of infrastructures belonging to different <strong>OC City sites</strong>, the infrastructures and resources of experimenters <strong>(OC experimenters site)</strong> and the infrastructure supporting the generation of crowdsourcing data into the platform <strong>(OC Provider Site).</strong><br>It is important to note that experimenters aiming to feed data into the platform should rely on the OC experimenters site. It exposes several methods trough the Federation API that can create, delete or update assets within the facility under the scope of the experiment <a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/HowToPushAnAsset.md">(More info)</a>.
+</li>
+</ul>
+<h2>Users Accounts and registration</h2>
+<p>To ensure that all interactions with the facility are authenticated with valid user credentials and access rights, Authentication, Authorization and Accounting (AAA) mechanisms have been implemented. Users will be enforced to use their own credentials to interact with the different APIs and tools. To start experimenting on top of the OC facility, the experimenters are encouraged to register themselves in the platform. Click <a href="https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=account&redirect_uri=https%3A%2F%2Faccounts.organicity.eu%2Frealms%2Forganicity%2Faccount%2Flogin-redirect&state=0%2Ffbef2e8c-5990-4caf-b4ee-26fe03f96ab4&response_type=code">here </a>to register yourself.
+<br>Once experimenters get registered within the platform, they will be assigned with the OC user role. The OC facility managers will assign the experimenters the OC experimenter role upon the acceptation of the corresponding request. To this end, you should send an email to <a href="mailto:helpdesk@organicity.eu">helpdesk@organicity.eu</a>, indicating the mail that you have been registered with and the experiment that you belong to.</p>
+<h2>Tools and enablers for experimentation in Organicity</h2>
+<p>Once the experimenters are registered in the facility, they will have access to a set of tools that will facilitate the experimentation and co-creation activities that they have planned within their experiment. Attending to their functionalities, they can be classified in three different types:</p>
+<ol>
+<li><strong>Tools to Manage the experiment life-cycle. </strong>To create, configure and run experiments within the OrganiCity facility, experimenters must use the Experimenter Portal, and other complementary components which will allow them to manage different experiments concurrently.
+<ul>
+<li><strong>Experimenter Portal</strong>. It is the user interface to be used by the experimenters in order to define the scope of the experiments and manage them during their entire life cycle. From this portal, the experimenters will get access to the set of co-creation tools offered that they can use to build their experiments, the documentation and support channels. (<a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/ExperimenterPortal.md">See further details about how to manage the experiment life cycle</a>)</li>
+<li><strong>Smartphone experimentation framework</strong>. It is a complementary framework that facilitates experimenter to gather and process data from the sensors and communication interfaces of the smartphones of volunteers and use them to run experiments. <a href="https://organicityeu.github.io/set.html">(More)</a></li>
+<li><strong>Community Management</strong>. Basic functionality for interacting with the different communities of <em>Organicitizens</em> participating in each experiment, which has been integrated within the Experimenter Portal.</li>
+</ul></li>
+</ol>
+<ol start="2">
+<li><strong>Tools for discovering, exploring and annotating data assets. </strong></li>
+<ul>
+<li><strong>Urban Data Observatory UI</strong>. The UDO provides a UI that allows experimeters  to develop a deeper understanding of the federated city data sources that can be used in your experiments. It is based on an Asset Directory that maintains entries for the federated urban assets registered at the facility from the city sites and also from the experiments. <a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/UrbanDataObservatory.md">More info</a> </li>
+<li><strong>Data Annotation services</strong>. These services simplify the process of creating meaningful knowledge from urban data streams. The first phase of this tool will allow experimenters and citizens to use pre-defined tag sets for annotating existing data assets. (<a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/AssetAnnotationService.md">More details </a>)</li>
+</ul>
+</ol>
+<ol start="3">
+<li><strong>Co-creation tools.</strong> A set of innovative tools and enablers for the co-creation of urban infrastructure, knowledge and services has been developed and integrated within the EaaS facility infrastructure, extending it and facilitating experimental research for new services and innovative applications.</li>
+<ul>
+<li><strong>SensiNact</strong> aims at helping coders working with data streams from deployed data assets without the need to learn about the Organicity APIs. By using <strong>it, experimenters can interact with information of different data assets available in</strong> the different clusters, as well as within the scope of their experiments, and understand the data streams that they provide. The SensiNact IDE allows the creation of applications using a scripting tool (with Code Assist functionality). <a href="https://organicityeu.github.io/tools/sensinact/">See more...</a></li>
+<li><strong>TSmarT</strong>. It is a modular wireless communications platform designed to facilitate the development and implementation of M2M, monitoring and remote control applications in different markets. TSmarT devices are integrated with OrganiCity facility and therefore able to feed data to the OC platform, connecting them to the OC experimenters site.<a href="https://organicityeu.github.io/TSmarT/"> See more...</a></li>
+  <li><strong>TinkerSpace</strong>.Toolkit for creating mobile services - Apps - without the need for extensive software training or experience. Tinkerspace builds on the idea of Component-based software engineering and Visual programming, with LEGO&trade; as an inspiration &ndash; it should be as easy to build a mobile app as to build a LEGO&trade; model.<a href="http://www.tinkerspace.eu"> See more...</a></li>
+<li><strong>Web socket processing library</strong>.This library enables experimenters who have skills in the Processing programming language to easily connect to data streams from IoT devices in the OrganiCity facility. They may then actuate events in real-time as part of their Processing sketches.<a href="https://github.com/OrganicityEu/Processing-Websocket-Library"> See more...</a></li>
+  <li><strong>DUL Radio and Event Bus</strong>.The DUL-Radio allows OrganiCity experimenters to make wirelessly connected sensors, starting with very little technical knowledge. The board features a built-in accelerometer, but also has analog and digital inputs which can be used to connect other sensors.<br>The DUL-radio transmits data back to the provided “EventBus” software which enables users with a limited knowledge of computer programming to easily create applications and data collection services.<a href="https://organicityeu.github.io/EventBus/"> See more... </a></li>
+</ul>
+</ol>
+<h2>Organicity APIs</h2>
+<ul>
+<li><strong>Asset Discovery</strong>It facilitates exploration and inspection of available assets. <a href="http://organicityeu.github.io/api/AssetDiscovery.html">More info...</a></li>
+  <li><strong>Asset Federation</strong>.It provides access to asset creation and update services of Organicity. <a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/HowToPushAnAsset.md">More info...</a></li>
+<li><strong>Data Source</strong>. It provides access to the data stored in Organicity. <a href="http://organicityeu.github.io/api/DataSource.html">More info...</a></li>
+  <li><strong>Asset Annotation</strong>. It provides access to asset annotation servives of Organicity. <a href="http://organicityeu.github.io/api/Annotation.html">More info...</a></li>
+  <li><strong>Permissions</strong>. It provides inspection, editing and updating of access permissions. <a href="http://organicityeu.github.io/api/Permissions.html">More info...</a></li>
+</ul>
+<h1>Assets</h1>
+<p>
+Urban resources are modeled inside Organicity as Assets. These assets it's possible to model IoT devices, observations like temperature, information like social events etc. The description of the assets is following the NGSI9/10 information modelling specification 
+(<a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/AssetDataModel.md"> More details</a>)
+<br>
+Currently in the Organicity platform, there are federated assets from the city sites: Aarhus (Denmark), London (UK) and Santander (Spain) 
+(<a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/FederatedDataAssets.md"> More details</a>)
+</p>
+<h1>Support</h1>
+<p>For resolving technical questions, reporting specific issues/bugs and discussion possible extensions in the services and tools of Organicity, Slack and GitHub issue tracking is recommended for use.</p>
+  <ul><li><strong>Generic questions</strong>. Use the tech channel on slack to ask for generic questions. We will try to guide you and solve your doubts at <a href="https://organicityexperiments.slack.com">https://organicityexperiments.slack.com</a>
+    </li><li><strong>Generic issues</strong>. If you find a generic issue, you can report it and keep track at <a href="https://github.com/OrganicityEu/organicityeu.github.io/issues"> https://github.com/OrganicityEu/organicityeu.github.io/issues</a>
+    </li><li><strong>Specific issues related to a particular tool</strong>.  Browse the various repositories at <a href=" https://github.com/OrganicityEu/">https://github.com/OrganicityEu/</a>  and then report the issue in the proper one.
+    </li></ul>
+  </div>
 <footer>&copy; Organicity 2016</footer>
-
 </body>
 
 </html>

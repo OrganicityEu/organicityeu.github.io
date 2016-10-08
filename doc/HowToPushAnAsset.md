@@ -58,7 +58,7 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 
 ### HTTP body
 
-The HTTP body is an asset in JSON format as described here. Important for the creation is the correct Asset ID. An Asset ID has the form:
+The HTTP body is an asset in JSON format [as described here](AssetDataModel.md). Important for the creation is the correct Asset ID. An Asset ID has the form:
 
 ```
 urn:oc:entity:experimenters:<ExperimenterId>:<ExperimentId>:<AssetId>
@@ -75,14 +75,13 @@ A simple valid asset could be:
 ```
 {
 	"id": "urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1",
-	"type": "urn:oc:entitytype:demo",
+	"type": "urn:oc:entityType:demo",
   "TimeInstant": {
     "type": "urn:oc:attributeType:ISO8601",
     "value": "2016-10-04T13:45:00.000Z"
   }
 }
 ```
-
 
 ### Wiring everything together
 
@@ -99,7 +98,7 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 
 {
 	"id": "urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1",
-	"type": "urn:oc:entitytype:demo",
+	"type": "urn:oc:entityType:demo",
   "TimeInstant": {
     "type": "urn:oc:attributeType:ISO8601",
     "value": "2016-10-04T13:45:00.000Z"
@@ -116,51 +115,18 @@ Content-Length: 0
 Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
 ...
-Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entitytype:demo
+Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
 ...
 ```
 
-### Validate, that the asset was created successfully
+### Validate, that the asset was created successfully with the Urban Data Obervatory
 
-To verify, that the asset was created in Organicity Experimenter Site, you must do an HTTP **GET** with the path from the `location` header (you're Asset ID)
-You must add the `Authorization`, `X-Organicity-Application` and `X-Organicity-Experiment` headers as well:
-
-```
-GET https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
-
-Authorization: Bearer <AccessToken>
-Accept: application/json
-X-Organicity-Application: 57e1285a10590cb31ca82aa7
-X-Organicity-Experiment: 57e127c010590cb31ca82aa4
-```
-
-The response is a `200 OK`, which includes the created asset.
-
-### Test with the Urban Data Obervatory
-
-To verify, that the asset was created in Organicity Experimenter Site, you must use the [Asset Discovery Service](https://organicityeu.github.io/api/AssetDiscovery.html):
+To verify, that the asset was created in Organicity Central Site, you must use the [Asset Discovery Service](https://organicityeu.github.io/api/AssetDiscovery.html).
+You can simply do an HTTP GET on the `location` header returnd by the creation:
 
 ```
 GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
 ```
-
-### Delete an asset
-
-The delteion of an asset works similar to the validation:
-
-To delete the asset, you must do an HTTP **DELETE** with the path from the `location` header.
-You must add the `Authorization`, `X-Organicity-Application` and `X-Organicity-Experiment` headers as well:
-
-```
-DELETE https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entitytype:demo
-
-Authorization: Bearer <AccessToken>
-Accept: application/json
-X-Organicity-Application: 57e1285a10590cb31ca82aa7
-X-Organicity-Experiment: 57e127c010590cb31ca82aa4
-```
-
-The response is a `204 No Content`, which tells you that assed was deleted.
 
 ## Push as an Participant
 
@@ -168,7 +134,13 @@ To push an asset as an participant, the participant must be part of you experime
 with the [Experimenter Portal](http://experimenters.organicity.eu/). If a participant logs in to your application,
 the `participant` role will be assigned. The pushing itself works as abobe.
 
-**HINT**: In the Asset ID, you keep the `<ExperimenterId>`!
+**HINTS**:
+* In the Asset ID, you keep the `<ExperimenterId>`!
+* A participant can just create or read assets. Update and delete is not supported for participants.
+
+## Delete and update assets
+
+See How to [Delete or Update an asset](HowToUpdateDeteleAnAsset.md).
 
 ## Demo
 

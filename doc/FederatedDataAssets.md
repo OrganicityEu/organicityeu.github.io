@@ -27,7 +27,7 @@ Example:
 				"value": "kilotonne"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2013-12-31T23:59:59"
 			}
 		}
@@ -41,7 +41,7 @@ Example:
 				"value": "percent"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2014-12-31T23:59:59"
 			}
 		}
@@ -72,7 +72,7 @@ Example:
 				"value": "percent"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2005-12-31T23:59:59"
 			}
 		}
@@ -86,7 +86,7 @@ Example:
 				"value": "monetayValuePounds"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2014-12-31T23:59:59"
 			}
 		}
@@ -100,7 +100,7 @@ Example:
 				"value": "count"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2011-12-31T23:59:59"
 			}
 		}
@@ -114,7 +114,7 @@ Example:
 				"value": "monetayValuePounds"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2013-12-31T23:59:59"
 			}
 		}
@@ -133,7 +133,7 @@ Example:
 				"value": "percent"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2014-12-31T23:59:59"
 			}
 		}
@@ -161,7 +161,7 @@ Example:
 				"value": "peoplePerHectare"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2015-12-31T23:59:59"
 			}
 		}
@@ -175,7 +175,7 @@ Example:
 				"value": "percent"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2014-12-31T23:59:59"
 			}
 		}
@@ -220,7 +220,7 @@ Example:
 				"value": "vehiclePerDay"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2015-12-31T23:59:59"
 			}
 		}
@@ -234,7 +234,7 @@ Example:
 				"value": "vehiclePerDay"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2015-12-31T23:59:59"
 			}
 		}
@@ -248,7 +248,7 @@ Example:
 				"value": "vehiclePerDay"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2015-12-31T23:59:59"
 			}
 		}
@@ -262,7 +262,7 @@ Example:
 				"value": "vehiclePerDay"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2015-12-31T23:59:59"
 			}
 		}
@@ -276,7 +276,7 @@ Example:
 				"value": "vehiclePerDay"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2015-12-31T23:59:59"
 			}
 		}
@@ -290,7 +290,7 @@ Example:
 				"value": "vehiclePerDay"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2015-12-31T23:59:59"
 			}
 		}
@@ -339,7 +339,7 @@ Example:
 				"value": "percent"
 			},
 			"TimeInstant": {
-				"type": "ISO8601",
+				"type": "urn:oc:attributeType:ISO8601",
 				"value": "2016-09-29T16:17:38+01:00"
 			}
 		}

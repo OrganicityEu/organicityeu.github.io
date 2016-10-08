@@ -189,7 +189,7 @@ carbonEmission: {
             value: "kilotonne"
         },
     TimeInstant: {
-        type: "ISO8601",
+        type: "urn:oc:attributeType:ISO8601",
         value: "2013-12-31T23:59:59"
     }
     }
@@ -246,7 +246,7 @@ This attribute encoded the time that an update to the assed has been performed
 
 ```
 TimeInstant: {
-    type: "ISO8601",
+    type: "urn:oc:attributeType:ISO8601",
     value: "2016-08-24T11:56:42+01:00"
 }
 ```

@@ -228,31 +228,129 @@ Example:
 ```
 
 
-## Annotation Service API
+## Annotation Service API Overview
 
-Operations:
-- TagDomain Management: Service, TagDomain, Tag
-- Application Management: Application, TagDomain
-- Annotations: Asset, Tag
+- Annotation Service Swagger UI: http://annotations.organicity.eu/swagger-ui.html
+- Annotation Service Swagger Documentation: https://organicityeu.github.io/api/Annotation.html
+
+Annotation API is organized in three major parts 
+ 
+- **Tag and Tag Domain browsing**: for reading Application,Service, TagDomain, Tag entities
+- **Annotation Parameters Management**: creating, deleting, updating Application,Service, TagDomain, Tag entities
+- **Annotation Management**: Getting/setting annotations on Organicity Assets
+
+### Application, Tag Domain and Tag browsing
+|Method| Path | Operation|
+|---|---|---|
+|GET| /applications                                 |Get All Applications|
+|GET| /applications/{applicationUrn}                |Get an Application|
+|GET| /applications/{applicationUrn}/tagDomains     |Get Tag Domains of an Application|
+|GET| /tagDomains                                   |Get Tag Domains|
+|GET| /tagDomains/{tagDomainUrn}                    |Get a Tag Domain|
+|GET| /tagDomains/{tagDomainUrn}/tags               |Get Tags of a Tag Domain|
+|GET| /tags/{tagUrn}                                |Get a Tag|
+
+### Annotation Parameters Management
+|Method| Path | Operation|
+|---|---|---| 
+|POST   |/admin/applications                                |Create an Application/Experiment |
+|DELETE |/admin/applications/{applicationUrn}               |Delete an Application/Experiment |
+|DELETE |/admin/applications/{applicationUrn}/tagDomains    |Disassociate a TagDomain of an Application |
+|GET    |/admin/applications/{applicationUrn}/tagDomains    |Get TagDomains of an Application|
+|POST   |/admin/applications/{applicationUrn}/tagDomains    |Associate a TagDomain with an Application|
+| | | | 
+|POST   |/admin/services                                    |Create a Service|
+|DELETE |/admin/services/{serviceUrn}                       |Delete a Service| 
+|GET    |/admin/services/{serviceUrn}/tagDomains            |Get associated Tag Domains with a Service |
+| | | | 
+|POST   |/admin/tagDomains                                  |Get TagDomains|
+|DELETE |/admin/tagDomains/{tagDomainUrn}                   |Delete a TagDomains|
+|POST   |/admin/tagDomains/{tagDomainUrn}                   |Update a TagDomains|
+|DELETE |/admin/tagDomains/{tagDomainUrn}/services          |Disassociate a TagDomain with a Service |
+|GET    |/admin/tagDomains/{tagDomainUrn}/services          |Get associated services with a Tag Domain  |
+|POST   |/admin/tagDomains/{tagDomainUrn}/services          |Associate a TagDomain with a Service|
+|DELETE |/admin/tagDomains/{tagDomainUrn}/tags              |Delete a Tag from a Tag Domain |
+|POST   |/admin/tagDomains/{tagDomainUrn}/tags              |Add a Tag in a Tag Domain|
 
 
-User Roles:
-- OC Admin (OC-A)
-- OC Experimenter (OC-E)
-- OC Participant (OC-P)
-- OC Anonymous (OC-AN)
+### Annotation Management
+|Method| Path | Operation|
+|---|---|---| 
+|GET    |/admin/annotations/delete/{assetUrn} |Delete Annotation of an Asset |
+|GET    |/annotations/                        |Get Annotation for Application, User and Tag | 
+|DELETE |/annotations/{assetUrn}              |deleteAnnotation|
+|POST   |/annotations/{assetUrn}              |Create Annotation |
+|GET    |/annotations/{assetUrn}/all          |Get Annotations of an Asset|
+|GET    |/annotations/{tagDomain}             |Get Annotation of a TagDomain|
 
-Restricions at Operations:
-1. TagDomain Management
- + OC-A can CRUD on Service, TagDomain, Tag
- + OC-E, OC-P, OC-AN can R on Service, TagDomain, Tag
-2. Application Management
- + OC-E can CRUD on Application, TagDomain
-3. Annotation
- + OC-A can CRUR all Annotations
- + OC-E can CRUR all annotations of his applications
- + OC-P can CRUD only his annotations
- + OC-AN can R only COUNT aggregations of annotations
+## Example
+
+Let userId=86d7edce-5092-44c0-bed8-da4beaa3fbc6 and experimentId=57eab2c2ad0302ad0b5c92c6
+
+Creation of a Tag Domain
+ 
+ 
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "description": "a tag domain for faulty noise level",
+  "services":  null,
+  "tags": [
+    {
+      "id": 123,
+      "name": "faulty",
+      "urn": "urn:tag:faulty"
+    },
+    {
+          "id": 132,
+          "name": "normal",
+          "urn": "urn:tag:normal"
+    }
+  ],
+  "urn": "urn:tagDomain:86d7edce-5092-44c0-bed8-da4beaa3fbc6:malfunctioning"
+}' 'https://annotations.organicity.eu/admin/tagDomains'
+```
+
+Get of Tag Domain
+```
+curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/tagDomains/urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
+```
+
+Get Tags of TagDomain
+```
+curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/tagDomains/urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning/tags'
+```
+
+Create Application/Experiment
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '
+{
+  "description": "Experiment 86d7edce-5092-44c0-bed8-da4beaa3fbc6",
+  "urn": "urn:application:86d7edce-5092-44c0-bed8-da4beaa3fbc6"
+}' 'https://annotations.organicity.eu/admin/applications'
+```
+
+Associate Experiment with an Application Domain
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' 'https://annotations.organicity.eu/admin/applications/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6/tagDomains?tagDomainUrn=urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
+```
 
 
-## Sample Calls
+Post an Annotation
+
+```
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+ 
+  "application": "urn:application:86d7edce-5092-44c0-bed8-da4beaa3fbc6",
+  "assetUrn": "urn:oc:entity:london:weatherstation1",
+ 
+    "numericValue": 0,
+    "tagUrn": "urn:tag:faulty",
+    "textValue": "string",
+    "user": "86d7edce-5092-44c0-bed8-da4beaa3fbc6"
+}' 'https://annotations.organicity.eu/annotations/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6'
+```
+
+Get All Annotations
+```
+curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/annotations/urn%3Aoc%3Aentity%3Alondon%3Aweatherstation1/all'
+```

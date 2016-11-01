@@ -84,6 +84,8 @@ If it was successful, you wll get the Subscription of your Orion:
 Successful: /v2/subscriptions/57ea49394735cf79905858c0
 ```
 
+**Hint**: Run this only once. Otherwise, you have multiple subscriptions!
+
 ## Verify subscription at your local Orion
 
 Now you can verify your subscription:

@@ -102,12 +102,12 @@
         </td>
                     </tr>
                     <tr>
-                        <td><a href="#operation--assets-v2-get">GET /assets/v2</a></td>
+                        <td><a href="#operation--assets-ngsiv2-get">GET /assets/ngsiv2</a></td>
                         <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
         </td>
                     </tr>
                     <tr>
-                        <td><a href="#operation--assets--urn--v2-get">GET /assets/{urn}/v2</a></td>
+                        <td><a href="#operation--assets--urn--ngsiv2-get">GET /assets/{urn}/ngsiv2</a></td>
                         <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
         </td>
                     </tr>
@@ -167,7 +167,7 @@
         </td>
                     </tr>
                     <tr>
-                        <td><a href="#operation--assets--assetUrn--data-v2-get">GET /assets/{assetUrn}/data/v2</a></td>
+                        <td><a href="#operation--assets--assetUrn--data-ngsiv2-get">GET /assets/{assetUrn}/data/ngsiv2</a></td>
                         <td><p>The Asset data by Unique Resource Name.</p>
         </td>
                     </tr>
@@ -197,17 +197,17 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#operation--assets-v2-get">GET /assets/v2</a></td>
+                        <td><a href="#operation--assets-ngsiv2-get">GET /assets/ngsiv2</a></td>
                         <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
         </td>
                     </tr>
                     <tr>
-                        <td><a href="#operation--assets--urn--v2-get">GET /assets/{urn}/v2</a></td>
+                        <td><a href="#operation--assets--urn--ngsiv2-get">GET /assets/{urn}/ngsiv2</a></td>
                         <td><p>Retrieve an assets using multiple criteria in NGSI V2</p>
         </td>
                     </tr>
                     <tr>
-                        <td><a href="#operation--assets--assetUrn--data-v2-get">GET /assets/{assetUrn}/data/v2</a></td>
+                        <td><a href="#operation--assets--assetUrn--data-ngsiv2-get">GET /assets/{assetUrn}/data/ngsiv2</a></td>
                         <td><p>The Asset data by Unique Resource Name.</p>
         </td>
                     </tr>
@@ -1067,6 +1067,265 @@
                       </section>
                 </div>
             </div>    
+        <span id="path--assets-ngsiv2"></span>
+            <div id="operation--assets-ngsiv2-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Retrieve an assets using multiple criteria in NGSI V2</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/ngsiv2</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>, 
+                            <a href="#tag-NGSI-v2">NGSI v2</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Retrieve an assets using multiple criteria in NGSI V2</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                urn
+                                            <td><p>Filter assets by their Unique Resource Name</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                lastUpdated
+                                            <td><p>Filter assets by last updated date</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                type
+                                            <td><p>Filter assets by type</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                sort
+                                            <td><p>Sort assets. Supported values are to be defined.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                filter
+                                            <td><p>Filter assets. Supported values are to be defined.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                order
+                                            <td><p>Order assets DESC or ASC.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                offset
+                                            <td><p>Return assets with the given offset of N results.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                page
+                                            <td><p>Return assets for the given page.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                per
+                                            <td><p>Return N assets per page.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                sample
+                                            <td><p>Return a random sample of N assets.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                query
+                                            <td><p>Return a list of assets based on metadatadatatata search</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                experimentId
+                                            <td><p>Return a list of assets used on an experiment</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/AssetNSGI/">AssetNSGI/</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-oAuth">oAuth</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
         <span id="path--assets-providers"></span>
             <div id="operation--assets-providers-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -1680,265 +1939,6 @@
                       </section>
                 </div>
             </div>    
-        <span id="path--assets-v2"></span>
-            <div id="operation--assets-v2-get" class="swagger--panel-operation-get panel">
-                <div class="panel-heading">
-                    <div class="operation-summary">Retrieve an assets using multiple criteria in NGSI V2</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/v2</strong></h3>
-                        Tags:
-                            <a href="#tag-Assets">Assets</a>, 
-                            <a href="#tag-NGSI-v2">NGSI v2</a>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                        <p>Retrieve an assets using multiple criteria in NGSI V2</p>
-            
-                    </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>
-                                                urn
-                                            <td><p>Filter assets by their Unique Resource Name</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                lastUpdated
-                                            <td><p>Filter assets by last updated date</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>    <span class="json-property-format">(date-time)</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                type
-                                            <td><p>Filter assets by type</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                sort
-                                            <td><p>Sort assets. Supported values are to be defined.</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                filter
-                                            <td><p>Filter assets. Supported values are to be defined.</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                order
-                                            <td><p>Order assets DESC or ASC.</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                offset
-                                            <td><p>Return assets with the given offset of N results.</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                page
-                                            <td><p>Return assets for the given page.</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                per
-                                            <td><p>Return N assets per page.</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                sample
-                                            <td><p>Return a random sample of N assets.</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">integer</span>    <span class="json-property-format">(int32)</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                query
-                                            <td><p>Return a list of assets based on metadatadatatata search</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                experimentId
-                                            <td><p>Return a list of assets used on an experiment</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                          <p><span class="label label-default">application/json</span> 
-                    </p>
-                    
-                        <dl>
-                            <dt class="sw-response-200">
-                              200 OK
-                    
-                            </dt>
-                            <dd class="sw-response-200">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div id="definition-Body-Schema" class="panel panel-definition">
-                                                  <div class="panel-heading">
-                                                    <h3 class="panel-title">
-                                                        Body Schema:
-                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                              </span>
-                                                    </h3>
-                                                  </div>
-                                                <div class="panel-body">
-                                                    
-                                                                    <section class="json-schema-array-items">
-                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/AssetV2/">AssetV2/</a>
-                                                                        </span>
-                                                                        <span class="json-property-range" title="Value limits"></span>
-                                                                        
-                                                                        <div class="json-inner-schema">
-                                                                            
-                                                                            
-                                                                        </div>
-                                                                    </section>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                        </dl>
-                      </section>
-                        <section class="sw-request-security">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-request-security-schema"></th>
-                                    <th class="sw-request-security-scopes"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td><a href="#security-definition-oAuth">oAuth</a></td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                </div>
-            </div>    
         <span id="path--assets--assetUrn-"></span>
             <div id="operation--assets--assetUrn--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -2099,11 +2099,11 @@
                       </section>
                 </div>
             </div>    
-        <span id="path--assets--assetUrn--data-v2"></span>
-            <div id="operation--assets--assetUrn--data-v2-get" class="swagger--panel-operation-get panel">
+        <span id="path--assets--assetUrn--data-ngsiv2"></span>
+            <div id="operation--assets--assetUrn--data-ngsiv2-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary">The Asset data by Unique Resource Name.</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{assetUrn}/data/v2</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{assetUrn}/data/ngsiv2</strong></h3>
                         Tags:
                             <a href="#tag-Assets">Assets</a>, 
                             <a href="#tag-NGSI-v2">NGSI v2</a>
@@ -2169,7 +2169,7 @@
                                           
                                               <div  class="panel panel-definition">
                                                 <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/AssetData_v2">AssetData_v2</a>
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/AssetData_NSGI">AssetData_NSGI</a>
                                                 </div>
                                               </div>
                                     </div>
@@ -2331,11 +2331,11 @@
                       </section>
                 </div>
             </div>    
-        <span id="path--assets--urn--v2"></span>
-            <div id="operation--assets--urn--v2-get" class="swagger--panel-operation-get panel">
+        <span id="path--assets--urn--ngsiv2"></span>
+            <div id="operation--assets--urn--ngsiv2-get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
                     <div class="operation-summary">Retrieve an assets using multiple criteria in NGSI V2</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{urn}/v2</strong></h3>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/{urn}/ngsiv2</strong></h3>
                         Tags:
                             <a href="#tag-Assets">Assets</a>, 
                             <a href="#tag-NGSI-v2">NGSI v2</a>
@@ -2412,7 +2412,7 @@
                                                 <div class="panel-body">
                                                     
                                                                     <section class="json-schema-array-items">
-                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/AssetV2/">AssetV2/</a>
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/AssetNSGI/">AssetNSGI/</a>
                                                                         </span>
                                                                         <span class="json-property-range" title="Value limits"></span>
                                                                         
@@ -2744,11 +2744,11 @@
                   </div>
                 </div>
             
-                <div id="definition-AssetData_v2" class="panel panel-definition">
+                <div id="definition-AssetData_NSGI" class="panel panel-definition">
                     <div class="panel-heading">
                       <h3 class="panel-title">
-                          <a name="/definitions/AssetData_v2"></a>
-                          AssetData_v2:
+                          <a name="/definitions/AssetData_NSGI"></a>
+                          AssetData_NSGI:
                           <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
                 
@@ -2919,11 +2919,11 @@
                   </div>
                 </div>
             
-                <div id="definition-AssetV2" class="panel panel-definition">
+                <div id="definition-AssetNSGI" class="panel panel-definition">
                     <div class="panel-heading">
                       <h3 class="panel-title">
-                          <a name="/definitions/AssetV2"></a>
-                          AssetV2:
+                          <a name="/definitions/AssetNSGI"></a>
+                          AssetNSGI:
                           <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
                 

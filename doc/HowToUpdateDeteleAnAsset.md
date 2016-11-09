@@ -15,8 +15,8 @@ The update of an asset works similar to the creation (with some minor changes):
 
 ### HTTP headers
 
-To update a new asset, please do an HTTP PUT on https://exp.orion.organicity.eu/v2/entities/<AassetID> with the
-same HTTP headers as in the creation step:
+To update a new asset, please do an HTTP POST on `https://exp.orion.organicity.eu/v2/entities/<AassetID>` with the
+*same HTTP headers* as in the creation step:
 
 ```
 Authorization: Bearer <AccessToken>
@@ -30,7 +30,7 @@ Accept: application/json
 
 ### Asset ID
 
-Important for the update is, that the same Asset ID is used as during the creation.
+Important for the update is, that the *same Asset ID* is used as during the creation.
 
 ### HTTP body
 
@@ -48,13 +48,12 @@ A simple valid asset for an update could be:
 }
 ```
 
-
 ### Wiring everything together
 
 Next, we wire everthing together: The HTTP headers and the asset:
 
 ```
-PUT https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+POST https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
 
 Authorization: Bearer <AccessToken>
 Content-Type: application/json

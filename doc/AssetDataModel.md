@@ -4,8 +4,7 @@
 
 # Asset Data Model
 
-For the organization and discTODOovery of data sources, Organicity platform is relying on the NGSI 9/10
-[NGSI9/10](https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/NGSI-9/NGSI-10_information_model) information model. As depicted in the following diagram, the underlying data model of NGSI
+For the organization and discovery of data sources, Organicity platform is relying on the [NGSI9/10](https://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/NGSI-9/NGSI-10_information_model) information model. As depicted in the following diagram, the underlying data model of NGSI
 9/10 consists of Asset Element, Asset Attributes and Attribute Metadata
 
 ![Asset Data Model](./figs/data_model.png "Asset Data Model")
@@ -110,17 +109,17 @@ See [XLS](./figs/Organicity_URNs.xlsx) for a recommendation list of asset types.
 Examples of assets ids and types:
 ```
 "contextElement": {
-"id": "​urn:oc:entity:london:environmental:hydePark:weatherstation123​",
-"type": "​urn:oc:entityType:weatherstation",
-"attributes": [ … ]
+  "id": "​urn:oc:entity:london:environmental:hydePark:weatherstation123​",
+  "type": "​urn:oc:entityType:weatherstation",
+  "attributes": [ … ]
 } "
 ```
 ```
 contextElement": {
-"id": "​urn:oc:entity:experimenters:86d7edce-5092-44c0-bed8-da4beaa3fbc6:57eab2c2ad0302ad0b5c92c6:asset1243​",
-"type": "​urn:oc:entityType:smartphone​",
-"isPattern": "false",
-"attributes": [ … ]
+  "id": "​urn:oc:entity:experimenters:86d7edce-5092-44c0-bed8-da4beaa3fbc6:57eab2c2ad0302ad0b5c92c6:asset1243​",
+  "type": "​urn:oc:entityType:smartphone​",
+  "isPattern": "false",
+  "attributes": [ … ]
 }
 ```
 

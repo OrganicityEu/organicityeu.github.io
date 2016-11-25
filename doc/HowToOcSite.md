@@ -24,7 +24,7 @@ To push assets to the Organicity Central Orion, please clone the repository of t
  and configure it:
 
 ```
-git clone git@github.com:OrganicityEu/Asset-Subscription-Proxy.git
+git clone https://github.com/OrganicityEu-Platform/Asset-Subscription-Proxy.git
 cd Asset-Subscription-Proxy
 cp config.js.example config.js
 ```

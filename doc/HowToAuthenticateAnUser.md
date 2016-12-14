@@ -109,10 +109,10 @@ https://example.com/callback?code=0123456789
 ```
 
 Now, the *second flow* starts. You're web-application takes this `code` and must send an HTTP POST request to the
-*authorization endpoint*, with the following parameters:
+*token endpoint*, with the following parameters:
 
 * `client_id=<CLIENT_ID>`: Here, you must include your `client_id`, which is provided by the Experimenter Portal
-* `grant_type=authrotization_code`: The `grant_type` must be `authrotization_code`. Here you see, where the name comes from.
+* `grant_type=authorization_code`: The `grant_type` must be `authorization_code`. Here you see, where the name comes from.
 * `redirect_uri=<REDIRECT_URI>`: The same URI as before
 * `code=<CODE>`: The code from the callback URL
 * `client_secret=<CLIENT_SECRET>`: Here, you must include your `client_secret`, which is provided by the Experimenter Portal

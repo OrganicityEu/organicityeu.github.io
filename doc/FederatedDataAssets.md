@@ -1080,7 +1080,7 @@ A set of 16 assets has been created, providing information about the number of a
 	},
 	"location": {
 		"type": "geo:point",
-		"value": "43.4694983127,-3.7752789259",
+		"value": "-3.7752789259,43.4694983127",
 		"metadata": {}
 	},
 	"name": {
@@ -1112,7 +1112,7 @@ A set of 16 assets has been created, providing information about the number of a
 	},
 	"location": {
 		"type": "geo:point",
-		"value": "43.4557850000,-3.8407950000",
+		"value": "-3.8407950000,43.4557850000",
 		"metadata": {}
 	},
 	"name": {

@@ -132,6 +132,16 @@
         </td>
                     </tr>
                     <tr>
+                        <td><a href="#operation--assets-experiments--experimentsID--get">GET /assets/experiments/{experimentsID}</a></td>
+                        <td><p>Return assets from an experiment</p>
+        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#operation--assets-experimenters--experimenterID--get">GET /assets/experimenters/{experimenterID}</a></td>
+                        <td><p>Return assets from from an experimenter</p>
+        </td>
+                    </tr>
+                    <tr>
                         <td><a href="#operation--assets-providers-get">GET /assets/providers</a></td>
                         <td><p>Return the providers the assets belong to</p>
         </td>
@@ -471,19 +481,6 @@
                                             <td>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                experimentId
-                                            <td><p>Return a list of assets used on an experiment</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
                                 </tbody>
                             </table>
                         </section>
@@ -558,6 +555,204 @@
                                 </tbody>
                             </table>
                         </section>
+                </div>
+            </div>    
+        <span id="path--assets-experimenters--experimenterID-"></span>
+            <div id="operation--assets-experimenters--experimenterID--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Return assets from from an experimenter</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/experimenters/{experimenterID}</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return assets from from an experimenter</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                experimenterID
+                                            <td><p>Filter assets by experimenter</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Asset">Asset</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                </div>
+            </div>    
+        <span id="path--assets-experiments--experimentsID-"></span>
+            <div id="operation--assets-experiments--experimentsID--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Return assets from an experiment</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/assets/experiments/{experimentsID}</strong></h3>
+                        Tags:
+                            <a href="#tag-Assets">Assets</a>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Return assets from an experiment</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                experimentsID
+                                            <td><p>Filter assets by experiment</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Asset">Asset</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                        </dl>
+                      </section>
                 </div>
             </div>    
         <span id="path--assets-geo-"></span>
@@ -687,10 +882,23 @@
                                         <tr>
                                             <td>
                                                 radius
-                                            <td><p>Spherical radius for geographical queries</p>
+                                            <td><p>Spherical radius for geographical queries in radians or when km is true in kilometers</p>
                                         </td>
                                             <td>query</td>
                                             <td><span class="json-property-type">number</span>    <span class="json-property-format">(float)</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                km
+                                            <td><p>When true sets radius property to work in kilometers</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">boolean</span>
                                         <span class="json-property-range" title="Value limits"></span>
                                         
                                             </td>
@@ -1068,19 +1276,6 @@
                                             <td>
                                                 query
                                             <td><p>Return a list of assets based on metadatadatatata search</p>
-                                        </td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                experimentId
-                                            <td><p>Return a list of assets used on an experiment</p>
                                         </td>
                                             <td>query</td>
                                             <td><span class="json-property-type">string</span>

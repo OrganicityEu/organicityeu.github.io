@@ -8,7 +8,7 @@ This is just an overview of how to CRUD assets.
 
 ## CREATE (HTTP POST)
 
-To create an asset, you must do an HTTP **POST** to the OC-Exp. Site:
+To [create an asset](HowToPushAnAsset.md), you must do an HTTP **POST** to the OC-Exp. Site:
 
 ```
 POST https://exp.orion.organicity.eu/v2/entities
@@ -42,8 +42,6 @@ Location: http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<
 ...
 ```
 
-[For more details, see here](HowToPushAnAsset.md).
-
 ## READ (HTTP GET)
 
 To read an asset, you must use the [Asset Discovery Service](https://organicityeu.github.io/api/AssetDiscovery.html).
@@ -53,14 +51,13 @@ You can simply do an HTTP GET on the `location` header returnd by the creation:
 GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
 ```
 
-[For more details, see here](HowToPushAnAsset.md).
-
 ## UPDATE (HTTP UPDATE)
 
-To update an asset, you must do an HTTP **PUT** to the OC-Exp. Site. JSON attributes `id` and `type` are not allowed!
+To [update an asset](HowToUpdateDeteleAnAsset.md#update-an-asset), you must do an HTTP **POST** to the OC-Exp. Site.
+JSON attributes `id` and `type` are not allowed! Be aware of the `/attrs` in the URL:
 
 ```
-PUT http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
+POST http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>/attrs
 
 Authorization: Bearer <AccessToken>
 Content-Type: application/json
@@ -76,24 +73,19 @@ X-Organicity-Experiment: <ExperimentId>
 }
 ```
 
-The response is a `TODO`, which includes a `location` header:
+The response is a `204 No Content`:
 
 ```
-Status Code: TODO
+Status Code: 204 No Content
 ...
 Content-Length: 0
 Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
-...
-Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
-...
 ```
-
-[For more details, see here](HowToUpdateDeteleAnAsset.md).
 
 ## DELETE (HTTP DELETE)
 
-To delete an asset, you must do an HTTP **DELETE** to the OC-Exp. Site:
+To [delete an asset](HowToUpdateDeteleAnAsset.md#delete-an-asset), you must do an HTTP **DELETE** to the OC-Exp. Site:
 
 ```
 DELETE http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
@@ -105,5 +97,3 @@ X-Organicity-Experiment: <ExperimentId>
 ```
 
 The response is a `204 No Content`, which tells you that assed was deleted.
-
-[For more details, see here](HowToUpdateDeteleAnAsset.md).

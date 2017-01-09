@@ -1033,6 +1033,49 @@ A set of 415 assets, one per bus stop in the city, have been created. Those asse
 	}
 }
 ```
+#### Bus lines
+
+```json
+{
+	"id": "urn:oc:entity:santander:transport:bus:line:N3",
+	"type": "bus:line",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-03T00:00:00.000Z",
+		"metadata": {}
+	},
+	"lineNumber": {
+		"type": "urn:oc:attributeType:busLine:number",
+		"value": "N3",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:busLine:name",
+		"value": "PEÑACASTILLO-PLAZA DE ITALIA ",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "TUS Santander",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	}
+}
+```
+
 #### Taxi stops. 
 These assets provide real time information about taxi availability in each particular stop, based on the information provided by the fleet management systems deployed by the two taxi associations.
 ```json

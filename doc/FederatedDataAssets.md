@@ -977,12 +977,290 @@ These assets provide real time information about taxi availability in each parti
 #### Bike stops. 
 A set of 16 assets has been created, providing information about the number of available public-hire bikes and also the number of places to return such bikes.
 ```json
+{
+	"id": "urn:oc:entity:santander:transport:bikestation:12",
+	"type": "urn:oc:entityType:bikeStop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-09T09:26:13.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"feeSpaces": {
+		"type": "urn:oc:attributeType:freeSpaces",
+		"value": 9,
+		"metadata": {}
+	},
+	"freeBikes": {
+		"type": "urn:oc:attributeType:freeBikes",
+		"value": 6,
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.8248012423,43.4579662522",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "012_CALLE ALTA",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "TusBic",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	}
+}
 ```
 
 
 ### Districts and sections 
 #### Districts
 ```json
+{
+	"id": "urn:oc:entity:santander:districts:D03",
+	"type": "urn:oc:entityType:district",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-04T11:16:41.000Z",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[-3.79124, 43.4685],
+					[-3.79199, 43.4686],
+					[-3.79221, 43.4686],
+					[-3.79238, 43.4686],
+					[-3.79255, 43.4686],
+					[-3.79263, 43.4686],
+					[-3.79294, 43.4685],
+					[-3.79343, 43.4685],
+					[-3.79366, 43.4685],
+					[-3.79414, 43.4685],
+					[-3.79476, 43.4684],
+					[-3.79521, 43.4684],
+					[-3.79543, 43.4684],
+					[-3.7956, 43.4684],
+					[-3.7958, 43.4684],
+					[-3.79623, 43.4685],
+					[-3.79653, 43.4685],
+					[-3.79665, 43.4685],
+					[-3.79679, 43.4685],
+					[-3.79701, 43.4685],
+					[-3.79723, 43.4685],
+					[-3.79752, 43.4685],
+					[-3.79795, 43.4684],
+					[-3.79886, 43.4684],
+					[-3.79928, 43.4683],
+					[-3.79947, 43.4683],
+					[-3.79966, 43.4683],
+					[-3.79994, 43.4682],
+					[-3.80002, 43.4681],
+					[-3.80114, 43.4678],
+					[-3.80134, 43.4678],
+					[-3.80174, 43.4677],
+					[-3.80205, 43.4676],
+					[-3.80219, 43.4676],
+					[-3.80233, 43.4675],
+					[-3.80265, 43.4675],
+					[-3.80307, 43.4675],
+					[-3.80348, 43.4675],
+					[-3.80393, 43.4675],
+					[-3.80426, 43.4675],
+					[-3.80437, 43.4675],
+					[-3.80476, 43.4675],
+					[-3.80507, 43.4674],
+					[-3.80528, 43.4674],
+					[-3.80539, 43.4674],
+					[-3.80571, 43.4674],
+					[-3.80598, 43.4674],
+					[-3.80612, 43.4673],
+					[-3.80624, 43.4673],
+					[-3.80653, 43.4673],
+					[-3.80678, 43.4672],
+					[-3.80692, 43.4672],
+					[-3.80706, 43.4672],
+					[-3.80719, 43.4672],
+					[-3.80732, 43.4672],
+					[-3.80794, 43.4673],
+					[-3.80799, 43.4673],
+					[-3.80818, 43.4674],
+					[-3.80833, 43.4674],
+					[-3.80909, 43.4675],
+					[-3.80947, 43.4676],
+					[-3.80973, 43.4676],
+					[-3.80992, 43.4676],
+					[-3.80995, 43.4676],
+					[-3.81028, 43.4676],
+					[-3.81341, 43.4676],
+					[-3.81353, 43.4676],
+					[-3.81377, 43.4676],
+					[-3.81385, 43.4676],
+					[-3.81372, 43.4675],
+					[-3.81347, 43.4674],
+					[-3.812, 43.4666],
+					[-3.81198, 43.4666],
+					[-3.81197, 43.4666],
+					[-3.81197, 43.4665],
+					[-3.81199, 43.4665],
+					[-3.81202, 43.4665],
+					[-3.81206, 43.4665],
+					[-3.8121, 43.4665],
+					[-3.81278, 43.4667],
+					[-3.81284, 43.4667],
+					[-3.81291, 43.4667],
+					[-3.81296, 43.4666],
+					[-3.813, 43.4666],
+					[-3.81303, 43.4666],
+					[-3.81303, 43.4665],
+					[-3.81301, 43.4664],
+					[-3.81297, 43.4664],
+					[-3.81294, 43.4664],
+					[-3.8129, 43.4664],
+					[-3.8128, 43.4663],
+					[-3.81222, 43.4662],
+					[-3.81213, 43.4662],
+					[-3.81204, 43.4662],
+					[-3.81195, 43.4662],
+					[-3.81185, 43.4662],
+					[-3.81169, 43.4662],
+					[-3.81162, 43.4662],
+					[-3.81156, 43.4662],
+					[-3.81153, 43.4661],
+					[-3.81153, 43.4661],
+					[-3.81156, 43.466],
+					[-3.8116, 43.466],
+					[-3.81166, 43.466],
+					[-3.8119, 43.466],
+					[-3.81195, 43.466],
+					[-3.81199, 43.466],
+					[-3.81202, 43.4659],
+					[-3.81203, 43.4659],
+					[-3.81202, 43.4659],
+					[-3.812, 43.4658],
+					[-3.81177, 43.4654],
+					[-3.81161, 43.4652],
+					[-3.81151, 43.465],
+					[-3.81148, 43.465],
+					[-3.81141, 43.4649],
+					[-3.81126, 43.4647],
+					[-3.81112, 43.4646],
+					[-3.81106, 43.4645],
+					[-3.811, 43.4644],
+					[-3.81098, 43.4644],
+					[-3.81101, 43.4643],
+					[-3.81133, 43.4632],
+					[-3.81133, 43.4632],
+					[-3.81063, 43.4632],
+					[-3.81069, 43.4637],
+					[-3.81007, 43.4637],
+					[-3.81005, 43.464],
+					[-3.81002, 43.464],
+					[-3.80997, 43.464],
+					[-3.80877, 43.464],
+					[-3.80875, 43.4637],
+					[-3.80828, 43.4637],
+					[-3.8078, 43.4637],
+					[-3.80769, 43.4637],
+					[-3.80621, 43.4637],
+					[-3.80548, 43.4638],
+					[-3.80546, 43.4638],
+					[-3.80446, 43.4638],
+					[-3.80418, 43.4639],
+					[-3.804, 43.4639],
+					[-3.80381, 43.4639],
+					[-3.80375, 43.4639],
+					[-3.80347, 43.464],
+					[-3.80314, 43.4641],
+					[-3.80287, 43.4641],
+					[-3.80269, 43.4642],
+					[-3.80265, 43.4642],
+					[-3.80246, 43.4642],
+					[-3.80235, 43.4642],
+					[-3.80211, 43.4642],
+					[-3.80185, 43.4643],
+					[-3.80166, 43.4643],
+					[-3.80133, 43.4643],
+					[-3.80115, 43.4643],
+					[-3.80103, 43.4643],
+					[-3.80087, 43.4643],
+					[-3.80073, 43.4643],
+					[-3.8007, 43.4643],
+					[-3.80025, 43.4643],
+					[-3.79985, 43.4643],
+					[-3.79958, 43.4644],
+					[-3.79912, 43.4644],
+					[-3.79861, 43.4644],
+					[-3.79818, 43.4645],
+					[-3.79791, 43.4645],
+					[-3.79768, 43.4646],
+					[-3.79738, 43.4646],
+					[-3.7971, 43.4647],
+					[-3.79683, 43.4647],
+					[-3.79688, 43.4652],
+					[-3.79682, 43.4653],
+					[-3.79671, 43.4654],
+					[-3.79646, 43.4654],
+					[-3.796, 43.4654],
+					[-3.79584, 43.4655],
+					[-3.79571, 43.4655],
+					[-3.79553, 43.4656],
+					[-3.79536, 43.4656],
+					[-3.79494, 43.4657],
+					[-3.79473, 43.4658],
+					[-3.79459, 43.4659],
+					[-3.79435, 43.4659],
+					[-3.79362, 43.466],
+					[-3.79269, 43.4661],
+					[-3.79255, 43.4661],
+					[-3.7917, 43.4662],
+					[-3.79167, 43.4662],
+					[-3.79078, 43.4663],
+					[-3.78731, 43.4665],
+					[-3.7871, 43.4665],
+					[-3.78709, 43.4666],
+					[-3.78715, 43.467],
+					[-3.78722, 43.4672],
+					[-3.78734, 43.4674],
+					[-3.78754, 43.4677],
+					[-3.78776, 43.4679],
+					[-3.78798, 43.468],
+					[-3.7904, 43.4683],
+					[-3.79124, 43.4685]
+				]
+			]
+		},
+		"metadata": {}
+	}
+}
 ```
 #### Sections
 ```json
@@ -1050,6 +1328,40 @@ A set of 16 assets has been created, providing information about the number of a
 ```
 ### Pace of the city events
 ```json
+{
+	"id": "urn:oc:entity:santander:paceofthecity:event:7975",
+	"type": "city:event",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-22T08:59:59.000Z",
+		"metadata": {}
+	},
+	"eventText": {
+		"type": "urn:oc:attributeType:event:description",
+		"value": "Faltan dos bolardos que se han partido.  han quedado trozos por encima del raso de la acera,  con lo cual puede haber cortadas en los pies.",
+		"metadata": {}
+	},
+	"eventTitle": {
+		"type": "urn:oc:attributeType:event:name",
+		"value": null,
+		"metadata": {}
+	},
+	"eventType": {
+		"type": "urn:oc:attributeType:event:type",
+		"value": "VIA_PUBLICA",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:imageURL",
+		"value": "http://farm9.staticflickr.com/8268/29711271953_c1b018c526.jpg",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.7963962,43.4701798",
+		"metadata": {}
+	}
+}
 ```
 ### Tourism:Points of Interest
 
@@ -1124,9 +1436,87 @@ A set of 16 assets has been created, providing information about the number of a
 ```
 ### Shops
 ```json
+{
+	"id": "urn:oc:santander:commerce:shops:2844",
+	"type": "poi:shop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-02T11:49:32.000Z",
+		"metadata": {}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "Moda y complementos marca propia para mujer joven.",
+		"metadata": {}
+	},
+	"description:other": {
+		"type": "urn:oc:attributeType:description",
+		"value": "",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:imageURL",
+		"value": "http://www.comerciosantander.com/imagenes/Comercios/ED407B6E-AB2E-E9B4-BD50-FC012F619733.jpg/resize/480/640/",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.812214499999982,43.4620188",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "SHIMAI",
+		"metadata": {}
+	}
+}
 ```
 ### Cultural agenda events 
 ```json
+{
+	"id": "urn:oc:entity:santander:culture:auna:23269",
+	"type": "agenda:event",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-02T01:50:41.000Z",
+		"metadata": {}
+	},
+	"category": {
+		"type": "urn:oc:attributeType:decription",
+		"value": "Formación/Talleres",
+		"metadata": {}
+	},
+	"date": {
+		"type": "urn:oc:attributeType:event:date",
+		"value": "Lunes 02/01/2017, todo el día. ",
+		"metadata": {}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "Festival de cine independiente dirigidoÂ por el cÃ¡ntabro Luis Bezeta con videocreaciÃ³n, ficciÃ³n,Â animaciÃ³n, performance y conciertos",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:url",
+		"value": "http://www.fundacionsantandercreativa.com/ekh2983gd29837gt_uploads/web_2/eventos_images/final/23269.jpg",
+		"metadata": {}
+	},
+	"link": {
+		"type": "urn:oc:attributeType:url",
+		"value": "http://www.fundacionsantandercreativa.com/mobile/index.php?evento%3Dinscripciones-para-el-curso-de-modelado-en-3d-con-blender",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "Inscripciones para el curso de Modelado en 3D con Blender",
+		"metadata": {}
+	},
+	"subname": {
+		"type": "urn:oc:attributeType:name",
+		"value": "IV Picnick Festival",
+		"metadata": {}
+	}
+}
 ```
 
 ### News in the city

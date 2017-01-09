@@ -620,27 +620,46 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 Four traffic cameras in the city provide real time images about the status of the traffic in different areas of the city.
 ```json
 {
-	"id": "urn:oc:entity:santander:traffic:camera:01",
+	"id": "urn:oc:entity:santander:traffic:camera:02",
 	"type": "urn:oc:entityType:camera",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-10-05T12:57:29.000Z",
+		"value": "2017-01-09T11:17:33.000Z",
 		"metadata": {}
 	},
 	"image": {
 		"type": "urn:oc:attributeType:image",
-		"value": "http://datos.santander.es/files/camara_cuatro_caminos/cuatro_caminos_20161005145728.jpg",
+		"value": "http://datos.santander.es/files/camara_castilla/castilla_20170109121732.jpg",
 		"metadata": {}
 	},
 	"name": {
 		"type": "urn:oc:attributeType:name",
-		"value": "Cuatro Caminos",
+		"value": "Castilla Hermida",
 		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Santander City",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
 	}
 }
 ```
 #### Vehicle count sensors
-Placed at the main entrance of the city, a set of 48 sensors, provides information about the occupancy, the count of vehicles, the median and average speed in the different lanes of these main roads.
+Placed at the main entrance of the city, they provide information about the occupancy and traffic intensity in the different lanes of the main roads.
 ```json
 {
 	"id": "urn:oc:entity:santander:traffic:fixed:3306",
@@ -716,6 +735,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 
 ```
 #### Vehicle speed sensors 
+Placed at the main entrance of the city, they provide information about the occupancy, the count of vehicles, the median and average speed in the different lanes of the main roads.
 ```json
 {
 	"id": "urn:oc:entity:santander:traffic:fixed:3337",
@@ -817,6 +837,69 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	}
 }
 ```
+#### Magnetic Loops 
+It provides real time information about the traffic intensity, the occupancy of the roads and the load, based on the measurements gathered by magnetic loops deployed along the city.
+
+```json
+{
+	"id": "urn:oc:entity:santander:traffic:magneticLoop:3030",
+	"type": "urn:oc:entityType:magneticLoop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-09T12:28:00.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.8005109,43.4709885",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SICE",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"roadLoad": {
+		"type": "urn:oc:attributeType:roadLoad",
+		"value": "10",
+		"metadata": {}
+	},
+	"roadOccupancy": {
+		"type": "urn:oc:attributeType:roadOccupancy",
+		"value": "2",
+		"metadata": {}
+	},
+	"trafficIntensity": {
+		"type": "urn:oc:attributeType:trafficIntensity",
+		"value": "240",
+		"metadata": {}
+	}
+}
+```
 
 ### Parking
 Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
@@ -876,7 +959,8 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 }
 ```
 
-#### Parking reserved for people with dissabilities. 
+#### Parking reserved for people with dissabilities.
+It provides information about the parking spots reserved for people with disabilities. 
 ```json
 {
 	"id": "urn:oc:entity:santander:parking:disabledpeople:24189",
@@ -949,8 +1033,6 @@ A set of 415 assets, one per bus stop in the city, have been created. Those asse
 	}
 }
 ```
-
-
 #### Taxi stops. 
 These assets provide real time information about taxi availability in each particular stop, based on the information provided by the fleet management systems deployed by the two taxi associations.
 ```json
@@ -1327,6 +1409,7 @@ A set of 16 assets has been created, providing information about the number of a
 }
 ```
 ### Pace of the city events
+Events happening in the city that have been generated by citizens using the apps to report them. Mainly, PulsodelaCiudad and Cuida Santander Apps
 ```json
 {
 	"id": "urn:oc:entity:santander:paceofthecity:event:7975",
@@ -1435,6 +1518,7 @@ A set of 16 assets has been created, providing information about the number of a
 }
 ```
 ### Shops
+More than 2000 assets have been created based on the information registered at Comercio Santander initiative. The list of assets is updated every day, so that, it can change during the experimentation period. 
 ```json
 {
 	"id": "urn:oc:santander:commerce:shops:2844",
@@ -1471,7 +1555,8 @@ A set of 16 assets has been created, providing information about the number of a
 	}
 }
 ```
-### Cultural agenda events 
+### Cultural agenda events
+Real time information to Santander Auna Events. 
 ```json
 {
 	"id": "urn:oc:entity:santander:culture:auna:23269",
@@ -1520,6 +1605,7 @@ A set of 16 assets has been created, providing information about the number of a
 ```
 
 ### News in the city
+News generated by the different areas of governance within the municipality. 
 ```json
 {
 	"id": "urn:oc:entity:santander:news:c35672836c31190ad2badb057cee6ad4",

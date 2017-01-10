@@ -1019,21 +1019,21 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 It provides information about the parking spots reserved for people with disabilities. 
 ```json
 {
-	"id": "urn:oc:entity:santander:parking:disabledpeople:24189",
-	"type": "parkingSpot:disabledPeople",
+	"id": "urn:oc:entity:santander:parking:disabledpeople:24192",
+	"type": "parking:zone:PMR",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-09-05T22:35:01.000Z",
+		"value": "2017-01-09T23:35:00.000Z",
 		"metadata": {}
 	},
-	"coordinates:utmx": {
-		"type": "urn:oc:attributeType:coordinates:utmx",
-		"value": "434340.745908154",
+	"location": {
+		"type": "geo:point",
+		"value": "-3.81137,43.45758",
 		"metadata": {}
 	},
-	"coordinates:utmy": {
-		"type": "urn:oc::attributeType:coordinates:utmy",
-		"value": "4811961.04121813",
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Santander OD",
 		"metadata": {}
 	},
 	"parkingspots:angled": {
@@ -1046,10 +1046,34 @@ It provides information about the parking spots reserved for people with disabil
 		"value": "1",
 		"metadata": {}
 	},
-	"street:name": {
-		"type": "urn:oc::attributeType:street:name",
-		"value": "CL/ FEDERICO VIAL",
+	"regulation": {
+		"type": "urn:oc:attributeType:regulation",
+		"value": "OLA",
 		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"street:name": {
+		"type": "urn:oc:attributeType:street:name",
+		"value": "CL/ MARQUES HERMIDA",
+		"metadata": {
+			"detail": {
+				"type": "urn:oc:datatype:string",
+				"value": "esquina C/Federico Vial"
+			}
+		}
 	}
 }
 ```

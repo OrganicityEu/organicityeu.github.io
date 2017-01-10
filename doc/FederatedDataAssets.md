@@ -902,6 +902,7 @@ It provides real time information about the traffic intensity, the occupancy of 
 ```
 
 ### Parking
+#### Outdoor Parking 
 Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
 ```json
 {
@@ -958,7 +959,62 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 	}
 }
 ```
-
+#### Indoor Parkings
+```json
+{
+	"id": "urn:oc:entity:santander:parking:indoor:APAR5",
+	"type": "urn:oc:entityType:indoorParking",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-10T11:12:07.000Z",
+		"metadata": {}
+	},
+	"extraSpotNumber": {
+		"type": "urn:oc:attributeType:extraSpotNumber",
+		"value": 2,
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.8256829977,43.4580629715",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "Parking del Mercado de Méjico",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantanderRA",
+		"metadata": {}
+	},
+	"parkingDisposition": {
+		"type": "urn:oc:attributeType:parkingDisposition",
+		"value": "parallel",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"totalSpotNumber": {
+		"type": "urn:oc:attributeType:totalSpotNumber",
+		"value": 520,
+		"metadata": {}
+	}
+}
+```
 #### Parking reserved for people with dissabilities.
 It provides information about the parking spots reserved for people with disabilities. 
 ```json
@@ -994,6 +1050,72 @@ It provides information about the parking spots reserved for people with disabil
 		"type": "urn:oc::attributeType:street:name",
 		"value": "CL/ FEDERICO VIAL",
 		"metadata": {}
+	}
+}
+```
+#### Load and unload areas
+```json
+{
+	"id": "urn:oc:entity:santander:parking:loadunloadzones:51264",
+	"type": "parking:zone",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-10T00:33:39.000Z",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.78853,43.46822",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Santander OD",
+		"metadata": {}
+	},
+	"parkingspots:angled": {
+		"type": "urn:oc:attributeType:parkingspots:angled",
+		"value": "0",
+		"metadata": {}
+	},
+	"parkingspots:inline": {
+		"type": "urn:oc:attributeType:parkingspots:inline",
+		"value": "2",
+		"metadata": {}
+	},
+	"regulation": {
+		"type": "urn:oc:attributeType:regulation",
+		"value": "Libre",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"serviceHours": {
+		"type": "urn:oc:attributeType:schedule",
+		"value": "7 a 14 Horas.",
+		"metadata": {}
+	},
+	"street:name": {
+		"type": "urn:oc:attributeType:street:name",
+		"value": "CL/ BARRIO CAMINO",
+		"metadata": {
+			"detail": {
+				"type": "urn:oc:datatype:string",
+				"value": "Margen Norte del vial, frente a la confluencia con la calle Gerona."
+			}
+		}
 	}
 }
 ```

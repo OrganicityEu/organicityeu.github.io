@@ -663,10 +663,10 @@ Placed at the main entrance of the city, they provide information about the occu
 ```json
 {
 	"id": "urn:oc:entity:santander:traffic:fixed:3306",
-	"type": "urn:oc:entityType:vehicleCounter",
+	"type": "urn:oc:entityType:iotdevice:vehicleCounter",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-10-05T06:08:08.000Z",
+		"value": "2017-01-12T09:15:07.000Z",
 		"metadata": {}
 	},
 	"datasource": {
@@ -680,8 +680,11 @@ Placed at the main entrance of the city, they provide information about the occu
 		}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.82782,43.45135",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.82782, 43.4513]
+		},
 		"metadata": {}
 	},
 	"origin": {
@@ -691,7 +694,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"reputation": {
 		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
+		"value": -1,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -705,7 +708,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"roadOccupancy": {
 		"type": "urn:oc:attributeType:speed:roadOccupancy",
-		"value": "44",
+		"value": 6.24,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -719,7 +722,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"trafficIntensity": {
 		"type": "urn:oc:attributeType:trafficIntensity",
-		"value": "14",
+		"value": 11,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -732,17 +735,16 @@ Placed at the main entrance of the city, they provide information about the occu
 		}
 	}
 }
-
 ```
 #### Vehicle speed sensors 
 Placed at the main entrance of the city, they provide information about the occupancy, the count of vehicles, the median and average speed in the different lanes of the main roads.
 ```json
 {
-	"id": "urn:oc:entity:santander:traffic:fixed:3337",
-	"type": "urn:oc:entityType:vehicleSpeed",
+	"id": "urn:oc:entity:santander:traffic:fixed:3305",
+	"type": "urn:oc:entityType:iotdevice:vehicleSpeed",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-10-05T06:08:08.000Z",
+		"value": "2017-01-12T09:08:09.000Z",
 		"metadata": {}
 	},
 	"datasource": {
@@ -756,8 +758,11 @@ Placed at the main entrance of the city, they provide information about the occu
 		}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.83322,43.46699",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.83027, 43.4499]
+		},
 		"metadata": {}
 	},
 	"origin": {
@@ -767,7 +772,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"reputation": {
 		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
+		"value": -1,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -781,7 +786,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"roadOccupancy": {
 		"type": "urn:oc:attributeType:speed:roadOccupancy",
-		"value": "56",
+		"value": 8.86,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -795,7 +800,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"speed:average": {
 		"type": "urn:oc:attributeType:speed:average",
-		"value": "53",
+		"value": 59.7,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -809,7 +814,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"speed:median": {
 		"type": "urn:oc:attributeType:speed:median",
-		"value": "46",
+		"value": 58,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -823,7 +828,7 @@ Placed at the main entrance of the city, they provide information about the occu
 	},
 	"trafficIntensity": {
 		"type": "urn:oc:attributeType:trafficIntensity",
-		"value": "14",
+		"value": 18,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",

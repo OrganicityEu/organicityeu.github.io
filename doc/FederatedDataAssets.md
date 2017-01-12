@@ -846,7 +846,67 @@ Placed at the main entrance of the city, they provide information about the occu
 It provides real time information about the traffic intensity, the occupancy of the roads and the load, based on the measurements gathered by magnetic loops deployed along the city.
 
 ```json
-{"id":"urn:oc:entity:santander:traffic:magneticLoop:1001","type":"urn:oc:entityType:iotdevice:magneticLoop","TimeInstant":{"type":"ISO8601","value":"2017-01-12T09:27:00.000Z","metadata":{}},"datasource":{"type":"urn:oc:attributeType:datasource","value":"http://mu.tlmat.unican.es:8098/","metadata":{"datasourceInternal":{"type":"urn:oc:dataType:boolean","value":"boolean"}}},"location":{"type":"geo:json","value":{"type":"Point","coordinates":[-3.82959,43.4536]},"metadata":{}},"origin":{"type":"urn:oc:attributeType:origin","value":"SICE","metadata":{}},"reputation":{"type":"urn:oc:attributeType:reputation","value":-1,"metadata":{"unit":{"type":"urn:oc:dataType:string","value":"urn:oc:uom:index"},"description":{"type":"urn:oc:dataType:string","value":"The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"}}},"roadLoad":{"type":"urn:oc:attributeType:roadLoad","value":9,"metadata":{}},"roadOccupancy":{"type":"urn:oc:attributeType:roadOccupancy","value":3,"metadata":{}},"trafficIntensity":{"type":"urn:oc:attributeType:trafficIntensity","value":180,"metadata":{}}}
+{
+	"id": "urn:oc:entity:santander:traffic:magneticLoop:1001",
+	"type": "urn:oc:entityType:iotdevice:magneticLoop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-12T09:27:00.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.82959, 43.4536]
+		},
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SICE",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"roadLoad": {
+		"type": "urn:oc:attributeType:roadLoad",
+		"value": 9,
+		"metadata": {}
+	},
+	"roadOccupancy": {
+		"type": "urn:oc:attributeType:roadOccupancy",
+		"value": 3,
+		"metadata": {}
+	},
+	"trafficIntensity": {
+		"type": "urn:oc:attributeType:trafficIntensity",
+		"value": 180,
+		"metadata": {}
+	}
+}
 ```
 
 ### Parking
@@ -983,16 +1043,19 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 It provides information about the parking spots reserved for people with disabilities. 
 ```json
 {
-	"id": "urn:oc:entity:santander:parking:disabledpeople:24192",
-	"type": "parking:zone:PMR",
+	"id": "urn:oc:entity:santander:parking:disabledpeople:51564",
+	"type": "urn:oc:entityType:parkingZone:disabledPeople",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2017-01-09T23:35:00.000Z",
+		"value": "2017-01-11T23:35:35.000Z",
 		"metadata": {}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.81137,43.45758",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.83885, 43.4625]
+		},
 		"metadata": {}
 	},
 	"origin": {
@@ -1002,22 +1065,22 @@ It provides information about the parking spots reserved for people with disabil
 	},
 	"parkingspots:angled": {
 		"type": "urn:oc:attributeType:parkingspots:angled",
-		"value": "",
+		"value": 0,
 		"metadata": {}
 	},
 	"parkingspots:inline": {
 		"type": "urn:oc:attributeType:parkingspots:inline",
-		"value": "1",
+		"value": 1,
 		"metadata": {}
 	},
 	"regulation": {
 		"type": "urn:oc:attributeType:regulation",
-		"value": "OLA",
+		"value": "Libre",
 		"metadata": {}
 	},
 	"reputation": {
 		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
+		"value": -1,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -1031,11 +1094,11 @@ It provides information about the parking spots reserved for people with disabil
 	},
 	"street:name": {
 		"type": "urn:oc:attributeType:street:name",
-		"value": "CL/ MARQUES HERMIDA",
+		"value": "CL/ RAFAEL ALSUA",
 		"metadata": {
 			"detail": {
 				"type": "urn:oc:datatype:string",
-				"value": "esquina C/Federico Vial"
+				"value": "Margen Norte del vial, junto al nº 17"
 			}
 		}
 	}
@@ -1044,16 +1107,19 @@ It provides information about the parking spots reserved for people with disabil
 #### Load and unload areas
 ```json
 {
-	"id": "urn:oc:entity:santander:parking:loadunloadzones:51264",
-	"type": "parking:zone",
+	"id": "urn:oc:entity:santander:parking:loadunload:50949",
+	"type": "urn:oc:entity:parkingZone:loadunload",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2017-01-10T00:33:39.000Z",
+		"value": "2017-01-11T23:40:08.000Z",
 		"metadata": {}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.78853,43.46822",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.77824, 43.473]
+		},
 		"metadata": {}
 	},
 	"origin": {
@@ -1063,12 +1129,12 @@ It provides information about the parking spots reserved for people with disabil
 	},
 	"parkingspots:angled": {
 		"type": "urn:oc:attributeType:parkingspots:angled",
-		"value": "0",
+		"value": 0,
 		"metadata": {}
 	},
 	"parkingspots:inline": {
 		"type": "urn:oc:attributeType:parkingspots:inline",
-		"value": "2",
+		"value": 2,
 		"metadata": {}
 	},
 	"regulation": {
@@ -1078,7 +1144,7 @@ It provides information about the parking spots reserved for people with disabil
 	},
 	"reputation": {
 		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
+		"value": -1,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -1092,16 +1158,16 @@ It provides information about the parking spots reserved for people with disabil
 	},
 	"serviceHours": {
 		"type": "urn:oc:attributeType:schedule",
-		"value": "7 a 14 Horas.",
+		"value": "DE 7 A 11,30 H",
 		"metadata": {}
 	},
 	"street:name": {
 		"type": "urn:oc:attributeType:street:name",
-		"value": "CL/ BARRIO CAMINO",
+		"value": "AV/ REINA VICTORIA",
 		"metadata": {
 			"detail": {
 				"type": "urn:oc:datatype:string",
-				"value": "Margen Norte del vial, frente a la confluencia con la calle Gerona."
+				"value": "RESERVA TRASLADADA DEL APARCAMIENTO INTERIOR."
 			}
 		}
 	}

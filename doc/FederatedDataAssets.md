@@ -846,64 +846,7 @@ Placed at the main entrance of the city, they provide information about the occu
 It provides real time information about the traffic intensity, the occupancy of the roads and the load, based on the measurements gathered by magnetic loops deployed along the city.
 
 ```json
-{
-	"id": "urn:oc:entity:santander:traffic:magneticLoop:3030",
-	"type": "urn:oc:entityType:magneticLoop",
-	"TimeInstant": {
-		"type": "ISO8601",
-		"value": "2017-01-09T12:28:00.000Z",
-		"metadata": {}
-	},
-	"datasource": {
-		"type": "urn:oc:attributeType:datasource",
-		"value": "http://mu.tlmat.unican.es:8098/",
-		"metadata": {
-			"datasourceInternal": {
-				"type": "urn:oc:dataType:boolean",
-				"value": "boolean"
-			}
-		}
-	},
-	"location": {
-		"type": "geo:point",
-		"value": "-3.8005109,43.4709885",
-		"metadata": {}
-	},
-	"origin": {
-		"type": "urn:oc:attributeType:origin",
-		"value": "SICE",
-		"metadata": {}
-	},
-	"reputation": {
-		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
-		"metadata": {
-			"unit": {
-				"type": "urn:oc:dataType:string",
-				"value": "urn:oc:uom:index"
-			},
-			"description": {
-				"type": "urn:oc:dataType:string",
-				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
-			}
-		}
-	},
-	"roadLoad": {
-		"type": "urn:oc:attributeType:roadLoad",
-		"value": "10",
-		"metadata": {}
-	},
-	"roadOccupancy": {
-		"type": "urn:oc:attributeType:roadOccupancy",
-		"value": "2",
-		"metadata": {}
-	},
-	"trafficIntensity": {
-		"type": "urn:oc:attributeType:trafficIntensity",
-		"value": "240",
-		"metadata": {}
-	}
-}
+{"id":"urn:oc:entity:santander:traffic:magneticLoop:1001","type":"urn:oc:entityType:iotdevice:magneticLoop","TimeInstant":{"type":"ISO8601","value":"2017-01-12T09:27:00.000Z","metadata":{}},"datasource":{"type":"urn:oc:attributeType:datasource","value":"http://mu.tlmat.unican.es:8098/","metadata":{"datasourceInternal":{"type":"urn:oc:dataType:boolean","value":"boolean"}}},"location":{"type":"geo:json","value":{"type":"Point","coordinates":[-3.82959,43.4536]},"metadata":{}},"origin":{"type":"urn:oc:attributeType:origin","value":"SICE","metadata":{}},"reputation":{"type":"urn:oc:attributeType:reputation","value":-1,"metadata":{"unit":{"type":"urn:oc:dataType:string","value":"urn:oc:uom:index"},"description":{"type":"urn:oc:dataType:string","value":"The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"}}},"roadLoad":{"type":"urn:oc:attributeType:roadLoad","value":9,"metadata":{}},"roadOccupancy":{"type":"urn:oc:attributeType:roadOccupancy","value":3,"metadata":{}},"trafficIntensity":{"type":"urn:oc:attributeType:trafficIntensity","value":180,"metadata":{}}}
 ```
 
 ### Parking
@@ -911,11 +854,11 @@ It provides real time information about the traffic intensity, the occupancy of 
 Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
 ```json
 {
-	"id": "urn:oc:entity:santander:parking:np3922",
-	"type": "parkingSensor",
+	"id": "urn:oc:entity:santander:parking:np3601",
+	"type": "urn:oc:entityType:iotdevice:parking",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-10-05T12:00:32.000Z",
+		"value": "2017-01-12T07:53:44.000Z",
 		"metadata": {}
 	},
 	"datasource": {
@@ -929,8 +872,11 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 		}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.799430501,43.463917645",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.79897, 43.4631]
+		},
 		"metadata": {}
 	},
 	"origin": {
@@ -950,7 +896,7 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 	},
 	"reputation": {
 		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
+		"value": -1,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -964,15 +910,25 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 	}
 }
 ```
-#### Indoor Parkings
+#### Underground Car Parkings
 ```json
 {
-	"id": "urn:oc:entity:santander:parking:indoor:APAR5",
-	"type": "urn:oc:entityType:indoorParking",
+	"id": "urn:oc:entity:santander:parking:underground:APAR4",
+	"type": "urn:oc:entityType:undergroundParking",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2017-01-10T11:12:07.000Z",
+		"value": "2017-01-12T10:16:00.000Z",
 		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
 	},
 	"extraSpotNumber": {
 		"type": "urn:oc:attributeType:extraSpotNumber",
@@ -980,13 +936,16 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 		"metadata": {}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.8256829977,43.4580629715",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.81769, 43.4614]
+		},
 		"metadata": {}
 	},
 	"name": {
 		"type": "urn:oc:attributeType:name",
-		"value": "Parking del Mercado de Méjico",
+		"value": "Parking de Numancia",
 		"metadata": {}
 	},
 	"origin": {
@@ -1015,7 +974,7 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 	},
 	"totalSpotNumber": {
 		"type": "urn:oc:attributeType:totalSpotNumber",
-		"value": 520,
+		"value": 244,
 		"metadata": {}
 	}
 }

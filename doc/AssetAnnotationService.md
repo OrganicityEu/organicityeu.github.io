@@ -342,16 +342,60 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 Post an Annotation
 
 ```
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
- 
-  "application": "urn:application:86d7edce-5092-44c0-bed8-da4beaa3fbc6",
-  "assetUrn": "urn:oc:entity:london:weatherstation1",
- 
-    "numericValue": 0,
-    "tagUrn": "urn:tag:faulty",
-    "textValue": "string",
-    "user": "86d7edce-5092-44c0-bed8-da4beaa3fbc6"
-}' 'https://annotations.organicity.eu/annotations/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6'
+Let an experimenter who has developed an application to his smartphone in order to collect data concerning 
+the wind speed. Assuming that the application contains a TagDomain that describes the wind speed levels, 
+the creation of an annotation can be implemented as follows:
+
+Let 
+userId = 86d7edce-5092-44c0-bed8-da4beaa3fbc6
+experimentId = 57eab2c2ad0302ad0b5c92c6
+assetUrn = urn:oc:entity:experimenters:62afc265-af9a-47e7-afb5-caab21ed09b4:57f210e59324fdd11103d93c:14
+tagUrn = urn:oc:tagDomain:WindSpeedLevel:calm
+	
+function createAnnotation(){
+        var annotationJson = {
+                "annotationId": null,
+                "application": experimentId,
+                "assetUrn": assetUrn,
+                "datetime": null,
+                "numericValue": 0,
+                "tagUrn": tagUrn,
+                "textValue": "textValue",
+                "user": userId,
+        };
+
+          $.ajax({
+             url: "https://annotations.organicity.eu/annotations/"+ assetUrn.name,
+             data: JSON.stringify(annotationJson),
+             type: "POST",
+             beforeSend: function(xhr){
+                 xhr.setRequestHeader('Accept', 'application/json');
+                 xhr.setRequestHeader('Accept', 'application/json');
+                 xhr.setRequestHeader('Content-Type', 'application/json');
+
+                 
+             },
+             success: function() {
+                $.ajax({
+                    url: "https://annotations.organicity.eu/annotations/" + assetUrn +"/all",
+                                   
+                    type: "GET",
+                    beforeSend: function(xhr){
+                        xhr.setRequestHeader('Accept', 'application/json');
+                        xhr.setRequestHeader('Accept', 'application/json');
+                        xhr.setRequestHeader('Content-Type', 'application/json');
+
+                    },
+                    success: function(response) {
+                        alert(response);
+                    }
+                 });
+             },
+             error: function(){
+                alert('an error occurred.');
+              }
+          });
+    } 
 ```
 
 Get All Annotations

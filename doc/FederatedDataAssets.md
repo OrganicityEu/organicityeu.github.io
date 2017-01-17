@@ -620,54 +620,26 @@ Moreover, there are recorded data from 10 distinct points in the city (Temperatu
 Four traffic cameras in the city provide real time images about the status of the traffic in different areas of the city.
 ```json
 {
-	"id": "urn:oc:entity:santander:traffic:camera:01",
+	"id": "urn:oc:entity:santander:traffic:camera:02",
 	"type": "urn:oc:entityType:camera",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-10-05T12:57:29.000Z",
+		"value": "2017-01-09T11:17:33.000Z",
 		"metadata": {}
 	},
 	"image": {
 		"type": "urn:oc:attributeType:image",
-		"value": "http://datos.santander.es/files/camara_cuatro_caminos/cuatro_caminos_20161005145728.jpg",
+		"value": "http://datos.santander.es/files/camara_castilla/castilla_20170109121732.jpg",
 		"metadata": {}
 	},
 	"name": {
 		"type": "urn:oc:attributeType:name",
-		"value": "Cuatro Caminos",
-		"metadata": {}
-	}
-}
-```
-#### Vehicle count sensors
-Placed at the main entrance of the city, a set of 48 sensors, provides information about the occupancy, the count of vehicles, the median and average speed in the different lanes of these main roads.
-```json
-{
-	"id": "urn:oc:entity:santander:traffic:fixed:3306",
-	"type": "urn:oc:entityType:vehicleCounter",
-	"TimeInstant": {
-		"type": "ISO8601",
-		"value": "2016-10-05T06:08:08.000Z",
-		"metadata": {}
-	},
-	"datasource": {
-		"type": "urn:oc:attributeType:datasource",
-		"value": "http://mu.tlmat.unican.es:8098/",
-		"metadata": {
-			"datasourceInternal": {
-				"type": "urn:oc:dataType:boolean",
-				"value": "boolean"
-			}
-		}
-	},
-	"location": {
-		"type": "geo:point",
-		"value": "-3.82782,43.45135",
+		"value": "Castilla Hermida",
 		"metadata": {}
 	},
 	"origin": {
 		"type": "urn:oc:attributeType:origin",
-		"value": "SmartSantander",
+		"value": "Santander City",
 		"metadata": {}
 	},
 	"reputation": {
@@ -683,10 +655,60 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
 			}
 		}
+	}
+}
+```
+#### Vehicle count sensors
+Placed at the main entrance of the city, they provide information about the occupancy and traffic intensity in the different lanes of the main roads.
+```json
+{
+	"id": "urn:oc:entity:santander:traffic:fixed:3306",
+	"type": "urn:oc:entityType:iotdevice:vehicleCounter",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-12T09:15:07.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.82782, 43.4513]
+		},
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantander",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
 	},
 	"roadOccupancy": {
 		"type": "urn:oc:attributeType:speed:roadOccupancy",
-		"value": "44",
+		"value": 6.24,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -700,7 +722,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	},
 	"trafficIntensity": {
 		"type": "urn:oc:attributeType:trafficIntensity",
-		"value": "14",
+		"value": 11,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -713,16 +735,16 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 		}
 	}
 }
-
 ```
 #### Vehicle speed sensors 
+Placed at the main entrance of the city, they provide information about the occupancy, the count of vehicles, the median and average speed in the different lanes of the main roads.
 ```json
 {
-	"id": "urn:oc:entity:santander:traffic:fixed:3337",
-	"type": "urn:oc:entityType:vehicleSpeed",
+	"id": "urn:oc:entity:santander:traffic:fixed:3305",
+	"type": "urn:oc:entityType:iotdevice:vehicleSpeed",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-10-05T06:08:08.000Z",
+		"value": "2017-01-12T09:08:09.000Z",
 		"metadata": {}
 	},
 	"datasource": {
@@ -736,8 +758,11 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 		}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.83322,43.46699",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.83027, 43.4499]
+		},
 		"metadata": {}
 	},
 	"origin": {
@@ -747,7 +772,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	},
 	"reputation": {
 		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
+		"value": -1,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -761,7 +786,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	},
 	"roadOccupancy": {
 		"type": "urn:oc:attributeType:speed:roadOccupancy",
-		"value": "56",
+		"value": 8.86,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -775,7 +800,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	},
 	"speed:average": {
 		"type": "urn:oc:attributeType:speed:average",
-		"value": "53",
+		"value": 59.7,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -789,7 +814,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	},
 	"speed:median": {
 		"type": "urn:oc:attributeType:speed:median",
-		"value": "46",
+		"value": 58,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -803,7 +828,7 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	},
 	"trafficIntensity": {
 		"type": "urn:oc:attributeType:trafficIntensity",
-		"value": "14",
+		"value": 18,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -817,16 +842,16 @@ Placed at the main entrance of the city, a set of 48 sensors, provides informati
 	}
 }
 ```
+#### Magnetic Loops 
+It provides real time information about the traffic intensity, the occupancy of the roads and the load, based on the measurements gathered by magnetic loops deployed along the city.
 
-### Parking
-Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
 ```json
 {
-	"id": "urn:oc:entity:santander:parking:np3922",
-	"type": "parkingSensor",
+	"id": "urn:oc:entity:santander:traffic:magneticLoop:1001",
+	"type": "urn:oc:entityType:iotdevice:magneticLoop",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-10-05T12:00:32.000Z",
+		"value": "2017-01-12T09:27:00.000Z",
 		"metadata": {}
 	},
 	"datasource": {
@@ -840,8 +865,78 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 		}
 	},
 	"location": {
-		"type": "geo:point",
-		"value": "-3.799430501,43.463917645",
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.82959, 43.4536]
+		},
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SICE",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"roadLoad": {
+		"type": "urn:oc:attributeType:roadLoad",
+		"value": 9,
+		"metadata": {}
+	},
+	"roadOccupancy": {
+		"type": "urn:oc:attributeType:roadOccupancy",
+		"value": 3,
+		"metadata": {}
+	},
+	"trafficIntensity": {
+		"type": "urn:oc:attributeType:trafficIntensity",
+		"value": 180,
+		"metadata": {}
+	}
+}
+```
+
+### Parking
+#### Outdoor Parking 
+Real time information of available parking spots within zone 30. A set of 400 ferromagnetic sensors are placed under the asphalt in zone 30 of the Santander city centre, providing real time information about the status of occupancy of the different parking spots.
+```json
+{
+	"id": "urn:oc:entity:santander:parking:np3601",
+	"type": "urn:oc:entityType:iotdevice:parking",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-12T07:53:44.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.79897, 43.4631]
+		},
 		"metadata": {}
 	},
 	"origin": {
@@ -861,7 +956,7 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 	},
 	"reputation": {
 		"type": "urn:oc:attributeType:reputation",
-		"value": "-1",
+		"value": -1,
 		"metadata": {
 			"unit": {
 				"type": "urn:oc:dataType:string",
@@ -875,41 +970,206 @@ Real time information of available parking spots within zone 30. A set of 400 fe
 	}
 }
 ```
-
-#### Parking reserved for people with dissabilities. 
+#### Underground Car Parkings
 ```json
 {
-	"id": "urn:oc:entity:santander:parking:disabledpeople:24189",
-	"type": "parkingSpot:disabledPeople",
+	"id": "urn:oc:entity:santander:parking:underground:APAR4",
+	"type": "urn:oc:entityType:undergroundParking",
 	"TimeInstant": {
 		"type": "ISO8601",
-		"value": "2016-09-05T22:35:01.000Z",
+		"value": "2017-01-12T10:16:00.000Z",
 		"metadata": {}
 	},
-	"coordinates:utmx": {
-		"type": "urn:oc:attributeType:coordinates:utmx",
-		"value": "434340.745908154",
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"extraSpotNumber": {
+		"type": "urn:oc:attributeType:extraSpotNumber",
+		"value": 2,
 		"metadata": {}
 	},
-	"coordinates:utmy": {
-		"type": "urn:oc::attributeType:coordinates:utmy",
-		"value": "4811961.04121813",
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.81769, 43.4614]
+		},
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "Parking de Numancia",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantanderRA",
+		"metadata": {}
+	},
+	"parkingDisposition": {
+		"type": "urn:oc:attributeType:parkingDisposition",
+		"value": "parallel",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"totalSpotNumber": {
+		"type": "urn:oc:attributeType:totalSpotNumber",
+		"value": 244,
+		"metadata": {}
+	}
+}
+```
+#### Parking reserved for people with dissabilities.
+It provides information about the parking spots reserved for people with disabilities. 
+```json
+{
+	"id": "urn:oc:entity:santander:parking:disabledpeople:51564",
+	"type": "urn:oc:entityType:parkingZone:disabledPeople",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-11T23:35:35.000Z",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.83885, 43.4625]
+		},
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Santander OD",
 		"metadata": {}
 	},
 	"parkingspots:angled": {
 		"type": "urn:oc:attributeType:parkingspots:angled",
-		"value": "",
+		"value": 0,
 		"metadata": {}
 	},
 	"parkingspots:inline": {
 		"type": "urn:oc:attributeType:parkingspots:inline",
-		"value": "1",
+		"value": 1,
+		"metadata": {}
+	},
+	"regulation": {
+		"type": "urn:oc:attributeType:regulation",
+		"value": "Libre",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"street:name": {
+		"type": "urn:oc:attributeType:street:name",
+		"value": "CL/ RAFAEL ALSUA",
+		"metadata": {
+			"detail": {
+				"type": "urn:oc:datatype:string",
+				"value": "Margen Norte del vial, junto al nº 17"
+			}
+		}
+	}
+}
+```
+#### Load and unload areas
+```json
+{
+	"id": "urn:oc:entity:santander:parking:loadunload:50949",
+	"type": "urn:oc:entity:parkingZone:loadunload",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-11T23:40:08.000Z",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Point",
+			"coordinates": [-3.77824, 43.473]
+		},
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "Santander OD",
+		"metadata": {}
+	},
+	"parkingspots:angled": {
+		"type": "urn:oc:attributeType:parkingspots:angled",
+		"value": 0,
+		"metadata": {}
+	},
+	"parkingspots:inline": {
+		"type": "urn:oc:attributeType:parkingspots:inline",
+		"value": 2,
+		"metadata": {}
+	},
+	"regulation": {
+		"type": "urn:oc:attributeType:regulation",
+		"value": "Libre",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"serviceHours": {
+		"type": "urn:oc:attributeType:schedule",
+		"value": "DE 7 A 11,30 H",
 		"metadata": {}
 	},
 	"street:name": {
-		"type": "urn:oc::attributeType:street:name",
-		"value": "CL/ FEDERICO VIAL",
-		"metadata": {}
+		"type": "urn:oc:attributeType:street:name",
+		"value": "AV/ REINA VICTORIA",
+		"metadata": {
+			"detail": {
+				"type": "urn:oc:datatype:string",
+				"value": "RESERVA TRASLADADA DEL APARCAMIENTO INTERIOR."
+			}
+		}
 	}
 }
 ```
@@ -949,7 +1209,48 @@ A set of 415 assets, one per bus stop in the city, have been created. Those asse
 	}
 }
 ```
+#### Bus lines
 
+```json
+{
+	"id": "urn:oc:entity:santander:transport:bus:line:N3",
+	"type": "bus:line",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-03T00:00:00.000Z",
+		"metadata": {}
+	},
+	"lineNumber": {
+		"type": "urn:oc:attributeType:busLine:number",
+		"value": "N3",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:busLine:name",
+		"value": "PEÑACASTILLO-PLAZA DE ITALIA ",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "TUS Santander",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	}
+}
+```
 
 #### Taxi stops. 
 These assets provide real time information about taxi availability in each particular stop, based on the information provided by the fleet management systems deployed by the two taxi associations.
@@ -977,12 +1278,290 @@ These assets provide real time information about taxi availability in each parti
 #### Bike stops. 
 A set of 16 assets has been created, providing information about the number of available public-hire bikes and also the number of places to return such bikes.
 ```json
+{
+	"id": "urn:oc:entity:santander:transport:bikestation:12",
+	"type": "urn:oc:entityType:bikeStop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-09T09:26:13.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"feeSpaces": {
+		"type": "urn:oc:attributeType:freeSpaces",
+		"value": 9,
+		"metadata": {}
+	},
+	"freeBikes": {
+		"type": "urn:oc:attributeType:freeBikes",
+		"value": 6,
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.8248012423,43.4579662522",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "012_CALLE ALTA",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "TusBic",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	}
+}
 ```
 
 
 ### Districts and sections 
 #### Districts
 ```json
+{
+	"id": "urn:oc:entity:santander:districts:D03",
+	"type": "urn:oc:entityType:district",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-04T11:16:41.000Z",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:json",
+		"value": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[-3.79124, 43.4685],
+					[-3.79199, 43.4686],
+					[-3.79221, 43.4686],
+					[-3.79238, 43.4686],
+					[-3.79255, 43.4686],
+					[-3.79263, 43.4686],
+					[-3.79294, 43.4685],
+					[-3.79343, 43.4685],
+					[-3.79366, 43.4685],
+					[-3.79414, 43.4685],
+					[-3.79476, 43.4684],
+					[-3.79521, 43.4684],
+					[-3.79543, 43.4684],
+					[-3.7956, 43.4684],
+					[-3.7958, 43.4684],
+					[-3.79623, 43.4685],
+					[-3.79653, 43.4685],
+					[-3.79665, 43.4685],
+					[-3.79679, 43.4685],
+					[-3.79701, 43.4685],
+					[-3.79723, 43.4685],
+					[-3.79752, 43.4685],
+					[-3.79795, 43.4684],
+					[-3.79886, 43.4684],
+					[-3.79928, 43.4683],
+					[-3.79947, 43.4683],
+					[-3.79966, 43.4683],
+					[-3.79994, 43.4682],
+					[-3.80002, 43.4681],
+					[-3.80114, 43.4678],
+					[-3.80134, 43.4678],
+					[-3.80174, 43.4677],
+					[-3.80205, 43.4676],
+					[-3.80219, 43.4676],
+					[-3.80233, 43.4675],
+					[-3.80265, 43.4675],
+					[-3.80307, 43.4675],
+					[-3.80348, 43.4675],
+					[-3.80393, 43.4675],
+					[-3.80426, 43.4675],
+					[-3.80437, 43.4675],
+					[-3.80476, 43.4675],
+					[-3.80507, 43.4674],
+					[-3.80528, 43.4674],
+					[-3.80539, 43.4674],
+					[-3.80571, 43.4674],
+					[-3.80598, 43.4674],
+					[-3.80612, 43.4673],
+					[-3.80624, 43.4673],
+					[-3.80653, 43.4673],
+					[-3.80678, 43.4672],
+					[-3.80692, 43.4672],
+					[-3.80706, 43.4672],
+					[-3.80719, 43.4672],
+					[-3.80732, 43.4672],
+					[-3.80794, 43.4673],
+					[-3.80799, 43.4673],
+					[-3.80818, 43.4674],
+					[-3.80833, 43.4674],
+					[-3.80909, 43.4675],
+					[-3.80947, 43.4676],
+					[-3.80973, 43.4676],
+					[-3.80992, 43.4676],
+					[-3.80995, 43.4676],
+					[-3.81028, 43.4676],
+					[-3.81341, 43.4676],
+					[-3.81353, 43.4676],
+					[-3.81377, 43.4676],
+					[-3.81385, 43.4676],
+					[-3.81372, 43.4675],
+					[-3.81347, 43.4674],
+					[-3.812, 43.4666],
+					[-3.81198, 43.4666],
+					[-3.81197, 43.4666],
+					[-3.81197, 43.4665],
+					[-3.81199, 43.4665],
+					[-3.81202, 43.4665],
+					[-3.81206, 43.4665],
+					[-3.8121, 43.4665],
+					[-3.81278, 43.4667],
+					[-3.81284, 43.4667],
+					[-3.81291, 43.4667],
+					[-3.81296, 43.4666],
+					[-3.813, 43.4666],
+					[-3.81303, 43.4666],
+					[-3.81303, 43.4665],
+					[-3.81301, 43.4664],
+					[-3.81297, 43.4664],
+					[-3.81294, 43.4664],
+					[-3.8129, 43.4664],
+					[-3.8128, 43.4663],
+					[-3.81222, 43.4662],
+					[-3.81213, 43.4662],
+					[-3.81204, 43.4662],
+					[-3.81195, 43.4662],
+					[-3.81185, 43.4662],
+					[-3.81169, 43.4662],
+					[-3.81162, 43.4662],
+					[-3.81156, 43.4662],
+					[-3.81153, 43.4661],
+					[-3.81153, 43.4661],
+					[-3.81156, 43.466],
+					[-3.8116, 43.466],
+					[-3.81166, 43.466],
+					[-3.8119, 43.466],
+					[-3.81195, 43.466],
+					[-3.81199, 43.466],
+					[-3.81202, 43.4659],
+					[-3.81203, 43.4659],
+					[-3.81202, 43.4659],
+					[-3.812, 43.4658],
+					[-3.81177, 43.4654],
+					[-3.81161, 43.4652],
+					[-3.81151, 43.465],
+					[-3.81148, 43.465],
+					[-3.81141, 43.4649],
+					[-3.81126, 43.4647],
+					[-3.81112, 43.4646],
+					[-3.81106, 43.4645],
+					[-3.811, 43.4644],
+					[-3.81098, 43.4644],
+					[-3.81101, 43.4643],
+					[-3.81133, 43.4632],
+					[-3.81133, 43.4632],
+					[-3.81063, 43.4632],
+					[-3.81069, 43.4637],
+					[-3.81007, 43.4637],
+					[-3.81005, 43.464],
+					[-3.81002, 43.464],
+					[-3.80997, 43.464],
+					[-3.80877, 43.464],
+					[-3.80875, 43.4637],
+					[-3.80828, 43.4637],
+					[-3.8078, 43.4637],
+					[-3.80769, 43.4637],
+					[-3.80621, 43.4637],
+					[-3.80548, 43.4638],
+					[-3.80546, 43.4638],
+					[-3.80446, 43.4638],
+					[-3.80418, 43.4639],
+					[-3.804, 43.4639],
+					[-3.80381, 43.4639],
+					[-3.80375, 43.4639],
+					[-3.80347, 43.464],
+					[-3.80314, 43.4641],
+					[-3.80287, 43.4641],
+					[-3.80269, 43.4642],
+					[-3.80265, 43.4642],
+					[-3.80246, 43.4642],
+					[-3.80235, 43.4642],
+					[-3.80211, 43.4642],
+					[-3.80185, 43.4643],
+					[-3.80166, 43.4643],
+					[-3.80133, 43.4643],
+					[-3.80115, 43.4643],
+					[-3.80103, 43.4643],
+					[-3.80087, 43.4643],
+					[-3.80073, 43.4643],
+					[-3.8007, 43.4643],
+					[-3.80025, 43.4643],
+					[-3.79985, 43.4643],
+					[-3.79958, 43.4644],
+					[-3.79912, 43.4644],
+					[-3.79861, 43.4644],
+					[-3.79818, 43.4645],
+					[-3.79791, 43.4645],
+					[-3.79768, 43.4646],
+					[-3.79738, 43.4646],
+					[-3.7971, 43.4647],
+					[-3.79683, 43.4647],
+					[-3.79688, 43.4652],
+					[-3.79682, 43.4653],
+					[-3.79671, 43.4654],
+					[-3.79646, 43.4654],
+					[-3.796, 43.4654],
+					[-3.79584, 43.4655],
+					[-3.79571, 43.4655],
+					[-3.79553, 43.4656],
+					[-3.79536, 43.4656],
+					[-3.79494, 43.4657],
+					[-3.79473, 43.4658],
+					[-3.79459, 43.4659],
+					[-3.79435, 43.4659],
+					[-3.79362, 43.466],
+					[-3.79269, 43.4661],
+					[-3.79255, 43.4661],
+					[-3.7917, 43.4662],
+					[-3.79167, 43.4662],
+					[-3.79078, 43.4663],
+					[-3.78731, 43.4665],
+					[-3.7871, 43.4665],
+					[-3.78709, 43.4666],
+					[-3.78715, 43.467],
+					[-3.78722, 43.4672],
+					[-3.78734, 43.4674],
+					[-3.78754, 43.4677],
+					[-3.78776, 43.4679],
+					[-3.78798, 43.468],
+					[-3.7904, 43.4683],
+					[-3.79124, 43.4685]
+				]
+			]
+		},
+		"metadata": {}
+	}
+}
 ```
 #### Sections
 ```json
@@ -1049,7 +1628,42 @@ A set of 16 assets has been created, providing information about the number of a
 }
 ```
 ### Pace of the city events
+Events happening in the city that have been generated by citizens using the apps to report them. Mainly, PulsodelaCiudad and Cuida Santander Apps
 ```json
+{
+	"id": "urn:oc:entity:santander:paceofthecity:event:7975",
+	"type": "city:event",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2016-10-22T08:59:59.000Z",
+		"metadata": {}
+	},
+	"eventText": {
+		"type": "urn:oc:attributeType:event:description",
+		"value": "Faltan dos bolardos que se han partido.  han quedado trozos por encima del raso de la acera,  con lo cual puede haber cortadas en los pies.",
+		"metadata": {}
+	},
+	"eventTitle": {
+		"type": "urn:oc:attributeType:event:name",
+		"value": null,
+		"metadata": {}
+	},
+	"eventType": {
+		"type": "urn:oc:attributeType:event:type",
+		"value": "VIA_PUBLICA",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:imageURL",
+		"value": "http://farm9.staticflickr.com/8268/29711271953_c1b018c526.jpg",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.7963962,43.4701798",
+		"metadata": {}
+	}
+}
 ```
 ### Tourism:Points of Interest
 
@@ -1123,13 +1737,94 @@ A set of 16 assets has been created, providing information about the number of a
 }
 ```
 ### Shops
+More than 2000 assets have been created based on the information registered at Comercio Santander initiative. The list of assets is updated every day, so that, it can change during the experimentation period. 
 ```json
+{
+	"id": "urn:oc:santander:commerce:shops:2844",
+	"type": "poi:shop",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-02T11:49:32.000Z",
+		"metadata": {}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "Moda y complementos marca propia para mujer joven.",
+		"metadata": {}
+	},
+	"description:other": {
+		"type": "urn:oc:attributeType:description",
+		"value": "",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:imageURL",
+		"value": "http://www.comerciosantander.com/imagenes/Comercios/ED407B6E-AB2E-E9B4-BD50-FC012F619733.jpg/resize/480/640/",
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.812214499999982,43.4620188",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "SHIMAI",
+		"metadata": {}
+	}
+}
 ```
-### Cultural agenda events 
+### Cultural agenda events
+Real time information to Santander Auna Events. 
 ```json
+{
+	"id": "urn:oc:entity:santander:culture:auna:23269",
+	"type": "agenda:event",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-02T01:50:41.000Z",
+		"metadata": {}
+	},
+	"category": {
+		"type": "urn:oc:attributeType:decription",
+		"value": "Formación/Talleres",
+		"metadata": {}
+	},
+	"date": {
+		"type": "urn:oc:attributeType:event:date",
+		"value": "Lunes 02/01/2017, todo el día. ",
+		"metadata": {}
+	},
+	"description": {
+		"type": "urn:oc:attributeType:description",
+		"value": "Festival de cine independiente dirigidoÂ por el cÃ¡ntabro Luis Bezeta con videocreaciÃ³n, ficciÃ³n,Â animaciÃ³n, performance y conciertos",
+		"metadata": {}
+	},
+	"imageURL": {
+		"type": "urn:oc:attributeType:url",
+		"value": "http://www.fundacionsantandercreativa.com/ekh2983gd29837gt_uploads/web_2/eventos_images/final/23269.jpg",
+		"metadata": {}
+	},
+	"link": {
+		"type": "urn:oc:attributeType:url",
+		"value": "http://www.fundacionsantandercreativa.com/mobile/index.php?evento%3Dinscripciones-para-el-curso-de-modelado-en-3d-con-blender",
+		"metadata": {}
+	},
+	"name": {
+		"type": "urn:oc:attributeType:name",
+		"value": "Inscripciones para el curso de Modelado en 3D con Blender",
+		"metadata": {}
+	},
+	"subname": {
+		"type": "urn:oc:attributeType:name",
+		"value": "IV Picnick Festival",
+		"metadata": {}
+	}
+}
 ```
 
 ### News in the city
+News generated by the different areas of governance within the municipality. 
 ```json
 {
 	"id": "urn:oc:entity:santander:news:c35672836c31190ad2badb057cee6ad4",
@@ -1156,6 +1851,202 @@ A set of 16 assets has been created, providing information about the number of a
 	}
 }
 ```
-
-
-
+### Environmental sensors
+#### Mobile Nodes
+```
+{
+	"id": "urn:oc:entity:santander:environmental:mobile:3028",
+	"type": "urn:oc:entityType:mobileSensor",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2017-01-09T19:26:35.000Z",
+		"metadata": {}
+	},
+	"chemicalAgentAtmosphericConcentration:CO": {
+		"type": "urn:oc:attributeType:chemicalAgentAtmosphericConcentration:CO",
+		"value": 0.1,
+		"metadata": {}
+	},
+	"chemicalAgentAtmosphericConcentration:O3": {
+		"type": "urn:oc:attributeType:chemicalAgentAtmosphericConcentration:O3",
+		"value": 79,
+		"metadata": {}
+	},
+	"chemicalAgentAtmosphericConcentration:airParticles": {
+		"type": "urn:oc:attributeType:chemicalAgentAtmosphericConcentration:airParticles",
+		"value": 0.09,
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"direction:heading": {
+		"type": "urn:oc:attributeType:direction:heading",
+		"value": 87,
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.811630,43.461900",
+		"metadata": {}
+	},
+	"mileage:total": {
+		"type": "urn:oc:attributeType:mileage:total",
+		"value": 18825,
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantander",
+		"metadata": {}
+	},
+	"position:altitude": {
+		"type": "urn:oc:attributeType:position:altitude",
+		"value": 13,
+		"metadata": {}
+	},
+	"relativeHumidity": {
+		"type": "urn:oc:attributeType:relativeHumidity",
+		"value": 46,
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": -1,
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"speed:instantaneous": {
+		"type": "urn:oc:attributeType:speed:instantaneous",
+		"value": 27,
+		"metadata": {}
+	},
+	"temperature:ambient": {
+		"type": "urn:oc:attributeType:temperature:ambient",
+		"value": 10.7,
+		"metadata": {}
+	}
+}
+```
+#### Noise repeaters
+```json
+{
+ 	"id": "urn:oc:entity:santander:environmental:fixed:737",
+ 	"type": "urn:oc:entityType:repeater:noise",
+ 	"TimeInstant": {
+ 		"type": "ISO8601",
+ 		"value": "2017-01-02T11:01:06.000Z",
+ 		"metadata": {}
+ 	},
+ 	"datasource": {
+ 		"type": "urn:oc:attributeType:datasource",
+ 		"value": "http://mu.tlmat.unican.es:8098/",
+ 		"metadata": {
+ 			"datasourceInternal": {
+ 				"type": "urn:oc:dataType:boolean",
+ 				"value": "boolean"
+ 			}
+ 		}
+ 	},
+ 	"location": {
+ 		"type": "geo:point",
+ 		"value": "-3.81289,43.45487",
+ 		"metadata": {}
+ 	},
+ 	"origin": {
+ 		"type": "urn:oc:attributeType:origin",
+ 		"value": "SmartSantander",
+ 		"metadata": {}
+ 	},
+ 	"reputation": {
+ 		"type": "urn:oc:attributeType:reputation",
+ 		"value": "-1",
+ 		"metadata": {
+ 			"unit": {
+ 				"type": "urn:oc:dataType:string",
+ 				"value": "urn:oc:uom:index"
+ 			},
+ 			"description": {
+ 				"type": "urn:oc:dataType:string",
+ 				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+ 			}
+ 		}
+ 	},
+ 	"soundPressureLevel:ambient": {
+ 		"type": "urn:oc:attributeType:soundPressureLevel:ambient",
+ 		"value": "50.50",
+ 		"metadata": {}
+ 	}
+ }
+```
+#### luminosity repeaters
+```json
+{
+	"id": "urn:oc:entity:santander:environmental:fixed:680",
+	"type": "urn:oc:entityType:repeater:luminosity",
+	"TimeInstant": {
+		"type": "ISO8601",
+		"value": "2013-04-05T11:20:19.000Z",
+		"metadata": {}
+	},
+	"datasource": {
+		"type": "urn:oc:attributeType:datasource",
+		"value": "http://mu.tlmat.unican.es:8098/",
+		"metadata": {
+			"datasourceInternal": {
+				"type": "urn:oc:dataType:boolean",
+				"value": "boolean"
+			}
+		}
+	},
+	"illuminance": {
+		"type": "urn:oc:attributeType:illuminance",
+		"value": 3,
+		"metadata": {}
+	},
+	"location": {
+		"type": "geo:point",
+		"value": "-3.82052,43.46023",
+		"metadata": {}
+	},
+	"origin": {
+		"type": "urn:oc:attributeType:origin",
+		"value": "SmartSantander",
+		"metadata": {}
+	},
+	"reputation": {
+		"type": "urn:oc:attributeType:reputation",
+		"value": "-1",
+		"metadata": {
+			"unit": {
+				"type": "urn:oc:dataType:string",
+				"value": "urn:oc:uom:index"
+			},
+			"description": {
+				"type": "urn:oc:dataType:string",
+				"value": "The reputation scores vary from 0 to 1. -1 means that there is not scores already calculated"
+			}
+		}
+	},
+	"temperature:ambient": {
+		"type": "urn:oc:attributeType:temperature:ambient",
+		"value": 4,
+		"metadata": {}
+	}
+}
+```

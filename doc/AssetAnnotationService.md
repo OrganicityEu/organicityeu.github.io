@@ -155,7 +155,7 @@ Example:
 }
 ```
 
-### Application (a.k.a. Experiment)
+### Experiment
 ```
 {
     "description": "string",
@@ -245,7 +245,7 @@ Annotation API is organized in three major parts
 - **Annotation Parameters Management**: creating, deleting, updating Application,Service, TagDomain, Tag entities
 - **Annotation Management**: Getting/setting annotations on Organicity Assets
 
-### Application, Tag Domain and Tag browsing
+### Experiment, Tag Domain and Tag browsing
 |Method| Path | Operation|
 |---|---|---|
 |GET| /tagDomains                                   |Get Tag Domains|
@@ -322,7 +322,7 @@ Get Tags of TagDomain
 curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/tagDomains/urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning/tags'
 ```
 
-Create Application/Experiment
+Create Experiment
 ```
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '
 {
@@ -331,7 +331,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 }' 'https://annotations.organicity.eu/admin/applications'
 ```
 
-Associate Experiment with an Application Domain
+Associate Experiment with an Tag Domain
 ```
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' 'https://annotations.organicity.eu/admin/applications/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6/tagDomains?tagDomainUrn=urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
 ```

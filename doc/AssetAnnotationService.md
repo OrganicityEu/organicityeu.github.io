@@ -33,7 +33,6 @@ on the extracted models and create adaptive models using reinforcement learning 
 References to the specification of the Asset Annotation Service
 - Annotation Service Endpoint: http://annotations.organicity.eu/
 - Annotation Service Swagger UI: http://annotations.organicity.eu/swagger-ui.html
-- Annotation Service Swagger Documentation: https://organicityeu.github.io/api/Annotation.html
 
 ## Data Model
 

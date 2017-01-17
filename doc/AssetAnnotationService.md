@@ -238,7 +238,6 @@ Example:
 ## Annotation Service API Overview
 
 - Annotation Service Swagger UI: http://annotations.organicity.eu/swagger-ui.html
-- Annotation Service Swagger Documentation: https://organicityeu.github.io/api/Annotation.html
 
 Annotation API is organized in three major parts 
  

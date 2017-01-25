@@ -88,7 +88,7 @@ Date: Tue, 20 Sep 2016 12:37:07 GMT
 To [delete an asset](HowToUpdateDeteleAnAsset.md#delete-an-asset), you must do an HTTP **DELETE** to the OC-Exp. Site:
 
 ```
-DELETE http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
+DELETE  https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
 
 Authorization: Bearer <AccessToken>
 Accept: application/json

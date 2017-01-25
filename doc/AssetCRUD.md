@@ -57,7 +57,7 @@ To [update an asset](HowToUpdateDeteleAnAsset.md#update-an-asset), you must do a
 JSON attributes `id` and `type` are not allowed! Be aware of the `/attrs` in the URL:
 
 ```
-POST http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>/attrs
+POST https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>/attrs
 
 Authorization: Bearer <AccessToken>
 Content-Type: application/json

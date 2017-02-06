@@ -199,6 +199,10 @@ See [XLS](./figs/Organicity_URNs.xlsx) for a recommendation list of asset types.
 
 ### Geospatial Asset Attributes
 
+:exclamation: :wrench: :earth_asia: **Please, notice the Assets Spatial model changed on the past days!** :earth_asia: :wrench: :exclamation:
+
+_For any questions you can contact us at https://support.zoho.com/portal/organicity/_ 
+
 Asset can have spatial-information attached. It is recommended each assets to have a spatial attribute. For assets that are having a location the asset location format
 should be used, while other assets with more complex geometries (e.g. polygons for boroughs in the city) the complex geometry format can be used.
 
@@ -206,7 +210,24 @@ should be used, while other assets with more complex geometries (e.g. polygons f
 
 This is the basic model for adding a simple single point location to an asset.
 
-*Points are always always a string containing a valid longitude-latitude pair, separated by comma.﻿⁠⁠*
+:exclamation: **Notice this changed. Latitude and Longitude pairs work now following the [WGS84 Lat Long](https://en.wikipedia.org/wiki/World_Geodetic_System#WGS84),
+  [EPSG::4326](http://www.opengis.net/def/crs/EPSG/0/4326) standard as described below:**
+
+*Points are always always a string containing a valid latitude-longitude pair, separated by comma.﻿⁠⁠*
+
+:wrench: **If you used this before you simply need to reverse the *longitude and latitude* pairs to *latitude and logitude* as on the example:**
+
+
+```
+{
+  "location": {
+    "value": "latitude, longitude",
+    "type": "geo:point"
+  }
+}
+```
+
+Example:
 
 ```
 {
@@ -216,23 +237,68 @@ This is the basic model for adding a simple single point location to an asset.
   }
 }
 ```
+
 ####Asset Complex Geometry Format
 
-This is model supports complex assets geometries representations by supporting standard [GeoJSON](http://geojson.org/geojson-spec.html#geometry-objects) geometry objects.
+This model supports complex assets geometries representations by supporting standard [GeoJSON](http://geojson.org/geojson-spec.html#geometry-objects) geometry objects.
 
-* Attribute should be named as geometry and type should be oc:geo:json*
+
+:exclamation: **Notice this changed: The attribute name should be *location* instead of *geometry* and the type should be *geo:json* instead of *oc:geo:json*.**
+
+*Attribute should be named location and type should be geo:json. Coordinates need to follow the longitude, latitude pairs in order to follow the [GeoJSON](http://geojson.org/geojson-spec.html#geometry-objects) standard*
+
+:wrench: **If you used this before you simply need to check you are using the *location* attribute and the  *geo:json* type as on the example below:**
 
 ```
 {
-  "geometry": {
-    "value": {
-      "type": "Point",
-      "coordinates": [2.186447514, 41.3763726]
-    },
-    "type": "oc:geo:json"
-  }
+	"location": {
+		"value": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[longitude, latitude],
+					[longitude, latitude]
+				]
+			]
+		},
+		"type": "geo:json"
+	}
 }
 ```
+
+Example:
+
+```
+{
+	"location": {
+		"value": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[100.0, 0.0],
+					[101.0, 0.0],
+					[101.0, 1.0],
+					[100.0, 1.0],
+					[100.0, 0.0]
+				],
+				[
+					[100.2, 0.2],
+					[100.8, 0.2],
+					[100.8, 0.8],
+					[100.2, 0.8],
+					[100.2, 0.2]
+				]
+			]
+		},
+		"type": "geo:json"
+	}
+}
+```
+
+More GeoJSON examples can be found in [GeoJSON IETF Spec](https://tools.ietf.org/html/draft-butler-geojson-06#page-14).
+Additionally, the following
+[GeoJSON Tutorial](http://www.macwright.org/2015/03/23/geojson-second-bite.html)
+might be useful in understanding the format. 
 
 ### Other designated Asset Attributes
 
@@ -241,7 +307,7 @@ There is a number of attributes that can be used for an asset that encode severa
 ####Last Update
 
 This attribute encoded the time that an update to the assed has been performed
-*This attribute is set by Organicity platform  *
+*This attribute is set by Organicity platform*
 
 ```
 TimeInstant: {

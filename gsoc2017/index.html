@@ -12,6 +12,7 @@
   <!-- For iPhone: -->
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
   <link rel="stylesheet" href="../stylesheets/stylesheet.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <header>
@@ -24,18 +25,46 @@
 </div>
 <div class="content">
 
+<div class="col-md-12"> 
 <h1>Project Ideas:</h1>
+<div id="proplist">
 
-<ul>
-
-<li>
-
-</li>
-
-</ul>
+<div id="proposal" class="col-md-4 hidden"> 
+  <div class="panel panel-default">
+    <div class="prop-title panel-heading"></div>
+    <div class="prop-body panel-body">
+      
+    </div>
+    <div class="prop-tech panel-footer"></div>
+  </div>
+</div>
 
 </div>
-<footer>&copy; Organicity 2016</footer>
+</div>
+</div>
+<footer class="col-md-12">&copy; Organicity 2016</footer>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+var JSON;
+
+ $.getJSON('./proposals.json', function(response){
+       JSON = response;
+       JSON.forEach(function(elem){
+            var itm = document.getElementById("proposal");
+            console.log(itm);
+            var cln = itm.cloneNode(true);
+            $(cln).find(".prop-title").text(elem.title);
+            $(cln).find(".prop-body").text(elem.description);
+            $(cln).find(".prop-tech").text(elem.tech);
+            cln.removeAttribute("id");
+            $(cln).removeClass("hidden");
+            document.getElementById("proplist").appendChild(cln);
+            console.log(cln);
+       
+       })
+ })
+</script>
 </body>
 
 </html>

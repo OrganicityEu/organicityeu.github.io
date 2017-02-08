@@ -1,11 +1,16 @@
 [
-{"title":"OC Data Reporting","description":"A tool that allows OrganiCitizens to report problems in the discriptions of stored Assets in OC. Suggestions could then be merged by the OC Site managers. It could be developed as an application (e.g., for smartphones) or some functionalities on top of the Urban Data Observatory.", "tech":"Android, Gradle/ HTML, WebServices"}
-,{"title":"OC Data Importers"}
-,{"title":"OrganiCityPi"}
-,{"title":"OrganiCityDuino"}
-,{"title":"Online Data Sources"}
-,{"title":"Develop Smartphone Experimentation Sensors"}
-,{"title":"OrganiCity Accounting"}
-,{"title":"OrganiCity User Profile Page"}
-,{"title":"OC Getting Started Guide"}
+{"title":"Data Reporter","description":"A tool that allows OrganiCitizens to report problems in the discriptions of stored Assets in OC. Suggestions could then be merged by the OC Site managers. It could be developed as an application (e.g., for smartphones) or some functionalities on top of the Urban Data Observatory.", "tech":"Android, Gradle/ HTML, WebServices"}
+,{"title":"Data Importers","description":"Develop a set of importers for external data (CSV, Excel, WebServices) to the OrganiCity compatible NGSI 9/10 format.","tech":"NGSI 9/10, WebServices "}
+,{"title":"OrganiCityPi","description":"Create a RaspberryPi based sensor-box for OrganiCity that citizens can place in their house/building/office and submit data to OrganiCity.
+","tech":"NGSI 9/10, WebServices, Python, Linux, Grove"}
+,{"title":"OrganiCityDuino","description":"Create an Arduino based sensor-box for OrganiCity that citizens can place in their house/building/office and submit data to OrganiCity.","tech":"NGSI 9/10, WebServices, Python, Linux, C und C++  "}
+,{"title":"Online Data Sources","description":"Create an integration for external sensor data sources (e.g., Temboo) to OrganiCity, so that citizens can submit data to OrganiCity.","tech":"NGSI 9/10, WebServices"}
+,{"title":"Develop Smartphone Experimentation Sensors","description":"Create a number of Sensor Plugins for the Smartphone Experimentation Tool integrating wearables, BLE devices or other smart devices.","tech":"Android, OSGi, Bluetooth, Java"}
+,{"title":"OrganiCity Accounting","description":" OrganiCity has multiple components, which rely on accounting informations of each other. The goal of this project is to install and configure the central OC Accounting component (based on FIWARE Orion), and add the corresponding accounting to the different tools. For example, this includes a quota management","tech":"REST, NGSI9/10, ..."}
+,{"title":"OrganiCity User Profile Page","description":"OrganiCity’s Account management relies on the KeyCloak Identity and Access Management. Currently, the user profile is the default profile page of the Keycloak Server which includes the username, the email, the first name and the last name. Furthermore, the list of application inside the profile is just a mess. The idea of this project is separated in two parts:
+Develop a REST component (back-end), which can store more Organicity specific user data like the age, city, interests and the experiments a user participates, etc. It basically extends the KeyCloak, without touching the KeyCloak implementation.
+Based on the component developed in 1), create a beautiful user profile page (front-page), which will be an extended profile page for the users. It includes all Organicity specific user data, the experiments a user participates, etc. It will also be an interface for new users to find experiments they can participate.
+","tech":"Java (Backend), React (Front-end), HTML, CSS, REST"}
+,{"title":"OC Getting Started Guide","description":"To use the OC Facility as an experimenter, is very hard to understand how this works. Thus, we need a Getting Started Guide which explains the experimenters step by step how to use the facility, This could be similar to https://try.github.io . This guide will be augmented with novel UX components and techniques to make it simpler for users to interact with the platform for the first time.
+","tech":"HTML, CSS, JavaScript (React)"}
 ]

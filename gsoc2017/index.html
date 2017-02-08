@@ -13,6 +13,12 @@
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
   <link rel="stylesheet" href="../stylesheets/stylesheet.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <style>
+  .easy { background-color: green !important}
+  .med { background-color: yellow !important}
+  .hard { background-color: red !important}  
+  </style>
 </head>
 <body>
 <header>
@@ -31,11 +37,16 @@
 
 <div id="proposal" class="col-md-4 hidden"> 
   <div class="panel panel-default">
-    <div class="prop-title panel-heading"></div>
+    <div class="panel-heading">
+    <span class="prop-diff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span class="prop-title"></span> 
+    </div>
     <div class="prop-body panel-body">
       
     </div>
-    <div class="prop-tech panel-footer"></div>
+    <div class="panel-footer">
+    <span class="prop-tech"></span>
+    </div>
   </div>
 </div>
 
@@ -57,6 +68,7 @@ var JSON;
             $(cln).find(".prop-title").text(elem.title);
             $(cln).find(".prop-body").text(elem.description);
             $(cln).find(".prop-tech").text(elem.tech);
+            $(cln).find(".prop-diff").addClass(elem.diff);
             cln.removeAttribute("id");
             $(cln).removeClass("hidden");
             document.getElementById("proplist").appendChild(cln);

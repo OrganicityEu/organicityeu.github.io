@@ -82,8 +82,9 @@ grant_type=refresh_token&refresh_token=<REFRESH_TOKEN>
 
 Please note, that the same `client_id` and `client_secret` is needed to refresh the token.
 
-The server verifies your credentials and the refresh token.
-If successful, the server returns a JSON record as described above.
+The server verifies your credentials and the refresh token. If successful, the server returns a JSON record as described above.
+
+**IMPORTANT NOTE**: A Refresh Token is valid for 30 days. It means, you must use the Refresh Token at least once within 30 days, otherwise it expires!
 
 ## Please note
 

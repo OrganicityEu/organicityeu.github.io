@@ -359,7 +359,7 @@ function createAnnotation(){
                 "numericValue": 0,
                 "tagUrn": tagUrn,
                 "textValue": "textValue",
-                "user": userId,
+                "user": userId
         };
 
           $.ajax({

@@ -59,8 +59,20 @@
 
 <p>The following table shows the basic structure for writing a script.</p>
 
-
-<p>TODO TABLE</p>
+<table>
+<tr>
+  <td>[resource <resource>]+</td>
+  <td>Shortcut block, which must contains at least one statement.</td>
+</tr>
+<tr>
+  <td>on <events>+</td>
+  <td>The event block, lists the events triggering the script. At least one event must be provided.</td>
+</tr>
+<tr>
+  <td>[if <condition> do]+<br>[<actions>]+<br>[else do]?<br>[<actions>]?+<br>end if;</td>
+  <td>The conditional block, which lists actions to be performed based on conditions.</td>
+</tr>
+</table>
 
 <p>Once the script has been written, it can be deployed to the gateway where it will be executed. This is performed using a right click on the script file.</p>
 
@@ -74,7 +86,63 @@
 
 <p>First of all, a new service is created with the name of the sna file (without the extension). In our example, it is speed-limit. This service representing the application always contains a standard set of resources.</p>
 
-<p>TODO TABLE</p>
+<table>
+<tr>
+  <td>Resource</td>
+  <td>Type</td>
+  <td>Description</td>
+</tr>
+<tr>
+  <td>autorestart</td>
+  <td>property</td>
+  <td>In case of failure, decides if the application should be automatically started again</td>
+</tr>
+<tr>
+  <td>content</td>
+  <td>property</td>
+  <td>Script file content</td>
+</tr>
+<tr>
+  <td>EXCEPTION</td>
+  <td>action</td>
+  <td>Deprecated</td>
+</tr>
+<tr>
+  <td>location</td>
+  <td>property</td>
+  <td>GPS location which can be used if it makes sense </td>
+</tr>
+<tr>
+  <td>maxinstances</td>
+  <td>property</td>
+  <td>Number of parallel instances which should be started</td>
+</tr>
+<tr>
+  <td>resetOnStop</td>
+  <td>property</td>
+  <td>On Stop, decides if the generated resources by the application should be destroyed or kept</td>
+</tr>
+<tr>
+  <td>START</td>
+  <td>action</td>
+  <td>Starts the application</td>
+</tr>
+<tr>
+  <td>status</td>
+  <td>state variable</td>
+  <td>Current status of the application: START/STOP/...</td>
+</tr>
+<tr>
+  <td>STOP</td>
+  <td>action</td>
+  <td>Stops the application</td>
+</tr>
+<tr>
+  <td>UNINSTALL</td>
+  <td>action</td>
+  <td>Removes the application</td>
+</tr>
+</table>
 
 <p>To start the application, simply double click on the START resource. This will launch the start action, which will run the script.</p>
 

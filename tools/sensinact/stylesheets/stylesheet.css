@@ -84,3 +84,59 @@ a:hover {
   margin-bottom: 6rem;
   text-align: center;
 }
+
+
+
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: left;
+}
+
+th, td{
+    vertical-align: middle;
+}
+
+th {
+    font-weight: 600;
+}
+
+table {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-collapse: separate;
+    border-color: #DDDDDD #DDDDDD #DDDDDD -moz-use-text-color;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 0;
+    margin-bottom: 18px;
+    width: 100%;
+    background-color: transparent;
+    border-spacing: 0;
+    max-width: 100%;
+}
+
+thead th {
+    border-left: 1px solid #DDDDDD;
+    line-height: 18px;
+    padding: 8px;
+}
+
+th, td {
+    border-left: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    line-height: 18px;
+    padding: 8px;
+}
+
+tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th {
+    background-color: #F9F9F9;
+}
+
+

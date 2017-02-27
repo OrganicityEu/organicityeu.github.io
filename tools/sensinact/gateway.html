@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SensiNact | OrganiCity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Standard Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="http://organicity.eu/wp-content/themes/organicity/favicon.ico">
+  <!-- For iPhone: -->
+  <link rel="apple-touch-icon-precomposed" href="http://organicity.eu/wp-content/themes/organicity/apple-touch-icon-precomposed.png">
+  <link rel="stylesheet" href="stylesheets/stylesheet.css">
+</head>
+
+<body>
+
+<header>
+  <a href="http://organicity.eu/" title="OrganiCity - link to homepage">
+    <img src="images/organicity_logo.png" alt="Organicity">
+  </a>
+</header>
+
+<div class="title">
+  <h1>SensiNact</h1>
+  <nav>
+    <a href="index.html">Introduction</a> |
+    <a href="install.html">Installation</a> |
+    <a href="studio.html">Studio</a> |
+    <a href="application.html">Application management</a>
+    <a href="gateway.html">Gateway</a>
+  </nav>
+</div>
+
+<div class="content">
+
+<h2>Gateway</h2>
+
+<h3>Introduction</h3>
+
+<p>The sensiNact Gateway allows the interconnection of heterogeneous devices and services into a consistent model. This one is presented to the sensiNact Studio which can monitor the devices ecosystem and design application to be executed on the gateway.</p>
+
+<img src="images/gateway-integration.png"/>
+
+<p>More precisely, the sensiNact Gateway integrates with the OC Platform using the Asset Discovery Service. Thereby, the gateway is aware of the assets provided by the OC Platform. On the other hand, the gateway has dedicated interfaces to directly connect to third parties devices and API. As a result, the gateway can interact with a lot of resources, which can be local or remote.</p>
+
+<h3>The gateway architecture</h3>
+
+<p>The interactions between the gateway and other entities are performed through a set of northbound and southbound bridges. The goal of the bridges is to manage the communication with devices and services, which can be local or remote. On one hand, southbound bridges are in charge of collecting data from sensors and services, and to send orders which will be performed by actuators. On the other hand, northbound bridges are specialized in interacting with remote systems. Thanks to those bridges, it is possible to make third party systems aware of devices & virtual resources known by the gateway.</p>
+
+<img src="images/gateway-architecture.png"/>
+
+<p>In terms of connectivity, on the southbound side the sensiNact gateway allows to cope both with “physical device” protocols and “virtual device” ones, allowing a uniform and transparent access to an XBee network, or an HTTP Restful web service for example. Here's a non-exhaustive list of supported protocols:</p>
+
+<ul>
+  <li><strong>EnOcean [EnOcean],</strong> energy harvesting wireless sensor technology (ultra-low-power radio technology for free wireless sensors), and protocols in use to interact with those sensors;</li>
+  <li><strong>Bluetooth Low Energy.</strong> Part of the Bluetooth specification version 4 [Bluetooth4], it is a personal area network, low power protocol designed mainly for healthcare or entertainment type of applications;</li>
+  <li><strong>MQTT [MQTT],</strong> which is a machine-to-machine protocol, lightweight publish/subscribe messaging transport, useful for connections with remote locations where a small code footprint is required and/or network bandwidth is at a premium;</li>
+  <li><strong>ZigBee [ZigBee]</strong> based protocols (XBee for example);</li>
+  <li><strong>CoAP [RFC7252],</strong> which is a REST application protocol, designed to be “the HTTP for constrained networks and devices” whose concept originated from the idea that "the Internet Protocol could and should be applied even to the smallest devices," and that low-power devices with limited processing capabilities should be able to participate in the Internet of Things; it is usually used on top of a 6LoWPAN network, but it may travel regular IP networks as well (it is used by the OMA LWM2M protocol, for instance).</li>
+</ul>
+
+<p>On the northbound side the sensiNact gateway provides both client/server and publish/subscribe access protocols: MQTT [MQTT], JSON-RPC (1.0 and 2.0) [JSON-RPC], HTTP RESTful, CDMI [CDMI].</p>
+
+<p>All the communications of sensiNact gateway are converging to a central piece: the core. This element is in charge of the overall coordination of information, involving two managers: the device manager and the application manager.</p>
+
+<p>The device manager, with its associated database (the OSGi registry) stores all the information regarding devices. This include devices availability, and also devices properties, location, etc.</p>
+
+<p>The application manager is a bit more complex. It manages the applications, following devices availability and updating applications life cycle. It offers a plug-in facility, to extend its behaviour. The two main plugins are the Event Condition Action plugin, and the Complex Event Processor plugin. The Event Condition Action plugin provides the basic structure for creating applications. It allows the triggering of rules, based on event. Then, a condition can be evaluated, and actions performed accordingly. Of course, events, conditions and actions are related to devices, using the device manager. Using the Esper Engine, the Complex Event Processor plugin is able to generate high level events based on low level ones. For example, it is possible to know that two events occur in a given time interval, with a given order. The events generated by the CEP plug-in can be used in the ECA plugin.</p>
+
+
+<h3>SensiNact resource model</h3>
+
+<p>It is important to understand the internal model of the sensiNact Gateway , since it is used everywhere in the sensiNact ecosystem. That is why, a clear understanding of the concepts and relationships between them can even help using the Studio introduced previously.</p>
+
+<p>All the devices and their related informations are represented using a standard resource model. It is structured around three main concepts: Service Provider, Service and Resource. A Service Provider représents an entity, which can be a device or something more abstract such as an API endpoint. This Service Provider can have several Services, which are a meaningful aggregate of resources based on a common purpose. A resource is the place where information is stored. For example, on a weather station, a temperature sensor will be a resource providing the temperature.</p>
+
+<img src="images/gateway-resource-model.png"/>
+
+<p>Based on its purpose, a resource can be a Property, a Sensor Data, a State Variable, or an Action. The differences among them is detailed in the following table.</p>
+
+<table>
+<thead>
+  <tr>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tr>
+  <td>Property</td>
+  <td>Property exposed by a service. This is information which is likely to be static (owner, model, vendor, static location, etc.). In some cases, this property can be allowed to be modified.</td>
+</tr>
+<tr>
+  <td>Sensor Data</td>
+  <td>Sensory data provided by a service. This is real-time information provided, for example, by the SmartObject that measures physical quantities.</td>
+</tr>
+<tr>
+  <td>State Variable</td>
+  <td>Information representing a SmartObject state variable of the service. This variable is most likely to be modified by an action (turn on light modifies the light state, opening door changes the door state, etc.) but also to intrinsic conditions associated to the working procedure of the service.</td>
+</tr>
+<tr>
+  <td>Action</td>
+  <td>Functionality provided by a service. This is mostly an actuation on the physical environment via an actuator SmartObject supporting this functionality (turn on light, open door, etc.) but can also be a request to do a virtual action (play a multimedia on a TV, make a parking space reservation, etc.)</td>
+</tr>
+</table>
+
+<p>Since it is not possible to directly interact with resources, sensiNact provides access methods. The access methods that can be associated to a resource depend on the resource type, for example, a GET method can only be associated to resources of type Property, State Variable and SensorData. A SET method can only be associated to State Variable and modifiable Property resources. An ACT method can only be associated to an Action resource. SUBSCRIBE and UNSUBSCRIBE methods can be associated to any resources.</p>
+
+<table>
+<thead>
+  <tr>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tr>
+  <td>GET</td>
+  <td>Gets the value attribute of the resource.</td>
+</tr>
+<tr>
+  <td>SET</td>
+  <td>Sets a given new value as the data value of the resource.</td>
+</tr>
+<tr>
+  <td>ACT</td>
+  <td>Invokes the resource (method execution) with a set of defined parameters.</td>
+</tr>
+<tr>
+  <td>SUBSCRIBE</td>
+  <td>Subscribes to the resource with optional condition and periodicity.</td>
+</tr>
+<tr>
+  <td>UNSUBSCRIBE</td>
+  <td>Remove an existing subscription.</td>
+</tr>
+</table>
+
+
+<h3>Conclusion</h3>
+
+<p>We have presented the architecture of the sensiNact Gateway, and the way it is integrated into the OC Platform. We also have introduced its resource model, since it is used in the studio as well.</p>
+
+<p>To help experimenters start easily using the Studio, we are providing “Gateways as a Service” for the OrganiCity project. They are Gateways available in the cloud, and configured for interacting with OrganiCity devices.</p>
+
+</div>
+
+<footer>&copy; Organicity 2016</footer>
+
+</body>
+
+</html>

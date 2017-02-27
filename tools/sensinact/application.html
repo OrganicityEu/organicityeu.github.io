@@ -28,15 +28,63 @@
 			<a href="index.html">Introduction</a> |
       <a href="install.html">Installation</a> |
       <a href="studio.html">Studio</a> |
-      <a href="application.html">Application creation</a>
+      <a href="application.html">Application management</a>
 	</nav>
 </div>
 
 <div class="content">
 
-<h2>Application creation</h2>
+<h2>Application management</h2>
 
-<p>SensiNact Studio provides...</p>
+<h3>Application creation</h3>
+
+<img src="images/app-creation.png"/>
+
+<p>The SensiNact Studio allows the creation of applications to be executed on the gateway. Creating an application is performed by writing a script using a dedicated syntax, and deploying this script to the gateway.</p>
+
+<p>On the figure above, a project has been created on the project explorer view (on the left). In this project, a script named speed-limit.sna has been created, and is being edited. As the figures shows, the editor provides code highlighting (some keywords are displayed in a special font), code completion (with popups) and a syntax validator which displays red crosses on the script margin in case of error.</p>
+
+<p>The dedicated syntax, a Domain Specific Language, is composed by the following blocks:</p>
+
+<ul>
+  <li><strong>The shortcut block:</strong> each resource is accessible through a unique URI, which can be quite long. This block aims at creating shortcut for the next blocks.</li>
+  <li><strong>The event block:</strong> the developer defines on which resources the application is triggered. When an event is thrown and is a valid trigger, the conditional block is executed.</li>
+  <li><strong>The conditional block:</strong> once the application has been triggered, and before any action can be executed, the data from the resource has to satisfy the conditional block. The keyword for this block is if followed by the conditions to be validated.</li>
+  <li><strong>The actions statements:</strong> if the conditional block is satisfied, actions are performed in the order that they are listed. The actions can be physical actions on actuators or virtual actions such as changing the format of a data using a mathematical function. The available actions, also named functions, are listed below:</li>
+  <ul>
+    <li><strong>Basic functions:</strong> addition, subtraction, division, multiplication, modulo, string concatenation, substring, various operators (e.g., equals, greater than, lesser than, different), ACT and SET methods on sensiNact resources.</li>
+    <li><strong>Complex Event Processing functions (using the Esper1 library):</strong> after, before, coincides, average, average deviation, count, max, min, median, standard deviation and sum.</li>
+  </ul>
+</ul>
+
+<p>The following table shows the basic structure for writing a script.</p>
+
+
+<p>TODO TABLE</p>
+
+<p>Once the script has been written, it can be deployed to the gateway where it will be executed. This is performed using a right click on the script file.</p>
+
+<img src="images/app-deployment.png"/>
+
+<h3>Application monitoring</h3>
+
+<p>After the application has been deployed, a new set of resources is automatically created under the AppManager device. You can browse those resources into the Device Navigator View.</p>
+
+<img src="images/app-resources.png"/>
+
+<p>First of all, a new service is created with the name of the sna file (without the extension). In our example, it is speed-limit. This service representing the application always contains a standard set of resources.</p>
+
+<p>TODO TABLE</p>
+
+<p>To start the application, simply double click on the START resource. This will launch the start action, which will run the script.</p>
+
+<img src="images/app-startup.png"/>
+
+<p>The figure shows that the application is up and running on the server. The studio can be used to check if the application has the expected behavior, by querying the resources. The studio can also be shutted down, since the applications are executed on the gateway, which will be presented in paragraph 4.3 (sensiNact Gateway). </p>
+
+<h3>Conclusion</h3>
+
+<p>In this section, we have presented the way sensiNact Studio can gives an overview of the available devices in the OrganiCity  context. We have also shown the creation process of IoT application following the Event-Condition-Action (ECA) pattern.</p>
 
 </div>
 

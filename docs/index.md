@@ -27,9 +27,12 @@ Once the experimenters are registered in the facility, they will have access to 
 
 ### Tools to Manage the experiment life-cycle 
 To create, configure and run experiments within the OrganiCity facility, experimenters must use the Experimenter Portal, and other complementary components which will allow them to manage different experiments concurrently.
-    *   **Experimenter Portal** It is the user interface to be used by the experimenters in order to define the scope of the experiments and manage them during their entire life cycle. From this portal, the experimenters will get access to the set of co-creation tools offered that they can use to build their experiments, the documentation and support channels. ([See further details about how to manage the experiment life cycle](/ExperimenterPortal))
-    *   **Smartphone experimentation framework**. It is a complementary framework that facilitates experimenter to gather and process data from the sensors and communication interfaces of the smartphones of volunteers and use them to run experiments. [(More)](https://organicityeu.github.io/set.html)
-    *   **Community Management** Basic functionality for interacting with the different communities of _Organicitizens_ participating in each experiment, which has been integrated within the Experimenter Portal.
+
+* **Experimenter Portal** It is the user interface to be used by the experimenters in order to define the scope of the experiments and manage them during their entire life cycle. From this portal, the experimenters will get access to the set of co-creation tools offered that they can use to build their experiments, the documentation and support channels. ([See further details about how to manage the experiment life cycle](/ExperimenterPortal))
+    
+* **Smartphone experimentation framework** It is a complementary framework that facilitates experimenter to gather and process data from the sensors and communication interfaces of the smartphones of volunteers and use them to run experiments. [(More)](https://organicityeu.github.io/set.html)
+
+* **Community Management** Basic functionality for interacting with the different communities of _Organicitizens_ participating in each experiment, which has been integrated within the Experimenter Portal.
 
 ### Tools for discovering, exploring and annotating data assets.
 

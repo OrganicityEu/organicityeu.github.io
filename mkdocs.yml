@@ -25,7 +25,7 @@ pages:
       -  TSmart: tools/tsmart/tsmart.md
 
 extra:
-    logo: https://organicityeu.github.io/api/static/img/oc_logo.png
+    logo: 'images/oc_logo.png'
     site_short_name: Tech Docs
     links:
         - name: api's
@@ -34,7 +34,7 @@ extra:
           url: https://status.organicity.eu/
     license: ''
     project: "This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198"
-    footer_logo: 'http://organicity.eu/wp-content/themes/organicity/images/logo_eu.png'
+    footer_logo: 'images/logo_eu.png'
 
 extra_css:
     - css/extra.css

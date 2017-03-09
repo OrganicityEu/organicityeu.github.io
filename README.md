@@ -54,15 +54,14 @@ INFO    -  Cleaning site directory
 On the `master` branch of the git repository run the following command:
 
 ```sh
-mkdocs gh-deploy
+mkdocs gh-deploy --remote-branch master
 ```
 
 That's it! Behind the scenes, MkDocs will build your docs and use the [ghp-import]
-tool to commit them to the gh-pages branch and push the gh-pages branch to
+tool to commit them to the master branch and push the master branch to
 GitHub.
 
-Use `mkdocs gh-deploy --help` to get a full list of options available for the
-`gh-deploy` command.
+*We use the master branch since we are using a Github personal page. For other repositories you can use the gh-pages branch*
 
 Be aware that you will not be able to review the built site before it is pushed
 to GitHub. Therefore, you may want to verify any changes you make to the docs
@@ -71,8 +70,7 @@ files locally.
 
 **Warning**
 
-You should never edit files in your gh-pages branch by hand if you're using
-the `gh-deploy` command because you will lose your work.
+You should never edit files in the `master` branch by hand always edit them on the `mkdocs` branch and then deploy them using **mkdocs**
 
 [GitHub]: https://github.com/
 [GitHub Pages]: https://pages.github.com/

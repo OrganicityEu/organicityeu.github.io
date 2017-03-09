@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>How To Push An Asset To The Experimenter Site - Organicity Tech Docs</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+			<a class="navbar-brand active" href="..">
+				<img alt="Organicity Tech Docs" src="https://organicityeu.github.io/api/static/img/oc_logo.png">Tech Docs
+			</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">architecture <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../AssetCRUD/">Asset CRUD</a>
+</li>
+                            
+<li >
+    <a href="../AssetDataModel/">Asset Data Model</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">services <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../AssetDiscoveryService/">Asset Discovery Service</a>
+</li>
+                            
+<li >
+    <a href="../AssetAnnotationService/">Asset Annotation Service</a>
+</li>
+                            
+<li >
+    <a href="../ExperimenterPortal/">Experimenter Portal</a>
+</li>
+                            
+<li >
+    <a href="../FederatedDataAssets/">Federated Data Assets</a>
+</li>
+                            
+<li >
+    <a href="../UrbanDataObservatory/">Urban Data Observatory</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../HowToAccessToken/">How To Access Token</a>
+</li>
+                            
+<li >
+    <a href="../HowToAuthenticateAnUser/">How To Authenticate An User</a>
+</li>
+                            
+<li >
+    <a href="../HowToOcSite/">How To Oc Site</a>
+</li>
+                            
+<li >
+    <a href="../HowToPushAnAsset/">How To Push An Asset</a>
+</li>
+                            
+<li class="active">
+    <a href="./">How To Push An Asset To The Experimenter Site</a>
+</li>
+                            
+<li >
+    <a href="../HowToPushAnAssetToTheProviderSite/">How To Push An Asset To The Provider Site</a>
+</li>
+                            
+<li >
+    <a href="../HowToRefreshToken/">How To Refresh Token</a>
+</li>
+                            
+<li >
+    <a href="../HowToUpdateDeteleAnAsset/">How To Update Detele An Asset</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../tools/sensinact/">Sensinact</a>
+</li>
+                            
+<li >
+    <a href="../tools/tsmart/tsmart/">TSmart</a>
+</li>
+                        </ul>
+                    </li>
+				
+				  
+				    <li><a href="https://organicityeu.github.io/api/">api's</a></li>
+				  
+				    <li><a href="https://status.organicity.eu/">status</a></li>
+				  
+				
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../HowToPushAnAsset/">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../HowToPushAnAssetToTheProviderSite/">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/organicityeu">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tutorial-how-to-push-an-assets-to-the-organicity-experimenter-site">Tutorial: How to push an Assets to the Organicity Experimenter Site</a></li>
+            <li><a href="#create-an-experiment-and-an-application">Create an Experiment and an Application</a></li>
+            <li><a href="#push-a-new-asset">Push a new asset</a></li>
+            <li><a href="#push-as-an-participant">Push as an Participant</a></li>
+            <li><a href="#delete-and-update-assets">Delete and update assets</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#todo-in-this-documentation">TODO in this documentation</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="tutorial-how-to-push-an-assets-to-the-organicity-experimenter-site">Tutorial: How to push an Assets to the Organicity Experimenter Site</h1>
+<p><strong>Precondition</strong>:</p>
+<ul>
+<li>To be able to push an asset to the Organicity Experimenter Site (OC-Exp. Site), you need the <strong>experimenter</strong> role. This will be assigned to you by the Organicity team.</li>
+</ul>
+<h2 id="create-an-experiment-and-an-application">Create an Experiment and an Application</h2>
+<p>First of all, you must create an experiment within the <a href="http://experimenters.organicity.eu">Experimenter Portal</a>. Please log in and click on <strong>[NEW EXPERIMENT]</strong> and follow the instructions. Make sure, the current date is between the the start date and end date.</p>
+<p>After you created an experiment, you must create an application. Please select the experiment and click on <strong>[APPS]</strong>. After you created the application, please select that application. On top, you will find three IDs, for example:</p>
+<ul>
+<li><strong>Experimenter ID</strong>: <code>cf2c1723-3369-4123-8b32-49abe71c0e57</code></li>
+<li><strong>Experiment ID</strong>: <code>57e127c010590cb31ca82aa4</code></li>
+<li><strong>Application ID</strong>: <code>57e1285a10590cb31ca82aa7</code></li>
+</ul>
+<p>In the next steps, we need that IDs.</p>
+<p>Go back to the <strong>[EXPERIMENTS]</strong> and start the experiment by clicking on <code>STOPPED</code> in the state column. The state is <code>running</code> afterwards.</p>
+<h2 id="push-a-new-asset">Push a new asset</h2>
+<p>The Asset endpoint is located under <a href="https://exp.orion.organicity.eu/v2/entities">https://exp.orion.organicity.eu/v2/entities</a>.</p>
+<h3 id="http-headers">HTTP headers</h3>
+<p>To create a new asset, please do an HTTP POST on https://exp.orion.organicity.eu/v2/entities with the following HTTP headers:</p>
+<pre><code class="shell">Authorization: Bearer &lt;AccessToken&gt;
+X-Organicity-Application: &lt;ApplicationID&gt;
+X-Organicity-Experiment: &lt;ExperimentID&gt;
+Content-Type: application/json
+Accept: application/json
+
+&lt;Asset in JSON&gt;
+</code></pre>
+
+<p>Here, you must use an <a href="../HowToAuthenticateAnUser">Access Token</a> which is <a href="../HowToAuthenticateAnUser">issued for you</a>.</p>
+<p>For the above IDs it looks like this:</p>
+<pre><code class="shell">POST https://exp.orion.organicity.eu/v2/entities
+
+Authorization: Bearer &lt;AccessToken&gt;
+Content-Type: application/json
+Accept: application/json
+X-Organicity-Application: 57e1285a10590cb31ca82aa7
+X-Organicity-Experiment: 57e127c010590cb31ca82aa4
+
+&lt;Asset in JSON&gt;
+</code></pre>
+
+<h3 id="http-body">HTTP body</h3>
+<p>The HTTP body is an asset in JSON format <a href="../AssetDataModel">as described here</a>. Important for the creation is the correct Asset ID. An Asset ID has the form:</p>
+<pre><code class="json">urn:oc:entity:experimenters:&lt;ExperimenterId&gt;:&lt;ExperimentId&gt;:&lt;AssetId&gt;
+</code></pre>
+
+<p>The <code>&lt;ExperimenterId&gt;</code> and <code>&lt;ExpeirmentID&gt;</code> are the one from above. The <code>&lt;assetID&gt;</code> is application specifc. Thus, you decide how they look like. In our example, we wil just use an <code>1</code> as the Asset ID. In our example, it looks as follows:</p>
+<pre><code class="json">urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+</code></pre>
+
+<p>A simple valid asset could be:</p>
+<pre><code class="json">{
+    &quot;id&quot;: &quot;urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1&quot;,
+    &quot;type&quot;: &quot;urn:oc:entityType:demo&quot;,
+  &quot;TimeInstant&quot;: {
+    &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+    &quot;value&quot;: &quot;2016-10-04T13:45:00.000Z&quot;
+  }
+}
+</code></pre>
+
+<h3 id="wiring-everything-together">Wiring everything together</h3>
+<p>Next, we wire everthing together: The HTTP headers and the asset:</p>
+<pre><code class="shell">POST https://exp.orion.organicity.eu/v2/entities
+
+Authorization: Bearer &lt;AccessToken&gt;
+Content-Type: application/json
+Accept: application/json
+X-Organicity-Application: 57e1285a10590cb31ca82aa7
+X-Organicity-Experiment: 57e127c010590cb31ca82aa4
+
+{
+    &quot;id&quot;: &quot;urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1&quot;,
+    &quot;type&quot;: &quot;urn:oc:entityType:demo&quot;,
+  &quot;TimeInstant&quot;: {
+    &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+    &quot;value&quot;: &quot;2016-10-04T13:45:00.000Z&quot;
+  }
+}
+</code></pre>
+
+<p>The response is a <code>201 Created</code>, which includes a <code>location</code> header:</p>
+<pre><code class="shell">Status Code: 201 Created
+...
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Date: Tue, 20 Sep 2016 12:37:07 GMT
+...
+Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
+...
+</code></pre>
+
+<h3 id="validate-that-the-asset-was-created-successfully-with-the-urban-data-obervatory">Validate, that the asset was created successfully with the Urban Data Obervatory</h3>
+<p>To verify, that the asset was created in Organicity Central Site, you must use the <a href="https://organicityeu.github.io/api/AssetDiscovery.html">Asset Discovery Service</a>.
+You can simply do an HTTP GET on the <code>location</code> header returnd by the creation:</p>
+<pre><code class="shell">GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+</code></pre>
+
+<h2 id="push-as-an-participant">Push as an Participant</h2>
+<p>To push an asset as an participant, the participant must be part of you experiment. A participant can be invited
+with the <a href="http://experimenters.organicity.eu/">Experimenter Portal</a>. If a participant logs in to your application,
+the <code>participant</code> role will be assigned. The pushing itself works as abobe.</p>
+<p><strong>HINTS</strong>:
+<em> In the Asset ID, you keep the <code>&lt;ExperimenterId&gt;</code>!
+</em> A participant can just create or read assets. Update and delete is not supported for participants.</p>
+<h2 id="delete-and-update-assets">Delete and update assets</h2>
+<p>See How to <a href="../HowToUpdateDeteleAnAsset">Delete or Update an asset</a>.</p>
+<h2 id="demo">Demo</h2>
+<h3 id="push-a-new-asset_1">Push a new asset</h3>
+<p>An XMLHTTPRequest-based example can be found here: https://organicityeu.github.io/demo/pushAsset.html</p>
+<h2 id="todo-in-this-documentation">TODO in this documentation</h2>
+<ul>
+<li>Public/Private</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
+                  <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="http://organicity.eu/wp-content/themes/organicity/images/logo_eu.png">            
+            <p class="small">Last update 2017-03-09 15:41:12 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../api/static/js/cropbox-min.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

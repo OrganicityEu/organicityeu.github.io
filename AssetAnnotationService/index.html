@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Asset Annotation Service - Organicity Tech Docs</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+			<a class="navbar-brand active" href="..">
+				<img alt="Organicity Tech Docs" src="https://organicityeu.github.io/api/static/img/oc_logo.png">Tech Docs
+			</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">architecture <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../AssetCRUD/">Asset CRUD</a>
+</li>
+                            
+<li >
+    <a href="../AssetDataModel/">Asset Data Model</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">services <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../AssetDiscoveryService/">Asset Discovery Service</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Asset Annotation Service</a>
+</li>
+                            
+<li >
+    <a href="../ExperimenterPortal/">Experimenter Portal</a>
+</li>
+                            
+<li >
+    <a href="../FederatedDataAssets/">Federated Data Assets</a>
+</li>
+                            
+<li >
+    <a href="../UrbanDataObservatory/">Urban Data Observatory</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../HowToAccessToken/">How To Access Token</a>
+</li>
+                            
+<li >
+    <a href="../HowToAuthenticateAnUser/">How To Authenticate An User</a>
+</li>
+                            
+<li >
+    <a href="../HowToOcSite/">How To Oc Site</a>
+</li>
+                            
+<li >
+    <a href="../HowToPushAnAsset/">How To Push An Asset</a>
+</li>
+                            
+<li >
+    <a href="../HowToPushAnAssetToTheExperimenterSite/">How To Push An Asset To The Experimenter Site</a>
+</li>
+                            
+<li >
+    <a href="../HowToPushAnAssetToTheProviderSite/">How To Push An Asset To The Provider Site</a>
+</li>
+                            
+<li >
+    <a href="../HowToRefreshToken/">How To Refresh Token</a>
+</li>
+                            
+<li >
+    <a href="../HowToUpdateDeteleAnAsset/">How To Update Detele An Asset</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../tools/sensinact/">Sensinact</a>
+</li>
+                            
+<li >
+    <a href="../tools/tsmart/tsmart/">TSmart</a>
+</li>
+                        </ul>
+                    </li>
+				
+				  
+				    <li><a href="https://organicityeu.github.io/api/">api's</a></li>
+				  
+				    <li><a href="https://status.organicity.eu/">status</a></li>
+				  
+				
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../AssetDiscoveryService/">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../ExperimenterPortal/">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/organicityeu">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#asset-annotation-service">Asset Annotation Service</a></li>
+            <li><a href="#data-model">Data Model</a></li>
+            <li><a href="#annotation-service-api-overview">Annotation Service API Overview</a></li>
+            <li><a href="#example">Example</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="asset-annotation-service">Asset Annotation Service</h1>
+<p>Data Annotation Service manages the data annotation process on assets of all Organicity sites.
+The primary goal of this service is to provide to the programmable clients an available set of
+tag domains and then receive and store tags (tag attachment on an asset by a user). The Organicity
+platform will expose the data annotation service through the Annotation API.</p>
+<p>Since the UDO is creating a new type of urban data repository and provides a starting point for exploration of
+urban data across different city environments, it is crucial to stimulate extraction and generation of knowledge from the
+raw data streams. Aiming at enhancing the urban data sources with useful information, OrganiCity has developed this service for
+enabling collaborative data annotation. The utilized data model and annotation services are flexible enough to enable various types
+of labels from online resources on the Web, social media and references to rich multimedia content online (images, video, etc.)
+ to free-text labels or numeric values. A set of methods has been created for maintaining dynamic label
+ categories, labels and labelling of data.</p>
+<p><img alt="UDO and Annotations" src="../../images/udo-annotations.png" title="UDO and Annotations" /></p>
+<p>Acquiring labels for a specific set of data sources can be parameterized under the scope of an experiment. Experimenters can define a set
+of label categories to be used by the applications associated with their experiment. Moreover, experimenters, or other end-users,
+can retrieve the various labels and the corresponding data under the scope of an experiment.  Finally, they can create customized applications
+to acquire annotations from participants, or applications to visualize them.</p>
+<p>Along with the crowdsourcing annotation process, experimenters can utilize machine learning algorithms that enable more autonomous
+learning, semi-supervised learning or reinforcement learning techniques, exploiting the acquired annotations as training sets.
+It is possible in this way to use the created models as classifiers for automatic labelling of urban resources, events or anomaly detection.
+Furthermore, as users are constantly contributing with annotations, experimenters are possible to perform verification, cross-validation
+on the extracted models and create adaptive models using reinforcement learning methodologies.</p>
+<p>References to the specification of the Asset Annotation Service
+- Annotation Service Endpoint: http://annotations.organicity.eu/
+- Annotation Service Swagger UI: http://annotations.organicity.eu/swagger-ui.html</p>
+<h2 id="data-model">Data Model</h2>
+<p>The underlying data model of the annotation service is depicted in the following figure.
+<img alt="Annotation Model" src="../../images/annotation_model.png" title="Annotation Model" /></p>
+<ul>
+<li><strong>Service Entities</strong> represent utility/urban services or in general urban processes. An example of a service might be Garbage Collection, Noise Monitoring etc. The basic usage of
+service entities is the organization and discovery of tag collections (e.g. what tags are usually used for characterizing the noise level sensors etc.)</li>
+<li><strong>TagDomains Entities</strong> represent collections of tags. Usually a tag domain is associated with a service and experiment/application specify which tag domains they will use.</li>
+<li><strong>Tag Entities</strong> represent the actual labels to be used by end-user using an annotation client (application or experiment)</li>
+<li><strong>Application Entities</strong> (a.k.a. experiments) represent the client applications used by end-users during the annotation process.</li>
+<li><strong>Asset Entities</strong> are the assets of Urban data observatory that are annotated (associated by user with an existing tag/label)</li>
+</ul>
+<p>There are some underlying restriction and rules to Organicity users on accessing and using the annotation service. For the following Organicity roles:
+User Roles:
+- OC Admin (OC-A):
+    - can create, read, update and delete (CRUD) Service, TagDomain, Tag, Application and Annotatation entities
+- OC Experimenter (OC-E):
+    - can only Read Service, TagDomain, Tag entities that are public
+    - CRUD the ones involved in their experiment
+    - OC-E can CRUD all annotations of his applications
+- OC Participant (OC-P):
+    - can only Read Service, TagDomain, Tag entities that are public
+    - OC-P can CRUD only his annotations
+- OC Anonymous (OC-AN)
+    - OC-AN can R only COUNT aggregations of annotations</p>
+<h3 id="entity-description">Entity Description</h3>
+<p>The objects of the entities are comply with the following schema:</p>
+<h3 id="tag">Tag</h3>
+<pre><code class="json">{
+    &quot;id&quot;: 0,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;urn&quot;: &quot;string&quot;
+}
+</code></pre>
+
+<p>Example:</p>
+<pre><code class="json">{
+    id: 106,
+    urn: &quot;urn:tag:faulty&quot;,
+    name: &quot;faulty reading&quot;
+}
+</code></pre>
+
+<h3 id="tagdomain">TagDomain</h3>
+<pre><code class="json">{
+&quot;description&quot;: &quot;string&quot;,
+&quot;id&quot;: 0,
+&quot;urn&quot;: &quot;string&quot;,
+&quot;services&quot;: [
+    {
+        &quot;description&quot;: &quot;string&quot;,
+        &quot;id&quot;: 0,
+        &quot;urn&quot;: &quot;string&quot;,
+              &quot;user&quot;:&quot;string&quot;
+    }
+ ],
+ &quot;tags&quot;: [
+    {
+    &quot;id&quot;: 0,
+       &quot;name&quot;: &quot;string&quot;,
+       &quot;urn&quot;: &quot;string&quot;
+    }
+ ]
+}
+</code></pre>
+
+<p>Example:</p>
+<pre><code class="json">  {
+  id: 104,
+  urn: &quot;urn:tagDomain:faultyReadings&quot;,
+  description: &quot;This is tag domain to classify readings into faulty or normal&quot;,
+  tags: [
+      {
+          id: 106,
+          urn: &quot;urn:tag:faulty&quot;,
+          name: faulty reading
+      },
+      {
+          id: 105,
+          urn: &quot;urn:tag:normal&quot;,
+          name: &quot;normal reading&quot;
+      }
+   ],
+  services: [
+      {
+          id: 107,
+          urn: &quot;urn:service:environmentalMonitoring&quot;,
+          description: &quot;environmental monitoring&quot;,
+          user:&quot;372f3a46-0596-41cf-a038-a2845f06eb24&quot;
+      }
+   ]
+  }
+</code></pre>
+
+<h3 id="service">Service</h3>
+<pre><code class="json">{
+    &quot;description&quot;: &quot;string&quot;,
+    &quot;id&quot;: 0,
+    &quot;urn&quot;: &quot;string&quot;,
+    &quot;user&quot;:&quot;string&quot;
+}
+</code></pre>
+
+<p>Example:</p>
+<pre><code class="json">{
+    id: 107,
+    urn: &quot;urn:service:environmentalMonitoring&quot;,
+    description: &quot;environmental monitoring&quot;,
+    user:&quot;372f3a46-0596-41cf-a038-a2845f06eb24&quot;
+}
+</code></pre>
+
+<h3 id="experiment">Experiment</h3>
+<pre><code class="json">{
+    &quot;description&quot;: &quot;string&quot;,
+    &quot;id&quot;: 0,
+    &quot;tagDomains&quot;: [
+        {
+          &quot;description&quot;: &quot;string&quot;,
+          &quot;id&quot;: 0,
+          &quot;services&quot;: [
+            {
+              &quot;description&quot;: &quot;string&quot;,
+              &quot;id&quot;: 0,
+              &quot;urn&quot;: &quot;string&quot;,
+              &quot;user&quot;: &quot;string&quot;
+            }
+          ],
+          &quot;tags&quot;: [
+            {
+              &quot;id&quot;: 0,
+              &quot;name&quot;: &quot;string&quot;,
+              &quot;urn&quot;: &quot;string&quot;,
+              &quot;user&quot;: &quot;string&quot;
+            }
+          ],
+          &quot;urn&quot;: &quot;string&quot;,
+          &quot;user&quot;: &quot;string&quot;
+        }
+      ],
+    &quot;urn&quot;: &quot;string&quot;,
+    &quot;user&quot;: &quot;string&quot;
+}
+</code></pre>
+
+<h3 id="asset">Asset</h3>
+<pre><code class="json">{
+    &quot;id&quot;: 0,
+    &quot;urn&quot;: &quot;string&quot;
+}
+</code></pre>
+
+<p>Example:</p>
+<pre><code class="json">{
+    &quot;id&quot;: 12 ,
+    &quot;urn&quot;: &quot;urn:oc:entity:london:enableiot:fixed:98-4F-EE-00-0F-76&quot;
+}
+</code></pre>
+
+<h3 id="annotation">Annotation</h3>
+<pre><code class="json">{
+    &quot;annotationId&quot;: 0,
+    &quot;application&quot;: &quot;string&quot;,
+    &quot;assetUrn&quot;: &quot;string&quot;,
+    &quot;datetime&quot;: &quot;string&quot;,
+    &quot;numericValue&quot;: 0,
+    &quot;tagUrn&quot;: &quot;string&quot;,
+    &quot;textValue&quot;: &quot;string&quot;,
+    &quot;user&quot;: &quot;string&quot;
+}
+</code></pre>
+
+<p>Example:</p>
+<pre><code class="json">{
+    &quot;annotationId&quot;: 0,
+    &quot;application&quot;: &quot;57eab2c2ad0302ad0b5c92c6&quot;,
+    &quot;assetUrn&quot;: &quot;urn:oc:entity:london:enableiot:fixed:98-4F-EE-00-0F-76&quot;,
+    &quot;datetime&quot;: &quot;2016-10-21 09:01:12:123&quot;,
+    &quot;numericValue&quot;: 0,
+    &quot;tagUrn&quot;: &quot;urn:tag:faulty&quot;,
+    &quot;textValue&quot;: &quot;string&quot;,
+    &quot;user&quot;: &quot;86d7edce-5092-44c0-bed8-da4beaa3fbc6&quot;
+}
+</code></pre>
+
+<h2 id="annotation-service-api-overview">Annotation Service API Overview</h2>
+<ul>
+<li>Annotation Service Swagger UI: http://annotations.organicity.eu/swagger-ui.html</li>
+</ul>
+<p>Annotation API is organized in three major parts </p>
+<ul>
+<li><strong>Tag and Tag Domain browsing</strong>: for reading Application,Service, TagDomain, Tag entities</li>
+<li><strong>Annotation Parameters Management</strong>: creating, deleting, updating Application,Service, TagDomain, Tag entities</li>
+<li><strong>Annotation Management</strong>: Getting/setting annotations on Organicity Assets</li>
+</ul>
+<h3 id="experiment-tag-domain-and-tag-browsing">Experiment, Tag Domain and Tag browsing</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/tagDomains</td>
+<td>Get Tag Domains</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/tagDomains/{tagDomainUrn}</td>
+<td>Get a Tag Domain</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/tagDomains/{tagDomainUrn}/tags</td>
+<td>Get Tags of a Tag Domain</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/tags/{tagUrn}</td>
+<td>Get a Tag</td>
+</tr>
+</tbody>
+</table>
+<h3 id="annotation-parameters-management">Annotation Parameters Management</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>/admin/experiments</td>
+<td>Create an Experiment</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/admin/experiments/{experimentUrn}</td>
+<td>Delete an Experiment</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/admin/experiments/{experimentUrn}/tagDomains</td>
+<td>Disassociate a TagDomain of an Experiment</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/admin/experiments/{experimentUrn}/tagDomains</td>
+<td>Get TagDomains of an Experiment</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/admin/experiments/{experimentUrn}/tagDomains</td>
+<td>Associate a TagDomain with an Experiment</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/admin/services</td>
+<td>Create a Service</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/admin/services/{serviceUrn}</td>
+<td>Delete a Service</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/admin/tagDomains</td>
+<td>Get TagDomains</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/admin/tagDomains/{tagDomainUrn}</td>
+<td>Delete a TagDomains</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/admin/tagDomains/{tagDomainUrn}</td>
+<td>Update a TagDomains</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/admin/tagDomains/{tagDomainUrn}/services</td>
+<td>Disassociate a TagDomain with a Service</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/admin/tagDomains/{tagDomainUrn}/services</td>
+<td>Get associated services with a Tag Domain</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/admin/tagDomains/{tagDomainUrn}/services</td>
+<td>Associate a TagDomain with a Service</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/admin/tagDomains/{tagDomainUrn}/tags</td>
+<td>Delete a Tag from a Tag Domain</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/admin/tagDomains/{tagDomainUrn}/tags</td>
+<td>Add a Tag in a Tag Domain</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/admin/tagDomains/{tagDomainUrn}/tag</td>
+<td>Create Tag to TagDomain</td>
+</tr>
+</tbody>
+</table>
+<h3 id="annotation-management">Annotation Management</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/admin/annotations/delete/{assetUrn}</td>
+<td>Delete Annotation of an Asset</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/annotations/</td>
+<td>Get Annotation for Application, User and Tag</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/annotations/{assetUrn}</td>
+<td>deleteAnnotation</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/annotations/{assetUrn}</td>
+<td>Create Annotation</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/annotations/{assetUrn}/all</td>
+<td>Get Annotations of an Asset</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/annotations/{tagDomain}</td>
+<td>Get Annotation of a TagDomain</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p>Let userId=86d7edce-5092-44c0-bed8-da4beaa3fbc6 and experimentId=57eab2c2ad0302ad0b5c92c6</p>
+<p>Creation of a Tag Domain</p>
+<pre><code class="shell">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  &quot;description&quot;: &quot;a tag domain for faulty noise level&quot;,
+  &quot;services&quot;:  null,
+  &quot;tags&quot;: [
+    {
+      &quot;id&quot;: 123,
+      &quot;name&quot;: &quot;faulty&quot;,
+      &quot;urn&quot;: &quot;urn:tag:faulty&quot;
+    },
+    {
+          &quot;id&quot;: 132,
+          &quot;name&quot;: &quot;normal&quot;,
+          &quot;urn&quot;: &quot;urn:tag:normal&quot;
+    }
+  ],
+  &quot;urn&quot;: &quot;urn:tagDomain:86d7edce-5092-44c0-bed8-da4beaa3fbc6:malfunctioning&quot;
+}' 'https://annotations.organicity.eu/admin/tagDomains'
+</code></pre>
+
+<p>Get of Tag Domain</p>
+<pre><code class="shell">curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/tagDomains/urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
+</code></pre>
+
+<p>Get Tags of TagDomain</p>
+<pre><code class="shell">curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/tagDomains/urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning/tags'
+</code></pre>
+
+<p>Create Experiment</p>
+<pre><code class="shell">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '
+{
+  &quot;description&quot;: &quot;Experiment 86d7edce-5092-44c0-bed8-da4beaa3fbc6&quot;,
+  &quot;urn&quot;: &quot;urn:application:86d7edce-5092-44c0-bed8-da4beaa3fbc6&quot;
+}' 'https://annotations.organicity.eu/admin/applications'
+</code></pre>
+
+<p>Associate Experiment with an Tag Domain</p>
+<pre><code class="shell">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' 'https://annotations.organicity.eu/admin/applications/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6/tagDomains?tagDomainUrn=urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
+</code></pre>
+
+<p>Post an Annotation</p>
+<p>Let an experimenter who has developed an application to his smartphone in order to collect data concerning 
+the wind speed. Assuming that the application contains a TagDomain that describes the wind speed levels, 
+the creation of an annotation can be implemented as follows:</p>
+<pre><code class="javascript">userId = 86d7edce-5092-44c0-bed8-da4beaa3fbc6
+experimentId = 57eab2c2ad0302ad0b5c92c6
+assetUrn = urn:oc:entity:experimenters:62afc265-af9a-47e7-afb5-caab21ed09b4:57f210e59324fdd11103d93c:14
+tagUrn = urn:oc:tagDomain:WindSpeedLevel:calm
+
+function createAnnotation(){
+        var annotationJson = {
+                &quot;annotationId&quot;: null,
+                &quot;application&quot;: experimentId,
+                &quot;assetUrn&quot;: assetUrn,
+                &quot;datetime&quot;: null,
+                &quot;numericValue&quot;: 0,
+                &quot;tagUrn&quot;: tagUrn,
+                &quot;textValue&quot;: &quot;textValue&quot;,
+                &quot;user&quot;: userId,
+        };
+
+          $.ajax({
+             url: &quot;https://annotations.organicity.eu/annotations/&quot;+ assetUrn.name,
+             data: JSON.stringify(annotationJson),
+             type: &quot;POST&quot;,
+             beforeSend: function(xhr){
+                 xhr.setRequestHeader('Accept', 'application/json');
+                 xhr.setRequestHeader('Accept', 'application/json');
+                 xhr.setRequestHeader('Content-Type', 'application/json');
+
+
+             },
+             success: function() {
+                $.ajax({
+                    url: &quot;https://annotations.organicity.eu/annotations/&quot; + assetUrn +&quot;/all&quot;,
+
+                    type: &quot;GET&quot;,
+                    beforeSend: function(xhr){
+                        xhr.setRequestHeader('Accept', 'application/json');
+                        xhr.setRequestHeader('Accept', 'application/json');
+                        xhr.setRequestHeader('Content-Type', 'application/json');
+
+                    },
+                    success: function(response) {
+                        alert(response);
+                    }
+                 });
+             },
+             error: function(){
+                alert('an error occurred.');
+              }
+          });
+    } 
+</code></pre>
+
+<p>Get All Annotations</p>
+<pre><code class="shell">curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/annotations/urn%3Aoc%3Aentity%3Alondon%3Aweatherstation1/all'
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
+                  <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="http://organicity.eu/wp-content/themes/organicity/images/logo_eu.png">            
+            <p class="small">Last update 2017-03-09 15:41:12 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../api/static/js/cropbox-min.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

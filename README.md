@@ -10,6 +10,13 @@ Feel free to contribute by adding new tutorials and resources. Simply fork the r
 
 ## How to edit the documentation
 
+### Clone the repository
+
+```bash
+ git clone https://github.com/OrganicityEu/organicityeu.github.io.git
+```
+You will see the default branch is `mkdocs` instead of `master`. `master` is where the final html files will be created.
+
 ### Install MkDocs
 
 Install the `mkdocs` package using pip:
@@ -51,7 +58,7 @@ INFO    -  Cleaning site directory
 
 ### Deploy in [organicityeu.github.io](https://organicityeu.github.io/)
 
-On the `master` branch of the git repository run the following command:
+On the `mkdocs` branch of the git repository run the following command:
 
 ```sh
 mkdocs gh-deploy --remote-branch master
@@ -70,7 +77,7 @@ files locally.
 
 **Warning**
 
-You should never edit files in the `master` branch by hand always edit them on the `mkdocs` branch and then deploy them using **mkdocs**
+You should never edit files in the `master` branch by hand always edit them on the `mkdocs` branch and then deploy them using **mkdocs**.
 
 [GitHub]: https://github.com/
 [GitHub Pages]: https://pages.github.com/

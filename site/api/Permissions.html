@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OrganiCity API</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="oc.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
+  </script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">
+  </script>
+  <![endif]-->
+</head>
+<body>
+  <div id="top" class="container oc-page-wrapper">
+  <div class="row">
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand active" href="http://organicity.eu/">
+            <img src="static/img/oc_logo.png">
+          </a>
+          <button class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" aria-expanded="false">
+          <span class="oc-left-links-wrapper">
+          </span>
+          <ul class="nav navbar-nav navbar-right">
+            <li role="presentation">
+              <a href="index.html" aria-selected="false">Overview
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <h1>Organicity Accounts - Permission Component</h1>
+    <p class="sw-info-version">Version: <span>0.3.0-development</span></p>
+    <p><p>Several functions of Organicity are not available to any user, but
+    require additional permissions to be executed. This component
+    streamlines the handling of reading, editing and assigning roles and permissions
+    for specific users, and the reading and editing of clients.</p>
+    <p>The functionalities in this document are only available to the
+    service accounts of clients, and require appropriate roles
+    themselves, which is documented per resource.</p>
+    </p>
+    
+    
+    <p class="sw-default-value">
+        <span class="sw-default-value-header">Schemes:</span>
+        https
+    </p>
+    
+      <p>
+      <span class="sw-default-value-header">Base URL:</span>
+      <a href="https://accounts.organicity.eu/permissions/">
+      https://accounts.organicity.eu/permissions/
+      </a>
+      </p>
+    
+    
+    
+        <h2 id="swagger--summary-no-tags">Summary</h2>
+        
+            <div class="panel">
+              <div class="panel-body">
+        
+        <table class="table table-condensed swagger--summary">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Operation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--clients">/clients</a>
+                            </td>
+                        <td>
+                            <a href="#operation--clients-post">POST</a>
+                        </td>
+                        <td>
+                            <p>Create a client</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="2">
+                                <a href="#path--clients--clientId--redirecturis">/clients/{clientId}/redirecturis</a>
+                            </td>
+                        <td>
+                            <a href="#operation--clients--clientId--redirecturis-get">GET</a>
+                        </td>
+                        <td>
+                            <p>Get the redirect URIs for a given <code>clientId</code></p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--clients--clientId--redirecturis-put">PUT</a>
+                        </td>
+                        <td>
+                            <p>Update the redirect URIs for a given <code>clientId</code></p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--users">/users</a>
+                            </td>
+                        <td>
+                            <a href="#operation--users-get">GET</a>
+                        </td>
+                        <td>
+                            <p>Retrieve a list of users</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="2">
+                                <a href="#path--users--userId--roles">/users/{userId}/roles</a>
+                            </td>
+                        <td>
+                            <a href="#operation--users--userId--roles-get">GET</a>
+                        </td>
+                        <td>
+                            <p>Retrieves a list of all available roles of a user</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--users--userId--roles-post">POST</a>
+                        </td>
+                        <td>
+                            <p>Add a role to a user</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="2">
+                                <a href="#path--users--userId--roles--roleName-">/users/{userId}/roles/{roleName}</a>
+                            </td>
+                        <td>
+                            <a href="#operation--users--userId--roles--roleName--delete">DELETE</a>
+                        </td>
+                        <td>
+                            <p>Removes a specific role from a user</p>
+        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#operation--users--userId--roles--roleName--get">GET</a>
+                        </td>
+                        <td>
+                            <p>Tests if a user is assigned a specific role</p>
+        
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        
+              </div>
+            </div>
+    
+    
+    <h2>Security</h2>
+    
+    <div id="security-definition-Bearer" class="panel panel-security-definition panel-security-definition-apiKey">
+      <div class="panel-heading">
+        <h3 class="panel-title"><span class="security-name">Bearer</span> <strong><span class="sw-security-definition-apiKey"></span></strong></h3>
+      </div>
+      <div class="panel-body">
+        <section class="sw-security-properties">
+          <dl>
+          </dt>
+          <dl>
+            <dt class="security-property-name">name:</dt>
+            <dd class="security-property-type">
+              Authorization
+            </dd>
+          </dt>
+          <dl>
+            <dt class="security-property-name">in:</dt>
+            <dd class="security-property-type">
+              header
+            </dd>
+          </dt>
+          <dl>
+            <dt class="security-property-name">description:</dt>
+            <dd class="security-property-type">
+              Every API call must be authorized with a Bearer Token in the HTTP header
+    (Authorization: Bearer &lt;TOKEN&gt;) provided by OrganiCity Accounts -
+    https://accounts.organicity.eu
+    
+            </dd>
+          </dt>
+        </section>
+      </div>
+    </div>
+    
+    <h2>Paths</h2>
+    
+        
+        <span id="path--clients"></span>
+            <div id="operation--clients-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Create a client</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/clients</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:createClient</code> required.</p>
+            <p>This endpoint allows tools to create clients.</p>
+            
+                    </section>
+                        
+                        <section class="sw-request-body">
+                          
+                            <p><span class="label label-default">application/json</span> 
+                        </p>
+                             <p><p>The new client to be created.</p>
+                        </p>
+                              <div class="row body-content">
+                               <div class="col-md-6 sw-request-model">
+                                
+                                    <div id="definition-client" class="panel panel-definition">
+                                        <div class="panel-heading">
+                                          <h3 class="panel-title">
+                                              client
+                                          </h3>
+                                        </div>
+                                      <div class="panel-body">
+                                              Reference: <a class="json-schema-ref" href="#/definitions/Client">Client</a>
+                                      </div>
+                                    </div>
+                               </div>
+                              </div>
+                        </section>
+                    
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-201">
+                              201 Created
+                    
+                            </dt>
+                            <dd class="sw-response-201">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The client was successfully created.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">client_id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;c6e3c4ae-37e8-4662-b201-65ddb9bca6ff&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">secret</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;e49545ba-48a0-40de-9ad9-ea75ca23f15f&quot;</span><br></span>}
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/ClientCredentials">ClientCredentials</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-403">
+                              403 Forbidden
+                    
+                            </dt>
+                            <dd class="sw-response-403">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client does not have sufficient permissions
+                                (e.g., <code>accounts-permissions:createClient</code>)
+                                to create a client.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--clients--clientId--redirecturis"></span>
+            <div id="operation--clients--clientId--redirecturis-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Get the redirect URIs for a given <code>clientId</code></div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/clients/{clientId}/redirecturis</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:readClientRedirectUris</code> required.</p>
+            <p>This endpoint allows tools to get the redirect URIs for clients.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                clientId
+                                            <td><p>The identifier of the client</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requested list of redirect URIs returned as the body of
+                                the reply as an array. If no redirect URIs are available,
+                                the array will be emtpy</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">redirectUris</span>&quot;: <span class="hljs-value">[<br>        <span class="hljs-string">&quot;https://example.com/callback&quot;</span>,<br>        <span class="hljs-string">&quot;https://login.example.com/callback&quot;</span><br>    ]<br></span>}
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/RedirectUris">RedirectUris</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--clients--clientId--redirecturis-put" class="swagger--panel-operation-put panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Update the redirect URIs for a given <code>clientId</code></div>
+                    <h3 class="panel-title"><span class="operation-name">PUT</span> <strong>/clients/{clientId}/redirecturis</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:editClientRedirectUris</code> required.</p>
+            <p>This endpoint allows tools to update the redirect URIs for clients.
+            This is a full update, e.g. all existing redirect URIs will
+            be <em>exchanged</em> by the given one.</p>
+            
+                    </section>
+                        
+                        <section class="sw-request-body">
+                          
+                            <p><span class="label label-default">application/json</span> 
+                        </p>
+                             <p><p>The list of redirect URIs</p>
+                        </p>
+                              <div class="row body-content">
+                               <div class="col-md-6 sw-request-model">
+                                
+                                    <div id="definition-redirectUris" class="panel panel-definition">
+                                        <div class="panel-heading">
+                                          <h3 class="panel-title">
+                                              redirectUris
+                                          </h3>
+                                        </div>
+                                      <div class="panel-body">
+                                              Reference: <a class="json-schema-ref" href="#/definitions/RedirectUris">RedirectUris</a>
+                                      </div>
+                                    </div>
+                               </div>
+                              </div>
+                        </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                clientId
+                                            <td><p>The identifier of the client</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>Just a simple 200 will be returned, if the update was successful</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--users"></span>
+            <div id="operation--users-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Retrieve a list of users</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/users</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:listUsers</code> or/and <code>accounts-permissions:findUserByEmail</code> required.</p>
+            <p>This endpoint supplies a list of available user names and
+            userIds that can be used for the more detailed actions.</p>
+            <p>Due to privacy resons, this endpoint only returns these two
+            fields; more data can only be obtained when the respective
+            user performs a successful login through the client and
+            supplies an ID Token.</p>
+            <p>The endpoint always only returns a part of the list of users
+            (paginated), given by the offset (which defaults to <code>0</code>) and
+            the page length (which defaults to the maximum value of <code>50</code>).
+            If you want to query for more users, you have to make multiple
+            calls to the api.</p>
+            <p>The list of users is always sorted alphabetically with regard
+            to the user name. The offset into a list is thus not
+            guaranteed to always return a list starting with the same
+            user, as new users might shift the offset. However, as long as
+            the list of users itself does not change, the returned list is
+            constant as well.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                offset
+                                            <td><p>Permission <code>accounts-permissions:listUsers</code> required.</p>
+                                        <p>The offset in the list of users, given as the amount of
+                                        users to skip. Defaults to <code>0</code>, thus returning the start
+                                        of the list.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | x ≥ 0 }</span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                count
+                                            <td><p>Permission <code>accounts-permissions:listUsers</code> required.</p>
+                                        <p>The maximum amount of users to return as the result of the
+                                        call. Only values between 1 and 50 are allowed, in order
+                                        to limit the result size. Defaults to <code>50</code>.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">integer</span>
+                                        <span class="json-property-range" title="Value limits">, { x ∈ ℤ | 1 ≤ x ≤ 50 }</span>
+                                        
+                                                <span class="json-property-default-value">50</span>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                email
+                                            <td><p>Permission <code>accounts-permissions:findUserByEmail</code> required.</p>
+                                        <p>Using this parameter allows to search for a user by an email address.
+                                        If found, an HTTP 200 with a list containing one user will be returned,
+                                        otherwise an HTTP 404 NOT FOUND.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requested list of users has been extracted and is
+                                returned as the body of the reply as an array. If no users matched
+                                the query (i.e. the offset is too high), an empty
+                                array may be returned.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">[<br>    {<br>        &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;cf2c1723-3369-4123-8b32-49abe71c0e57&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;fbuether&quot;</span><br>    </span>},<br>    {<br>        &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;0dfc01f7-a234-4cbc-8e70-7ae361127dd4&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;jackie&quot;</span><br>    </span>}<br>]
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                        <section class="json-schema-description">
+                                                            <p>An array of user identifiers, along with the
+                                                    human-readable user name.</p>
+                                                    
+                                                        </section>
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/UserIdentifier">UserIdentifier</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client did not supply identify information
+                                (see <a href="#security-definition-OrganicityPermissions">Security
+                                Definitions</a>).</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-403">
+                              403 Forbidden
+                    
+                            </dt>
+                            <dd class="sw-response-403">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client does not have sufficient permissions
+                                (e.g., <code>accounts-permissions:listUsers</code> or/and <code>accounts-permissions:findUserByEmail</code>)
+                                to list users.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>Will be returned, if no users will be found. The body will be empty.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-422">
+                              422 Unprocessable Entity
+                    
+                            </dt>
+                            <dd class="sw-response-422">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The given query parameters where not valid. This might
+                                occur if either the given offset or count where negative,
+                                or if count was too large.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;The given count is too large.&quot;</span><br></span>}
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--users--userId--roles"></span>
+            <div id="operation--users--userId--roles-get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Retrieves a list of all available roles of a user</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/users/{userId}/roles</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:readGlobalRoles</code> or/and <code>accounts-permissions:readLocalRoles</code> required.</p>
+            <p>This endpoint retrieves a list of all roles available to the
+            supplied user and visible to the requesting tool. This
+            includes global roles as well as roles specific to the
+            requesting tool.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                userId
+                                            <td><p>The identifier of the user, as given by the subject field
+                                        in the user&#39;s ID Token (the authentication token handed
+                                        out by Organicity Accounts on login).</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The request has been processed and the determined roles
+                                are returned.</p>
+                                <p>Note that for a user that has no (visible) roles, an empty
+                                list is returned.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">[<br>    {<br>        &quot;<span class="hljs-attribute">role</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;experimenter&quot;</span><br>    </span>},<br>    {<br>        &quot;<span class="hljs-attribute">role</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;scenarios:admin&quot;</span><br>    </span>}<br>]
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div id="definition-Body-Schema" class="panel panel-definition">
+                                                  <div class="panel-heading">
+                                                    <h3 class="panel-title">
+                                                        Body Schema:
+                                                        <span class="json-property-type"><span class="json-property-type">object[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                              </span>
+                                                    </h3>
+                                                  </div>
+                                                <div class="panel-body">
+                                                        <section class="json-schema-description">
+                                                            <p>An array of roles, where each role describes a
+                                                    role assigned to the user.</p>
+                                                    
+                                                        </section>
+                                                    
+                                                                    <section class="json-schema-array-items">
+                                                                        <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Role">Role</a>
+                                                                        </span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                            
+                                                                        </div>
+                                                                    </section>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client did not supply identify information
+                                (see <a href="#security-definition-OrganicityPermissions">Security
+                                Definitions</a>).</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-403">
+                              403 Forbidden
+                    
+                            </dt>
+                            <dd class="sw-response-403">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client does not have sufficient permissions
+                                (e.g., <code>accounts-permissions:readGlobalRoles</code> or/and <code>accounts-permissions:readLocalRoles</code>)
+                                to inspect the roles of users.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The supplied user ID does not denote an existing user.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--users--userId--roles-post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Add a role to a user</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/users/{userId}/roles</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:editGlobalRoles</code> or/and <code>accounts-permissions:editLocalRoles</code> required.</p>
+            <p>This endpoint allows tools to assign roles to a specific user,
+            effectively allowing the user to perform additional actions.</p>
+            
+                    </section>
+                        
+                        <section class="sw-request-body">
+                          
+                            <p><span class="label label-default">application/json</span> 
+                        </p>
+                             <p><p>The new role to be assigned to the user. See the <a href="#/definitions/Role">definition
+                        of roles</a> for possible values.</p>
+                        </p>
+                              <div class="row body-content">
+                               <div class="col-md-6 sw-request-model">
+                                
+                                    <div id="definition-role" class="panel panel-definition">
+                                        <div class="panel-heading">
+                                          <h3 class="panel-title">
+                                              role
+                                          </h3>
+                                        </div>
+                                      <div class="panel-body">
+                                              Reference: <a class="json-schema-ref" href="#/definitions/Role">Role</a>
+                                      </div>
+                                    </div>
+                               </div>
+                              </div>
+                        </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                userId
+                                            <td><p>The identifier of the user, as given by the subject field
+                                        in the user&#39;s ID Token (the authentication token handed
+                                        out by Organicity Accounts on login).</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-201">
+                              201 Created
+                    
+                            </dt>
+                            <dd class="sw-response-201">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The given role was successfully assigned to the specified
+                                user. This reply is also returned if the role was already
+                                assigned to the user previously; in that case, no changes
+                                have been made.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client did not supply identify information
+                                (see <a href="#security-definition-OrganicityPermissions">Security
+                                Definitions</a>).</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-403">
+                              403 Forbidden
+                    
+                            </dt>
+                            <dd class="sw-response-403">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client does not have sufficient permissions
+                                (e.g., Permission <code>accounts-permissions:editGlobalRoles</code> or/and <code>accounts-permissions:editLocalRoles</code> required.)
+                                to assign roles to users.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The supplied user ID does not denote an existing user.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-422">
+                              422 Unprocessable Entity
+                    
+                            </dt>
+                            <dd class="sw-response-422">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The supplied role is not valid. This usually means that an
+                                experiment identifier was required as part of the role,
+                                but was not supplied.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;An Experiment ID is required for the given role, but was not supplied.&quot;</span><br></span>}
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    
+        <span id="path--users--userId--roles--roleName-"></span>
+            <div id="operation--users--userId--roles--roleName--delete" class="swagger--panel-operation-delete panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Removes a specific role from a user</div>
+                    <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/users/{userId}/roles/{roleName}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:editGlobalRoles</code> or/and <code>accounts-permissions:editLocalRoles</code> required.</p>
+            <p>This endpoint allows a requesting client to remove a role from
+            a user, effectively revoking permissions or access to specific
+            resources.</p>
+            <p>This endpoint only allows a requesting tool to manipulate the
+            global roles or the roles specific to itself. A tool cannot
+            remove permissions assigned to the user that are specific to a
+            different tool.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                userId
+                                            <td><p>The identifier of the user, as given by the subject field
+                                        in the user&#39;s ID Token (the authentication token handed
+                                        out by Organicity Accounts on login).</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                roleName
+                                            <td><p>The role to be checked for. This needs to adhere to the
+                                        format specified in the <a href="#/definitions/Role">Role Type
+                                        Definition</a>.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                experiment
+                                            <td><p>This field supplies an experiment identifier if the role
+                                        to be deleted is specific for an experiment.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The given role has been successfully removed from the
+                                supplied user.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client did not supply identify information
+                                (see <a href="#security-definition-OrganicityPermissions">Security
+                                Definitions</a>).</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-403">
+                              403 Forbidden
+                    
+                            </dt>
+                            <dd class="sw-response-403">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client does not have sufficient permissions
+                                (e.g., <code>accounts-permissions:editGlobalRoles</code> or/and <code>accounts-permissions:editLocalRoles</code>)
+                                to remove roles.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The user ID does not describe a valid user, or the role
+                                name does not denote a valid role.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-422">
+                              422 Unprocessable Entity
+                    
+                            </dt>
+                            <dd class="sw-response-422">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The supplied role is not valid. This usually means that an
+                                experiment identifier was required as part of the role,
+                                but was not supplied.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;An Experiment ID is required for the given role, but was not supplied.&quot;</span><br></span>}
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>    <div id="operation--users--userId--roles--roleName--get" class="swagger--panel-operation-get panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Tests if a user is assigned a specific role</div>
+                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/users/{userId}/roles/{roleName}</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>Permission <code>accounts-permissions:readGlobalRoles</code> or/and <code>accounts-permissions:readLocalRoles</code> required.</p>
+            <p>This endpoint can be used if a tool is not interested in the
+            complete list of assigned roles, but wants to check one
+            specific role for a user.</p>
+            
+                    </section>
+                    
+                        <section class="sw-request-params">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-param-name"></th>
+                                    <th class="sw-param-description"></th>
+                                    <th class="sw-param-type"></th>
+                                    <th class="sw-param-data-type"></th>
+                                    <th class="sw-param-annotation"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                userId
+                                            <td><p>The identifier of the user, as given by the subject field
+                                        in the user&#39;s ID Token (the authentication token handed
+                                        out by Organicity Accounts on login).</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                roleName
+                                            <td><p>The role to be checked for. This needs to adhere to the
+                                        format specified in the <a href="#/definitions/Role">Role Type
+                                        Definition</a>.</p>
+                                        </td>
+                                            <td>path</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                                    <span class="json-property-required"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                experiment
+                                            <td><p>This field specifies an experiment to check against. The
+                                        parameter should only be supplied if the given role
+                                        requires an experiment identifier.</p>
+                                        </td>
+                                            <td>query</td>
+                                            <td><span class="json-property-type">string</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    
+                      <section class="sw-responses">
+                          <p><span class="label label-default">application/json</span> 
+                    </p>
+                    
+                        <dl>
+                            <dt class="sw-response-200">
+                              200 OK
+                    
+                            </dt>
+                            <dd class="sw-response-200">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The role is assigned to the user.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-401">
+                              401 Unauthorized
+                    
+                            </dt>
+                            <dd class="sw-response-401">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client did not supply identify information
+                                (see <a href="#security-definition-OrganicityPermissions">Security
+                                Definitions</a>).</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-403">
+                              403 Forbidden
+                    
+                            </dt>
+                            <dd class="sw-response-403">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The requesting client does not have sufficient permissions
+                                (e.g., <code>accounts-permissions:readGlobalRoles</code> or/and <code>accounts-permissions:readLocalRoles</code>)
+                                to inspect roles, or the client tried to inspect permissions
+                                that are not visible to the client (e.g. because they
+                                belong to a different tool).</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-404">
+                              404 Not Found
+                    
+                            </dt>
+                            <dd class="sw-response-404">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The user ID does not describe a valid user, or the role
+                                name does not denote a valid role.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                            <dt class="sw-response-422">
+                              422 Unprocessable Entity
+                    
+                            </dt>
+                            <dd class="sw-response-422">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>The supplied role is not valid. This usually means that an
+                                experiment identifier was required as part of the role,
+                                but was not supplied.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 sw-response-examples">
+                                      <div class="label label-default">Example for application/json</div>
+                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;An Experiment ID is required for the given role, but was not supplied.&quot;</span><br></span>}
+                                </code></pre>
+                                
+                                    </div>
+                                </div>
+                                
+                                  <div class="row body-content">
+                                    <div class="col-md-6 sw-response-model">
+                                          
+                                              <div  class="panel panel-definition">
+                                                <div class="panel-body">
+                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                                </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                                
+                            </dd>
+                            <dt class="sw-response-500">
+                              500 Internal Server Error
+                    
+                            </dt>
+                            <dd class="sw-response-500">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <p>An unknown internal server error occured.</p>
+                                
+                                  </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                
+                                
+                            </dd>
+                        </dl>
+                      </section>
+                        <section class="sw-request-security">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="sw-request-security-schema"></th>
+                                    <th class="sw-request-security-scopes"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                </div>
+            </div>
+     
+    
+                       
+        <h2>Schema definitions</h2>
+    
+            
+                <div id="definition-Client" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Client"></a>
+                          Client:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>This JSON object is needed to create a client.</p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="clientName">
+                                              <span class="json-property-name">clientName:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>A name for the client</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="clientUri">
+                                              <span class="json-property-name">clientUri:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The URI of a client</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="redirectUri">
+                                              <span class="json-property-name">redirectUri:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>A redirect URI for a client</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">clientName</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;A client name&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">clientUri</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://localhost&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">redirectUri</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://localhost&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+            
+                <div id="definition-ClientCredentials" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/ClientCredentials"></a>
+                          ClientCredentials:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>This JSON object contains the credentials of a client</p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="client_id">
+                                              <span class="json-property-name">client_id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The unique id of a client</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="secret">
+                                              <span class="json-property-name">secret:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The secred (e.g., the password) of the client</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">client_id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;c6e3c4ae-37e8-4662-b201-65ddb9bca6ff&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">secret</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;e49545ba-48a0-40de-9ad9-ea75ca23f15f&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+            
+                <div id="definition-Error" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Error"></a>
+                          Error:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>These JSON objects are returned when the server encounters an error
+                      on processing a request, and needs to explain further error
+                      details to the requesting client.</p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="error">
+                                              <span class="json-property-name">error:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>A detailed explanation on why the request failed.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;The requested role does not adhere to the required format.&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+            
+                <div id="definition-RedirectUris" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/RedirectUris"></a>
+                          RedirectUris:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>This JSON object represents a list of redirect URIs</p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="redirectUris">
+                                              <span class="json-property-name">redirectUris:</span>
+                                              <span class="json-property-type">string[]</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>An array of redirectUris</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                                  <section class="json-schema-array-items">
+                                                                      <span class="json-property-type">string</span>
+                                                                      <span class="json-property-range" title="Value limits"></span>
+                                                                      
+                                                                      <div class="json-inner-schema">
+                                                                              <section class="json-schema-description">
+                                                                                  <p>All items should be URIs</p>
+                                                                          
+                                                                              </section>
+                                                                          
+                                                                          
+                                                                      </div>
+                                                                  </section>
+                                                      <section class="json-schema-example">
+                                                          <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">redirectUris</span>&quot;: <span class="hljs-value">[<br>        <span class="hljs-string">&quot;https://example.com/callback&quot;</span>,<br>        <span class="hljs-string">&quot;https://login.example.com/callback&quot;</span><br>    ]<br></span>}
+                                                  </code></pre>
+                                                  
+                                                      </section>
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                      
+                  </div>
+                </div>
+            
+                <div id="definition-Role" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Role"></a>
+                          Role:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>This JSON object represents a role.</p>
+                      <p>The actual roles are managed by the Organicity Permissions.
+                      Roles are represented by strings, which can come in two flavours:</p>
+                      <p>A role might be a global <strong>role</strong>, applying to all of Organicity, or
+                      it might be specific to a single tool (a Client from the view of
+                      Organicity Accounts). A tool-specific role is called <strong>permission</strong> and
+                      is always prefixed with the tool name and a colon.</p>
+                      <p>For example, the global role to create a new asset can be <code>experimenter</code>
+                      or <code>participant</code>.
+                      In contrast, the specific role of an administrator of the Scenario Tool
+                      is called: <code>scenarios:admin</code>.</p>
+                      <p><strong>Note</strong>: tool-specific permissions are only visible to the respective
+                      tools. Consequently, when a tool queries the Permission
+                      Component for the roles/permission of a single user, only the global roles
+                      and the permission specific to the querying tool are returned.</p>
+                      <p>The following roles for users are available:</p>
+                      <ul>
+                      <li>OC User - Everybody that is registered at OrganiCity, but does not participate in experiments</li>
+                      <li><code>experimenter</code> - OC Experimenter - People that promote and implement an experiment with the OC Platform</li>
+                      <li><code>participant</code> - OC Participant - People that participate in an experiment, e.g., by running it on their smartphones</li>
+                      <li><code>sitemanager</code> - OC Site Manager -<blockquote>
+                      <p>TODO</p>
+                      </blockquote>
+                      </li>
+                      <li><code>administator</code> - OC Administrator - Technical administration and support, e.g., the OC Facility administrator</li>
+                      </ul>
+                      <p>The following roles for clients are available:</p>
+                      <ul>
+                      <li><code>ocsite</code> - OC Site - A Client, which represents a OC City Site</li>
+                      <li><code>provider</code> - OC Provider -<blockquote>
+                      <p>TODO</p>
+                      </blockquote>
+                      </li>
+                      </ul>
+                      <p>The following permission are available (representative selection):</p>
+                      <ul>
+                      <li>Account Permissions:<ul>
+                      <li><code>accounts-permissions:readGlobalRoles</code>, which allows reading global roles assigned to a user.</li>
+                      <li><code>accounts-permissions:readLocalRoles</code>, which allows reading roles specific the requesting client assigned to a user.</li>
+                      <li><code>accounts-permissions:editGlobalRoles</code>, which allows adding or removing global roles to or from a user.</li>
+                      <li><code>accounts-permissions:editLocalRoles</code>, which allows adding or removing roles specific to the requesting client to or from a user.</li>
+                      <li><code>accounts-permissions:listUsers</code>, which allows listing of all users.</li>
+                      <li><code>accounts-permissions:findUserByEmail</code>, which allows to find users by an email.</li>
+                      <li><code>accounts-permissions:createClient</code>, which allows to create a client</li>
+                      <li><code>accounts-permissions:readClientRedirectUris</code>, which allows reading the redirect urls beloning to a client</li>
+                      <li><code>accounts-permissions:editClientRedirectUris</code>, which allows editing the redirect urls beloning to a client</li>
+                      </ul>
+                      </li>
+                      <li>Scenarios:<ul>
+                      <li><code>scenarios:moderator</code></li>
+                      <li><code>scenarios:admin</code></li>
+                      </ul>
+                      </li>
+                      <li>Site Manager:<ul>
+                      <li><code>site-manager:role-admin</code></li>
+                      <li><code>site-manager:dictionary-admin</code></li>
+                      <li>...</li>
+                      </ul>
+                      </li>
+                      </ul>
+                      <p><strong>Note</strong>: Some composite permissions are given, thus an user with the role <code>administrator</code>
+                        has the permissions <code>scenarios:admin</code> and <code>site-manager:role-admin</code></p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="role">
+                                              <span class="json-property-name">role:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The name of the role</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="experiment">
+                                              <span class="json-property-name">experiment:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                          </dt>
+                                          <dd>
+                                              <p>An experiment identifier, denoting the experiment that this
+                              specific role applies to.</p>
+                              <p>This field only needs to be set for roles restricted to
+                              specific experiments. If a query specifies a such a role
+                              without supplying an experiment id, the query will fail.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">role</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;experimenter&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+            
+                <div id="definition-UserIdentifier" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/UserIdentifier"></a>
+                          UserIdentifier:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                <span class="json-property-range" title="Value limits"></span>
+                
+                </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                          <section class="json-schema-description">
+                              <p>This is a simple record of only user id and name, to group
+                      a system-unique identifier together with a human-readable
+                      name of a user. This record is deliberatly kept small to
+                      not leak any privacy-related information.</p>
+                      
+                          </section>
+                      
+                              <section class="json-schema-properties">
+                                  <dl>
+                                          <dt data-property-name="id">
+                                              <span class="json-property-name">id:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The unique and permanent user identifier.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                          <dt data-property-name="name">
+                                              <span class="json-property-name">name:</span>
+                                              <span class="json-property-type">string</span>
+                                              <span class="json-property-range" title="Value limits"></span>
+                                              
+                                                  <span class="json-property-required"></span>
+                                          </dt>
+                                          <dd>
+                                              <p>The self-appointed user name.</p>
+                              
+                                              <div class="json-inner-schema">
+                                                  
+                                                  
+                                              </div>
+                                          </dd>
+                                  </dl>
+                              </section>
+                      
+                          <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;0dfc01f7-a234-4cbc-8e70-7ae361127dd4&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">name</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;jackie&quot;</span><br></span>}
+                      </code></pre>
+                      
+                          </section>
+                  </div>
+                </div>
+    
+  </div>
+  
+  <div class="oc-footers">
+    <div class="row oc-footer-large">
+      <h1 class="oc-home-view-title">Follow us
+      </h1>
+      <div class="oc-footer-large-social-links">
+        <a href="https://twitter.com/organicity_eu">
+          <span class="fa fa-twitter">
+          </span>
+        </a>
+        <a href="https://www.facebook.com/OrganiCities">
+          <span class="fa fa-facebook-official">
+          </span>
+        </a>
+      </div>
+      <img class="oc-footer-large-eu-logo" src="static/img/logo_eu.png">
+      </div>
+      <div class="row oc-footer-small">
+        <div class="col-md-2">&copy; OrganiCity 2015
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4">
+          <a class="oc-link" href="http://organicity.eu/">VISIT ORGANICITY.EU TO FIND OUT MORE
+          </a>
+        </div>
+        <div class="col-md-5">
+          <div>
+            <h4>Contact Us
+            </h4>
+              <a href="mailto:info@organicity.eu">info@organicity.eu
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

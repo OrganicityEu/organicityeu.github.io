@@ -178,42 +178,229 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#sensinact">SensiNact</a></li>
-            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#introduction">Introduction</a></li>
             <li><a href="#installation">Installation</a></li>
             <li><a href="#studio">Studio</a></li>
-            <li><a href="#application-creation">Application creation</a></li>
+            <li><a href="#application-management">Application management</a></li>
+            <li><a href="#gateway">Gateway</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="sensinact">SensiNact</h1>
+<h2 id="introduction">Introduction</h2>
 <p>SensiNact aims at helping coders working with data streams from deployed “IoT” devices without the need to complex API configuration.</p>
 <p>Using SensiNact, experimenters can find Internet of Things devices which are deployed in the city, and understand the data streams that they provide. The SensiNact IDE allows the creation of applications using a scripting tool (with Code Assist functionality). These applications might set up alerts for when variables in the data streams reach certain levels, or can aggregate data from many devices, creating virtual devices which provide coarse data that might be more useful to an experiment.</p>
-<h2 id="architecture">Architecture</h2>
 <p>The following schema summaries the way SensiNact integrates with the OrganiCity Experimentation as a Service facility.</p>
-<p><img alt="Sensinact" src="./images/architecture.png" />  </p>
+<p><img alt="SensiNact architecture" src="./images/architecture.png" /></p>
 <p>The Organicity EaaS facility collects and stores data from the federated sites (Santander, Aarhus and London, on this schema). SensiNact Gateway is connected to this platform, and is notifed when IoT devices is added, removed, or when sensed data is updated. SensiNact studio provides a graphical UI to the gateway. It ease discovering devices, and provides an editor to write applications using IoT devices.</p>
 <h2 id="installation">Installation</h2>
 <p>To use sensiNact, you need a gateway, and the studio.</p>
 <p><strong>SensiNact gateway</strong> will be provided as a service, in the cloud. To get the url and your credentials, please contact <a href="mailto:etienne.gandrille@cea.fr">Etienne Gandrille</a>.</p>
-<p><strong>SensiNact studio</strong>is based on the well known Eclipse IDE. To recieve a download link, please contact <a href="mailto:etienne.gandrille@cea.fr">Etienne Gandrille</a>.</p>
+<p><strong>SensiNact studio</strong> is based on the well known Eclipse IDE. To recieve a download link, please contact <a href="mailto:etienne.gandrille@cea.fr">Etienne Gandrille</a>.</p>
 <h2 id="studio">Studio</h2>
-<p><img alt="" src="./images/sensinact.png" /></p>
-<p>The central part of the Studio is the database of available devices. The content of this database is kept synchronized with the gateway using two mechanisms.</p>
-<p>Actively, the database can query the gateway through the HTTP client to obtain up to date information. This facility is used when the studio starts, to get an up to date devices database. Then, the Studio registers to gateway. When the state or the availability of a device changes, the gateway sends a notification to the studio. This notification is received by the HTTP server, processed by the model manager which updates the database accordingly.</p>
-<p>Two views allow the user to interact with devices: the Devices List View and the Device Location Map.</p>
-<p>The devices List View offers a tree view for browsing all the devices available on the gateway. This view also allows basic interaction with devices, such as getting the current value of variables (ie, the temperature of a thermometer) or acting on them (ie, turning on a light). When such an interaction is asked by the user, a request is sent to the gateway through the HTTP client.</p>
-<p>Device Location Map puts a pinpoint on a worldwide map for the device for which the position is known. This is a very convenient way to understand the geographical distribution of devices. Clicking on the pinpoint, a pop up displays device related information, such as its current internal state. The pinpoints can also be dragged and dropped on the map from the device list to update the device location. This interaction is managed by the device Location Manger, which updates the devices database, which then sends a position update request to the gateway.</p>
-<p>The other part of the studio is dedicated to application creation, management and monitoring. To interact with the studio, the user can edit “*.sna” files in a dedicated editor: the application editor. The content of the files is continually checked by a grammar checker, to ensure the content is written according to a domain specific language. When the file describing the application is well formed, it can be deployed to the gateway using the app manager.</p>
-<h2 id="application-creation">Application creation</h2>
-<p>SensiNact Studio provides...</p></div>
+<p>SensiNact Studio allows an easy interaction with the OrganiCity  devices and the creation of applications. The Studio is based on the Eclipse platform [Eclipse] and built as a rich client platform application. The Graphical User Interface (GUI) is developed using the views mechanism from Eclipse. Thus, it propose s views for browsing devices, locating devices on a map and interacting with them, i.e., getting value from sensors or performing actions on actuators. The Studio is also targeted to ease the creation of IoT application following the Event-Condition-Action (ECA) pattern [Den89].</p>
+<p><img alt="SensiNact Studio GUI" src="./images/studio-gui.png" /></p>
+<p>The GUI includes different views: navigator, deployment, properties views, as well as a Domain Specific Language (DSL) editor.</p>
+<h3 id="browsing-devices">Browsing devices</h3>
+<p>Before users can use the studio for managing devices and applications, they need to connect a SensiNact gateway (see paragraph 4.3). This action is performed by clicking on the plus sign icon on the device navigator. Then, gateway information have to be provided.</p>
+<p><img alt="SensiNact Studio gateway config" src="./images/studio-gateway-config.png" /></p>
+<p>Once the information have been provided and the dialog validated, the Gateway is added to the Navigator View. To display and browse the available devices imported by this gateway, connecting to it is needed. This action is performed using the connect button.</p>
+<p><img alt="SensiNact Studio gateway connection" src="./images/studio-gateway-connection.png" /></p>
+<p>The device Navigator View is then populated, and pin points are displayed on the map. By clicking on attributes names, it is possible to get the current value for the considered attribute. It is also possible to see attributes values on the map, clicking on the pin points.</p>
+<h2 id="application-management">Application management</h2>
+<h3 id="application-creation">Application creation</h3>
+<p><img alt="SensiNact application creation" src="./images/app-creation.png" /></p>
+<p>The SensiNact Studio allows the creation of applications to be executed on the gateway. Creating an application is performed by writing a script using a dedicated syntax, and deploying this script to the gateway.</p>
+<p>On the figure above, a project has been created on the project explorer view (on the left). In this project, a script named speed-limit.sna has been created, and is being edited. As the figures shows, the editor provides code highlighting (some keywords are displayed in a special font), code completion (with popups) and a syntax validator which displays red crosses on the script margin in case of error.</p>
+<p>The dedicated syntax, a Domain Specific Language, is composed by the following blocks:</p>
+<ul>
+<li><strong>The shortcut block:</strong> each resource is accessible through a unique URI, which can be quite long. This block aims at creating shortcut for the next blocks.</li>
+<li><strong>The event block:</strong> the developer defines on which resources the application is triggered. When an event is thrown and is a valid trigger, the conditional block is executed.</li>
+<li><strong>The conditional block:</strong> once the application has been triggered, and before any action can be executed, the data from the resource has to satisfy the conditional block. The keyword for this block is if followed by the conditions to be validated.</li>
+<li><strong>The actions statements:</strong> if the conditional block is satisfied, actions are performed in the order that they are listed. The actions can be physical actions on actuators or virtual actions such as changing the format of a data using a mathematical function. The available actions, also named functions, are listed below:</li>
+<li><strong>Basic functions:</strong> addition, subtraction, division, multiplication, modulo, string concatenation, substring, various operators (e.g., equals, greater than, lesser than, different), ACT and SET methods on sensiNact resources.</li>
+<li><strong>Complex Event Processing functions (using the Esper1 library):</strong> after, before, coincides, average, average deviation, count, max, min, median, standard deviation and sum.</li>
+</ul>
+<p>The following table shows the basic structure for writing a script.</p>
+<table>
+<tr>
+  <td>[resource <resource>]+</td>
+  <td>Shortcut block, which must contains at least one statement.</td>
+</tr>
+<tr>
+  <td>on <events>+</td>
+  <td>The event block, lists the events triggering the script. At least one event must be provided.</td>
+</tr>
+<tr>
+  <td>[if <condition> do]+<br>[<actions>]+<br>[else do]?<br>[<actions>]?+<br>end if;</td>
+  <td>The conditional block, which lists actions to be performed based on conditions.</td>
+</tr>
+</table>
+
+<p>Once the script has been written, it can be deployed to the gateway where it will be executed. This is performed using a right click on the script file.</p>
+<p><img alt="SensiNact application deployment" src="./images/app-deployment.png" /></p>
+<h3 id="application-monitoring">Application monitoring</h3>
+<p>After the application has been deployed, a new set of resources is automatically created under the AppManager device. You can browse those resources into the Device Navigator View.</p>
+<p><img alt="SensiNact application resources" src="./images/app-resources.png" /></p>
+<p>First of all, a new service is created with the name of the sna file (without the extension). In our example, it is speed-limit. This service representing the application always contains a standard set of resources.</p>
+<table>
+<thead>
+  <tr>
+    <th>Resource</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tr>
+  <td>autorestart</td>
+  <td>property</td>
+  <td>In case of failure, decides if the application should be automatically started again</td>
+</tr>
+<tr>
+  <td>content</td>
+  <td>property</td>
+  <td>Script file content</td>
+</tr>
+<tr>
+  <td>EXCEPTION</td>
+  <td>action</td>
+  <td>Deprecated</td>
+</tr>
+<tr>
+  <td>location</td>
+  <td>property</td>
+  <td>GPS location which can be used if it makes sense </td>
+</tr>
+<tr>
+  <td>maxinstances</td>
+  <td>property</td>
+  <td>Number of parallel instances which should be started</td>
+</tr>
+<tr>
+  <td>resetOnStop</td>
+  <td>property</td>
+  <td>On Stop, decides if the generated resources by the application should be destroyed or kept</td>
+</tr>
+<tr>
+  <td>START</td>
+  <td>action</td>
+  <td>Starts the application</td>
+</tr>
+<tr>
+  <td>status</td>
+  <td>state variable</td>
+  <td>Current status of the application: START/STOP/...</td>
+</tr>
+<tr>
+  <td>STOP</td>
+  <td>action</td>
+  <td>Stops the application</td>
+</tr>
+<tr>
+  <td>UNINSTALL</td>
+  <td>action</td>
+  <td>Removes the application</td>
+</tr>
+</table>
+
+<p>To start the application, simply double click on the START resource. This will launch the start action, which will run the script.</p>
+<p><img alt="SensiNact application startup" src="./images/app-startup.png" /></p>
+<p>The figure shows that the application is up and running on the server. The studio can be used to check if the application has the expected behavior, by querying the resources. The studio can also be shutted down, since the applications are executed on the gateway, which will be presented in paragraph 4.3 (sensiNact Gateway). </p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this section, we have presented the way sensiNact Studio can gives an overview of the available devices in the OrganiCity  context. We have also shown the creation process of IoT application following the Event-Condition-Action (ECA) pattern.</p>
+<h2 id="gateway">Gateway</h2>
+<h3 id="introduction_1">Introduction</h3>
+<p>The sensiNact Gateway allows the interconnection of heterogeneous devices and services into a consistent model. This one is presented to the sensiNact Studio which can monitor the devices ecosystem and design application to be executed on the gateway.</p>
+<p><img alt="SensiNact gateway integration" src="./images/gateway-integration.png" /></p>
+<p>More precisely, the sensiNact Gateway integrates with the OC Platform using the Asset Discovery Service. Thereby, the gateway is aware of the assets provided by the OC Platform. On the other hand, the gateway has dedicated interfaces to directly connect to third parties devices and API. As a result, the gateway can interact with a lot of resources, which can be local or remote.</p>
+<h3 id="the-gateway-architecture">The gateway architecture</h3>
+<p>The interactions between the gateway and other entities are performed through a set of northbound and southbound bridges. The goal of the bridges is to manage the communication with devices and services, which can be local or remote. On one hand, southbound bridges are in charge of collecting data from sensors and services, and to send orders which will be performed by actuators. On the other hand, northbound bridges are specialized in interacting with remote systems. Thanks to those bridges, it is possible to make third party systems aware of devices &amp; virtual resources known by the gateway.</p>
+<p><img alt="SensiNact gateway architecture" src="./images/gateway-architecture.png" /></p>
+<p>In terms of connectivity, on the southbound side the sensiNact gateway allows to cope both with “physical device” protocols and “virtual device” ones, allowing a uniform and transparent access to an XBee network, or an HTTP Restful web service for example. Here's a non-exhaustive list of supported protocols:</p>
+<ul>
+  <li>**EnOcean [EnOcean],** energy harvesting wireless sensor technology (ultra-low-power radio technology for free wireless sensors), and protocols in use to interact with those sensors;</li>
+  <li>**Bluetooth Low Energy.** Part of the Bluetooth specification version 4 [Bluetooth4], it is a personal area network, low power protocol designed mainly for healthcare or entertainment type of applications;</li>
+  <li>**MQTT [MQTT],** which is a machine-to-machine protocol, lightweight publish/subscribe messaging transport, useful for connections with remote locations where a small code footprint is required and/or network bandwidth is at a premium;</li>
+  <li>**ZigBee [ZigBee]** based protocols (XBee for example);</li>
+  <li>**CoAP [RFC7252],** which is a REST application protocol, designed to be “the HTTP for constrained networks and devices” whose concept originated from the idea that "the Internet Protocol could and should be applied even to the smallest devices," and that low-power devices with limited processing capabilities should be able to participate in the Internet of Things; it is usually used on top of a 6LoWPAN network, but it may travel regular IP networks as well (it is used by the OMA LWM2M protocol, for instance).</li>
+</ul>
+
+<p>On the northbound side the sensiNact gateway provides both client/server and publish/subscribe access protocols: MQTT [MQTT], JSON-RPC (1.0 and 2.0) [JSON-RPC], HTTP RESTful, CDMI [CDMI].</p>
+<p>All the communications of sensiNact gateway are converging to a central piece: the core. This element is in charge of the overall coordination of information, involving two managers: the device manager and the application manager.</p>
+<p>The device manager, with its associated database (the OSGi registry) stores all the information regarding devices. This include devices availability, and also devices properties, location, etc.</p>
+<p>The application manager is a bit more complex. It manages the applications, following devices availability and updating applications life cycle. It offers a plug-in facility, to extend its behaviour. The two main plugins are the Event Condition Action plugin, and the Complex Event Processor plugin. The Event Condition Action plugin provides the basic structure for creating applications. It allows the triggering of rules, based on event. Then, a condition can be evaluated, and actions performed accordingly. Of course, events, conditions and actions are related to devices, using the device manager. Using the Esper Engine, the Complex Event Processor plugin is able to generate high level events based on low level ones. For example, it is possible to know that two events occur in a given time interval, with a given order. The events generated by the CEP plug-in can be used in the ECA plugin.</p>
+<h3>SensiNact resource model</h3>
+
+<p>It is important to understand the internal model of the sensiNact Gateway , since it is used everywhere in the sensiNact ecosystem. That is why, a clear understanding of the concepts and relationships between them can even help using the Studio introduced previously.</p>
+<p>All the devices and their related informations are represented using a standard resource model. It is structured around three main concepts: Service Provider, Service and Resource. A Service Provider représents an entity, which can be a device or something more abstract such as an API endpoint. This Service Provider can have several Services, which are a meaningful aggregate of resources based on a common purpose. A resource is the place where information is stored. For example, on a weather station, a temperature sensor will be a resource providing the temperature.</p>
+<p><img alt="SensiNact gateway resource model" src="./images/gateway-resource-model.png" /></p>
+<p>Based on its purpose, a resource can be a Property, a Sensor Data, a State Variable, or an Action. The differences among them is detailed in the following table.</p>
+<table>
+<thead>
+  <tr>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tr>
+  <td>Property</td>
+  <td>Property exposed by a service. This is information which is likely to be static (owner, model, vendor, static location, etc.). In some cases, this property can be allowed to be modified.</td>
+</tr>
+<tr>
+  <td>Sensor Data</td>
+  <td>Sensory data provided by a service. This is real-time information provided, for example, by the SmartObject that measures physical quantities.</td>
+</tr>
+<tr>
+  <td>State Variable</td>
+  <td>Information representing a SmartObject state variable of the service. This variable is most likely to be modified by an action (turn on light modifies the light state, opening door changes the door state, etc.) but also to intrinsic conditions associated to the working procedure of the service.</td>
+</tr>
+<tr>
+  <td>Action</td>
+  <td>Functionality provided by a service. This is mostly an actuation on the physical environment via an actuator SmartObject supporting this functionality (turn on light, open door, etc.) but can also be a request to do a virtual action (play a multimedia on a TV, make a parking space reservation, etc.)</td>
+</tr>
+</table>
+
+<p>Since it is not possible to directly interact with resources, sensiNact provides access methods. The access methods that can be associated to a resource depend on the resource type, for example, a GET method can only be associated to resources of type Property, State Variable and SensorData. A SET method can only be associated to State Variable and modifiable Property resources. An ACT method can only be associated to an Action resource. SUBSCRIBE and UNSUBSCRIBE methods can be associated to any resources.</p>
+<table>
+<thead>
+  <tr>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tr>
+  <td>GET</td>
+  <td>Gets the value attribute of the resource.</td>
+</tr>
+<tr>
+  <td>SET</td>
+  <td>Sets a given new value as the data value of the resource.</td>
+</tr>
+<tr>
+  <td>ACT</td>
+  <td>Invokes the resource (method execution) with a set of defined parameters.</td>
+</tr>
+<tr>
+  <td>SUBSCRIBE</td>
+  <td>Subscribes to the resource with optional condition and periodicity.</td>
+</tr>
+<tr>
+  <td>UNSUBSCRIBE</td>
+  <td>Remove an existing subscription.</td>
+</tr>
+</table>
+
+<h3 id="conclusion_1">Conclusion</h3>
+<p>We have presented the architecture of the sensiNact Gateway, and the way it is integrated into the OC Platform. We also have introduced its resource model, since it is used in the studio as well.</p>
+<p>To help experimenters start easily using the Studio, we are providing “Gateways as a Service” for the OrganiCity project. They are Gateways available in the cloud, and configured for interacting with OrganiCity devices.</p></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-03-16 14:09:39 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-03-16 14:11:11 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '../..';</script>
         <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>

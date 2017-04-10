@@ -13,11 +13,11 @@
             </button>
             {%- endif %}
 
-          {%- block site_name %}
-			<a class="navbar-brand active" href="{{nav.homepage.url}}">
-				<img alt="{{config.site_name}}" src="{{config.extra.logo}}">{{config.extra.site_short_name}}
-			</a>
-          {%- endblock %}
+            {%- block site_name %}
+            <a class="navbar-brand active" href="{{nav.homepage.url}}">
+                <img alt="{{config.site_name}}" src="{{config.extra.logo}}">{{config.extra.site_short_name}}
+            </a>
+            {%- endblock %}
         </div>
 
         <!-- Expanded navigation -->
@@ -42,11 +42,11 @@
                     </li>
                 {%- endif %}
                 {%- endfor %}
-				{% if config.extra.links %}
-				  {% for link in config.extra.links %}
-				    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
-				  {% endfor %}
-				{% endif %}
+                {% if config.extra.links %}
+                  {% for link in config.extra.links %}
+                    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+                  {% endfor %}
+                {% endif %}
                 </ul>
             {%- endif %}
           {%- endblock %}

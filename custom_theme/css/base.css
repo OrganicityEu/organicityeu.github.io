@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px;
+    padding-top: 120px;
     background: url(../img/grid.png) repeat-x;
     background-attachment: fixed;
     background-color: #f8f8f8;
@@ -206,7 +206,7 @@ footer {
     }
     .bs-sidebar.affix { /* csslint allow: adjoining-classes */
         position: fixed; /* Undo the static from mobile first approach */
-        top: 80px;
+        top: 120px;
     }
     .bs-sidebar.affix-bottom { /* csslint allow: adjoining-classes */
         position: absolute; /* Undo the static from mobile first approach */

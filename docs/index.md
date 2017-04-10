@@ -66,5 +66,5 @@ Currently in the Organicity platform, there are federated assets from the city s
 For resolving technical questions, reporting specific issues/bugs and discussion possible extensions in the services and tools of Organicity, Slack and GitHub issue tracking is recommended for use.
 
 *   **Generic questions**. Use the tech channel on slack to ask for generic questions. We will try to guide you and solve your doubts at [https://organicityexperiments.slack.com](https://organicityexperiments.slack.com)
-*   **Generic issues**. If you find a generic issue, you can report it and keep track at [https://github.com/OrganicityEu/organicityeu.github.io/issues](https://github.com/OrganicityEu/organicityeu.github.io/issues)
+*   **Generic issues**. If you find a generic issue, you can report it and keep track at [organicityeu.github.io/issues](https://github.com/OrganicityEu/organicityeu.github.io/issues)
 *   **Specific issues related to a particular tool**. Browse the various repositories at [https://github.com/OrganicityEu/]( https://github.com/OrganicityEu/) and then report the issue in the proper one.

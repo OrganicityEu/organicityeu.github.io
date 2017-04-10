@@ -39,6 +39,9 @@ extra:
 extra_css:
     - css/extra.css
 
+extra_javascript:
+    - api/static/js/cropbox-min.js
+
 theme_dir: 'custom_theme'
 
 # google_analytics: ['UA-36723568-3', 'mkdocs.org']

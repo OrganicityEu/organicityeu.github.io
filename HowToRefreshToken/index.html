@@ -206,10 +206,10 @@ As these nodes still need to contact Organicity, for example to post measured da
 <h3 id="authorization-code-grant">Authorization Code Grant</h3>
 <p>The flow is the same as <a href="../HowToAuthenticateAnUser">described here</a>, just with the additional query parameter <code>scope=offline_access</code>.</p>
 <p>The full authorization URL looks as follows:</p>
-<pre><code class="shell">https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=&lt;CLIENT_ID&gt;&amp;response_type=code&amp;redirect_uri=&lt;REDIRECT_URI&gt;&amp;scope=offline_access
+<pre><code class="shell"> https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?response_type=code&amp;client_id=&lt;CLIENT_ID&gt;&amp;redirect_uri=&lt;REDIRECT_URI&gt;&amp;scope=offline_access
 </code></pre>
 
-<p>As in the regular grant, it returns an <em>Authorization Code</em> which must be converted into an Access Token.</p>
+<p>As in the Authorization Code Grant, it returns an <em>Authorization Code</em> which must be converted into an Access Token.</p>
 <p>If successful, the server returns a JSON, which contains the following attributes:</p>
 <ul>
 <li><code>token_type</code>: This is usually <code>Bearer</code></li>
@@ -236,12 +236,22 @@ As these nodes still need to contact Organicity, for example to post measured da
 <p>This grant cannot return a refresh token, because this grant directly returns the Access Token.</p>
 <h2 id="refresh-token-grant">Refresh Token Grant</h2>
 <p>To use a the <em>Refresh Token Grant</em>, you perform a simple HTTPS call, which will return a new suitable Access Token.</p>
+<p>Option A (<code>client_id</code> and <code>client_secret</code> in the header):</p>
 <pre><code class="shell">POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
 Host: accounts.organicity.eu
-Authorization: Basic &lt;BASE64_ENCODE(client_id:client_secret)&gt;
+Authorization: Basic &lt;BASE64_ENCODE(&lt;CLIENT_ID&gt;:&lt;CLIENT_SECRET&gt;)&gt; 
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=refresh_token&amp;refresh_token=&lt;REFRESH_TOKEN&gt;
+</code></pre>
+
+<p>The Authorization header contains your <code>client_id</code> and <code>client_secret</code> encoded with HTTP basic authentication. For details on how to create this field, <a href="https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side">see here</a>.</p>
+<p>Option B (<code>client_id</code> and <code>client_secret</code> in the body):</p>
+<pre><code class="shell">POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
+Host: accounts.organicity.eu
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token&amp;refresh_token=&lt;REFRESH_TOKEN&gt;&amp;client_id=&lt;CLIENT_ID&gt;&amp;client_secret=&lt;CLIENT_SECRET&gt;
 </code></pre>
 
 <p>Please note, that the same <code>client_id</code> and <code>client_secret</code> is needed to refresh the token.</p>
@@ -271,7 +281,7 @@ If successful, the server returns a JSON record as described above.</p>
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-04-10 15:05:54 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-04-19 09:06:31 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>

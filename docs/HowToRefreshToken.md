@@ -28,10 +28,10 @@ The flow is the same as [described here](/HowToAuthenticateAnUser), just with th
 The full authorization URL looks as follows:
 
 ```shell
-https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=<CLIENT_ID>&response_type=code&redirect_uri=<REDIRECT_URI>&scope=offline_access
+ https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?response_type=code&client_id=<CLIENT_ID>&redirect_uri=<REDIRECT_URI>&scope=offline_access
 ```
 
-As in the regular grant, it returns an *Authorization Code* which must be converted into an Access Token.
+As in the Authorization Code Grant, it returns an *Authorization Code* which must be converted into an Access Token.
 
 If successful, the server returns a JSON, which contains the following attributes:
 
@@ -67,13 +67,27 @@ This grant cannot return a refresh token, because this grant directly returns th
 
 To use a the *Refresh Token Grant*, you perform a simple HTTPS call, which will return a new suitable Access Token.
 
+Option A (`client_id` and `client_secret` in the header):
+
 ```shell
 POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
 Host: accounts.organicity.eu
-Authorization: Basic <BASE64_ENCODE(client_id:client_secret)>
+Authorization: Basic <BASE64_ENCODE(<CLIENT_ID>:<CLIENT_SECRET>)> 
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=refresh_token&refresh_token=<REFRESH_TOKEN>
+```
+
+The Authorization header contains your `client_id` and `client_secret` encoded with HTTP basic authentication. For details on how to create this field, [see here](https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side).
+
+Option B (`client_id` and `client_secret` in the body):
+
+```shell
+POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
+Host: accounts.organicity.eu
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token&refresh_token=<REFRESH_TOKEN>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
 ```
 
 Please note, that the same `client_id` and `client_secret` is needed to refresh the token.

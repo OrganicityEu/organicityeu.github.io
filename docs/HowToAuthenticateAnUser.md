@@ -11,11 +11,6 @@
 
 [Organicity Accounts](https://accounts.organicity.eu) provides unified user management to the whole Organicity platform. Of course, a unified experience requires all Organicity components to properly talk to Organicity Accounts. This document guides through the process of setting your component up.
 
-## TODO
-
-* Scopes
-* Refresh_token
-
 ## OAuth2 Grants
 
 [Organicity Accounts](https://accounts.organicity.eu/) is an [OAuth2 server](https://tools.ietf.org/html/rfc6749), which provides a Single Sign-On (SSO) service. Thus, you can login to
@@ -69,8 +64,8 @@ keeps the `client_secret` confidential. This grant is divided in two flows:
 For the *first flow*, you must extend the authorization endpoint with the following
 query parameters:
 
-* `client_id=<CLIENT_ID>`: Here, you must include your `client_id`, which is provided by the Experimenter Portal
 * `response_type=code`: Here, the response type must be `code`
+* `client_id=<CLIENT_ID>`: Here, you must include your `client_id`, which is provided by the Experimenter Portal
 * `redirect_uri=<REDIRECT_URI>`: Within the Experimenter Portal, you can configure Redirect URIs. After a successful login, the user is redirected to that URI.
 
 **HINT**: Make sure, that you're web-application, and thus the `redirect_uri`, runs on HTTPS. This ensures, that the exchanged data cannot be intercepted during the login process.
@@ -78,13 +73,13 @@ query parameters:
 Thus, the full authorization URL looks as follows:
 
 ```shell
-https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=<CLIENT_ID>&response_type=code&redirect_uri=<REDIRECT_URI>
+ https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?response_type=code&client_id=<CLIENT_ID>&redirect_uri=<REDIRECT_URI>
 ```
 
 An example:
 
 ```shell
-https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=example&response_type=code&redirect_uri=https://example.com/callback
+ https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?response_type=code&client_id=example&redirect_uri=https://example.com/callback 
 ```
 
 Calling this URL, the users must login with their credentials. If the login is successful, the user is redirected back to the configured redirect URI.
@@ -115,10 +110,27 @@ Now, the *second flow* starts. You're web-application takes this `code` and must
 
 **HINT**: Make sure, that this call is done from the web-application in the background, thus the `client_secret` stays confidential!
 
-An example:
+Option A (`client_id` and `client_secret` in the header):
 
 ```shell
-TODO
+POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
+Host: accounts.organicity.eu
+Authorization: Basic <BASE64_ENCODE(<CLIENT_ID>:<CLIENT_SECRET>)>
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&code=<CODE>&rediret_uri=<REDIRECT_URI>
+```
+
+The Authorization header contains your `client_id` and `client_secret` encoded with HTTP basic authentication. For details on how to create this field, [see here](https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side).
+
+Option B (`client_id` and `client_secret` in the body):
+
+```shell
+POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
+Host: accounts.organicity.eu
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&code=<CODE>&rediret_uri=<REDIRECT_URI>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
 ```
 
 Calling this URL, the server verifies your credentials and the code. If successful, the server returns a JSON, which contains the following attributes:
@@ -150,8 +162,8 @@ the Access Token directly. The Grant is called *implicit*, as no intermediate cr
 
 For this grant, you must extend the authorization endpoint with the following query parameters:
 
-* `client_id=<CLIENT_ID>`: Here, you must include your `client_id`, which is provided by the Experimenter Portal
 * `response_type=token`: Here, the response type must be `token` (becaue you'll get an Access Token immediately)
+* `client_id=<CLIENT_ID>`: Here, you must include your `client_id`, which is provided by the Experimenter Portal
 * `redirect_uri=<REDIRECT_URI>`: Within the Experimenter Portal, you can configure Redirect URIs. After a successful login, the user is redirected to that URI.
 
 **HINT**: Make sure, that you're web-application, and thus the `redirect_uri`, runs on HTTPS. This ensures, that the exchanged data cannot be intercepted during the login process.
@@ -159,13 +171,13 @@ For this grant, you must extend the authorization endpoint with the following qu
 Thus, the full authorization URL looks as follows:
 
 ```shell
-https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=<CLIENT_ID>&response_type=token&redirect_uri=<REDIRECT_URI>
+ https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?response_type=token&client_id=<CLIENT_ID>&redirect_uri=<REDIRECT_URI>
 ```
 
 An example:
 
 ```shell
-https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=example&response_type=token&redirect_uri=https://example.com/callback
+ https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?response_type=token&client_id=example&redirect_uri=https://example.com/callback
 ```
 
 Calling this URL, the users must login with their credentials. If the login is successful, the user is redirected back to the configured redirect URI.
@@ -197,18 +209,30 @@ An example:
 
 The **Client Credential Grant** is used for applications, which **act on their own**. For this, the *Service Account* of the Client must be enabled.
 
-Service Accounts usually apply for Organicity Accounts, but can also be used by e.g. experiments. To use a Service Account, you perform a simple HTTPS with your `client_id` and `client_secret` call, which will return a suitable Access Token:
+Service Accounts usually apply for Organicity Accounts, but can also be used by e.g. experiments. To use a Service Account, you perform a simple HTTPS with your `client_id` and `client_secret` call, which will return a suitable Access Token.
+
+ Option A (`client_id` and `client_secret` in the header):
 
 ```shell
 POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
 Host: accounts.organicity.eu
-Authorization: Basic <BASE64_ENCODE(client_id:client_secret)>
+Authorization: Basic <BASE64_ENCODE(<CLIENT_ID>:<CLIENT_SECRET>)> 
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=client_credentials
 ```
 
 The Authorization header contains your `client_id` and `client_secret` encoded with HTTP basic authentication. For details on how to create this field, [see here](https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side).
+
+Option B (`client_id` and `client_secret` in the body):
+
+```
+POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
+Host: accounts.organicity.eu
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
+```
 
 The call returns a JSON record, which contains the following attributes:
 

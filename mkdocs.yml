@@ -23,6 +23,7 @@ pages:
   - tools:
       -  Sensinact: tools/sensinact/index.md
       -  TSmart: tools/tsmart/tsmart.md
+      -  Smartphone Experimentation: tools/set/index.md
 
 extra:
     logo: '/images/oc_logo.png'

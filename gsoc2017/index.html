@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OrganiCity GitHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Standard Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- For iPhone: -->
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+  <link rel="stylesheet" href="../stylesheets/stylesheet.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <style>
+  .easy { background-color: green !important}
+  .med { background-color: yellow !important}
+  .hard { background-color: red !important}  
+  </style>
+</head>
+<body>
+<header>
+  <a href="http://organicity.eu/" title="OrganiCity - link to homepage">
+    <img src="../images/organicity_logo.png" alt="Organicity">
+  </a>
+</header>
+<div class="title">
+  <h1>OrganiCity @ GSoC 2017</h1>
+</div>
+<div class="content" style="padding: 0rem 18rem;">
+
+<div class="col-md-12"> 
+<h1>Project Ideas:</h1>
+<div id="proplist">
+
+<div id="proposal" class="col-md-4 hidden"> 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    <span class="prop-diff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span class="prop-title"></span> 
+    </div>
+    <div class="prop-body panel-body">
+      
+    </div>
+    <div class="panel-footer">
+    <span class="prop-tech"></span>
+    <div class="pull-right"> <button type="button" class="btn btn-xs btn-success">I am interested!</button> </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+<footer class="col-md-12">&copy; Organicity 2016</footer>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+var JSON;
+
+ $.getJSON('./proposals.json', function(response){
+       JSON = response;
+       JSON.forEach(function(elem){
+            var itm = document.getElementById("proposal");
+            console.log(itm);
+            var cln = itm.cloneNode(true);
+            $(cln).find(".prop-title").text(elem.title);
+            $(cln).find(".prop-body").text(elem.description);
+            $(cln).find(".prop-tech").text(elem.tech);
+            $(cln).find(".prop-diff").addClass(elem.diff);
+            cln.removeAttribute("id");
+            $(cln).removeClass("hidden");
+            document.getElementById("proplist").appendChild(cln);
+            console.log(cln);
+       
+       })
+ })
+</script>
+</body>
+
+</html>

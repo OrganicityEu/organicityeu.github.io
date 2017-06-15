@@ -22,11 +22,20 @@ That is it! In the following section, we will provide a concrete usage example o
 
 This section provides a simple example on how to use the websocket tool, and we will be using Netbeans as the java IDE. The specific example shows how to subscribe to a single asset already created in the OrganiCity platform (it is not possible to subscribe to more than one asset at a time, and it is not possible to subscribe to creation or deletion of a new asset).
 
-### Start Netbeans and create an new empty java project
+### Start Netbeans and create a new empty java project
 
-![TSmarT OC configuration main](images/OC_TSmarT_web_01.JPG)
+![Step_1](images/step1.png)
 
-!(images/OC_TSmarT_web_01.JPG)
+![Step_2](images/step2.png)
+
+### Add WebsocketsClient.jar as external jar
+
+![Step_3](images/step3.png)
+
+![Step_4](images/step4.png)
+
+
+
 
 
 ```

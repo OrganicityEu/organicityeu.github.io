@@ -29,6 +29,8 @@ This section provides a simple example on how to use the websocket tool, and we 
 
 The OrganiCity platform is built around the Orion Context Broker (https://fiware-orion.readthedocs.io/en/master/), and the websockets tool conform to the abilities and formats dictated by the context broker. As the Context Broker is REST based, we provide a Spring.io based middleware (https://github.com/OrganicityEu-Platform/WebsocketMiddleware) for transforming the connections between REST and Websockets.
 
+For further technical and code detail, please take a look here: https://github.com/OrganicityEu/WebsocketClient
+
 
 
 

@@ -26,6 +26,8 @@ This section provides a simple example on how to use the websocket tool, and we 
 
 ![TSmarT OC configuration main](images/OC_TSmarT_web_01.JPG)
 
+!(images/OC_TSmarT_web_01.JPG)
+
 
 ```
 import java.util.List;

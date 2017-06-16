@@ -16,7 +16,7 @@ In order to make this tool work one would need to be working in a Java environme
 2. Unzip the file locally
 3. You can either open the entire websockets project as a maven project in your favourite java IDE or simply import WebsocketsClient/libs/WebsocketClient.jar as an external jar into your existing project
 
-That is it! In the following section, we will provide a concrete usage example on how to import the websocket tool as an externalt jar into a new java project.
+That is it! In the following section, we will provide a concrete usage example on how to import the websocket tool as an external jar into a new java project.
 
 ## Usage example
 

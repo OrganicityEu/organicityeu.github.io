@@ -34,6 +34,15 @@ This section provides a simple example on how to use the websocket tool, and we 
 
 ![Step_4](images/step4.png)
 
+## Adding an asset (can be omitted if there is already an asset available)
+
+This task can only be performed if you are a registered OrganiCity experimenter! In order to become an experimenter go to this website https://experimenters.organicity.eu, and click "Sign in" (even if you don't have a user yet - you can create one).
+
+You create a new asset by following this the steps in this link: http://organicityeu.github.io/HowToPushAnAssetToTheExperimenterSite/#tutorial-how-to-push-an-assets-to-the-organicity-experimenter-site
+
+When the asset has been created, the next step is authentication.
+
+## Get authentication token
 
 
 
@@ -109,7 +118,7 @@ public class VanillaTestClient implements WebsocketCallback{
 ```
 
 
-## Technical backrgound
+## Technical background
 
 The OrganiCity platform is built around the Orion Context Broker (https://fiware-orion.readthedocs.io/en/master/), and the websockets tool conform to the abilities and formats dictated by the context broker. As the Context Broker is REST based, we provide a Spring.io based middleware (https://github.com/OrganicityEu-Platform/WebsocketMiddleware) for transforming the connections between REST and Websockets.
 

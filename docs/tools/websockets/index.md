@@ -36,9 +36,15 @@ When the java project has been created it is time to import the websocket connec
 
 The below screenshots show how to add an external jar to an existing java project.
 
+First you need to right-click on the "Libraries" folder and select "Add Jar/Folder..."
+
 ![Step_3](images/step3.png)
 
+Then you have to browse to where you unzipped the file from Github (see Installation section), select teh file named "WebsocketClient.jar", and finally click "Choose".
+
 ![Step_4](images/step4.png)
+
+That's it. The library has now been imported and can be leveraged in your project. In order to test the websocket functionality it is required to have an existing asset. If you don't have an existing asset, then read the next section. Otherwise, you can skip this section and jump directly to "Get authentication token".
 
 ### Adding an asset (can be omitted if there is already an asset available)
 
@@ -50,8 +56,17 @@ When the asset has been created, the next step is authentication.
 
 ### Get authentication token
 
+In order to be able to actually subscribe to a specific asset you need an anthentication token (a proof that you actually have the rights to get the information from the asset). This can be quite tricky, but we have created a tutorial on how to get the token: http://organicityeu.github.io/HowToAuthenticateAnUser/
 
+You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.
 
+Note!!! An authentication token only lasts for 300 seconds, so you need to refresh the token beforehand if needed (this might already have been taken care of if you use one of the extrenal libraries). Here is a tutorial on how to refresh the token: http://organicityeu.github.io/HowToRefreshToken/
+
+When you have generated the authentication token it is time write some code.
+
+### Coding example
+
+Below is a code snippet showing how to subscribe to a specific asset with an entity id, and an authentication token. The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the code example is to show how to both subscribe and unsubscribe.
 
 ```
 import java.util.List;

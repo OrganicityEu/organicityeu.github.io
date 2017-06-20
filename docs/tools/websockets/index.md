@@ -70,7 +70,7 @@ Below is a code snippet showing how to subscribe to a specific asset with an ent
 
 The most important line of code is ```OrionSubscription subscription = new OrionSubscription(cond, attr, "P1D", entityId, false, "urn:oc:entityType:userImage",null,token);```
 
-Each of the parameters are:
+Each of the parameters are described in the table below
 
 | Parameter    | Description                                    | Value       | Type     | Additional info | 
 | ------------ | ---------------------------------------------- |-----------  | -------- | --------------- |

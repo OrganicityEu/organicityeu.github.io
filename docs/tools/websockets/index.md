@@ -24,17 +24,23 @@ This section provides a simple example on how to use the websocket tool, and we 
 
 ### Start Netbeans and create a new empty java project
 
+The below screenshots show the steps of creating a simple java application
+
 ![Step_1](images/step1.png)
 
 ![Step_2](images/step2.png)
 
+When the java project has been created it is time to import the websocket connection
+
 ### Add WebsocketsClient.jar as external jar
+
+The below screenshots show how to add an external jar to an existing java project.
 
 ![Step_3](images/step3.png)
 
 ![Step_4](images/step4.png)
 
-## Adding an asset (can be omitted if there is already an asset available)
+### Adding an asset (can be omitted if there is already an asset available)
 
 This task can only be performed if you are a registered OrganiCity experimenter! In order to become an experimenter go to this website https://experimenters.organicity.eu, and click "Sign in" (even if you don't have a user yet - you can create one).
 
@@ -42,7 +48,7 @@ You create a new asset by following this the steps in this link: http://organici
 
 When the asset has been created, the next step is authentication.
 
-## Get authentication token
+### Get authentication token
 
 
 

@@ -138,7 +138,7 @@ public class VanillaTestClient implements WebsocketCallback{
 }
 ```
 
-If everything went as expected, then you have now made you first subscriptioon to the OrganiCity platform, and you are ready to make your application truely responsive to changes within OrganiCity.
+If everything went as expected, then you have now made your first subscriptioon to the OrganiCity platform, and you are ready to make your application truely responsive to changes within OrganiCity.
 
 ## Technical background
 

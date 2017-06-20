@@ -91,50 +91,47 @@ public class VanillaTestClient implements WebsocketCallback{
     while(true){
       if(System.currentTimeMillis()>now+5000){
         if(!hasSubscription){
-			//example of how to create a subscription
-			String[] attr = new String[1];
-			attr[0] = "comments";
-			String[] cond = new String[1];
-			cond[0] = "comments";
-			String entityId = "urn:oc:entity:experimenters:5a660d96-0ef7-42ca-9f6c-5dbb86d6aa20:58ab32f36f8b513746565c54:wsasset";
-
-			String token = "<Your token here>";
-			OrionSubscription subscription = new OrionSubscription(cond, attr, "P1D", entityId, false, "urn:oc:entityType:userImage",null,token);
+	  //example of how to create a subscription
+	  String[] attr = new String[1];
+	  attr[0] = "comments";
+	  String[] cond = new String[1];
+	  cond[0] = "comments";
+	  
+	  String entityId = "<Your asset id here here>";
+	  String token = "<Your token here>";
+	
+	  OrionSubscription subscription = new OrionSubscription(cond, attr, "P1D", entityId, false, "urn:oc:entityType:userImage",null,token);
 					  
-			System.out.println("trying to set subscrition");
-			hasSubscription = wsc.registerSubscription(subscription);
+	  System.out.println("trying to set subscrition");
+	  hasSubscription = wsc.registerSubscription(subscription);
 
-            if(hasSubscription){
-              System.out.println("subscription set");
-            }  
-          }else{
-            List<String> subscriptions = wsc.getSubscriptions();
-            if(subscriptions.size()>0){
-              if(wsc.unregisterSubscription(subscriptions.get(0))){
-                hasSubscription=false;
-                
-              }
+          if(hasSubscription){
+            System.out.println("subscription set");
+          }  
+        }else{
+          List<String> subscriptions = wsc.getSubscriptions();
+          if(subscriptions.size()>0){
+            if(wsc.unregisterSubscription(subscriptions.get(0))){
+              hasSubscription=false;  
             }
           }
+        }
         
         now = System.currentTimeMillis();
       }
     }
   }
   
-
   @Override
   public void messageReceived(String mesg) {
     System.out.println("Received message in Processing "+mesg);
   }
   
   
-  
   public static void main(String[] args){
     System.out.println("Starting Vanilla test client");
     VanillaTestClient client = new VanillaTestClient();
   }
-
 }
 ```
 

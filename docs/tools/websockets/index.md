@@ -66,7 +66,7 @@ When you have generated the authentication token it is time write some code.
 
 ### Coding example
 
-Below is a code snippet showing how to subscribe to a specific asset with an entity id, and an authentication token. The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the code example is to show how to both subscribe and unsubscribe.
+Below is a code snippet showing how to subscribe to a specific asset with an entity id, and an authentication token (both are not real, and can't be used). The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.
 
 ```
 import java.util.List;
@@ -138,6 +138,7 @@ public class VanillaTestClient implements WebsocketCallback{
 }
 ```
 
+If everything went as expected, then you have now made you first subscriptioon to the OrganiCity platform, and you are ready to make your application truely responsive to changes within OrganiCity.
 
 ## Technical background
 

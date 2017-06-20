@@ -68,6 +68,54 @@ When you have generated the authentication token it is time write some code.
 
 Below is a code snippet showing how to subscribe to a specific asset with an entity id, and an authentication token (both are not real, and can't be used). The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.
 
+The most important line of code is ```OrionSubscription subscription = new OrionSubscription(cond, attr, "P1D", entityId, false, "urn:oc:entityType:userImage",null,token);```
+
+Each of the parameters are:
+
+| Parameter    | Description                                    | Value       | Type     | Additional info | 
+| ------------ |:----------------------------------------------:|:-----------:|:--------:| ---------------:|
+| conditions   | Defines the "trigger" for the subscription     | Can be null | String[] |                 |
+| attributes   | Define the "triggering attributes"             | Can be null | String[] |                 |
+| duration     | when the subscription expires                  | Need value  | String   | More on formats: https://en.wikipedia.org/wiki/ISO_8601 |
+| id           | Id of the asset you want to subscribe to       | Need value  | String   |                 |
+| isPattern    | Indicate whether the subscription is a pattern | Need value  | Boolean  | More on patterns: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#getting-all-entities-and-filtering |
+| type         | Type of an asset entity                        | Need value  | String   |                 |
+| subscriberId | Id of the subscriber                           | Can be null | String   |                 |
+| token        | The token accuired in the previous step        | Need value  | String   |                 |
+
+Additional parameter descriptions can be found here: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#subscriptions
+
+Below is an example of a valid asset:
+
+```
+{
+  "id": "urn:oc:entity:experimenters:5a660d96-0ef7-42ca-9f6c-5dbb86d6aa20:58ab32f36f8b513746565c54:wsasset",
+  "type": "urn:oc:entityType:userImage",
+  "TimeInstant": {
+    "type": "urn:oc:attributeType:ISO8601",
+    "value": "2016-10-04T13:45:00.000Z",
+    "metadata": {}
+  },
+  "access:scope": {
+    "type": "urn:oc:attributeType:access:scope",
+    "value": "public",
+    "metadata": {}
+  },
+  "comments": {
+    "type": "urn:oc:attributeType:text:string",
+    "value": "hello",
+    "metadata": {}
+  },
+  "user": {
+    "type": "urn:oc:attributeType:text:string",
+    "value": "skov",
+    "metadata": {}
+  }
+}
+```
+
+And now the actual code :-)
+
 ```
 import java.util.List;
 import dk.alexandra.orion.websocket.transports.OrionSubscription;

@@ -73,7 +73,7 @@ The most important line of code is ```OrionSubscription subscription = new Orion
 Each of the parameters are:
 
 | Parameter    | Description                                    | Value       | Type     | Additional info | 
-| ------------ |:----------------------------------------------:|:-----------:|:--------:| ---------------:|
+| ------------ | ---------------------------------------------- |-----------  | -------- | --------------- |
 | conditions   | Defines the "trigger" for the subscription     | Can be null | String[] |                 |
 | attributes   | Define the "triggering attributes"             | Can be null | String[] |                 |
 | duration     | when the subscription expires                  | Need value  | String   | More on formats: https://en.wikipedia.org/wiki/ISO_8601 |

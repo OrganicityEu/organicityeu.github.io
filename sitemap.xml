@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,13 @@
         
     <url>
      <loc>/AssetCRUD/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/AssetDataModel/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,31 +29,31 @@
         
     <url>
      <loc>/AssetDiscoveryService/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/AssetAnnotationService/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ExperimenterPortal/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/FederatedDataAssets/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/UrbanDataObservatory/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -63,49 +63,49 @@
         
     <url>
      <loc>/HowToAccessToken/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/HowToAuthenticateAnUser/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/HowToOcSite/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/HowToPushAnAsset/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/HowToPushAnAssetToTheExperimenterSite/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/HowToPushAnAssetToTheProviderSite/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/HowToRefreshToken/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/HowToUpdateDeteleAnAsset/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -115,19 +115,25 @@
         
     <url>
      <loc>/tools/sensinact/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tools/tsmart/tsmart/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tools/set/</loc>
-     <lastmod>2017-06-12</lastmod>
+     <lastmod>2017-06-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tools/websockets/</loc>
+     <lastmod>2017-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

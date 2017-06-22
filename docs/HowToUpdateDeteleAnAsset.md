@@ -128,7 +128,10 @@ Content-Length: 0
 Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
 ...
-``
+X-remainingQuota: 999946
+```
+
+As for the update, the header `X-remainingQuota` will be provided. It contains the new quota after deleting an asset.
 
 ## Update/Delete as an Participant
 

@@ -83,8 +83,10 @@ A simple valid asset could be:
 }
 ```
 
-Hint: the attribute `TimeInstant` is required. The locaion attribute is optional, 
-but needed if the assets should be shown in the [Urban Data Observatory](/UrbanDataObservatory).
+Hint: the attribute `TimeInstant` is required. 
+The locaion attribute is optional, but needed if the assets should be shown in the [Urban Data Observatory](/UrbanDataObservatory).
+
+Further infomations about the attributes can be found in the [Asset Data Model](/AssetDataModel).
 
 ### Wiring everything together
 

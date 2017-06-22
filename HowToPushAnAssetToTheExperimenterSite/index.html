@@ -253,10 +253,16 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
   &quot;TimeInstant&quot;: {
     &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
     &quot;value&quot;: &quot;2016-10-04T13:45:00.000Z&quot;
-  }
+  },
+ &quot;location&quot;: {
+    &quot;type&quot;: &quot;geo:point&quot;,
+    &quot;value&quot;: &quot;53.83404, 10.704197&quot;
+ }
 }
 </code></pre>
 
+<p>Hint: the attribute <code>TimeInstant</code> is required. The locaion attribute is optional, 
+but needed if the assets should be shown in the <a href="../UrbanDataObservatory">Urban Data Observatory</a>.</p>
 <h3 id="wiring-everything-together">Wiring everything together</h3>
 <p>Next, we wire everthing together: The HTTP headers and the asset:</p>
 <pre><code class="shell">POST https://exp.orion.organicity.eu/v2/entities
@@ -273,11 +279,15 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
   &quot;TimeInstant&quot;: {
     &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
     &quot;value&quot;: &quot;2016-10-04T13:45:00.000Z&quot;
-  }
+  },
+ &quot;location&quot;: {
+    &quot;type&quot;: &quot;geo:point&quot;,
+    &quot;value&quot;: &quot;53.83404, 10.704197&quot;
+ }
 }
 </code></pre>
 
-<p>The response is a <code>201 Created</code>, which includes a <code>location</code> header:</p>
+<p>The response is a <code>201 Created</code>, which includes a <code>location</code> and a <code>X-remainingQuota</code> header:</p>
 <pre><code class="shell">Status Code: 201 Created
 ...
 Content-Length: 0
@@ -285,15 +295,28 @@ Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
 ...
 Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
+X-remainingQuota: 999946
 ...
 </code></pre>
 
-<h3 id="validate-that-the-asset-was-created-successfully-with-the-urban-data-obervatory">Validate, that the asset was created successfully with the Urban Data Obervatory</h3>
-<p>To verify, that the asset was created in Organicity Central Site, you must use the <a href="https://organicityeu.github.io/api/AssetDiscovery.html">Asset Discovery Service</a>.
+<p>The URL in the <code>location</code> header always links to the <a href="https://organicityeu.github.io/api/AssetDiscovery.html">Assets Discovery API</a>.
+The <code>X-remainingQuota</code> header tells you, how many assets you can push until the quota is reached.</p>
+<h3 id="validate-that-the-asset-was-created-successfully-with-the-asset-discovery-api">Validate, that the asset was created successfully with the Asset Discovery API</h3>
+<p>To verify, that the asset was created in the Organicity Central Site, you must use the <a href="https://organicityeu.github.io/api/AssetDiscovery.html">Asset Discovery API</a>.
 You can simply do an HTTP GET on the <code>location</code> header returnd by the creation:</p>
 <pre><code class="shell">GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
 </code></pre>
 
+<h3 id="validate-that-the-asset-was-created-successfully-with-the-urban-data-obervatory">Validate, that the asset was created successfully with the Urban Data Obervatory</h3>
+<p>To validate , that the asset was created successfully with the Urban Data Obervatory, just use your <code>assetID</code> and open the follwoing URL in the browser:</p>
+<pre><code class="shell">GET https://observatory.organicity.eu/assets/{assetID}
+</code></pre>
+
+<p>That means for the above <code>assetID</code>:</p>
+<pre><code class="shell">GET https://observatory.organicity.eu/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+</code></pre>
+
+<p><em>Hint</em>: Your assets needs the <code>location</code> attribute to be usable in the Urban Data Obervatory</p>
 <h2 id="push-as-an-participant">Push as an Participant</h2>
 <p>To push an asset as an participant, the participant must be part of you experiment. A participant can be invited
 with the <a href="http://experimenters.organicity.eu/">Experimenter Portal</a>. If a participant logs in to your application,
@@ -316,7 +339,7 @@ the <code>participant</code> role will be assigned. The pushing itself works as 
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-06-21 15:00:31 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-06-22 12:12:20 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>

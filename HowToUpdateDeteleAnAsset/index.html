@@ -287,13 +287,16 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
 </code></pre>
 
 <p>The response is a <code>204 No Content</code>, which tells you that asset was deleted:</p>
-<p><code>`shell
-Status Code: 204 No Content
+<pre><code class="shell">Status Code: 204 No Content
 ...
 Content-Length: 0
 Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
-...</code></p>
+...
+X-remainingQuota: 999946
+</code></pre>
+
+<p>As for the update, the header <code>X-remainingQuota</code> will be provided. It contains the new quota after deleting an asset.</p>
 <h2 id="updatedelete-as-an-participant">Update/Delete as an Participant</h2>
 <p>This is not supported.</p></div>
         </div>
@@ -302,7 +305,7 @@ Date: Tue, 20 Sep 2016 12:37:07 GMT
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-06-22 12:17:56 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-06-22 13:06:55 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>

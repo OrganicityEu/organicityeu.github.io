@@ -75,9 +75,16 @@ A simple valid asset could be:
   "TimeInstant": {
     "type": "urn:oc:attributeType:ISO8601",
     "value": "2016-10-04T13:45:00.000Z"
-  }
+  },
+ "location": {
+ 	"type": "geo:point",
+ 	"value": "53.83404, 10.704197"
+ }
 }
 ```
+
+Hint: the attribute `TimeInstant` is required. The locaion attribute is optional, 
+but needed if the assets should be shown in the [Urban Data Observatory](/UrbanDataObservatory).
 
 ### Wiring everything together
 
@@ -98,11 +105,15 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
   "TimeInstant": {
     "type": "urn:oc:attributeType:ISO8601",
     "value": "2016-10-04T13:45:00.000Z"
-  }
+  },
+ "location": {
+ 	"type": "geo:point",
+ 	"value": "53.83404, 10.704197"
+ }
 }
 ```
 
-The response is a `201 Created`, which includes a `location` header:
+The response is a `201 Created`, which includes a `location` and a `X-remainingQuota` header:
 
 ```shell
 Status Code: 201 Created
@@ -112,17 +123,36 @@ Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
 ...
 Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
+X-remainingQuota: 999946
 ...
 ```
 
-### Validate, that the asset was created successfully with the Urban Data Obervatory
+The URL in the `location` header always links to the [Assets Discovery API](https://organicityeu.github.io/api/AssetDiscovery.html).
+The `X-remainingQuota` header tells you, how many assets you can push until the quota is reached.
 
-To verify, that the asset was created in Organicity Central Site, you must use the [Asset Discovery Service](https://organicityeu.github.io/api/AssetDiscovery.html).
+### Validate, that the asset was created successfully with the Asset Discovery API
+
+To verify, that the asset was created in the Organicity Central Site, you must use the [Asset Discovery API](https://organicityeu.github.io/api/AssetDiscovery.html).
 You can simply do an HTTP GET on the `location` header returnd by the creation:
 
 ```shell
 GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
 ```
+
+### Validate, that the asset was created successfully with the Urban Data Obervatory
+
+To validate , that the asset was created successfully with the Urban Data Obervatory, just use your `assetID` and open the follwoing URL in the browser:
+
+```shell
+GET https://observatory.organicity.eu/assets/{assetID}
+```
+
+That means for the above `assetID`:
+
+```shell
+GET https://observatory.organicity.eu/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+```
+*Hint*: Your assets needs the `location` attribute to be usable in the Urban Data Obervatory
 
 ## Push as an Participant
 

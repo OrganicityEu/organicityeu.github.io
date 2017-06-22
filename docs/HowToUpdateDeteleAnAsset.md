@@ -42,7 +42,11 @@ A simple valid asset for an update could be:
   "TimeInstant": {
     "type": "urn:oc:attributeType:ISO8601",
     "value": "2016-10-04T13:45:00.000Z"
-  }
+  },
+ "location": {
+ 	"type": "geo:point",
+ 	"value": "53.83404, 10.704197"
+ }
 }
 ```
 
@@ -63,7 +67,11 @@ X-Organicity-Experiment: 57e127c010590cb31ca82aa4
   "TimeInstant": {
     "type": "urn:oc:attributeType:ISO8601",
     "value": "2016-10-04T13:45:00.000Z"
-  }
+  },
+ "location": {
+ 	"type": "geo:point",
+ 	"value": "53.83404, 10.704197"
+ }
 }
 ```
 
@@ -79,7 +87,12 @@ Content-Length: 0
 Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
 ...
+Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
+X-remainingQuota: 999946
+...
 ```
+
+As for the creation, the headers `location` and `X-remainingQuota` will be provided.
 
 ### Validate, that the asset was updated successfully with the Urban Data Obervatory
 

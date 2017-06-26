@@ -25,6 +25,7 @@ pages:
       -  TSmart: tools/tsmart/tsmart.md
       -  Smartphone Experimentation: tools/set/index.md
       -  Websockets: tools/websockets/index.md
+      -  Scenarios: tools/scenarios/index.md
 
 extra:
     logo: '/images/oc_logo.png'

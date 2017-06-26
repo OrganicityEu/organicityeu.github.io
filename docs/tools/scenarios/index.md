@@ -46,8 +46,19 @@ It is also possible to bookmark a scenario for later reference (the list of book
 
 ### Create a scenario
 
+At some point you might have been so entrigued that you decide to contribute your own scenario. In order to do this, you simply click "CREATE" at the very top of the webpage. First you will be required to create a new user if you don't have onw already. When the user creation is finished, you will be refered to a page that looks like the picture below:
 
+![create](images/create.png)
 
+You are presented with an elaborate form that needs to be filled out. We have provided helping text for understanding what needs to be filled in each of the boxes. When you have finished filling out the form click "PREVIEW", and you will be ready to publish the scenario to the broad public.
+
+### My profile
+
+The very last part of traversing the scenario tool is to look at your profile page (see picture below). Here you can update your information, see a list of the secnarios you have contributed, and a list of your bookmarked scenarios
+
+![my_profile](images/profile.png)
+
+That's it! You now now everything that is worth knowing about the scenario tool, from an end-user perspective. If you are interested in knowing what is under the hood of the tool, we have both the source code publicly available on Github, and we have a REST api. In the following section we will point you to the relevant locations.
 
 ## Technical background and use
 

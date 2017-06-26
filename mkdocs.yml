@@ -26,6 +26,7 @@ pages:
       -  Smartphone Experimentation: tools/set/index.md
       -  Websockets: tools/websockets/index.md
       -  Scenarios: tools/scenarios/index.md
+      -  Facility Manager: tools/facility-manager/index.md
 
 extra:
     logo: '/images/oc_logo.png'

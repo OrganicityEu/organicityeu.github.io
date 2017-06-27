@@ -56,6 +56,8 @@ A set of innovative tools and enablers for the co-creation of urban infrastructu
 *   **Asset Annotation**  It provides access to asset annotation servives of Organicity. [More info...](http://organicityeu.github.io/api/Annotation.html)
 *   **Permissions** It provides inspection, editing and updating of access permissions. [More info...](http://organicityeu.github.io/api/Permissions.html)
 
+OrganiCity API Tester application provides a number of examples to familiarize the new experimenters with the OrganiCity APIs. [More info...](http://organicityeu.github.io/api/Permissions.html)
+
 # Assets
 
 Urban resources are modeled inside Organicity as Assets. These assets it's possible to model IoT devices, observations like temperature, information like social events etc. The description of the assets is following the NGSI9/10 information modelling specification ( [More details](/AssetDataModel))  

@@ -56,7 +56,7 @@ A set of innovative tools and enablers for the co-creation of urban infrastructu
 *   **Asset Annotation**  It provides access to asset annotation servives of Organicity. [More info...](http://organicityeu.github.io/api/Annotation.html)
 *   **Permissions** It provides inspection, editing and updating of access permissions. [More info...](http://organicityeu.github.io/api/Permissions.html)
 
-OrganiCity API Tester application provides a number of examples to familiarize the new experimenters with the OrganiCity APIs. [More info...](http://organicityeu.github.io/api/Permissions.html)
+**OrganiCity API Tester** application provides a number of examples to familiarize the new experimenters with the OrganiCity APIs. [More info...](https://github.com/OrganicityEu/OrganiCityTesterAPIapp)
 
 # Assets
 

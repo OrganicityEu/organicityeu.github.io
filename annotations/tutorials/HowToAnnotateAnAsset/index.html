@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>TSmart - Organicity Tech Docs</title>
+        <title>How To Annotate An Asset - Organicity Tech Docs</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 </li>
                             
 <li >
-    <a href="../../../annotations/AssetAnnotationService/">Asset Annotation Service</a>
+    <a href="../../AssetAnnotationService/">Asset Annotation Service</a>
 </li>
                             
 <li >
@@ -89,7 +89,7 @@
 </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">tutorials <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
@@ -126,11 +126,11 @@
 </li>
                             
 <li >
-    <a href="../../../annotations/tutorials/HowToCreateAnnotationTags/">How To Create Annotation Tags</a>
+    <a href="../HowToCreateAnnotationTags/">How To Create Annotation Tags</a>
 </li>
                             
-<li >
-    <a href="../../../annotations/tutorials/HowToAnnotateAnAsset/">How To Annotate An Asset</a>
+<li class="active">
+    <a href="./">How To Annotate An Asset</a>
 </li>
                             
 <li >
@@ -138,28 +138,28 @@
 </li>
                         </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">tools <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../sensinact/">Sensinact</a>
-</li>
-                            
-<li class="active">
-    <a href="./">TSmart</a>
+    <a href="../../../tools/sensinact/">Sensinact</a>
 </li>
                             
 <li >
-    <a href="../../set/">Smartphone Experimentation</a>
+    <a href="../../../tools/tsmart/tsmart/">TSmart</a>
 </li>
                             
 <li >
-    <a href="../../websockets/">Websockets</a>
+    <a href="../../../tools/set/">Smartphone Experimentation</a>
 </li>
                             
 <li >
-    <a href="../../scenarios/">Scenarios</a>
+    <a href="../../../tools/websockets/">Websockets</a>
+</li>
+                            
+<li >
+    <a href="../../../tools/scenarios/">Scenarios</a>
 </li>
                         </ul>
                     </li>
@@ -179,12 +179,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../../sensinact/">
+                        <a rel="next" href="../HowToCreateAnnotationTags/">
                             <i class="fa fa-arrow-left"></i>
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../../set/">
+                        <a rel="prev" href="../../../jamaica/tutorials/HowToAutomaticallyAnnotateAssets/">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -201,47 +201,120 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#tsmart">TSmarT</a></li>
-            <li><a href="#technical-capabilities">Technical capabilities</a></li>
-            <li><a href="#tsmart-configuration-website">TSmarT Configuration website</a></li>
+        <li class="main active"><a href="#tutorial-how-to-annotate-an-asset">Tutorial: How to Annotate an Asset</a></li>
+            <li><a href="#using-the-api">Using the API</a></li>
+            <li><a href="#using-the-java-client">Using the Java Client</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="tsmart">TSmarT</h1>
-<p>These are the TSmarT devices. A tool for retrieving environment data and establish alarms in your experiments within the <a href="http://organicity.eu">OrganiCity</a> EaaS platform.</p>
-<p>This tool is based on the widespread TSmarT platform and its goal is to take advantage of sensor integration capabilities to provide not only a source of data but also a point to be handled remotely.</p>
-<p>TSmarT devices are integrated with OrganiCity platform and therefore able to share data retrieved by their sensors with experimenters and users, who can check those values through the OrganiCity <a href="http://observatory.organicity.eu/">Observatory</a>. On a first stage, up to 15 TSmarT devices will be available for experimenters through OrganiCity platform. They will be initially located in different spots in Spain, with the majority of them sending data from Santander, but also from Madrid and Barcelona.</p>
-<p>OrganiCity TSmart devices act as a source of data, providing information related to environmental conditions thanks to the sensors integrated in them. Experimenters will be able to check periodically temperature, humidity and illuminance values wherever the devices are located, as well as establish simple alarms that could help them when creating their applications.</p>
-<h2 id="technical-capabilities">Technical capabilities</h2>
-<p>TSmarT is a modular wireless communications platform designed to facilitate the development and implementation of M2M, monitoring and remote control applications in different markets. The TSmarT family encompasses two programmable devices (TSmoTe &amp; TSgaTe) and expansion modules for the different wireless technologies supported (ZigBee, Wi-Fi, GPRS, NFC/RFID, GPS).</p>
-<p>These products address OEMs, engineering companies and system integrators seeking for a simple way to integrate wireless technologies into their products.</p>
-<p>Among its main technical features the following should be highlighted:</p>
-<ul>
-<li>Standard ANSI C programing</li>
-<li>Multiple communication interfaces: ZigBee, Wi-Fi, Sigfox GPRS, RFID/NFC, GPS</li>
-<li>Real-time multi-tasking operating system</li>
-<li>Open source tools</li>
-<li>Powerful low-energy 32 bits microcontroller</li>
-<li>Sensor interfaces: UART, I2C, SPI, analog and digital I/Os, RS485</li>
-</ul>
-<p>TSmarT devices support SIGFOX network, being this the technology employed to communicate them with OrganiCity platform. SIGFOX counts on wireless networks to connect low-energy objects, such as TSmarT devices, therefore offering global connectivity global cellular connectivity for the Internet of Things.</p>
-<h2 id="tsmart-configuration-website">TSmarT Configuration website</h2>
-<p>A specific webpage devoted to let experimenters manage and configure TSmarT devices is offered within OrganiCity framework. Upon accessing its "experimenter area" on the OrganiCity Experimenter Portal, users who have required to perform some activities within their projects employing TSmarT devices will have the option to direct themselves to the TSmarT configuration webpage.</p>
-<p>There, in the main screen they will find a list summarizing all the devices they can handle as well as their location over a map. By clicking on each device a new pop-up window will show up offering additional information, which can be expanded by clicking the ‘STATUS’ button or selecting the desired device from the left side menu. In addition, a couple of graphs below show the last measurements registered by that device sensors.</p>
-<p><img alt="TSmarT OC configuration main" src="../images/OC_TSmarT_web_01.JPG" /></p>
-<p>User has the chance to explore with more detail what is exactly happenning in each device. The screen will show all the information concerning each individual device:</p>
-<ul>
-<li>Name</li>
-<li>Group</li>
-<li>ID</li>
-<li>Date and Time of the last measurement</li>
-<li>Latitude and longitude</li>
-<li>Sensors values and alarms</li>
-</ul>
-<p>When clicking on "CONFIGURE ALARMS" a new pop-up window will appear on screen, letting experimenters modify the alarm values and establish the thresholds they prefer. Given the design characteristics and looking for guaranteeing a long device battery life, there are certain constraints related to the configuration of those alarms into the actual devices, being the changes introduced by experimenters applied twice a day.</p>
-<p><img alt="TSmarT OC configuration edit" src="../images/OC_TSmarT_web_02+03.JPG" /></p>
-<p>All in all, this configuration webpage is an easy to handle tool which can complement your OrganiCity experience.</p></div>
+<style>
+img[src$="centerme"] {
+  display:block;
+  margin: 0 auto;
+}
+</style>
+
+<h1 id="tutorial-how-to-annotate-an-asset">Tutorial: How to Annotate an Asset</h1>
+<!--
+## Using the Experimenter's Portal
+
+Experimenters can create and manage the Tag Domains and Tags of their experiment using the Experimenter's portal `Annotation` interface.
+
+![Annotations EP](../img/tutorial-1.png?style=centerme "Annotations EP")
+-->
+
+<h2 id="using-the-api">Using the API</h2>
+<p>Users can interact with the <em>Annotation Service</em> using the provided Restful API. The full description of the API is available <a href="https://annotations.Organicity.eu/swagger-ui.html">here</a>. </p>
+<h3 id="post-an-annotation">Post an Annotation</h3>
+<p>To retrieve the tags of a <em>TagDomain</em> experimenters need to use <a href="https://annotations.organicity.eu/swagger-ui.html#!/annotation-controller/createAnnotation">createAnnotation</a> API call.</p>
+<p>This api call requires the following json object to be provided in the post request's body:</p>
+<pre><code class="json">{
+  &quot;application&quot;: &quot;nameOftheApplication&quot;,
+  &quot;assetUrn&quot;: &quot;urn:oc:entity:patras:easybike:bikestation:293:301&quot;,
+  &quot;numericValue&quot;: 0,
+  &quot;tagUrn&quot;: &quot;urn:oc:tagDomain:IndoorHumidityLevels:high&quot;,
+  &quot;textValue&quot;: &quot;&quot;,
+  &quot;user&quot;: &quot;organcity sub of the user if available&quot;
+}
+</code></pre>
+
+<pre><code class="shell">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  &quot;application&quot;: &quot;nameOftheApplication&quot;,
+  &quot;assetUrn&quot;: &quot;urn:oc:entity:patras:easybike:bikestation:293:301&quot;,
+  &quot;numericValue&quot;: 0,
+  &quot;tagUrn&quot;: &quot;urn:oc:tagDomain:IndoorHumidityLevels:high&quot;,
+  &quot;textValue&quot;: &quot;&quot;,
+  &quot;user&quot;: &quot;organcity sub of the user if available&quot;
+}' 'https://annotations.organicity.eu/annotations/urn%3Aoc%3Aentity%3Apatras%3Aeasybike%3Abikestation%3A293%3A301'
+</code></pre>
+
+<h3 id="listing-all-annotations">Listing All Annotations</h3>
+<p>To retrieve the list of <em>Annotations</em> experimenters need to use <a href="https://annotations.organicity.eu/swagger-ui.html#!/annotation-controller/getAnnotations_1">getAnnotations_1</a> API call.</p>
+<pre><code class="shell">curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/annotations/all'
+</code></pre>
+
+<h2 id="using-the-java-client">Using the Java Client</h2>
+<p>Also, users can interact with the <em>Annotation Service</em> using the available JAVA and Android client for the <em>Annotation Service</em>. The code of the Annotation Service Clients is available <a href="https://github.com/OrganicityEu-Platform/Asset-Annotation-Service">here</a>. </p>
+<h3 id="using-in-maven">Using in Maven</h3>
+<p>To use the <em>Annotation Service Client</em> in Java project you need to add the following dependency in you <code>pom.xml</code>.</p>
+<pre><code class="shell">&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;organicity&lt;/id&gt;
+        &lt;url&gt;https://maven.organicity.eu/content/repositories/snapshots&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;eu.organicity&lt;/groupId&gt;
+        &lt;artifactId&gt;annotations-client&lt;/artifactId&gt;
+        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;/dependency&gt; 
+&lt;/dependencies&gt; 
+</code></pre>
+
+<h3 id="using-in-gradle-for-android">Using in Gradle for Android</h3>
+<p>To use the <em>Annotation Service Android Client</em> in Android application you need to add the following dependency in you <code>build.gradle</code>.</p>
+<pre><code class="shell">repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://maven.organicity.eu/content/repositories/snapshots' }
+}
+
+dependencies {
+    compile('eu.organicity:annotations-android-client:1.0-SNAPSHOT') {
+        exclude module: 'spring-boot-starter'
+        exclude module: 'spring-web'
+        exclude module: 'jackson-annotations'
+        exclude module: 'jackson-databind'
+        exclude module: 'spring-boot-starter-logging'
+        exclude module: 'jackson-mapper-asl'
+        exclude module: 'commons-logging'
+    }
+}
+</code></pre>
+
+<h3 id="post-an-annotation_1">Post an Annotation</h3>
+<pre><code class="java">final AnnotationServiceClient client =  new AnnotationServiceClient(&quot;client_id&quot;, &quot;client_secret&quot;, &quot;username&quot;, &quot;password&quot;);
+AnnotationDTO dto = new AnnotationDTO();
+dto.setApplication(&quot;nameOftheApplication&quot;);
+dto.setAssetUrn(&quot;urn:oc:entity:patras:easybike:bikestation:293:301&quot;);
+dto.setUser(&quot;organcity sub of the user if available&quot;);
+dto.setNumericValue(0.0);
+dto.setTagUrn(&quot;urn:oc:tagDomain:IndoorHumidityLevels:high&quot;);
+dto.setTextValue(&quot;&quot;);
+dto = client.postAnnotation(dto);
+System.out.println(dto);
+</code></pre>
+
+<h3 id="listing-all-annotations_1">Listing All Annotations</h3>
+<pre><code class="java">final AnnotationServiceClient client =  new AnnotationServiceClient(&quot;client_id&quot;, &quot;client_secret&quot;, &quot;username&quot;, &quot;password&quot;);
+AnnotationDTO[] annotations = client.getAnnotations();
+for (AnnotationDTO annotation : annotations) {
+    System.out.println(annotation);
+}
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

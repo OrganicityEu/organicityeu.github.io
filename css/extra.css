@@ -5869,9 +5869,31 @@ footer .small {
     font-weight: bold;
     background-color: transparent;
     border-right: 1px solid #CD0037;
-    
+
 }
 
 div[role=main] li {
     margin: 0 0 5px 0;
+}
+
+.oc-button {
+    background-color: #EF4070;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    font-family: CooperHewitt-Medium, Verdana, Arial, sans-serif;
+    font-size: 1.3rem;
+    padding: 0.8rem 2.5rem 0.5rem;
+    border: 0;
+    width: 100%;
+}
+
+.oc-button:hover {
+    background-color: #191115;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
 }

@@ -10482,4 +10482,13 @@ ul {
     color: #333333 !important;
 }
 
+@media (max-width: 700px) {
+    .apiBlock > h2 {
+        text-align: center;
+    }
+    .apiBlock > p {
+        text-align: center;
+    }
+}
+
 /*# sourceMappingURL=../assets/less/oc.less.css.map */

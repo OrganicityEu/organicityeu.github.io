@@ -78,46 +78,6 @@ To add a *TagDomain* to the list of selected *TagDomains* of an *Experiment* exp
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' 'https://annotations.organicity.eu/admin/applications/urn%3Aapplication%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6/tagDomains?tagDomainUrn=urn%3AtagDomain%3A86d7edce-5092-44c0-bed8-da4beaa3fbc6%3Amalfunctioning'
 ```
 
-
-### Post an Annotation
-
-To retrieve the tags of a *TagDomain* experimenters need to use [createAnnotation](https://annotations.organicity.eu/swagger-ui.html#!/annotation-controller/createAnnotation) API call.
-
-This api call requires the following json object to be provided in the post request's body:
-
-```json
-{
-  "application": "nameOftheApplication",
-  "assetUrn": "urn:oc:entity:patras:easybike:bikestation:293:301",
-  "numericValue": 0,
-  "tagUrn": "urn:oc:tagDomain:IndoorHumidityLevels:high",
-  "textValue": "",
-  "user": "organcity sub of the user if available"
-}
-```
-
-```shell
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
-  "application": "nameOftheApplication",
-  "assetUrn": "urn:oc:entity:patras:easybike:bikestation:293:301",
-  "numericValue": 0,
-  "tagUrn": "urn:oc:tagDomain:IndoorHumidityLevels:high",
-  "textValue": "",
-  "user": "organcity sub of the user if available"
-}' 'https://annotations.organicity.eu/annotations/urn%3Aoc%3Aentity%3Apatras%3Aeasybike%3Abikestation%3A293%3A301'
-```
-
-
-
-### Listing All Annotations
-
-To retrieve the list of *Annotations* experimenters need to use [getAnnotations_1](https://annotations.organicity.eu/swagger-ui.html#!/annotation-controller/getAnnotations_1) API call.
-
-
-```shell
-curl -X GET --header 'Accept: application/json' 'https://annotations.organicity.eu/annotations/all'
-```
-
 ## Using the Java Client
 
 Also, users can interact with the *Annotation Service* using the available JAVA and Android client for the *Annotation Service*. The code of the Annotation Service Clients is available [here](https://github.com/OrganicityEu-Platform/Asset-Annotation-Service). 

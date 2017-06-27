@@ -9,7 +9,7 @@ OrganiCity API Tester application is a Windows application which provides the ba
 The necessary file to execute the application are located into the OrganiCityTesterAPI folder. To run the application, just double click on "OrganiCityClient.exe" file.
 
 ## Using Tester ##
-The following figures illustrates the functionalities of OrganiCity API Tester app. The application has three main screens/tabs: (a) post data to your experiment (tab1), (b) Learn OrganiCity data format, and (c) Get data from cities.
+The following figures illustrates the functionalities of OrganiCity API Tester app. The application has three main screens/tabs: (a) post data to your experiment, (b) Learn OrganiCity data format, and (c) Get data from cities.
 
 In the first tab, the user has to follow three main steps to post a new asset to a specific experiment. In the first step, the user is able to request and get an access token by providing Clientid, ClientSecret. Then, the user has to fill the details of the experiment (ExperimenterId, ExperimentId, ApplicationId). In the last step (i.e. step 3), the user can post a new asset to the specific experiment by pressing the “Post Random Asset” button.
 

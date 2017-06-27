@@ -6,7 +6,7 @@ OrganiCity API Tester application is a Windows application which provides the ba
 * Assets retrieval from OrganiCity sites by using the EaaS API.
 
 ## Run the application ##
-The necessary file to execute the application are located into the OrganiCityTesterAPI folder. To run the application, just double click on "OrganiCityClient.exe" file.
+The necessary file to execute the application are located into the [OrganiCityTesterAPI](https://github.com/OrganicityEu/OrganiCityTesterAPIapp/tree/master/OrganiCityTesterAPI) folder. To run the application, just double click on "OrganiCityClient.exe" file.
 
 ## Using Tester ##
 The following figures illustrates the functionalities of OrganiCity API Tester app. The application has three main screens/tabs: (a) post data to your experiment, (b) Learn OrganiCity data format, and (c) Get data from cities.

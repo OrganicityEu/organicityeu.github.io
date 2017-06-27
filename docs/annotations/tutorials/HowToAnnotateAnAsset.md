@@ -6,7 +6,8 @@ img[src$="centerme"] {
 }
 </style>
 
-# Tutorial: How to Annotate an OrganiCity Asset
+# Tutorial: How to Annotate an Asset
+
 <!--
 ## Using the Experimenter's Portal
 

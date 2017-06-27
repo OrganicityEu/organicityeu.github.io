@@ -218,3 +218,10 @@ Example:
     "user": "86d7edce-5092-44c0-bed8-da4beaa3fbc6"
 }
 ```
+
+## Tutorials
+
+For more information about how to interact with the *Asset Annotation Service* you can check out the following tutorials:
+
+- [How to Create Annotation Tags](/annotations/tutorials/HowToAnnotateAnAsset/)
+- [How To Annotate An Asset](/annotations/tutorials/HowToAnnotateAnAsset/)

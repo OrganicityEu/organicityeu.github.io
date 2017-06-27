@@ -175,6 +175,8 @@ for (AnnotationDTO annotation : annotations) {
 }
 ```
 
+## Posting Annotations 
+Now lets jump to [posting annotations](/annotations/tutorials/HowToAnnotateAnAsset/).
 
 <!---
 

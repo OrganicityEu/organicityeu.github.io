@@ -5897,3 +5897,8 @@ p {
     text-align: justify;
     text-justify: inter-word;
 }
+
+.bs-sidebar .nav > .active {
+    text-decoration: underline;
+    font-weight: bold !important;
+}

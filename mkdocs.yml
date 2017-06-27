@@ -7,7 +7,7 @@ pages:
       -  Asset Data Model: AssetDataModel.md
   -  services:
       -  Asset Discovery Service: AssetDiscoveryService.md
-      -  Asset Annotation Service: AssetAnnotationService.md
+      -  Asset Annotation Service: annotations/AssetAnnotationService.md
       -  Experimenter Portal: ExperimenterPortal.md
       -  Federated Data Assets: FederatedDataAssets.md
       -  Urban Data Observatory: UrbanDataObservatory.md
@@ -20,12 +20,17 @@ pages:
       -  How To Push An Asset To The Provider Site: HowToPushAnAssetToTheProviderSite.md
       -  How To Refresh Token: HowToRefreshToken.md
       -  How To Update Detele An Asset: HowToUpdateDeteleAnAsset.md
+      -  How To Create Annotation Tags: annotations/tutorials/HowToCreateAnnotationTags.md
+      -  How To Annotate An Asset: annotations/tutorials/HowToAnnotateAnAsset.md
+      -  How To Annotate An Asset using Machine Learning: jamaica/tutorials/HowToAnnotateAnAsset.md
   - tools:
       -  Sensinact: tools/sensinact/index.md
       -  TSmart: tools/tsmart/tsmart.md
       -  Smartphone Experimentation: tools/set/index.md
       -  Websockets: tools/websockets/index.md
       -  Scenarios: tools/scenarios/index.md
+      -  Annotations: annotations/tool.md
+      -  JAMAiCA: jamaica/tool.md
 
 extra:
     logo: '/images/oc_logo.png'

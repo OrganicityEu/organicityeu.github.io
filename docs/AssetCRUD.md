@@ -2,7 +2,7 @@
 
 This is just an overview of how to CRUD assets.
 
-## CREATE (HTTP POST)
+## Create (HTTP Post)
 
 To [create an asset](/HowToPushAnAsset), you must do an HTTP **POST** to the OC-Exp. Site:
 
@@ -38,7 +38,7 @@ Location: http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<
 ...
 ```
 
-## READ (HTTP GET)
+## Get (HTTP Get)
 
 To read an asset, you must use the [Asset Discovery Service](https://organicityeu.github.io/api/AssetDiscovery.html).
 You can simply do an HTTP GET on the `location` header returnd by the creation:
@@ -47,7 +47,7 @@ You can simply do an HTTP GET on the `location` header returnd by the creation:
 GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
 ```
 
-## UPDATE (HTTP UPDATE)
+## Update (HTTP Update)
 
 To [update an asset](/HowToUpdateDeteleAnAsset#update-an-asset), you must do an HTTP **POST** to the OC-Exp. Site.
 JSON attributes `id` and `type` are not allowed! Be aware of the `/attrs` in the URL:
@@ -79,7 +79,7 @@ Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
 ```
 
-## DELETE (HTTP DELETE)
+## Delete (HTTP Delete)
 
 To [delete an asset](/HowToUpdateDeteleAnAsset#delete-an-asset), you must do an HTTP **DELETE** to the OC-Exp. Site:
 

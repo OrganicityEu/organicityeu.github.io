@@ -223,5 +223,5 @@ Example:
 
 For more information about how to interact with the *Asset Annotation Service* you can check out the following tutorials:
 
-- [How to Create Annotation Tags](/annotations/tutorials/HowToAnnotateAnAsset/)
+- [How to Create Annotation Tags](/annotations/tutorials/HowToCreateAnnotationTags/)
 - [How To Annotate An Asset](/annotations/tutorials/HowToAnnotateAnAsset/)

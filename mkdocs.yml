@@ -22,15 +22,15 @@ pages:
       -  How To Update Detele An Asset: HowToUpdateDeteleAnAsset.md
       -  How To Create Annotation Tags: annotations/tutorials/HowToCreateAnnotationTags.md
       -  How To Annotate An Asset: annotations/tutorials/HowToAnnotateAnAsset.md
-      -  How To Annotate An Asset using Machine Learning: jamaica/tutorials/HowToAnnotateAnAsset.md
+      -  How To Annotate An Asset using Machine Learning: jamaica/tutorials/HowToAutomaticallyAnnotateAssets.md
   - tools:
       -  Sensinact: tools/sensinact/index.md
       -  TSmart: tools/tsmart/tsmart.md
       -  Smartphone Experimentation: tools/set/index.md
       -  Websockets: tools/websockets/index.md
       -  Scenarios: tools/scenarios/index.md
-      -  Annotations: annotations/tool.md
-      -  JAMAiCA: jamaica/tool.md
+#      -  Annotations: annotations/tool.md
+#      -  JAMAiCA: jamaica/tool.md
 
 extra:
     logo: '/images/oc_logo.png'

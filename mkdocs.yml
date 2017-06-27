@@ -39,7 +39,7 @@ extra:
     site_short_name: OrganiCity Tech Docs
     links:
         - name: APIS
-          url: https://organicityeu.github.io/api/
+          url: /api/
         - name: Status
           url: https://status.organicity.eu/
     license: ''

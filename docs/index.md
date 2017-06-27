@@ -18,7 +18,12 @@ As it can be seen in the following figure, three different tiers can be distingu
 
 ## Users Accounts and registration
 
-To ensure that all interactions with the facility are authenticated with valid user credentials and access rights, Authentication, Authorization and Accounting (AAA) mechanisms have been implemented. Users will be enforced to use their own credentials to interact with the different APIs and tools. To start experimenting on top of the OC facility, the experimenters are encouraged to register themselves in the platform. Click [here](https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=account&redirect_uri=https%3A%2F%2Faccounts.organicity.eu%2Frealms%2Forganicity%2Faccount%2Flogin-redirect&state=0%2Ffbef2e8c-5990-4caf-b4ee-26fe03f96ab4&response_type=code) to register yourself.  
+To ensure that all interactions with the facility are authenticated with valid user credentials and access rights, Authentication, Authorization and Accounting (AAA) mechanisms have been implemented. Users will be enforced to use their own credentials to interact with the different APIs and tools. To start experimenting on top of the OC facility, the experimenters are encouraged to register themselves in the platform.
+
+<a href="https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=account&redirect_uri=https%3A%2F%2Faccounts.organicity.eu%2Frealms%2Forganicity%2Faccount%2Flogin-redirect&state=0%2Ffbef2e8c-5990-4caf-b4ee-26fe03f96ab4&response_type=code">
+<button class="oc-button" >Register</button>
+</a>  
+
 Once experimenters get registered within the platform, they will be assigned with the OC user role. The OC facility managers will assign the experimenters the OC experimenter role upon the acceptation of the corresponding request. To this end, you should send an email to [helpdesk@organicity.eu](mailto:helpdesk@organicity.eu), indicating the mail that you have been registered with and the experiment that you belong to.
 
 ## Tools and enablers for experimentation in Organicity

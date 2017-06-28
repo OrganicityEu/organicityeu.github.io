@@ -33,6 +33,7 @@ pages:
       -  Scenarios: tools/scenarios/index.md
 #      -  Annotations: annotations/tool.md
 #      -  JAMAiCA: jamaica/tool.md
+  -  New Home: index-new.md  
 
 extra:
     logo: '/images/oc_logo.png'

@@ -1,43 +1,49 @@
 # Experimenter Portal
 
-The Experimenter Portal (EP) provides a common interface for the experimenters to carry out several management task such as creation and modification of experiments, control of developments (i.e. applications, tools) carried out under such experiments, and monitoring the results obtained from them. In this sense, the EP enables to manage the whole lifecycle of the experiments and facilitates the interaction with other related OrganiCity functionalities. In the following we will thoroughly describe the EP by showcasing the interactions of the experimenter with the tool.
+The Experimenter Portal provides a common interface for the experimenters to carry out experiment management and to start the interaction of your experiment with different services (e.g. annotations, authorization, etc.). An experiment can be seen as a entity that allows you to interact with the Organicity facility. Besides, within an experiment you can defined a number of applications, also entities, so that when you create assets you have to indicate which application of which experiment has created it. It is worth highlighting that an Organicity application refers just to the entity (an identifier), that will be afterwards used in *real* applications (such as smartphone applications) to enable the interaction with Organicity,
 
-## Entering the portal
-EP can be accessed through the URL http://experimenters.organicity.eu . After a successful login, the experimenter is redirected to the main page of the EP, shown in Figure 1. As can be observed, the portal provides rapid access to the different development alternatives facilitated by OrganiCity in the sidebar: links to co-creation tools, to develop new services and applications; access to documentation of tools and APIs, necessary for the experiment development; and finally, provide links to support tools, such as OrganiCity FAQ system, GitHub repository and dedicated google groups channel, devoted to provide timely support to the experimenters.
+In the following the features of the Experimenter Portal are desbried in a comprehensive way.
 
-> **Figure 1:**
+First you need to log into the the portal (http://experimenters.organicity.eu/). In case you do not manage to perform the login, contact the facility managers through [helpdesk@organicity.eu](mailto:helpdesk@organicity.eu) to obtain proper credentials.
+
+When you enter the portal for the same time, you will find an empty table and a button to create a new experiment. Besides, from the header you may navigate to different services and tools of Organicity; we do not detail each service and tool here, go [Home](/index) for more information.
+
+
 
 ![alt text](../images/01-Portal_main.png)
+**Figure 1:** Main view of the Experimenter Portal
 
-In the main view, it is also shown the list of current experiments indicating whether or not they are ongoing, so that the experimenter can see, at a glance, its experimentation state. As can be seen, the portal provides the option to remove experiments as well as to create new ones. When you remove an experiment, all the information related to the experiment will be lost. This will also disable the applications developed under the experiment.
+All you need to do to start the experimentation is clicking **NEW EXPERIMENT** button. Through the portal you will find some rounded blue icons that will provide you information at each step.
 
-## Creating new experiment
-In order to create a new experiment, the portal will request general information about the experiment such as its name and description (Figure 2). It is recommended to use a catchy name and a detailed description in order to encourage people to take part on it. The experimenter also defines the time during which the experiment will be available. After that period of time the experiment cannot be used by participants, but still exist in the EP. Besides, for each experiment, it is defined the assets, or information sources, it can handle. Such assets could be public, this means that assets created by this experiment will be visible for everyone, otherwise only this experiment, and their applications, will be allowed to use them.
 
-**Figure 2:**
+## Create and edit experiments
 
-![alt text](../images/02-Create_experiment.png)
+As can be seen in the figure below, an experiment can be created by just defining:
+* Name: Name of the experiment to be shows afterwards
+* Description: meaningful and catchy description of the experiment. This description will be used if you decide to invite people to participate in your experiment
+* Assets privacy: choose whether or not you want your asstes to be public or private. Note that by doing them private only your experiment will be able to access their data.
 
-After providing basic information about the new experiment, the portal will request define the experiment area (Figure 3), which consisting of a set of regions where the experiment will take place. This area will be used as a first filter to select, by using some UDO functionalities, the assets used along the experiment. If you do not define an area, the experiment will be considered worldwide.
+Besides, if it is necessary you may also define the experiment area, by clinking **EXPERIMENT AREA**. The area is made of regions, that in turn is defined as a polygon with a name, as depicted belor. You can define as many regions you want for your experiment.
 
-**Figure 3**
+Once you are done, click **FINISH** to complete the experiment creation.
 
-![alt text](../images/03-Define_area.png)
+## Experiment Credentials
 
-## Getting detailed info about experiment
-Once the experimenter selects an experiment from the list, the details of experiment is presented. Firstly, the information provided during the experiment creation process is displayed, as shown in Figure 4, allowing the portal user modify it. By this way, an experimenter might modify the experiment settings during its lifecycle: extending or limiting the area of the experiment, modifying its timespan or editing the experiment tags to better indicate its aim.
+When an experiment is created a new *client* is created for that experiment. You may use that client to implement authorization in the applications within the experiment, see [How To Authenticate An User](/HowToAuthenticateAnUser).
 
-**Figure 4**
+From that client you can define and edit *redirect_uris* as you need.
 
-![alt text](../images/04-Exp_info.png)
+## Create and edit applications
 
-## Creating new assets
-In the most of cases, the experiment will include the development of some kind of application (e.g. mobile application) that will enable to participant interact with the experiment. These applications will produce information whose structure should be previously defined by the experimenter. For this end, the portal enables to create new assets by means of an editor (see Figure 5) with a twofold purpose: first to simplify the definition of new information sources by a visual tool, and secondly to provide a template and useful insight to create assets via software. As can be observed in Figure 5, during the asset edition, the experimenter will see the resulting output (JSON format) and how some of the fields are autocompleted with experiment specific information (e.g. experiment and experimenter identifiers).
+As mentioned before, to create assets the experiment does not suffice, but you need to do it through applications within the experiment. To create an applciation just go to the **Applications** section of you experiment **NEW APPLICATION**. As you can see below, you have to provide minimal information to create it. 
 
-**Figure 5**
+If you are going to experiment with [](/https://organicityeu.github.io/set.html)
 
-![alt text](../images/05-Create_assets.png)
+## Manage assets
 
-## Managing experiment applications
-Experimenter Portal also provides the functionality to manage applications. The detailed information of the applications, such as links to download them, can be edited during the whole experiment lifecycle and will be advertised to the OrganiCity participants so as to facilitate their use. As the application is constrained to the characteristics of the experiment, the application scope is also limited by spatio-temporal dimension of the experiment, as well as by the assets that the application can use.
+## Annotations
+## Experiment area
 
+## Experiment team
+
+## Participants

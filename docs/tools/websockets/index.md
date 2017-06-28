@@ -56,8 +56,6 @@ In order to be able to actually subscribe to a specific asset you need an anthen
 
 You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.
 
-Note!!! An authentication token only lasts for 300 seconds, so you need to refresh the token beforehand if needed (this might already have been taken care of if you use one of the extrenal libraries). Here is a tutorial on how to refresh the token: http://organicityeu.github.io/HowToRefreshToken/
-
 When you have generated the authentication token it is time write some code.
 
 ### Coding example
@@ -92,11 +90,6 @@ Below is an example of a valid asset:
     "value": "2016-10-04T13:45:00.000Z",
     "metadata": {}
   },
-  "access:scope": {
-    "type": "urn:oc:attributeType:access:scope",
-    "value": "public",
-    "metadata": {}
-  },
   "comments": {
     "type": "urn:oc:attributeType:text:string",
     "value": "hello",
@@ -104,7 +97,7 @@ Below is an example of a valid asset:
   },
   "user": {
     "type": "urn:oc:attributeType:text:string",
-    "value": "skov",
+    "value": "world",
     "metadata": {}
   }
 }

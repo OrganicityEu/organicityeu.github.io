@@ -61,8 +61,8 @@ When you have generated the authentication token it is time write some code.
 Below is a code snippet showing how to subscribe to a specific asset. The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.
 
 You can subscribe to an asset by using one of the folloing two constructors:
-* The simple: public OrionSubscription(String entityId, String token)
-* The advanced: public OrionSubscription(String[] conditions, String[] attributes, String entityId, String token)
+- The simple: public OrionSubscription(String entityId, String token)
+- The advanced: public OrionSubscription(String[] conditions, String[] attributes, String entityId, String token)
 
 A specific code example would be: ```OrionSubscription subscription = new OrionSubscription("some_entity_id", "some_token_string");```
 
@@ -125,9 +125,10 @@ public class VanillaTestClient implements WebsocketCallback{
       if(System.currentTimeMillis()>now+5000){
         if(!hasSubscription){
 	  /*
-	  Example of setting conditions and attributes. "comments" and "user" are taken from the example asset above.
-	  When using these, you will get a notifaction with user information, when the comment is altered (if "hello"
-	  is changed to something else)
+	  Example of setting conditions and attributes. "comments" and "user" are taken
+	  from the example asset above. When using these, you will get a notifaction
+	  with user information, when the comment is altered (if "hello" is changed to
+	  something else)
 	  */
 	  String[] attr = new String[1];
 	  attr[0] = "comments";

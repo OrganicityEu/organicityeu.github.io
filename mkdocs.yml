@@ -11,6 +11,7 @@ pages:
       -  Experimenter Portal: ExperimenterPortal.md
       -  Federated Data Assets: FederatedDataAssets.md
       -  Urban Data Observatory: UrbanDataObservatory.md
+      -  Facility Manager: services/facility-manager/index.md
   -  Tutorials:
       -  How To Access Token: HowToAccessToken.md
       -  How To Authenticate An User: HowToAuthenticateAnUser.md
@@ -25,12 +26,11 @@ pages:
       -  How To Annotate An Asset using Machine Learning: jamaica/tutorials/HowToAutomaticallyAnnotateAssets.md
       -  OrganiCity Tester API Application: OrganiCityTesterAPI.md
   - Tools:
-      -  Sensinact: tools/sensinact/index.md
+      -  Eclipse sensiNact: tools/sensinact/index.md
       -  TSmart: tools/tsmart/tsmart.md
       -  Smartphone Experimentation: tools/set/index.md
       -  Websockets: tools/websockets/index.md
       -  Scenarios: tools/scenarios/index.md
-      -  Facility Manager: tools/facility-manager/index.md
 #      -  Annotations: annotations/tool.md
 #      -  JAMAiCA: jamaica/tool.md
 

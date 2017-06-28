@@ -60,12 +60,15 @@ When you have generated the authentication token it is time write some code.
 
 Below is a code snippet showing how to subscribe to a specific asset. The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.
 
-You can subscribe to an asset by using one of the folloing two constructors:
+You can subscribe to an asset by using one of the following two constructors:
 
 *   The simple: public OrionSubscription(String entityId, String token)
 *   The advanced: public OrionSubscription(String[] conditions, String[] attributes, String entityId, String token)
 
-A specific code example would be: ```OrionSubscription subscription = new OrionSubscription("some_entity_id", "some_token_string");```
+A specific code example would be:
+
+```OrionSubscription subscription = new OrionSubscription("some_entity_id", "some_token_string");```
+
 
 Each of the parameters are described in the table below
 

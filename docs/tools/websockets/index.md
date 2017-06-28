@@ -56,26 +56,24 @@ In order to be able to actually subscribe to a specific asset you need an anthen
 
 When you have generated the authentication token it is time write some code.
 
-### Coding example
+### Code example
 
-Below is a code snippet showing how to subscribe to a specific asset with an entity id, and an authentication token (both are not real, and can't be used). The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.
+Below is a code snippet showing how to subscribe to a specific asset. The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.
 
-The most important line of code is ```OrionSubscription subscription = new OrionSubscription(cond, attr, "P1D", entityId, false, "urn:oc:entityType:userImage",null,token);```
+You can subscribe to an asset by using one of the folloing two constructors:
+* The simple: public OrionSubscription(String entityId, String token)
+* The advanced: public OrionSubscription(String[] conditions, String[] attributes, String entityId, String token)
+
+A specific code example would be: ```OrionSubscription subscription = new OrionSubscription("some_entity_id", "some_token_string");```
 
 Each of the parameters are described in the table below
 
-| Parameter    | Description                                    | Value       | Type     | Additional info | 
-| ------------ | ---------------------------------------------- |-----------  | -------- | --------------- |
-| conditions   | Defines the "trigger" for the subscription     | Can be null | String[] |                 |
-| attributes   | Define the "triggering attributes"             | Can be null | String[] |                 |
-| duration     | when the subscription expires                  | Need value  | String   | More on formats: https://en.wikipedia.org/wiki/ISO_8601 |
-| id           | Id of the asset you want to subscribe to       | Need value  | String   |                 |
-| isPattern    | Indicate whether the subscription is a pattern | Need value  | Boolean  | More on patterns: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#getting-all-entities-and-filtering |
-| type         | Type of an asset entity                        | Need value  | String   |                 |
-| subscriberId | Id of the subscriber                           | Can be null | String   |                 |
-| token        | The token accuired in the previous step        | Need value  | String   |                 |
-
-Additional parameter descriptions can be found here: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#subscriptions
+| Parameter    | Description                                    | Value       | Type     |
+| ------------ | ---------------------------------------------- |-----------  | -------- |
+| conditions   | Defines the "trigger" for the subscription     | Need value  | String[] |
+| attributes   | Define the "triggering attributes"             | Need value  | String[] |
+| entityId     | Id of the asset you want to subscribe to       | Need value  | String   |
+| token        | The token accuired in the previous step        | Need value  | String   |
 
 Below is an example of a valid asset:
 
@@ -135,7 +133,11 @@ public class VanillaTestClient implements WebsocketCallback{
 	  String entityId = "<Your asset id here here>";
 	  String token = "<Your token here>";
 	
-	  OrionSubscription subscription = new OrionSubscription(cond, attr, "P1D", entityId, false, "urn:oc:entityType:userImage",null,token);
+	  //Example of subscribing to certain asset conditions and attributes
+	  //OrionSubscription subscription = new OrionSubscription(cond, attr, entityId, token);
+	  
+	  //Example of subscribing to a certain asset without any specific conditions
+	  OrionSubscription subscription = new OrionSubscription(entityId, token);
 					  
 	  System.out.println("trying to set subscrition");
 	  hasSubscription = wsc.registerSubscription(subscription);

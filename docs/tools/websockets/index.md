@@ -46,13 +46,13 @@ That's it. The library has now been imported and can be leveraged in your projec
 
 This task can only be performed if you are a registered OrganiCity experimenter! In order to become an experimenter go to this website https://experimenters.organicity.eu, and click "Sign in" (even if you don't have a user yet - you can create one).
 
-You create a new asset by following this the steps in this link: http://organicityeu.github.io/HowToPushAnAssetToTheExperimenterSite/#tutorial-how-to-push-an-assets-to-the-organicity-experimenter-site
+You create a new asset by following this the steps in this link: http://docs.organicity.eu/HowToPushAnAssetToTheExperimenterSite/#tutorial-how-to-push-an-assets-to-the-organicity-experimenter-site
 
 When the asset has been created, the next step is authentication.
 
 ### Get authentication token
 
-In order to be able to actually subscribe to a specific asset you need an anthentication token (a proof that you actually have the rights to get the information from the asset). This can be quite tricky, but we have created a tutorial on how to get the token: http://organicityeu.github.io/HowToAuthenticateAnUser/. You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.
+In order to be able to actually subscribe to a specific asset you need an anthentication token (a proof that you actually have the rights to get the information from the asset). This can be quite tricky, but we have created a tutorial on how to get the token: http://docs.organicity.eu/HowToAuthenticateAnUser/. You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.
 
 When you have generated the authentication token it is time write some code.
 
@@ -180,10 +180,9 @@ The OrganiCity platform is built around the Orion Context Broker (https://fiware
 
 For further technical and code detail, please take a look here: https://github.com/OrganicityEu/WebsocketClient
 
-reference: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#subscriptions
+Technical reference to the Orion context brokers subscription feature: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#subscriptions
 
-Look there to acquire token: https://github.com/OrganicityEu/organicityeu.github.io/blob/mkdocs/docs/HowToAuthenticateAnUser.md
-
+Look there to acquire token: http://docs.organicity.eu/HowToAuthenticateAnUser/
 
 ## Known issues
 

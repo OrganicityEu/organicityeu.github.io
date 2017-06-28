@@ -87,6 +87,10 @@
 <li >
     <a href="../../UrbanDataObservatory/">Urban Data Observatory</a>
 </li>
+                            
+<li >
+    <a href="../../services/facility-manager/">Facility Manager</a>
+</li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -147,7 +151,7 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../sensinact/">Sensinact</a>
+    <a href="../sensinact/">Eclipse sensiNact</a>
 </li>
                             
 <li >
@@ -164,10 +168,6 @@
                             
 <li >
     <a href="../scenarios/">Scenarios</a>
-</li>
-                            
-<li >
-    <a href="../facility-manager/">Facility Manager</a>
 </li>
                         </ul>
                     </li>
@@ -246,16 +246,17 @@
 <p>That's it. The library has now been imported and can be leveraged in your project. In order to test the websocket functionality it is required to have an existing asset. If you don't have an existing asset, then read the next section. Otherwise, you can skip this section and jump directly to "Get authentication token".</p>
 <h3 id="adding-an-asset-can-be-omitted-if-there-is-already-an-asset-available">Adding an asset (can be omitted if there is already an asset available)</h3>
 <p>This task can only be performed if you are a registered OrganiCity experimenter! In order to become an experimenter go to this website https://experimenters.organicity.eu, and click "Sign in" (even if you don't have a user yet - you can create one).</p>
-<p>You create a new asset by following this the steps in this link: http://organicityeu.github.io/HowToPushAnAssetToTheExperimenterSite/#tutorial-how-to-push-an-assets-to-the-organicity-experimenter-site</p>
+<p>You create a new asset by following this the steps in this link: http://docs.organicity.eu/HowToPushAnAssetToTheExperimenterSite/#tutorial-how-to-push-an-assets-to-the-organicity-experimenter-site</p>
 <p>When the asset has been created, the next step is authentication.</p>
 <h3 id="get-authentication-token">Get authentication token</h3>
-<p>In order to be able to actually subscribe to a specific asset you need an anthentication token (a proof that you actually have the rights to get the information from the asset). This can be quite tricky, but we have created a tutorial on how to get the token: http://organicityeu.github.io/HowToAuthenticateAnUser/</p>
-<p>You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.</p>
-<p>Note!!! An authentication token only lasts for 300 seconds, so you need to refresh the token beforehand if needed (this might already have been taken care of if you use one of the extrenal libraries). Here is a tutorial on how to refresh the token: http://organicityeu.github.io/HowToRefreshToken/</p>
+<p>In order to be able to actually subscribe to a specific asset you need an anthentication token (a proof that you actually have the rights to get the information from the asset). This can be quite tricky, but we have created a tutorial on how to get the token: http://docs.organicity.eu/HowToAuthenticateAnUser/. You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.</p>
 <p>When you have generated the authentication token it is time write some code.</p>
-<h3 id="coding-example">Coding example</h3>
-<p>Below is a code snippet showing how to subscribe to a specific asset with an entity id, and an authentication token (both are not real, and can't be used). The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.</p>
-<p>The most important line of code is <code>OrionSubscription subscription = new OrionSubscription(cond, attr, "P1D", entityId, false, "urn:oc:entityType:userImage",null,token);</code></p>
+<h3 id="code-example">Code example</h3>
+<p>Below is a code snippet showing how to subscribe to a specific asset. The specific code is not of any great use in a real setting, since it just performs a new subscription, and then deletes it five seconds later. The only purpose of the example is to show how to both subscribe and unsubscribe.</p>
+<p>You can subscribe to an asset by using one of the folloing two constructors:
+<em> The simple: public OrionSubscription(String entityId, String token)
+</em> The advanced: public OrionSubscription(String[] conditions, String[] attributes, String entityId, String token)</p>
+<p>A specific code example would be: <code>OrionSubscription subscription = new OrionSubscription("some_entity_id", "some_token_string");</code></p>
 <p>Each of the parameters are described in the table below</p>
 <table>
 <thead>
@@ -264,69 +265,35 @@
 <th>Description</th>
 <th>Value</th>
 <th>Type</th>
-<th>Additional info</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>conditions</td>
 <td>Defines the "trigger" for the subscription</td>
-<td>Can be null</td>
+<td>Need value</td>
 <td>String[]</td>
-<td></td>
 </tr>
 <tr>
 <td>attributes</td>
 <td>Define the "triggering attributes"</td>
-<td>Can be null</td>
-<td>String[]</td>
-<td></td>
-</tr>
-<tr>
-<td>duration</td>
-<td>when the subscription expires</td>
 <td>Need value</td>
-<td>String</td>
-<td>More on formats: https://en.wikipedia.org/wiki/ISO_8601</td>
+<td>String[]</td>
 </tr>
 <tr>
-<td>id</td>
+<td>entityId</td>
 <td>Id of the asset you want to subscribe to</td>
 <td>Need value</td>
 <td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>isPattern</td>
-<td>Indicate whether the subscription is a pattern</td>
-<td>Need value</td>
-<td>Boolean</td>
-<td>More on patterns: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#getting-all-entities-and-filtering</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Type of an asset entity</td>
-<td>Need value</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>subscriberId</td>
-<td>Id of the subscriber</td>
-<td>Can be null</td>
-<td>String</td>
-<td></td>
 </tr>
 <tr>
 <td>token</td>
 <td>The token accuired in the previous step</td>
 <td>Need value</td>
 <td>String</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<p>Additional parameter descriptions can be found here: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#subscriptions</p>
 <p>Below is an example of a valid asset:</p>
 <pre><code>{
   &quot;id&quot;: &quot;urn:oc:entity:experimenters:5a660d96-0ef7-42ca-9f6c-5dbb86d6aa20:58ab32f36f8b513746565c54:wsasset&quot;,
@@ -336,11 +303,6 @@
     &quot;value&quot;: &quot;2016-10-04T13:45:00.000Z&quot;,
     &quot;metadata&quot;: {}
   },
-  &quot;access:scope&quot;: {
-    &quot;type&quot;: &quot;urn:oc:attributeType:access:scope&quot;,
-    &quot;value&quot;: &quot;public&quot;,
-    &quot;metadata&quot;: {}
-  },
   &quot;comments&quot;: {
     &quot;type&quot;: &quot;urn:oc:attributeType:text:string&quot;,
     &quot;value&quot;: &quot;hello&quot;,
@@ -348,7 +310,7 @@
   },
   &quot;user&quot;: {
     &quot;type&quot;: &quot;urn:oc:attributeType:text:string&quot;,
-    &quot;value&quot;: &quot;skov&quot;,
+    &quot;value&quot;: &quot;world&quot;,
     &quot;metadata&quot;: {}
   }
 }
@@ -377,16 +339,24 @@ public class VanillaTestClient implements WebsocketCallback{
     while(true){
       if(System.currentTimeMillis()&gt;now+5000){
         if(!hasSubscription){
-      //example of how to create a subscription
+      /*
+      Example of setting conditions and attributes. &quot;comments&quot; and &quot;user&quot; are taken from the example asset above.
+      When using these, you will get a notifaction with user information, when the comment is altered (if &quot;hello&quot;
+      is changed to something else)
+      */
       String[] attr = new String[1];
       attr[0] = &quot;comments&quot;;
       String[] cond = new String[1];
-      cond[0] = &quot;comments&quot;;
+      cond[0] = &quot;user&quot;;
 
       String entityId = &quot;&lt;Your asset id here here&gt;&quot;;
       String token = &quot;&lt;Your token here&gt;&quot;;
 
-      OrionSubscription subscription = new OrionSubscription(cond, attr, &quot;P1D&quot;, entityId, false, &quot;urn:oc:entityType:userImage&quot;,null,token);
+      //Example of subscribing to certain asset conditions and attributes
+      //OrionSubscription subscription = new OrionSubscription(cond, attr, entityId, token);
+
+      //Example of subscribing to a certain asset without any specific conditions
+      OrionSubscription subscription = new OrionSubscription(entityId, token);
 
       System.out.println(&quot;trying to set subscrition&quot;);
       hasSubscription = wsc.registerSubscription(subscription);
@@ -425,8 +395,8 @@ public class VanillaTestClient implements WebsocketCallback{
 <h2 id="technical-background">Technical background</h2>
 <p>The OrganiCity platform is built around the Orion Context Broker (https://fiware-orion.readthedocs.io/en/master/), and the websockets tool conform to the abilities and formats dictated by the context broker. As the Context Broker is REST based, we provide a Spring.io based middleware (https://github.com/OrganicityEu-Platform/WebsocketMiddleware) for transforming the connections between REST and Websockets.</p>
 <p>For further technical and code detail, please take a look here: https://github.com/OrganicityEu/WebsocketClient</p>
-<p>reference: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#subscriptions</p>
-<p>Look there to acquire token: https://github.com/OrganicityEu/organicityeu.github.io/blob/mkdocs/docs/HowToAuthenticateAnUser.md</p>
+<p>Technical reference to the Orion context brokers subscription feature: https://fiware-orion.readthedocs.io/en/develop/user/walkthrough_apiv2/index.html#subscriptions</p>
+<p>Look there to acquire token: http://docs.organicity.eu/HowToAuthenticateAnUser/</p>
 <h2 id="known-issues">Known issues</h2>
 <p>When running the example code directly from within your IDE (e.g. Eclipse or Netbeans) it seems that the java process will not close down when stopping the application. It will only shut down properly if you run the application as debug. If you run the example from the commandline (as the final application outside of the IDE) then there should be no problems - it should all be working as expected, and all related java processe will clode down correctly.</p></div>
         </div>
@@ -435,7 +405,7 @@ public class VanillaTestClient implements WebsocketCallback{
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-06-27 13:36:15 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-06-28 11:07:05 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '../..';</script>
         <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>

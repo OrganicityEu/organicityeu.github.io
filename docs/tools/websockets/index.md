@@ -52,9 +52,7 @@ When the asset has been created, the next step is authentication.
 
 ### Get authentication token
 
-In order to be able to actually subscribe to a specific asset you need an anthentication token (a proof that you actually have the rights to get the information from the asset). This can be quite tricky, but we have created a tutorial on how to get the token: http://organicityeu.github.io/HowToAuthenticateAnUser/
-
-You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.
+In order to be able to actually subscribe to a specific asset you need an anthentication token (a proof that you actually have the rights to get the information from the asset). This can be quite tricky, but we have created a tutorial on how to get the token: http://organicityeu.github.io/HowToAuthenticateAnUser/. You can either follow the steps directly from top to bottom or you can scroll all the way to the bottom of the tutorial and leverage existing libraries which might reduce some of your complexity.
 
 When you have generated the authentication token it is time write some code.
 

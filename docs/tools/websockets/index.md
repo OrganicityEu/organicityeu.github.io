@@ -124,11 +124,15 @@ public class VanillaTestClient implements WebsocketCallback{
     while(true){
       if(System.currentTimeMillis()>now+5000){
         if(!hasSubscription){
-	  //example of how to create a subscription
+	  /*
+	  Example of setting conditions and attributes. "comments" and "user" are taken from the example asset above.
+	  When using these, you will get a notifaction with user information, when the comment is altered (if "hello"
+	  is changed to something else)
+	  */
 	  String[] attr = new String[1];
 	  attr[0] = "comments";
 	  String[] cond = new String[1];
-	  cond[0] = "comments";
+	  cond[0] = "user";
 	  
 	  String entityId = "<Your asset id here here>";
 	  String token = "<Your token here>";

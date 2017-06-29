@@ -24,7 +24,7 @@ pages:
       -  How To Create Annotation Tags: annotations/tutorials/HowToCreateAnnotationTags.md
       -  How To Annotate An Asset: annotations/tutorials/HowToAnnotateAnAsset.md
       -  How To Annotate An Asset using Machine Learning: jamaica/tutorials/HowToAutomaticallyAnnotateAssets.md
-      -  OrganiCity Tester API Application: OrganiCityTesterAPI.md
+      -  OrganiCity API Tester Application: OrganiCityTesterAPI.md
   - Tools:
       -  Eclipse sensiNact: tools/sensinact/index.md
       -  TSmart: tools/tsmart/tsmart.md

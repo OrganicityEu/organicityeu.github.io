@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Smartphone Experimentation - Organicity Tech Docs</title>
+        <title>Community Management - Organicity Tech Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -64,7 +64,7 @@
 </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
@@ -89,11 +89,11 @@
 </li>
                             
 <li >
-    <a href="../../services/facility-manager/">Facility Manager</a>
+    <a href="../facility-manager/">Facility Manager</a>
 </li>
                             
-<li >
-    <a href="../../services/community-management/">Community Management</a>
+<li class="active">
+    <a href="./">Community Management</a>
 </li>
                         </ul>
                     </li>
@@ -150,28 +150,28 @@
 </li>
                         </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../sensinact/">Eclipse sensiNact</a>
+    <a href="../../tools/sensinact/">Eclipse sensiNact</a>
 </li>
                             
 <li >
-    <a href="../tsmart/tsmart/">TSmart</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Smartphone Experimentation</a>
+    <a href="../../tools/tsmart/tsmart/">TSmart</a>
 </li>
                             
 <li >
-    <a href="../websockets/">Websockets</a>
+    <a href="../../tools/set/">Smartphone Experimentation</a>
 </li>
                             
 <li >
-    <a href="../scenarios/">Scenarios</a>
+    <a href="../../tools/websockets/">Websockets</a>
+</li>
+                            
+<li >
+    <a href="../../tools/scenarios/">Scenarios</a>
 </li>
                         </ul>
                     </li>
@@ -194,12 +194,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../tsmart/tsmart/">
+                        <a rel="next" href="../facility-manager/">
                             <i class="fa fa-arrow-left"></i>
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../websockets/">
+                        <a rel="prev" href="../../HowToAccessToken/">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -216,74 +216,31 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#smartphone-experimentation-organicity">Smartphone Experimentation | OrganiCity</a></li>
-            <li><a href="#experimenter-guide">Experimenter Guide</a></li>
+        <li class="main active"><a href="#community-management">Community Management</a></li>
+            <li><a href="#entering-the-communities">Entering the communities</a></li>
+            <li><a href="#creating-new-communities">Creating new communities</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="smartphone-experimentation-organicity">Smartphone Experimentation | OrganiCity</h1>
-<h2 id="experimenter-guide">Experimenter Guide</h2>
-<h3 id="introduction">Introduction</h3>
-<p>This guide will help you understand the functionality provided by the Smartphone Experimentation OrganiCity
-CoCreation tool, its capabilities and all the necessary steps to create, configure, monitor and manage your
-experiment as well as retrieve the data collected.</p>
-<h3 id="experimentation-as-a-service">Experimentation as a Service</h3>
-<p>The Smartphone Experimentation is offered as an Experimentation As A Service tool that you can easily use over
-via its cloud infrastructures and the provided Android Smartphone Application.</p>
-<p><strong>Experimenter Portal</strong>
-The Smartphone Experimentation cloud interface is tightly integrated with the OrganiCity Experimenter's portal.
-Most of the functionalities for managing the experimentation flow. In order to configure a new Experiment
-Experimenters need to follow the steps presented bellow:</p>
-<ul>
-<li>Create an Account for OrganiCity and be accepted as an Experimenter.</li>
-<li>Register a new Experiment and fill in all the required information.</li>
-<li>Draw a number of regions of interest on the Map for the data collection to take place.</li>
-<li>Create an Application of type "Smartphone Application".</li>
-<li>Now your application is ready to be executed! (not realy :P)</li>
-</ul>
-<p>There are <em>three operations that differentiate</em> the creation of a Smartphone Crowdsensing Experiment from
-the rest
-of the OrganiCity Experiments.</p>
-<p>First, when the experimentation areas are defined, the experimenter need to specify more information including:</p>
-<ul>
-<li>the expected <strong>number of samples</strong> (minimum and expected) for collection by the experimenters,</li>
-<li>the <strong>time spans</strong> for the experimentation to be executed,</li>
-<li>the <strong>importance</strong> of the area in the whole experiment.</li>
-</ul>
-<p>Secondly, the experimenter needs to select which sensors the experiment will use on the smartphone.
-The experimenter can select any of the available sensor plugins without the need for uploading any piece of
-code.
-In the case that the experimenter needs to upload a new sensor plugin, the upload can be done from this link.
-Any new sensor plugin can be either public or private based on the choice of the experimenter.</p>
-<p>Finally, the experimenter needs to provide the jar file that contains the business logic of the experiment.
-This is a specific jar file for the experiment and is responsible for preparing the data for upload to the
-Smartphone Experimentation Storage Services.</p>
-<p><strong>Development Environment</strong></p>
-<p>Smartphone Experimentation is based on the Ambient Dynamix project and the execution of OSGi plugins inside a
-host Android application. Specific security and privacy checks are performed internally to restrict the usage
-to sensors and interfaces on the phones based on the user's preferences. Information about how to install the
-Ambient Dynamix development environment in is available on the Ambient Dynamix
-<a href="http://ambientdynamix.org/documentation/plug-in-development-guide">Website</a>.</p>
-<p>In the context of Smartphone Experimentation there are two types of OSGi plugins to be used:</p>
-<ul>
-<li>Sensors and</li>
-<li>Experiments</li>
-</ul>
-<p>Both operate on an async call for a context update and provide data back to the SET wrapper for this request. (calls
-to handleContextRequest )</p>
-<p>Experiment Plugins can access data from all Sensor plugins and :</p>
-<ul>
-<li>either simply aggregate them to a single measurement to upload to the server or</li>
-<li>do internal calculations and format the results as the message to upload to the server.</li>
-</ul>
-<p>Code templates and examples for sensor and experiment plugins are available in the following repositories:</p>
-<ul>
-<li><a href="https://github.com/OrganicityEu/smartphone-experimentation-plugins">Sensor Plugins</a></li>
-<li><a href="https://github.com/OrganicityEu/smartphone-experimentation-experiments">Experiment Plugins</a></li>
-</ul>
-<p>All of them are available to use without the need for any development. If experimenters need to use any of them,
-they simply need to select them during the creation of the experiment.</p></div>
+<h1 id="community-management">Community Management</h1>
+<p>OrganiCity defines several types of users depending on the role assigned to them during the registration process on the OrganiCity platform. One of those roles is <strong>participant</strong>, which are users interested in using the experiments created by other users with experimenter role.</p>
+<p>During the registration process on the OrganiCity platform, the participant is required to provide personal information such as date of birth, country where participant is located, gender, topics in which it is interested, etc. Using this information, the experimenter can select participants to create administrative groups called <strong>communities</strong>. The communities provide several functionalities, which make the interaction easier with participants.</p>
+<h2 id="entering-the-communities">Entering the communities</h2>
+<p>In general, it can be accessed different types of communities depending on the roles assigned to the user. During the log in process, the Community Management detects the roles that user has and shows only the types of communities that correspond to him. In the case shown in <strong>Figure 1</strong>, the user has the roles of Experimenter, Site Manager and Facility Manager, so the communities corresponding to those roles are shown.</p>
+<p><img alt="Figure_1" src="./images/Figure-1.png" /></p>
+<p><strong>Figure 1.</strong> Main view of Community Management</p>
+<p>This documentation aims to provide support to experimenters in the use of Community Management, for that reason, the following sections will only describe the aspects of this service related to the experimenter (see <strong>Figure 2</strong>).</p>
+<p>The communities created by experimenter will be used in the <a href="https://experimenters.organicity.eu/" target="_blank">Experimenter Portal</a> to send invitations to participants in order to encourage them to get involved in the experiments.</p>
+<p><img alt="Figure_2" src="./images/Figure-2.png" />
+<strong>Figure 2.</strong> Experimenter Community</p>
+<p>After clicking the GO TO COMMUNITIES button, a table with the set of communities that have been created previously is shown (see <strong>Figure 3</strong>). Details of each community, such as the name, brief description, creation date, and the number of users that belong to the community are shown. Moreover, the experimenter can view more information about the community using the SHOW button, or remove it using the REMOVE button.</p>
+<p><img alt="Figure_3" src="./images/Figure-3.png" />
+<strong>Figure 3.</strong> Detail of experimenter communities</p>
+<h2 id="creating-new-communities">Creating new communities</h2>
+<p>Using the NEW COMMUNITY button, the experimenter can access to the view that enable to create new communities (see <strong>Figure 4</strong>). First, it is needed to specify the name of the community and a brief description of the purpose for which the community is created. Then, it must select the participants that belong to the community. Using the on/off button, you can obtain all the participants that are registered in the platform or obtain only those that meet the criteria specified by the boxes of <strong>Age range</strong> and/or <strong>Interests</strong>. Participants obtained by any of the above methods will be shown in the table below, in which all or some of them may be selected using the selection box located on the left side of each row. Once all fields are filled in, the CREATE button will be automatically enabled to allow the creation of the community.</p>
+<p><img alt="Figure_4" src="./images/Figure-4.png" />
+*<em>Figure 4.*</em> Creating new communities</p></div>
         </div>
 
         <footer class="col-md-12">

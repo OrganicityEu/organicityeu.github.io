@@ -6,7 +6,7 @@ Welcome to the <a href="http://organicity.eu/" target="_blank">Organicity</a> te
 
 As it can be seen in the following figure, three different tiers can be distinguished within the OC facility architecture:
 
-<img src="./images/facility.png" alt="Drawing" style="width: 600px;"/>
+![Facility](images/facility.png)
 
 **Figure 1\.** OrganiCity facility high level architecture
 
@@ -34,7 +34,7 @@ In general, the interaction with the whole technical environment is performed by
 *   **Asset Discovery** It facilitates exploration and inspection of available assets. In order to use this API and integrate it in your applications, take a look to the [Asset Discovery API](http://organicityeu.github.io/api/AssetDiscovery.html) and the [Asset Discovery Service](/AssetDiscoveryService).
 *   **Asset Annotation**  As you create assets, you might want to annotate them with meaningful tags. The [Annotaions API](http://organicityeu.github.io/api/Annotation.html) will allow you to do so.
 *   **Permissions** As mentioned before, the interactions with Organicity are required to be safe. Use the [Permissions API](http://organicityeu.github.io/api/Permissions.html) in you applications and devices to interact with Organicity in a safe way. 
-* 	**Datasource** While experimenting you can require that Organicity stores some of the information you are generating to et historical values of it, send en email to [helpdesk@organicity.eu](mailto:helpdesk@organicity.eu) for more information. Once the data is recorded, you can use the [Datasource API](http://organicityeu.github.io/api/DataSource.html) to retrieve it.
+*   **Datasource** While experimenting you can require that Organicity stores some of the information you are generating to et historical values of it, send en email to [helpdesk@organicity.eu](mailto:helpdesk@organicity.eu) for more information. Once the data is recorded, you can use the [Datasource API](http://organicityeu.github.io/api/DataSource.html) to retrieve it.
 
 In general the interaction with the different APIs will require authentication, what is perfomed by sending appropriate access tokens. Under the *Tutorials* tab you will find insightful explanations about how to obtain and work with these tokens: [How To Access Token](/HowToAccessToken), [How To Refresh A Token](/HowToRefreshToken) and [How To Authenticate A User](/HowToAuthenticateAnUser).
 

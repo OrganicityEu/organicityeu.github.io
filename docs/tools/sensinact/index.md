@@ -45,7 +45,6 @@ Here are the one to choose for discovering Eclispe sensiNact.
  * http (HTTP stack)
  * organicity (For connecting Organicity EaaS)
  * rest (HTTP callbacks)
- * simulation (If you want simulated devices)
  
 Now, you just need to resttart the service : `sudo service sensinact start`
 
@@ -56,7 +55,7 @@ Optional : If you want this service to be automaticaly launched at startup, exec
 
 To start Eclipse sensiNact Studio, just run `sensinact-studio`.
 
-Eclipse sensiNact Studio allows an easy interaction with the OrganiCity  devices and the creation of applications. The Studio is based on the Eclipse platform [Eclipse] and built as a rich client platform application. The Graphical User Interface (GUI) is developed using the views mechanism from Eclipse. Thus, it propose s views for browsing devices, locating devices on a map and interacting with them, i.e., getting value from sensors or performing actions on actuators. The Studio is also targeted to ease the creation of IoT application following the Event-Condition-Action (ECA) pattern [Den89].
+Eclipse sensiNact Studio allows an easy interaction with the OrganiCity  devices and the creation of applications. The Studio is based on the Eclipse platform [Eclipse] and built as a rich client platform application. The Graphical User Interface (GUI) is developed using the views mechanism from Eclipse. Thus, it proposes views for browsing devices, locating devices on a map and interacting with them, i.e., getting value from sensors or performing actions on actuators. The Studio is also targeted to ease the creation of IoT application following the Event-Condition-Action (ECA) pattern.
 
 ![Eclipse sensiNact Studio GUI](images/studio-gui.png)
 
@@ -64,7 +63,11 @@ The GUI includes different views: navigator, deployment, properties views, as we
 
 ### Browsing devices
 
-Before users can use the studio for managing devices and applications, they need to connect a Eclipse sensiNact gateway (see paragraph 4.3). This action is performed by clicking on the plus sign icon on the device navigator. Then, gateway information have to be provided.
+Before users can use the studio for managing devices and applications, they need to connect a Eclipse sensiNact gateway. This action is performed by clicking on the plus sign icon on the device navigator. Then, gateway information have to be provided. If you have installed the gateway locally, you can use the following configuration:
+
+ * Address : localhost
+ * Port : 8080
+ * Timeout : 10000
 
 ![Eclipse sensiNact Studio gateway config](images/studio-gateway-config.png)
 
@@ -79,11 +82,11 @@ The device Navigator View is then populated, and pin points are displayed on the
 
 ### Application creation
 
-![Eclipse sensiNact application creation](images/app-creation.png)
-
 The Eclipse sensiNact Studio allows the creation of applications to be executed on the gateway. Creating an application is performed by writing a script using a dedicated syntax, and deploying this script to the gateway.
 
-On the figure above, a project has been created on the project explorer view (on the left). In this project, a script named speed-limit.sna has been created, and is being edited. As the figures shows, the editor provides code highlighting (some keywords are displayed in a special font), code completion (with popups) and a syntax validator which displays red crosses on the script margin in case of error.
+![Eclipse sensiNact application creation](images/app-creation.png)
+
+On the figure above, a project has been created on the project explorer view (on the left). In this project, a script named `speed-limit.sna` has been created, and is being edited. As the figures shows, the editor provides code highlighting (some keywords are displayed in a special font), code completion (with popups) and a syntax validator which displays red crosses on the script margin in case of error.
 
 The dedicated syntax, a Domain Specific Language, is composed by the following blocks:
 
@@ -111,6 +114,44 @@ The following table shows the basic structure for writing a script.
 </tr>
 </table>
 
+
+### Application example
+
+For this example, we are going to use simulated devices.
+
+Let's run a gateway with the simulated devices.
+
+ * `sudo service sensinact stop` stops the gateway
+ * with `sudo /opt/sensinact/sensinact -c` add the simulation bundle
+ * restart the gateway with `sudo /opt/sensinact/sensinact` It's important to run the gateway this way, and not using the service to have the simulated devices UI linked to your current graphical session. 
+
+Now, in the project explorer view:
+
+ * new project creation: `File > New > Project`
+ * right click on the created folder in the Project Explorer View. `New > File`. Choose a name with the ending with `.sna`
+ * Add XText Nature to the project (a popup will automatically be displayed).
+
+You can now edit your sna file with the following content:
+
+``` script
+resource slider=[OrganiCity/slider/cursor/position]
+resource light_on = [OrganiCity/light/switch/turn_on]
+resource light_off = [OrganiCity/light/switch/turn_off]
+
+on slider.subscribe()
+
+if slider.get() < 500 do
+  light_off.act()
+else do
+  light_on.act()
+end if
+``` 
+
+This script will be triggered each time the slider position will be updated (`on slider.subscribe()` statement). The light will be turned on or off depending on the slider position value.
+
+
+### Application deployment
+
 Once the script has been written, it can be deployed to the gateway where it will be executed. This is performed using a right click on the script file.
 
 ![Eclipse sensiNact application deployment](images/app-deployment.png)
@@ -122,7 +163,7 @@ After the application has been deployed, a new set of resources is automatically
 
 ![Eclipse sensiNact application resources](images/app-resources.png)
 
-First of all, a new service is created with the name of the sna file (without the extension). In our example, it is speed-limit. This service representing the application always contains a standard set of resources.
+First of all, a new service is created with the name of the sna file (without the extension). In our example, it is `speed-limit`. This service representing the application always contains a standard set of resources.
 
 <table>
 <thead>
@@ -184,11 +225,11 @@ First of all, a new service is created with the name of the sna file (without th
 </tr>
 </table>
 
-To start the application, simply double click on the START resource. This will launch the start action, which will run the script.
+To start the application, simply double click on the `START` resource. This will launch the start action, which will run the script.
 
 ![Eclipse sensiNact application startup](images/app-startup.png)
 
-The figure shows that the application is up and running on the server. The studio can be used to check if the application has the expected behavior, by querying the resources. The studio can also be shutted down, since the applications are executed on the gateway, which will be presented in paragraph 4.3 (Eclipse sensiNact Gateway). 
+The figure shows that the application is up and running on the server. The studio can be used to check if the application has the expected behavior, by querying the resources. The studio can also be shutted down, since the applications are executed on the gateway. 
 
 
 ### Conclusion

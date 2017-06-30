@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Eclipse sensiNact aims at helping coders working with data streams from deployed “IoT” devices without the need to complex API configuration.
+[Eclipse sensiNact](https://projects.eclipse.org/projects/technology.sensinact) aims at helping coders working with data streams from deployed “IoT” devices without the need to complex API configuration.
 
 Using Eclipse sensiNact, experimenters can find Internet of Things devices which are deployed in the city, and understand the data streams that they provide. The Eclipse sensiNact IDE allows the creation of applications using a scripting tool (with Code Assist functionality). These applications might set up alerts for when variables in the data streams reach certain levels, or can aggregate data from many devices, creating virtual devices which provide coarse data that might be more useful to an experiment.
 
@@ -15,14 +15,46 @@ The Organicity EaaS facility collects and stores data from the federated sites (
 
 ## Installation
 
-To use Eclipse sensiNact, you need a gateway, and the studio.
+To use Eclipse sensiNact, you need a gateway, and the studio. The easier solution is to install both on your onw computer (running Linux 64 bits) with the following procedure. 
 
-**Eclipse sensiNact gateway** will be provided as a service, in the cloud. To get the url and your credentials, please contact [Etienne Gandrille](mailto:etienne.gandrille@cea.fr).
+First, you will need to add the Eclipse sensiNact repository to `/etc/apt/sources.list` configuration file.
 
-**Eclipse sensiNact studio** is based on the well known Eclipse IDE. To recieve a download link, please contact [Etienne Gandrille](mailto:etienne.gandrille@cea.fr).
+``` bash
+echo "deb http://debian.organicity.eu ./" | sudo tee -a /etc/apt/sources.list
+```
+
+Then, you can install both studio and gateway.
+
+``` bash
+sudo apt-get update --yes
+sudo apt-get install --yes sensinact
+sudo apt-get install --yes sensinact-studio
+```
+
+## Configuration
+
+Because Eclipse sensiNact is a modular runtime, you will need to choose the parts (bundles) you want to have up and running.
+
+First, you need to stop your Gateway: `sudo service sensinact stop`
+
+Then, you can select the bundles: `/opt/sensinact/sensinact -c`
+
+Here are the one to choose for discovering Eclispe sensiNact.
+
+ * application (Application manager)
+ * http (HTTP stack)
+ * organicity (For connecting Organicity EaaS)
+ * rest (HTTP callbacks)
+ * simulation (If you want simulated devices)
+ 
+Now, you just need to resttart the service : `sudo service sensinact start`
+
+Optional : If you want this service to be automaticaly launched at startup, execute the following command : `sudo bash update-rc.d sensinact defaults`
 
 
-## Studio
+## Eclipse sensiNact Studio
+
+To start Eclipse sensiNact Studio, just run `sensinact-studio`.
 
 Eclipse sensiNact Studio allows an easy interaction with the OrganiCity  devices and the creation of applications. The Studio is based on the Eclipse platform [Eclipse] and built as a rich client platform application. The Graphical User Interface (GUI) is developed using the views mechanism from Eclipse. Thus, it propose s views for browsing devices, locating devices on a map and interacting with them, i.e., getting value from sensors or performing actions on actuators. The Studio is also targeted to ease the creation of IoT application following the Event-Condition-Action (ECA) pattern [Den89].
 

@@ -1,7 +1,7 @@
 site_name: Organicity Tech Docs
 
 pages:
-  -  Home: index.md
+  -  Home: index-new.md
   -  Architecture:
       -  Asset CRUD: AssetCRUD.md
       -  Asset Data Model: AssetDataModel.md
@@ -34,7 +34,6 @@ pages:
       -  Scenarios: tools/scenarios/index.md
 #      -  Annotations: annotations/tool.md
 #      -  JAMAiCA: jamaica/tool.md
-  -  New Home: index-new.md  
 
 extra:
     logo: '/images/oc_logo.png'

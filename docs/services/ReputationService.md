@@ -11,10 +11,10 @@ This architecture is more efficient than the existence of a stand-alone service 
 For modelling the reputation of OC Assets, we rely on techniques for modelling reputation on internet and especially for web services. There is a quite exhaustive literature background in this field tackling the problem with various alternative techniques: feedback only based models, statistical models, fuzzy-logic models, data mining models or game theoretic models. In our case, we employ a statistical based model due to its simplicity, small computational requirements and the extendibility by easily integrating new parameters.  The reputation model is be based on a statistical model that integrates both subjective and objective parameters of assets, such as:
 * Direct opinion in the form of 5-star rating.
 * Usage of Statistics/Popularity, like:
-**	How many times an Asset has been annotated by OC users
-**	How many times an Asset has been rated by different OC users
+  * How many times an Asset has been annotated by OC users
+  *	How many times an Asset has been rated by different OC users
 *	Time of the most recent action, like:
-**	What was the last time that an Asset has been annotated
+  *	What was the last time that an Asset has been annotated
 Based on the aforementioned sources, the final trust value is calculated as the weighted average of the various metrics.
 
 ## Challenges ##

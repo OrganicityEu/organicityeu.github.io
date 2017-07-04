@@ -13,6 +13,7 @@ pages:
       -  Urban Data Observatory: UrbanDataObservatory.md
       -  Facility Manager: services/facility-manager/index.md
       -  Community Management: services/community-management/index.md
+      -  Repitation Service: services/ReputationService.md
   -  Tutorials:
       -  How To Access Token: HowToAccessToken.md
       -  How To Authenticate An User: HowToAuthenticateAnUser.md

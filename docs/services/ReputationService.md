@@ -4,6 +4,8 @@ An important job of the Urban Data Observatory Services is helping users navigat
 ## Architecture ##
 The Reputation is embedded to Urban Discovery Observatory while uses statistical data from Data Annotation Service.
 
+![Alt text](../Images/reputationservice_architecture.png?raw=true "Reputation service architecture and flow chart")
+
 Initially, the reputation score for new assets is unavailable. In order to initiate the scoring for an asset, a user has to either create an annotation for the specific asset or to rate it. This information is sent from Urban Data Observatory to Data Annotation Service, which updates the statistics accordingly. Then, the next time a user selects an asset, Urban Data Observatory requests the statistics from Data Annotation Service and calculates the reputation score based on the algorithm in the “Reputation Model” section. 
 This architecture is more efficient than the existence of a stand-alone service that periodically retrieves all the assets and their annotations and then calculates the reputation score. Furthermore, the overhead due to the update and retrieval of the statistics is negligible because Urban Data Observatory communicates with Data Annotation Service to create or retrieve annotations at the same time respectively. Therefore, this process is piggy-backed to the normal operation of the system.
 

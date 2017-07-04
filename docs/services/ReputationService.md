@@ -15,6 +15,7 @@ For modelling the reputation of OC Assets, we rely on techniques for modelling r
   *	How many times an Asset has been rated by different OC users
 *	Time of the most recent action, like:
   *	What was the last time that an Asset has been annotated
+
 Based on the aforementioned sources, the final trust value is calculated as the weighted average of the various metrics.
 
 ## Challenges ##

@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>/</loc>
+     <loc>/index-new/</loc>
      <lastmod>2017-07-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -65,6 +65,12 @@
         
     <url>
      <loc>/services/community-management/</loc>
+     <lastmod>2017-07-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/services/ReputationService/</loc>
      <lastmod>2017-07-04</lastmod>
      <changefreq>daily</changefreq>
     </url>

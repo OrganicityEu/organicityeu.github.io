@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Scenarios - Organicity Tech Docs</title>
+        <title>Reputation Service - Organicity Tech Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -64,7 +64,7 @@
 </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
@@ -89,15 +89,15 @@
 </li>
                             
 <li >
-    <a href="../../services/facility-manager/">Facility Manager</a>
+    <a href="../facility-manager/">Facility Manager</a>
 </li>
                             
 <li >
-    <a href="../../services/community-management/">Community Management</a>
+    <a href="../community-management/">Community Management</a>
 </li>
                             
-<li >
-    <a href="../../services/ReputationService/">Reputation Service</a>
+<li class="active">
+    <a href="./">Reputation Service</a>
 </li>
                         </ul>
                     </li>
@@ -154,28 +154,28 @@
 </li>
                         </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../sensinact/">Eclipse sensiNact</a>
+    <a href="../../tools/sensinact/">Eclipse sensiNact</a>
 </li>
                             
 <li >
-    <a href="../tsmart/tsmart/">TSmart</a>
+    <a href="../../tools/tsmart/tsmart/">TSmart</a>
 </li>
                             
 <li >
-    <a href="../set/">Smartphone Experimentation</a>
+    <a href="../../tools/set/">Smartphone Experimentation</a>
 </li>
                             
 <li >
-    <a href="../websockets/">Websockets</a>
+    <a href="../../tools/websockets/">Websockets</a>
 </li>
                             
-<li class="active">
-    <a href="./">Scenarios</a>
+<li >
+    <a href="../../tools/scenarios/">Scenarios</a>
 </li>
                         </ul>
                     </li>
@@ -195,12 +195,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../websockets/">
+                        <a rel="next" href="../community-management/">
                             <i class="fa fa-arrow-left"></i>
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
+                    <li >
+                        <a rel="prev" href="../../HowToAccessToken/">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -217,48 +217,36 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#scenarios">Scenarios</a></li>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#scenario-tool-walk-through">Scenario tool walk-through</a></li>
-            <li><a href="#technical-background-and-use">Technical background and use</a></li>
+        <li class="main active"><a href="#reputation-service">Reputation Service</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#reputation-model">Reputation Model</a></li>
+            <li><a href="#challenges">Challenges</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="scenarios">Scenarios</h1>
-<h2 id="introduction">Introduction</h2>
-<p>The scenario tool has been developed through the vision of capturing citizens' ideas about their cities. The overall aim is to make anyone able to create their own vison of how a smart city could look like, by descibing a specific future situation, service, product or something completely different, that they imagine would become part of their city. The scenario tool is basically a repository of future stories told by ordinary citiznes and the people involved in the OrganiCity project. Become part of the tool by contributing your future ideas.</p>
-<h2 id="scenario-tool-walk-through">Scenario tool walk-through</h2>
-<p>This section will go over how to interact with the tool from an end-user perspective. It is possible to grab the source code, and make your own scenario tool or repurpose it for use in an other context. Additionally, you can interact with the scenario tool through our REST api. These more technical features can be explored by going to the ver last section of this tutorial "Technical background and use".</p>
-<p>The scenario tool is available here: https://scenarios.organicity.eu</p>
-<h3 id="the-landing-page">The landing page</h3>
-<p>When entering the website for the first time you will be presented with an overview of the eight types of scenarios available, and how many have been generated under each type. Additionally, there is an overview of the latest added scenarios (see picture below).</p>
-<p><img alt="landing_page" src="./images/landing_page.png" /></p>
-<p>It is possible to select between english and spanish, when traversing the website. A specific scenario has been written in the language prefered by the author, and will therefore not be changed when changing the language of the website! the below picture shows how to change language:</p>
-<p><img alt="internationalisation" src="./images/internationalisation.png" /></p>
-<h3 id="exploring-scenarios">Exploring scenarios</h3>
-<p>When pressing the "explore" button at the top of the webpage, you will be refered to a page that resembles the landing page. The difference is that, it is now possible to browse through all available scenarios, and there is a filtering mechanism for simplifying search. The below picture shows how the explore page looks like.</p>
-<p><img alt="explore" src="./images/explore_page.png" /></p>
-<p>If no filtering has been applied, you can simply scroll your way trough all the scenarios. This can be quite combersome as the repository grows, and as a result we have added filtering that will reduce the scrollable list significantly. Filtering can through rtext searching and / or by by clicking on the types of interest. In the below picture "transport" and "energy" has been selected as the two types of interest. The list of relevant scenarios will automatically change according to what filtering has been applied.</p>
-<p><img alt="explore_filter" src="./images/explore_page_filter.png" /></p>
-<h3 id="selecting-a-specific-scenario">Selecting a specific scenario</h3>
-<p>when you have browsed the scenarios, and finally found one of interest, you simply click on it, and you will be directed to an elaborated page. In the below picture a specific scenario has been selected, and it now becomes possible to read the full scenario, see a star rating, evaluate the scenario, see how many has viewed it and how many comments it has gotten.</p>
-<p><img alt="specific_scenario" src="./images/specific_scenario.png" /></p>
-<p>Rating a scenario is done by hovering the mouse marker over the star at the top left corner of the page. The star expands into five stars, and you simply move the cursor to the number of stars you would like the scenario to have, and lick the mouse button. You can always change your mind and redu the rating at a later stage.</p>
-<p><img alt="star_rank" src="./images/star_rank.png" /></p>
-<p>It is also possible to bookmark a scenario for later reference (the list of bookmarked scenarios can be found under your profile). Bookmarking happens much the same way as with star rating. You move the mouse cursor to the bookmark icon at the top left of the webpage, and click. When the icon becomes filled it is saved. You can remove the bookmark simply by clicking once more at the icon, so that it becomes transparetn again.</p>
-<p><img alt="bookmark" src="./images/bookmark.png" /></p>
-<h3 id="create-a-scenario">Create a scenario</h3>
-<p>At some point you might have been so entrigued that you decide to contribute your own scenario. In order to do this, you simply click "CREATE" at the very top of the webpage. First you will be required to create a new user if you don't have onw already. When the user creation is finished, you will be refered to a page that looks like the picture below:</p>
-<p><img alt="create" src="./images/create_new.png" /></p>
-<p>You are presented with an elaborate form that needs to be filled out. We have provided helping text for understanding what needs to be filled in each of the boxes. When you have finished filling out the form click "PREVIEW", and you will be ready to publish the scenario to the broad public.</p>
-<h3 id="my-profile">My profile</h3>
-<p>The very last part of traversing the scenario tool is to look at your profile page (see picture below). Here you can update your information, see a list of the secnarios you have contributed, and a list of your bookmarked scenarios</p>
-<p><img alt="my_profile" src="./images/profile.png" /></p>
-<p>That's it! You now now everything that is worth knowing about the scenario tool, from an end-user perspective. If you are interested in knowing what is under the hood of the tool, we have both the source code publicly available on Github, and we have a REST api. In the following section we will point you to the relevant locations.</p>
-<h2 id="technical-background-and-use">Technical background and use</h2>
-<p>The Scenario tool is completely open source, and can be repurposed for any use. The code base is available at Github, and can be found here: https://github.com/OrganicityEu-Platform/scenarios</p>
-<p>If you would like to interact programmatically with the Scenario tool (e.g. extract all available scenarios), then you can simply leverage the existing REST api, which can be found here: https://organicityeu.github.io/api/Scenarios.html</p></div>
+<h1 id="reputation-service">Reputation Service</h1>
+<p>An important job of the Urban Data Observatory Services is helping users navigate the many assets available from the OrganiCity platform. The Assets Reputation Service is responsible for calculating the reputation of the various assets available on the OrganiCity platform. Reputation (what is generally said or believed about an asset’s reliability) captures a combined measure of reliability inferred from feedback by a community of end-users. In a stricter and personalized way, reputation can be conceived as trust, by modeling the degree the trust an end-user assigns to each specific assets they used. In our case, we focus on the generic notion of reputation that is public and combined and not on the personal and subjective one. By modelling reputation of assets, OrganiCity enables users and asset/service providers to differentiate among the assets based on how well these assets behaved in the history. This facilitates end-users and decision makers to distinguish good assets from bad ones based on user's feedbacks.</p>
+<h2 id="architecture">Architecture</h2>
+<p>The Reputation is embedded to Urban Discovery Observatory while uses statistical data from Data Annotation Service.</p>
+<p><img alt="Alt text" src="../../images/reputationservice_architecture_small.png?raw=true" title="Reputation service architecture and flow chart" /></p>
+<p>Initially, the reputation score for new assets is unavailable. In order to initiate the scoring for an asset, a user has to either create an annotation for the specific asset or to rate it. This information is sent from Urban Data Observatory to Data Annotation Service, which updates the statistics accordingly. Then, the next time a user selects an asset, Urban Data Observatory requests the statistics from Data Annotation Service and calculates the reputation score based on the algorithm in the “Reputation Model” section. 
+This architecture is more efficient than the existence of a stand-alone service that periodically retrieves all the assets and their annotations and then calculates the reputation score. Furthermore, the overhead due to the update and retrieval of the statistics is negligible because Urban Data Observatory communicates with Data Annotation Service to create or retrieve annotations at the same time respectively. Therefore, this process is piggy-backed to the normal operation of the system.</p>
+<h2 id="reputation-model">Reputation Model</h2>
+<p>For modelling the reputation of OC Assets, we rely on techniques for modelling reputation on internet and especially for web services. There is a quite exhaustive literature background in this field tackling the problem with various alternative techniques: feedback only based models, statistical models, fuzzy-logic models, data mining models or game theoretic models. In our case, we employ a statistical based model due to its simplicity, small computational requirements and the extendibility by easily integrating new parameters.  The reputation model is be based on a statistical model that integrates both subjective and objective parameters of assets, such as:
+<em> Direct opinion in the form of 5-star rating.
+</em> Usage of Statistics/Popularity, like:
+   * How many times an Asset has been annotated by OC users
+   * How many times an Asset has been rated by different OC users
+*   Time of the most recent action, like:
+     * What was the last time that an Asset has been annotated</p>
+<p>Based on the aforementioned sources, the final trust value is calculated as the weighted average of the various metrics.</p>
+<h2 id="challenges">Challenges</h2>
+<p>There are several challenges in defining an integrated reputation model that we investigated:
+Include multiple Quality metrics (a set of asset characteristics that express how bad or well the asset performs e.g. how accurate are the data): The OC Asset data model can be flexible enough to integrate various assets types like IoT devices, Smartphone devices, city boroughs, traffic and congestion, transportation lines. Due to the fact that different asset types have different quality characteristics makes the comparison challenging.
+Subjective/Objective perspectives: Integrate both subjective (feedbacks from users) and objective (Quality metrics monitored by OC platform) perspectives for quality metrics.
+Time domain: Taking into account the time of the last action, the reputation of the assets is dynamic by allowing freshly created asset to compete with already existed ones.
+Credibility of raters: Incorporate credibility of users to avoid dishonest ratings.</p></div>
         </div>
 
         <footer class="col-md-12">

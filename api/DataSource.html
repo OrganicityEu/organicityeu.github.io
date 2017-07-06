@@ -56,7 +56,6 @@
     </p>
     
     
-    
       <p>
       <span class="sw-default-value-header">Base URL:</span>
       <a href="data.organicity.eu">
@@ -100,13 +99,6 @@
                         </td>
                         <td><a href="#operation--attrs">GET</a></td>
                         <td><p>Get attributes </p></td>
-                    </tr>
-                    <tr>
-                        <td class="swagger--summary-path" rowspan="1">
-                          <a href="#path--assets">/{expId}/assets</a>
-                        </td>
-                        <td><a href="#operation--assets">GET</a></td>
-                        <td><p>Get assets recorded of one experiment </p></td>
                     </tr>
             </tbody>
         </table>
@@ -444,75 +436,7 @@
                       </section>
                 </div>
             </div>       
-                 <span id="path--assets"></span>
-         <div id="operation--assets" class="swagger--panel-operation-get panel">
-                <div class="panel-heading">
-                    <div class="operation-summary">datasource</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/{expId}/assets</strong></h3>
-                        Tags:
-                            <a href="#tag-datasource">datasource</a>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                      To request a list assets from which some attribute is recorded
-                    </section>
-                        <section class="sw-request-body">
-                            <p><span class="label label-default">application/json</span></p>
-                        </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>expId</td>
-                                            <td><p>Experiment identifier</p></td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                          <p><span class="label label-default">*/*</span> 
-                    </p>
-                        <dl>
-                          <dt class="sw-response-200"> 200 OK </dt>
-                          <dd class="sw-response-200">
-                            <div class="row"><div class="col-md-12"><p>OK</p></div></div>
-                            <div class="row"></div>
-                            <div class="row body-content">
-                              <div class="col-md-6 sw-response-model">
-                                <div  class="panel panel-definition">
-                                  <div class="panel-body">Reference: <a class="json-schema-ref" href="#/definitions/Response">Response</a></div>
-                                </div>
-                              </div>
-                            </div>
-                          </dd>
-                          <dt class="sw-response-404"> 404 Not Found </dt>
-                            <dd class="sw-response-404">
-                              <div class="row">
-                                <div class="col-md-12"><p>Not Found due to incorrect</p></div>
-                              </div>
-                              <div class="row"> </div>
-                            </dd>
-                        </dl>
-                      </section>
-                </div>
-            </div>                   
-
-     
-    
-                       
+   
         <h2>Schema definitions</h2>
     
             
@@ -559,9 +483,9 @@
                           <a name="/definitions/Response"></a>
                           Response:
                           <span class="json-property-type"><span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-range" title="Value limits"></span>
                 
-                </span>
+                      </span>
                       </h3>
                     </div>
                   <div class="panel-body">
@@ -593,6 +517,29 @@
                                   </dl>
                               </section>
                       
+                  </div>
+                </div>
+                <div id="definition-Attrs" class="panel panel-definition">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">
+                          <a name="/definitions/Response"></a>
+                          Response:
+                          <span class="json-property-type"><span class="json-property-type">object</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                
+                      </span>
+                      </h3>
+                    </div>
+                  <div class="panel-body">
+                      <section class="json-schema-properties">
+                      <dl>
+                        <dt data-property-name="readings">
+                          <span class="json-property-name">attributes:</span>
+                          <span class="json-property-type">String[]</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          </dt>
+                      </dl>
+                    </section>
                   </div>
                 </div>
     

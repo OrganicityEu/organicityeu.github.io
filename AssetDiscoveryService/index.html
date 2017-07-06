@@ -249,7 +249,7 @@
 <h3 id="spatial-queries-geojson-and-leaflet">Spatial queries: GeoJson and Leaflet</h3>
 <p>By using the <a href="https://organicityeu.github.io/api/AssetDiscovery.html#operation--assets-geo-search-get">Asset Discovery Spatial Search</a> method we can quickly get assets data on <a href="http://geojson.org/geojson-spec.html">GeoJSON</a> format. This allows to quickly develop map vizualizations by using libraries as <a href="http://leafletjs.com/">Leaflet</a></p>
 <p><strong>The API method</strong></p>
-<pre><code class="shell">GET http://discovery.organicity.eu/v0/assets/geo/search?city=london
+<pre><code class="shell">GET https://discovery.organicity.eu/v0/assets/geo/search?city=london
 </code></pre>
 
 <p><strong>The code example</strong></p>
@@ -263,7 +263,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoidG9tYXNkaWV6IiwiYSI6ImRTd01HSGsifQ.loQdtLNQ8GJkJl2LUzzxVg'
 }).addTo(myMap);
 
-$.getJSON(&quot;http://discovery.organicity.eu/v0/assets/geo/search?city=london&quot;, function(layers) {
+$.getJSON(&quot;https://discovery.organicity.eu/v0/assets/geo/search?city=london&quot;, function(layers) {
 
   $(layers).each(function(key, data) {
     $(layers[key].features).each(function(key, data) {
@@ -280,7 +280,7 @@ $.getJSON(&quot;http://discovery.organicity.eu/v0/assets/geo/search?city=london&
 <h3 id="incremental-search-angularjs-and-material">Incremental search: AngularJS and Material</h3>
 <p>By using the <a href="https://organicityeu.github.io/api/AssetDiscovery.html#operation--assets-metadata-search-get">Asset Discovery Incremental Search</a> method we can quickly search an asset by providing key words incrementally. This allows to quickly build search and filter functionalities with tools as <a href="https://material.angularjs.org/latest/demo/autocomplete">Angular Material</a></p>
 <p><strong>The API method</strong></p>
-<pre><code class="shell">GET http://discovery.organicity.eu/v0/assets/metadata/search?query=some+text
+<pre><code class="shell">GET https://discovery.organicity.eu/v0/assets/metadata/search?query=some+text
 </code></pre>
 
 <p><strong>The code example</strong></p>
@@ -309,7 +309,7 @@ $.getJSON(&quot;http://discovery.organicity.eu/v0/assets/geo/search?city=london&
         jsonquery = &quot;&amp;query=&quot; + query.replace(/\s/g,&quot;+&quot;);
       $http({
         method: 'GET',
-        url: 'http://discovery.organicity.eu/v0/assets/metadata/search?' + jsonquery
+        url: 'https://discovery.organicity.eu/v0/assets/metadata/search?' + jsonquery
       }).then(
         function successCallback(response) {
           vm.deferred.resolve(vm.assetsLoaded = response.data);
@@ -492,7 +492,7 @@ function position() {
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-07-05 12:04:59 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-07-06 07:47:51 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>

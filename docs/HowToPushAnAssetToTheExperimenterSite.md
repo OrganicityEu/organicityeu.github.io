@@ -138,7 +138,7 @@ To verify, that the asset was created in the Organicity Central Site, you must u
 You can simply do an HTTP GET on the `location` header returnd by the creation:
 
 ```shell
-GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+GET https://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
 ```
 
 ### Validate, that the asset was created successfully with the Urban Data Obervatory

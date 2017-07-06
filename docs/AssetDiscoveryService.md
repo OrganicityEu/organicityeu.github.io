@@ -32,7 +32,7 @@ By using the [Asset Discovery Spatial Search](https://organicityeu.github.io/api
 **The API method**
 
 ```shell
-GET http://discovery.organicity.eu/v0/assets/geo/search?city=london
+GET https://discovery.organicity.eu/v0/assets/geo/search?city=london
 ```
 
 **The code example**
@@ -49,7 +49,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: 'pk.eyJ1IjoidG9tYXNkaWV6IiwiYSI6ImRTd01HSGsifQ.loQdtLNQ8GJkJl2LUzzxVg'
 }).addTo(myMap);
 
-$.getJSON("http://discovery.organicity.eu/v0/assets/geo/search?city=london", function(layers) {
+$.getJSON("https://discovery.organicity.eu/v0/assets/geo/search?city=london", function(layers) {
 
   $(layers).each(function(key, data) {
     $(layers[key].features).each(function(key, data) {
@@ -70,7 +70,7 @@ By using the [Asset Discovery Incremental Search](https://organicityeu.github.io
 **The API method**
 
 ```shell
-GET http://discovery.organicity.eu/v0/assets/metadata/search?query=some+text
+GET https://discovery.organicity.eu/v0/assets/metadata/search?query=some+text
 ```
 
 **The code example**
@@ -102,7 +102,7 @@ Look at the complete example in [Codepen.io](http://codepen.io/pral2a/pen/ALxAOp
         jsonquery = "&query=" + query.replace(/\s/g,"+");
       $http({
         method: 'GET',
-        url: 'http://discovery.organicity.eu/v0/assets/metadata/search?' + jsonquery
+        url: 'https://discovery.organicity.eu/v0/assets/metadata/search?' + jsonquery
       }).then(
         function successCallback(response) {
           vm.deferred.resolve(vm.assetsLoaded = response.data);

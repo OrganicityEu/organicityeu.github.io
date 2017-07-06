@@ -34,7 +34,7 @@ Content-Length: 0
 Content-Type: text/html; charset=utf-8
 Date: Tue, 20 Sep 2016 12:37:07 GMT
 ...
-Location: http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
+Location: https://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
 ...
 ```
 
@@ -44,7 +44,7 @@ To read an asset, you must use the [Asset Discovery Service](https://organicitye
 You can simply do an HTTP GET on the `location` header returnd by the creation:
 
 ```shell
-GET http://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
+GET https://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:<MainExperimenterId>:<ExperimentId>:<AssetId>
 ```
 
 ## Update (HTTP Update)

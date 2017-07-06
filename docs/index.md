@@ -19,7 +19,7 @@ As it can be seen in the following figure, three different tiers can be distingu
 
 To ensure that all interactions with and within the facility are authenticated with valid user credentials and access rights, Authentication, Authorization and Accounting (AAA) mechanisms have been implemented. Users will be enforced to use their own credentials to interact with the different APIs, services and tools. To start experimenting on top of the OC facility, the experimenters are encouraged to register themselves in the platform.
 
-<a  href="https://accounts.organicity.eu/realms/organicity/protocol/openid-connect/auth?client_id=account&redirect_uri=https%3A%2F%2Faccounts.organicity.eu%2Frealms%2Forganicity%2Faccount%2Flogin-redirect&state=0%2Ffbef2e8c-5990-4caf-b4ee-26fe03f96ab4&response_type=code">
+<a  href="https://accounts.organicity.eu/">
 <button style="width:120px" class="oc-button" >Register</button>
 </a>  
 

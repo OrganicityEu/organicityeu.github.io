@@ -33,6 +33,7 @@ pages:
       -  Smartphone Experimentation: tools/set/index.md
       -  Websockets: tools/websockets/index.md
       -  Scenarios: tools/scenarios/index.md
+      -  Tinkerspace: tools/tinkerspace/index.md
 #      -  Annotations: annotations/tool.md
 #      -  JAMAiCA: jamaica/tool.md
 

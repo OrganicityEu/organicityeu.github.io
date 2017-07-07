@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tinkerspace - Organicity Tech Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">
+                <img alt="Organicity Tech Docs" src="/images/oc_logo.png">OrganiCity Tech Docs
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Architecture <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../AssetCRUD/">Asset CRUD</a>
+</li>
+                            
+<li >
+    <a href="../../AssetDataModel/">Asset Data Model</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../AssetDiscoveryService/">Asset Discovery Service</a>
+</li>
+                            
+<li >
+    <a href="../../annotations/AssetAnnotationService/">Asset Annotation Service</a>
+</li>
+                            
+<li >
+    <a href="../../ExperimenterPortal/">Experimenter Portal</a>
+</li>
+                            
+<li >
+    <a href="../../FederatedDataAssets/">Federated Data Assets</a>
+</li>
+                            
+<li >
+    <a href="../../UrbanDataObservatory/">Urban Data Observatory</a>
+</li>
+                            
+<li >
+    <a href="../../services/facility-manager/">Facility Manager</a>
+</li>
+                            
+<li >
+    <a href="../../services/community-management/">Community Management</a>
+</li>
+                            
+<li >
+    <a href="../../services/ReputationService/">Reputation Service</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../HowToAccessToken/">How To Access Token</a>
+</li>
+                            
+<li >
+    <a href="../../HowToAuthenticateAnUser/">How To Authenticate An User</a>
+</li>
+                            
+<li >
+    <a href="../../HowToOcSite/">How To Be An Oc Site</a>
+</li>
+                            
+<li >
+    <a href="../../HowToPushAnAsset/">How To Push An Asset</a>
+</li>
+                            
+<li >
+    <a href="../../HowToPushAnAssetToTheExperimenterSite/">How To Push An Asset To The Experimenter Site</a>
+</li>
+                            
+<li >
+    <a href="../../HowToPushAnAssetToTheProviderSite/">How To Push An Asset To The Provider Site</a>
+</li>
+                            
+<li >
+    <a href="../../HowToRefreshToken/">How To Refresh Token</a>
+</li>
+                            
+<li >
+    <a href="../../HowToUpdateDeteleAnAsset/">How To Update Detele An Asset</a>
+</li>
+                            
+<li >
+    <a href="../../annotations/tutorials/HowToCreateAnnotationTags/">How To Create Annotation Tags</a>
+</li>
+                            
+<li >
+    <a href="../../annotations/tutorials/HowToAnnotateAnAsset/">How To Annotate An Asset</a>
+</li>
+                            
+<li >
+    <a href="../../jamaica/tutorials/HowToAutomaticallyAnnotateAssets/">How To Annotate An Asset using Machine Learning</a>
+</li>
+                            
+<li >
+    <a href="../../OrganiCityTesterAPI/">OrganiCity API Tester Application</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../sensinact/">Eclipse sensiNact</a>
+</li>
+                            
+<li >
+    <a href="../tsmart/tsmart/">TSmart</a>
+</li>
+                            
+<li >
+    <a href="../set/">Smartphone Experimentation</a>
+</li>
+                            
+<li >
+    <a href="../websockets/">Websockets</a>
+</li>
+                            
+<li >
+    <a href="../scenarios/">Scenarios</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Tinkerspace</a>
+</li>
+                        </ul>
+                    </li>
+                
+                  
+                    <li><a href="/api/">APIS</a></li>
+                  
+                    <li><a href="https://status.organicity.eu/">Status</a></li>
+                  
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../scenarios/">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/organicityeu">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tinkerspace-organicity">Tinkerspace | OrganiCity</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#creating-new-apps-using-tinkerspace">Creating new apps using Tinkerspace</a></li>
+            <li><a href="#creating-tinkerspace-blocks">Creating Tinkerspace blocks</a></li>
+            <li><a href="#organicity-specific-blocks-in-tinkerspace">Organicity specific Blocks in Tinkerspace</a></li>
+            <li><a href="#organicity-example-application">Organicity Example application</a></li>
+            <li><a href="#conclusion">CONCLUSION</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="tinkerspace-organicity">Tinkerspace | OrganiCity</h1>
+<h2 id="introduction">Introduction</h2>
+<p>An increasing amount of people are interested in creating a personalized digital experience, i.e. to be able to select and form the usage of electronic devices to suit their own personal preferences. This might include using unique mobile applications, but not everyone have the technical skills required to develop complex applications. The idea behind Tinkerspace is to provide both technical and non technical citizens with a powerful graphical editor tool that enables them to transform their ideas into mobile applications. </p>
+<p>Within the OrganiCity facility, Tinkerspace offers the following functionality: </p>
+<ul>
+<li>Enables end-users to quickly <strong>build</strong> a mobile web application based on a set of ready-made building blocks with smart city and the open data access</li>
+<li>Enables experimenters to develop specific building blocks tailor-made for their experiment. These blocks can then be built into powerful mobile web applications to be used by end-users, or can 
+    be made available for end-users co-creation</li>
+</ul>
+<p>Tinkerspace is available at <a href="http://www.tinkerspace.eu">Tinkerspace</a> .</p>
+<h3 id="functionalities-and-features">Functionalities and features</h3>
+<p>Tinkerspace uses the notion of <strong><em>blocks</em></strong> much like in a LEGO™ fashion. Users can connect existing blocks in the graphical editor in order to create applications without the need for programming. When a user makes connections between blocks, the result will show in a preview screen indicating the final smartphone appearance in real time. When the user is satisfied, the application can be shared by sending the URL of the web application to others. The link to the web application may be saved in the home screen of most mobile devices, giving a similar appearance as a downloaded app. The web applications are platform independent so they work on all modern smart phones.</p>
+<p>For Tinkerspace users who know Javascript programming, it is possible to create their own blocks. This opens up the possibility for creating a vast amount of different applications using the platform. It is also possible for programmers to share their created blocks with other users, which makes the library of blocks being constantly extended. Moreover, it is also possible for the creator of a block to let other developers see the code and connections of a block and <strong><em>remix</em></strong> this to fit their own needs.</p>
+<h3 id="implementation">Implementation</h3>
+<p>A few blocks in the Tinkerspace platform have been created for interacting with the OC Platform. These serve as a starting point for experimenters to get up and running with OC Experiments and data quickly. The Tinkerspace OrganiCity-specific blocks use the following OrganiCity Components:</p>
+<ul>
+<li>The OC Accounts for performing authorization</li>
+<li>The OC Experimenter Portal where the experimenter sets up their experiment and retrieves the experimenter ID and the experiment ID</li>
+<li>The OC Asset Discovery Service for retrieving OC Assets</li>
+<li>The OrganiCity-specific blocks are basically generic example blocks that can be used for authorization, retrieving and creating assets. All these blocks are <strong>remixable</strong> so that  experimenters can view examples of how to communicate with the OC Platform and then, if necessary, modify these to fit their needs.</li>
+</ul>
+<h2 id="creating-new-apps-using-tinkerspace">Creating new apps using Tinkerspace</h2>
+<p>The main part of Tinkerspace that the user interacts with is the <strong>editor</strong>, which consists of three major parts:</p>
+<ul>
+<li>The Block Library</li>
+<li>The Canvas</li>
+<li>The App Settings and Preview area</li>
+</ul>
+<p>The <strong>Block Library</strong> contains a set of building blocks such as <strong>Button</strong>, which is used to trigger events; <strong>My Location</strong>, which reads the smartphone; <strong>Map</strong>, which displays information on a map, etc. The <strong>Block Library</strong> and <strong>App Settings and Preview area</strong> can be collapsed to allow more screen area for the canvas, which can be useful when arranging blocks into an app.</p>
+<p><img alt="Facility" src="./../../images/ts1.png" /></p>
+<p><strong>Figure 1.</strong> Tinkerspace user interface</p>
+<p>The figure shows a simple example where three blocks are combined into an app, allowing us to read a remote temperature sensor and to display the value on a gauge when pressing a trigger button. The <strong>Senzebox</strong> block reads the sensor value at an IP address, entered in the settings field. The <strong>Gauge</strong> block displays the value coming from the Senzebox, and the <strong>Button</strong> block provides a trigger to read the temperature. Some settings are available, e.g. the background colour, the text for the button, the IP address for the sensor, etc. Not all settings are shown in the figure.
+As it can be seen in the Figure 2, a Tinkerspace block may have input(s) and output(s) and will perform some functionality. The inputs and outputs are colour-coded in order to simplify selecting suitable blocks to connect with. Blocks are connected by <strong>dragging</strong> the coloured box of the output to the corresponding socket of the input in another block. While it may look so, it is not possible to <strong>puzzle</strong> together the blocks as in a jigsaw puzzle.</p>
+<p><img alt="Facility" src="./../../images/ts2.png" /></p>
+<p><strong>Figure 2.</strong> Creating new apps using Tinkerspace</p>
+<p>When the blocks are connected using the colour-coded connectors, the result is shown in the <strong>App preview</strong> part of the screen indicating the appearance of the final smartphone web app in real time. When the experimenter is satisfied with the result, the app is given a name and saved, and the URL of the web app is then e-mailed to the phone. The app may also be shared with others. On the mobile device, the link to the web app may be saved in the home screen, giving a similar appearance to a native mobile app.</p>
+<h2 id="creating-tinkerspace-blocks">Creating Tinkerspace blocks</h2>
+<p>Tinkerspace also enables users to create their own blocks, for private use or for sharing with others. This requires experience with Javascript development. JavaScript (JS) has been chosen as the implementation language for TinkerSpace components. The reason is relatively good performance of JS engines in modern WebKit-based browsers in mobile devices, combined with platform independence offered by this solution (it should work on both iOS and Android).</p>
+<p>The quickest way to get started would be to login to tinkerspace, enter the <strong>Blocks</strong> section, and start experimenting. Some blocks are marked <strong>remixable</strong> indicating that they can be copied and adapted by other developers.</p>
+<p><img alt="Facility" src="./images/../../ts3.png" /></p>
+<p><strong>Figure 3.</strong> Tinkerspace menu</p>
+<p>The workflow of creating a component is as follows: </p>
+<ul>
+<li>Configure the component parameters</li>
+<li>Write the JavaScript of the component</li>
+<li>Submit the component into the Tinkerspace system</li>
+</ul>
+<p>To write the javascript code of one component, a constructor function named <strong>make_[componentname]</strong> must be defined. This function can be invoked multiple times to create separate instances of the component, each encapsulating its own state variables. The constructor function must return a struct with a number of functions provided by the component (this struct may be empty, which would be the case for certain GUI components that accept no input from other components) </p>
+<p>Example:</p>
+<pre><code>function make_TriggerButton (label, id, env) {
+   var button = document.getElementById(id);
+   button.setAttribute(&quot;value&quot;,label);
+   button.onclick = function () { env.trigger() };
+}
+</code></pre>
+
+<p>The graphical user interface in the TinkerSpace editor uses an abstraction where a component has inputs and outputs. To this end, the following mapping is used: </p>
+<ul>
+<li>Input = Provided Push </li>
+<li>Input = Required Pull </li>
+<li>Output = Provided Pull </li>
+<li>Output = Required Push</li>
+<li>Provided interface</li>
+</ul>
+<p>A provided interface has zero or more ports. In javascript, it is implemented as a struct whose selectors are functions in this component that can be invoked by other components. If the component provides any functions, the constructor function must return a struct with selectors whose order, names, kinds, and types correspond to the provided ports of the component . Example:</p>
+<pre><code>function make_Counter (start_value, id, env) 
+{    
+    var value = start_value;    
+    return { 
+        inc : function (increment) { value = value + increment; },       
+        get : function () { return value ; }    
+    } 
+}
+</code></pre>
+
+<p>A required interface has zero or more ports. In javascript, it is implemented as a struct whose selectors are references to functions from other components that this component may invoke. The following example shows a constructor with these two parameters:</p>
+<pre><code>function make_Sum(id , env) {    
+    return {        
+        sum: function () { 
+            x = env.requiredMethodA();
+            y = env.requiredMethodB();            
+            return x+y;
+        }    
+    } 
+}
+</code></pre>
+
+<p>The selectors in the env struct, <strong>requiredMethodA</strong> and <strong>requiredMethodB</strong>, have to be listed in the Configuration Gui  as required ports. These names are local to this component, i.e., the names of the required ports in this component need not coincide with the names of the provided ports in the components that they are connected to.</p>
+<p>The provided and required interfaces contain zero or more ports. A port is either push or pull: </p>
+<ul>
+<li>Push: Functions that do not return a value. Can be executed either immediately when they are invoked, which is the default behavior, or at a later point in time, if they are wrapped in window:setTimeout() at the point of invocation; in this way a component may also schedule itself to execute after a certain period of time. </li>
+<li>Pull: Functions that always return a value. Must be executed immediately upon invocation. In both cases, the functions provided and required by a component can take at most one argument (but this argument may be a struct).</li>
+</ul>
+<p>A problem of JavaScript that has to be overcome in the TinkerSpace architecture is the fact that a JS program is not normally allowed to communicate with a web site other than where it is deployed (Java Same Origin Policy). In order to solve this, Tinkerspace solution provides a proxy server. Use the special function <strong>_satinExternalCall()</strong> to set up an asynchronous POST or GET service call and pass the result to a callback function.</p>
+<pre><code>_satinExternalCall(processResponse, curl, callT)
+// processResponse: Callback function
+// curl: Url for the call
+// callT: &quot;GET&quot; or &quot;POST&quot;
+</code></pre>
+
+<p>Example of proxy call:</p>
+<pre><code>function myFunction() {
+    lat = 65.583057;
+    lon = 22.146142;
+    var url = &quot;http://api.yr.no/weatherapi/locationforecast/1.8/&quot; + &quot;?lat=&quot; + lat + &quot;&amp;lon=&quot; + lon;
+    _satinExternalCall(processResponse, url, &quot;GET&quot;);
+ }
+</code></pre>
+
+<p>Example of callback function:</p>
+<pre><code>function processResponse(response) {
+   satinlog.print(response.responseText); //debug
+
+   if (!response.error &amp;&amp; response.status == &quot;200&quot; &amp;&amp; response.responseText.length &gt; 0) {
+       // Do something with the response 
+   }
+}
+</code></pre>
+
+<h2 id="organicity-specific-blocks-in-tinkerspace">Organicity specific Blocks in Tinkerspace</h2>
+<p>This section focus on how to use some of the OrganiCity-specific blocks.</p>
+<p>There are currently 4 OrganiCity-specific blocks:</p>
+<ul>
+<li>OrganiCity Login</li>
+<li>OrganiCity Asset Discovery</li>
+<li>OrganiCity Assets Table Display</li>
+<li>OrganiCity Asset Creator</li>
+</ul>
+<p>The functionality of each block is described briefly, followed by an end-to-end example of how to create an OrganiCity-related application using these blocks.</p>
+<h4 id="organicity-login">OrganiCity Login</h4>
+<p>The OrganiCity Login block provides a starting point for creating OrganiCity-related applications. This block will log in users to their OrganiCity account using the OAuth 2.0 [Oauth2] authorization process. When a user has logged in successfully, the block will trigger the <strong>Login Complete</strong> output that can be used to start other blocks.</p>
+<h4 id="organicity-asset-discovery">OrganiCity Asset Discovery</h4>
+<p>The OrganiCity Asset Discovery block is an example block that shows how to retrieve data from the Asset Discovery API. The block needs a <strong>Login Complete</strong> input to ensure the users are  authorized (typically issued via the OrganiCity Login block). The block is then started by activating its <strong>trigger</strong> input by for example the Button block. Once started, this block will make a call to the API querying for a list of Assets based on a sensor type that the user specifies in the block configuration. Once it has received this data (in JSON format) from the API, it will push this to its output for other blocks to use. This block has no graphical components.</p>
+<h4 id="organicity-assets-table-display">OrganiCity Assets Table Display</h4>
+<p>This block provides an easy-to-understand example of how API output from the OrganiCity Asset Discovery block can be parsed and displayed. The block will start parsing the JSON data as soon as it is provided to its input terminal. This block holds a simple graphical component, an HTML-table, that will be updated with sensor values from the API call in the OrganiCity Asset Discovery.</p>
+<h2 id="organicity-example-application">Organicity Example application</h2>
+<p>Using the above mentioned components we can build an OrganiCity example application that</p>
+<ul>
+<li>Makes sure the user is authorized</li>
+<li>Retrieves a list of Assets from the OC Asset Discovery API based on a sensor type</li>
+<li>Displays the results in a table</li>
+</ul>
+<p>To create this application, first login to Tinkerspace and choose <strong>Create new app!</strong>. Then use the search field in the top left corner to look for the OrganiCity Login block (Figure 4).</p>
+<p><img alt="Facility" src="./../../images/ts4.png" /></p>
+<p><strong>Figure 4.</strong> Search for the Organicity Login block and drag it onto the Canvas (black area)</p>
+<p>Now this block’s output needs to be connected to some other block. To do this, click on the output terminal of this block in order to automatically search for blocks that fit with this one (Figure 5).</p>
+<p><img alt="Facility" src="./../../images/ts5.png" /></p>
+<p><strong>Figure 5.</strong> By clicking ports on blocks the list of blocks on the left will automatically be updated with blocks that fit the selected input or output port</p>
+<p>In our example we will choose to connect the OrganiCity Asset Discovery block that provides a way to search for Assets within the OC Platform. Drag and drop this onto the canvas, and then connect the OrganiCity Login block output to the corresponding input on the OrganiCity Asset Discovery block (Figure 6).</p>
+<p><img alt="Facility" src="./../../images/ts6.png" /></p>
+<p><strong>Figure 6.</strong> Add blocks to your applciation by using drag and drop</p>
+<p>Now click the <strong>Trigger</strong> input of the OrganiCity Asset Discovery block in order to find triggers that can operate together with this block (in the same manner as in Figure 5). Find the <strong>Button</strong> block in the left menu and drag-and-drop this onto the canvas. Now connect the ports between these three blocks. When completed it should look like in Figure 7.</p>
+<p><img alt="Facility" src="./../../images/ts7.png" /></p>
+<p><strong>Figure 7.</strong> The three blocks (Organicity Login, Button and Organicity Asset Discovery) connected</p>
+<p>Finally, connect the output port of the OC Asset Discovery in order to complete the example application. Click the output terminal to find and connect the OrganiCity Asset Table Display. Now the example application is complete and should look like Figure 8.</p>
+<p><img alt="Facility" src="./../../images/ts8.png" /></p>
+<p><strong>Figure 8.</strong> The finished example application</p>
+<p>The preview window on the right should show that all handles are connected. You should also see a preview of the application. The application is now finished and you can share it with users by sending the link (URL) for the application (Figure 9).</p>
+<p><img alt="Facility" src="./../../images/ts9.png" /></p>
+<p><strong>Figure 9.</strong> Sahre your application by sending its URL</p>
+<p>When users open OrganiCity applications, they will be first asked to login to their OrganiCity Account. If they do not have one already, there is a link to create an account. When users have logged in successfully, the application will open automatically (Figure 10).</p>
+<p><img alt="Facility" src="./../../images/ts10.png" /></p>
+<p><strong>Figure 10.</strong> Users first need to login in order to use Organicity applications</p>
+<p>It is also possible for users to save applications to their home screen. This procedure is described for iPhone in Figures 10 and 11, but this works on Android phones as well in a similar manner. When users have chosen to save the application to their homescreen, it will appear as a <strong>native</strong> application among their other installed apps (Figure 11).</p>
+<p><img alt="Facility" src="./../../images/ts11.png" /></p>
+<p><strong>Figure 11.</strong> An OrganiCity application can be made to look as a <em>native application</em> by saving it to the home screen</p>
+<h2 id="conclusion">CONCLUSION</h2>
+<p>Tinkerspace is a graphical programming environment that works by connecting blocks in a LEGO™ fashion. The platform makes it possible for both non-programmers and programmers  to quickly build applications for working with OrganiCity projects. There are several example blocks available that help experimenters connect to the OrganiCity Platform. It is also possible for experimenters to create their own blocks using Javascript/HTML, or to <strong>remix</strong> existing blocks in order to see their source code and configurations. These things together makes Tinkerspace a powerful tool for OrganiCity experimenters.</p>
+<p>For more detailed information about how to create blocks, please refer to: <a href="http://tinkerspace.its.ltu.se/wiki">Tinkerspace-LTU</a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
+                  <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
+            <p class="small">Last update 2017-07-07 13:42:37 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../api/static/js/cropbox-min.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

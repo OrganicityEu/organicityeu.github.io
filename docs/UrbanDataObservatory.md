@@ -63,17 +63,17 @@ This module provides in-depth information about the provider of the asset. It is
 
 ### [F] Recommendations:
 
-The recommendation section suggests four similar assets. Similarity is understood as: asset A and B are concidered similar if most users who previously viewed asset A also viewed asset B. a machine learning algorithm is handling this in the background, and the idea is that user will get suggestions on relevant alternative or supplementary assets to take into account when traversing available data sources in the OrganiCity facility.
+The recommendation section suggests four similar assets. Similarity is understood as: asset A and B are concidered similar if most users who previously viewed asset A also viewed asset B. A machine learning algorithm is handling this in the background, and the idea is that user will get suggestions on relevant alternative or supplementary assets to take into account when traversing available data sources in the OrganiCity facility.
 
 #### Under the hood
 
-The asset recommender is implemented leveraging Prediction.io (http://predictionio.incubator.apache.org), and we have used this recommender template (http://predictionio.incubator.apache.org/templates/similarproduct/quickstart/).
+The asset recommender is implemented leveraging Prediction.io (http://predictionio.incubator.apache.org), and we have used this recommender template: http://predictionio.incubator.apache.org/templates/similarproduct/quickstart/.
 
-When an end user clicks on a specific assert in the UDO, a "view event" is send to the predition.io core machine learning platform. The event sends information on which user clickes on the asset (only the userid), what asset was clicked (only asset id), and a timestamp for when the event happened. This behavior is shown with the "Event Data" arrow in the diagram below.
+When an end user clicks on a specific asset in the UDO, a "view event" is send to the Predition.io core machine learning platform. The event sends information on which user clickes on the asset (only the userid), what asset was clicked (only asset id), and a timestamp for when the event happened. This behavior is shown with the "Event Data" arrow in the diagram below.
 
 ![Prediction.io diagram](../images/udo_recommender.png)
 
-As a parallel action we are asking the recommender engine for recommendations that relate to the clicked asset. This is illustrated with the two arrows "Query via REST" and "Predicted Result" in the above diagram. Since all communication is happening between the browser (client) and a remote server, these actions can be delayed a few seconds. A consequense is that the end user might not see recommendations until a few seconds after they clicked a specific assert in the UDO. This action is happening asynchroniously, so there will be no sensation of the website being slow.
+As a parallel action we are asking the recommender engine for recommendations that relate to the clicked asset. This is illustrated with the two arrows "Query via REST" and "Predicted Result" in the above diagram. Since all communication is happening between the browser (client) and a remote server, these actions can be delayed a few seconds. A consequense is that the end user might not see recommendations until a few seconds after they clicked a specific asset in the UDO. This action is happening asynchroniously, so there will be no sensation of the website being slow.
 
 Over time we will get a huge amount of usage data, which will only make the recommendations better. This is due to the fact that machine learning algorithms need to be trained regularly in order to interpret input and produce a relevant output. In the case of the recommender engine, we train it once every night (around midnight) in order to keep recommendations as update as possible without slowing the recommendation engine down, thereby keeping a good end user experiencing.
 

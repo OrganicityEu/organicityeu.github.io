@@ -8,7 +8,7 @@ pages:
   -  Services:
       -  Asset Discovery Service: AssetDiscoveryService.md
       -  Asset Annotation Service: annotations/AssetAnnotationService.md
-      -  Experimenter Portal: ExperimenterPortal.md
+      -  Experimenter Portal: services/experimenter-portal/index.md
       -  Federated Data Assets: FederatedDataAssets.md
       -  Urban Data Observatory: UrbanDataObservatory.md
       -  Facility Manager: services/facility-manager/index.md

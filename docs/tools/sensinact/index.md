@@ -27,8 +27,8 @@ Then, you can install both studio and gateway.
 
 ``` bash
 sudo apt-get update --yes
-sudo apt-get install --yes sensinact
-sudo apt-get install --yes sensinact-studio
+sudo apt-get install --yes --allow-unauthenticated sensinact
+sudo apt-get install --yes --allow-unauthenticated sensinact-studio
 ```
 
 ## Configuration

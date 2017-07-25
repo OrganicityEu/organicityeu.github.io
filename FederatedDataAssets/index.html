@@ -230,8 +230,568 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="federated-data-assets">Federated Data Assets</h1>
-<p>....</p>
 <h2 id="aarhus">Aarhus</h2>
+<h3 id="real-time-traffic-data">Real Time Traffic Data</h3>
+<h4 id="vehicle-speed-sensors">Vehicle speed sensors</h4>
+<p><a href="https://www.aarhus.dk/da/borger/Trafik/Projekter/Regulering/Bluetooth.aspx">Aarhus</a> has a network of <a href="https://www.odaa.dk/dataset/realtids-trafikdata">traffic sensors</a> distributed on selected roads throughout the city. These measures the average speed over short stretches on the main roads. </p>
+<p>Example:</p>
+<pre><code class="json">  {
+    &quot;id&quot;: &quot;urn:oc:entity:aarhus:traffic:fixed:BT338&quot;,
+    &quot;type&quot;: &quot;urn:oc:entityType:iotdevice:traffic&quot;,
+    &quot;TimeInstant&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+      &quot;value&quot;: &quot;2017-07-25T13:35:00.000Z&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;location&quot;: {
+      &quot;type&quot;: &quot;geo:point&quot;,
+      &quot;value&quot;: &quot;56.1102508220387, 10.153714822090137&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;origin&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:origin&quot;,
+      &quot;value&quot;: &quot;Traffic flow data from ODAA&quot;,
+      &quot;metadata&quot;: {
+        &quot;urls&quot;: {
+          &quot;type&quot;: &quot;urls&quot;,
+          &quot;value&quot;: &quot;https://www.odaa.dk/dataset/realtids-trafikdata&quot;
+        }
+      }
+    },
+    &quot;speed:average&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:speed:average&quot;,
+      &quot;value&quot;: &quot;69&quot;,
+      &quot;metadata&quot;: {
+        &quot;name&quot;: {
+          &quot;type&quot;: &quot;urn:oc:dataType:string&quot;,
+          &quot;value&quot;: &quot;urn:oc:uom:kilometrePerHour&quot;
+        }
+      }
+    }
+  }
+</code></pre>
+
+<h3 id="dokk1-visitors">Dokk1 Visitors</h3>
+<p><a href="https://dokk1.dk/english">Dokk1</a> houses the city’s main library and citizens' services. In the building you will find media, a café, project rooms, halls, study cells, playground and much more. Cameras at each entrance count the number of visitors entering and exiting the building.</p>
+<p>Example:</p>
+<pre><code class="json">  {
+    &quot;id&quot;: &quot;urn:oc:entity:aarhus:visitors:dokk1:fixed:camera1&quot;,
+    &quot;type&quot;: &quot;urn:oc:entityType:iotdevice:records&quot;,
+    &quot;TimeInstant&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+      &quot;value&quot;: &quot;2017-07-25T12:40:00.000Z&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;location&quot;: {
+      &quot;type&quot;: &quot;geo:point&quot;,
+      &quot;value&quot;: &quot;56.153394, 10.213934&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;origin&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:origin&quot;,
+      &quot;value&quot;: &quot;Visitors at Dokk1&quot;,
+      &quot;metadata&quot;: {
+        &quot;urls&quot;: {
+          &quot;type&quot;: &quot;urls&quot;,
+          &quot;value&quot;: &quot;https://www.odaa.dk/dataset/taellekamera-pa-dokk1&quot;
+        }
+      }
+    },
+    &quot;visitors:in&quot;: {
+      &quot;type&quot;: &quot;Number&quot;,
+      &quot;value&quot;: 1210,
+      &quot;metadata&quot;: {
+        &quot;unit&quot;: {
+          &quot;type&quot;: &quot;urn:oc:dataType:string&quot;,
+          &quot;value&quot;: &quot;urn:oc:uom:peoplePerHour&quot;
+        }
+      }
+    },
+    &quot;visitors:out&quot;: {
+      &quot;type&quot;: &quot;Number&quot;,
+      &quot;value&quot;: 811,
+      &quot;metadata&quot;: {
+        &quot;unit&quot;: {
+          &quot;type&quot;: &quot;urn:oc:dataType:string&quot;,
+          &quot;value&quot;: &quot;urn:oc:uom:peoplePerHour&quot;
+        }
+      }
+    }
+  }
+</code></pre>
+
+<h3 id="outdoor-activities">Outdoor Activities</h3>
+<p>Aarhus maintains a number of publicly accessible <a href="http://friluftslivaarhus.dk/">recreational areas and facilities</a> in and around the city. These include bike- and running trails, camp sites, fire pits, outdoor fitness gyms, etc. Some are bookable, some always available.</p>
+<p>Example:</p>
+<pre><code class="json">  {
+    &quot;id&quot;: &quot;urn:oc:entity:aarhus:friluftsliv:beacharea:02b5c18b2f07047b6637d6760d1deb64&quot;,
+    &quot;type&quot;: &quot;urn:oc:entityType:beacharea&quot;,
+    &quot;TimeInstant&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+      &quot;value&quot;: &quot;2016-02-16T14:29:53.000Z&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;bookable&quot;: {
+      &quot;type&quot;: &quot;urn:oc:datatype:boolean&quot;,
+      &quot;value&quot;: &quot;true&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;location&quot;: {
+      &quot;type&quot;: &quot;geo:json&quot;,
+      &quot;value&quot;: {
+        &quot;type&quot;: &quot;Polygon&quot;,
+        &quot;coordinates&quot;: [
+          [
+            [
+              10.30353,
+              56.224481000
+            ],
+            [
+              10.303198,
+              56.224281000
+            ],
+            [
+              10.302794,
+              56.223999
+            ],
+            [
+              10.30257,
+              56.2238
+            ],
+            [
+              10.302274,
+              56.223602
+            ],
+            [
+              10.302132,
+              56.223566000
+            ],
+            [
+              10.302008,
+              56.22345
+            ],
+            [
+              10.301855,
+              56.223267
+            ],
+            [
+              10.301826,
+              56.223233
+            ],
+            [
+              10.301823,
+              56.223228000
+            ],
+            [
+              10.301799,
+              56.2232
+            ],
+            [
+              10.301783,
+              56.22318
+            ],
+            [
+              10.30172,
+              56.223105000
+            ],
+            [
+              10.301627,
+              56.223002000
+            ],
+            [
+              10.301178,
+              56.222503000
+            ],
+            [
+              10.30054,
+              56.221855000
+            ],
+            [
+              10.300487,
+              56.221802000
+            ],
+            [
+              10.300233,
+              56.221552000
+            ],
+            [
+              10.29999,
+              56.221259000
+            ],
+            [
+              10.299967,
+              56.221241
+            ],
+            [
+              10.299883,
+              56.221196
+            ],
+            [
+              10.299884,
+              56.221176
+            ],
+            [
+              10.299889,
+              56.221175000
+            ],
+            [
+              10.299898,
+              56.221173
+            ],
+            [
+              10.299813,
+              56.220988000
+            ],
+            [
+              10.299806,
+              56.220976
+            ],
+            [
+              10.299801,
+              56.220965
+            ],
+            [
+              10.299795,
+              56.220954000
+            ],
+            [
+              10.299791,
+              56.220942
+            ],
+            [
+              10.299789,
+              56.220935000
+            ],
+            [
+              10.299786,
+              56.220928
+            ],
+            [
+              10.299785,
+              56.220921000
+            ],
+            [
+              10.299783,
+              56.220914
+            ],
+            [
+              10.299783,
+              56.220906
+            ],
+            [
+              10.29975,
+              56.220834000
+            ],
+            [
+              10.299686,
+              56.220691000
+            ],
+            [
+              10.29953,
+              56.220473000
+            ],
+            [
+              10.299283,
+              56.220113000
+            ],
+            [
+              10.299067,
+              56.219884
+            ],
+            [
+              10.298854,
+              56.219664000
+            ],
+            [
+              10.298661,
+              56.219475000
+            ],
+            [
+              10.298246,
+              56.219059000
+            ],
+            [
+              10.298033,
+              56.21915
+            ],
+            [
+              10.297973,
+              56.219178
+            ],
+            [
+              10.297899,
+              56.219213000
+            ],
+            [
+              10.297828,
+              56.219246000
+            ],
+            [
+              10.297761,
+              56.219277000
+            ],
+            [
+              10.297686,
+              56.219312000
+            ],
+            [
+              10.297682,
+              56.219314000
+            ],
+            [
+              10.297561,
+              56.219371000
+            ],
+            [
+              10.297353,
+              56.219468
+            ],
+            [
+              10.297698,
+              56.219725000
+            ],
+            [
+              10.297801,
+              56.219802000
+            ],
+            [
+              10.298149,
+              56.220207000
+            ],
+            [
+              10.29816,
+              56.220221000
+            ],
+            [
+              10.298167,
+              56.220226000
+            ],
+            [
+              10.298964,
+              56.220912000
+            ],
+            [
+              10.299026,
+              56.220983000
+            ],
+            [
+              10.298958,
+              56.221006000
+            ],
+            [
+              10.29844,
+              56.221188000
+            ],
+            [
+              10.298383,
+              56.221207
+            ],
+            [
+              10.299855,
+              56.222285
+            ],
+            [
+              10.299882,
+              56.222305000
+            ],
+            [
+              10.300132,
+              56.222512000
+            ],
+            [
+              10.300135,
+              56.222515000
+            ],
+            [
+              10.300497,
+              56.222815000
+            ],
+            [
+              10.300611,
+              56.222911000
+            ],
+            [
+              10.300666,
+              56.222957
+            ],
+            [
+              10.300668,
+              56.22296
+            ],
+            [
+              10.300723,
+              56.223006000
+            ],
+            [
+              10.300982,
+              56.223225
+            ],
+            [
+              10.301021,
+              56.223258000
+            ],
+            [
+              10.301037,
+              56.223271000
+            ],
+            [
+              10.301056,
+              56.223288000
+            ],
+            [
+              10.301076,
+              56.223305000
+            ],
+            [
+              10.301092,
+              56.223319000
+            ],
+            [
+              10.301111,
+              56.223334000
+            ],
+            [
+              10.303054,
+              56.224978
+            ],
+            [
+              10.303643,
+              56.224746000
+            ],
+            [
+              10.303849,
+              56.224666
+            ],
+            [
+              10.303643,
+              56.224549000
+            ],
+            [
+              10.30353,
+              56.224481000
+            ]
+          ]
+        ]
+      },
+      &quot;metadata&quot;: {}
+    },
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:name&quot;,
+      &quot;value&quot;: &quot;Tålfor Strand&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;origin&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:origin&quot;,
+      &quot;value&quot;: &quot;Beach areas from Friluftliv Aarhus&quot;,
+      &quot;metadata&quot;: {
+        &quot;urls&quot;: {
+          &quot;type&quot;: &quot;urls&quot;,
+          &quot;value&quot;: &quot;https://www.odaa.dk/dataset/naturarealer-ved-strande&quot;
+        }
+      }
+    }
+  }
+</code></pre>
+
+<h3 id="cultural-events">Cultural Events</h3>
+<p><a href="http://api.detskeriaarhus.dk/">Aarhus</a> maintains a shared database with information on all cultural events from the major cultural institutions in the city.</p>
+<p>Example:</p>
+<pre><code class="json">
+    &quot;id&quot;: &quot;urn:oc:entity:aarhus:events:12306&quot;,
+    &quot;type&quot;: &quot;urn:oc:entityType:event&quot;,
+    &quot;TimeInstant&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+      &quot;value&quot;: &quot;2016-09-02T22:00:00.000Z&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;URL&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:url&quot;,
+      &quot;value&quot;: &quot;http://www.aros.dk/moed-kunsten/samlingen/no-man-is-an-island/&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;city&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:city&quot;,
+      &quot;value&quot;: &quot;Aarhus C&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;excerpt&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:excerpt&quot;,
+      &quot;value&quot;: &quot;I udstillingen iscenesættes værker fra museets faste samling i nye og uvante relationer, som rejser aktuelle spørgsmål om samtidens globale, sociale og økonomiske udfordringer. &quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;firstEventTime&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+      &quot;value&quot;: &quot;2016-09-02T22:00:00.000Z&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;imageURL&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:url&quot;,
+      &quot;value&quot;: &quot;http://api.detskeriaarhus.dk/files/7984c1d907946d31c4b0a9e9ecaff864.jpg&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;lastEventTime&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
+      &quot;value&quot;: &quot;2016-09-02T22:00:00.000Z&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;location&quot;: {
+      &quot;type&quot;: &quot;geo:point&quot;,
+      &quot;value&quot;: &quot;56.154064, 10.19811&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;name&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:name&quot;,
+      &quot;value&quot;: &quot;No Man is an Island - The Satanic Verses&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;numberOfOccurrences&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:numberOfOccurrences&quot;,
+      &quot;value&quot;: 1,
+      &quot;metadata&quot;: {}
+    },
+    &quot;organizer&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:organizer&quot;,
+      &quot;value&quot;: &quot;Aros&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;origin&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:origin&quot;,
+      &quot;value&quot;: &quot;Det sker i Aarhus&quot;,
+      &quot;metadata&quot;: {
+        &quot;urls&quot;: {
+          &quot;type&quot;: &quot;urls&quot;,
+          &quot;value&quot;: &quot;http://api.detskeriaarhus.dk/&quot;
+        }
+      }
+    },
+    &quot;postalCode&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:postalCode&quot;,
+      &quot;value&quot;: &quot;8000&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;streetAddress&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:streetAddress&quot;,
+      &quot;value&quot;: &quot;Aros Alle 2&quot;,
+      &quot;metadata&quot;: {}
+    },
+    &quot;ticketPriceRange&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:ticketPriceRange&quot;,
+      &quot;value&quot;: null,
+      &quot;metadata&quot;: {}
+    },
+    &quot;ticketURL&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:url&quot;,
+      &quot;value&quot;: null,
+      &quot;metadata&quot;: {}
+    },
+    &quot;videoURL&quot;: {
+      &quot;type&quot;: &quot;urn:oc:attributeType:url&quot;,
+      &quot;value&quot;: null,
+      &quot;metadata&quot;: {}
+    }
+  }
+</code></pre>
+
 <h2 id="london">London</h2>
 <h3 id="london-borough-profiles">London Borough Profiles</h3>
 <p>Greater London is divided into 33 Boroughs. For each Borough we gather aggregate statistics related to mobility, air quality and communities. Some statistics are based on census that is collected every 10 years, while other statistics are updated more frequently. Example statistics include population density, average income, average house price, fraction of greenspace and average number of cars per household. The data is gathered from the <a href="http://data.london.gov.uk/">London Datastore</a>, <a href="http://phe.gov.uk/">Public Health England</a> and other sources.</p>
@@ -946,7 +1506,7 @@
 }
 </code></pre>
 
-<h4 id="vehicle-speed-sensors">Vehicle speed sensors</h4>
+<h4 id="vehicle-speed-sensors_1">Vehicle speed sensors</h4>
 <p>Placed at the main entrance of the city, they provide information about the occupancy, the count of vehicles, the median and average speed in the different lanes of the main roads.</p>
 <pre><code class="json">{
     &quot;id&quot;: &quot;urn:oc:entity:santander:traffic:fixed:3305&quot;,
@@ -2255,7 +2815,7 @@
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-07-10 09:21:28 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-07-25 14:34:53 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>

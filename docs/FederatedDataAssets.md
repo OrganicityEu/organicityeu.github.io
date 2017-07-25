@@ -1,8 +1,583 @@
 # Federated Data Assets
 
-....
-
 ## Aarhus
+
+### Real Time Traffic Data
+
+#### Vehicle speed sensors
+[Aarhus](https://www.aarhus.dk/da/borger/Trafik/Projekter/Regulering/Bluetooth.aspx) has a network of [traffic sensors](https://www.odaa.dk/dataset/realtids-trafikdata) distributed on selected roads throughout the city. These measures the average speed over short stretches on the main roads. 
+
+Example:
+
+```json
+  {
+    "id": "urn:oc:entity:aarhus:traffic:fixed:BT338",
+    "type": "urn:oc:entityType:iotdevice:traffic",
+    "TimeInstant": {
+      "type": "urn:oc:attributeType:ISO8601",
+      "value": "2017-07-25T13:35:00.000Z",
+      "metadata": {}
+    },
+    "location": {
+      "type": "geo:point",
+      "value": "56.1102508220387, 10.153714822090137",
+      "metadata": {}
+    },
+    "origin": {
+      "type": "urn:oc:attributeType:origin",
+      "value": "Traffic flow data from ODAA",
+      "metadata": {
+        "urls": {
+          "type": "urls",
+          "value": "https://www.odaa.dk/dataset/realtids-trafikdata"
+        }
+      }
+    },
+    "speed:average": {
+      "type": "urn:oc:attributeType:speed:average",
+      "value": "69",
+      "metadata": {
+        "name": {
+          "type": "urn:oc:dataType:string",
+          "value": "urn:oc:uom:kilometrePerHour"
+        }
+      }
+    }
+  }
+```
+
+### Dokk1 Visitors
+
+[Dokk1](https://dokk1.dk/english) houses the city’s main library and citizens' services. In the building you will find media, a café, project rooms, halls, study cells, playground and much more. Cameras at each entrance count the number of visitors entering and exiting the building.
+
+
+Example:
+
+```json
+  {
+    "id": "urn:oc:entity:aarhus:visitors:dokk1:fixed:camera1",
+    "type": "urn:oc:entityType:iotdevice:records",
+    "TimeInstant": {
+      "type": "urn:oc:attributeType:ISO8601",
+      "value": "2017-07-25T12:40:00.000Z",
+      "metadata": {}
+    },
+    "location": {
+      "type": "geo:point",
+      "value": "56.153394, 10.213934",
+      "metadata": {}
+    },
+    "origin": {
+      "type": "urn:oc:attributeType:origin",
+      "value": "Visitors at Dokk1",
+      "metadata": {
+        "urls": {
+          "type": "urls",
+          "value": "https://www.odaa.dk/dataset/taellekamera-pa-dokk1"
+        }
+      }
+    },
+    "visitors:in": {
+      "type": "Number",
+      "value": 1210,
+      "metadata": {
+        "unit": {
+          "type": "urn:oc:dataType:string",
+          "value": "urn:oc:uom:peoplePerHour"
+        }
+      }
+    },
+    "visitors:out": {
+      "type": "Number",
+      "value": 811,
+      "metadata": {
+        "unit": {
+          "type": "urn:oc:dataType:string",
+          "value": "urn:oc:uom:peoplePerHour"
+        }
+      }
+    }
+  }
+```
+
+### Outdoor Activities
+Aarhus maintains a number of publicly accessible [recreational areas and facilities](http://friluftslivaarhus.dk/) in and around the city. These include bike- and running trails, camp sites, fire pits, outdoor fitness gyms, etc. Some are bookable, some always available.
+
+Example:
+
+```json
+  {
+    "id": "urn:oc:entity:aarhus:friluftsliv:beacharea:02b5c18b2f07047b6637d6760d1deb64",
+    "type": "urn:oc:entityType:beacharea",
+    "TimeInstant": {
+      "type": "urn:oc:attributeType:ISO8601",
+      "value": "2016-02-16T14:29:53.000Z",
+      "metadata": {}
+    },
+    "bookable": {
+      "type": "urn:oc:datatype:boolean",
+      "value": "true",
+      "metadata": {}
+    },
+    "location": {
+      "type": "geo:json",
+      "value": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.30353,
+              56.224481000
+            ],
+            [
+              10.303198,
+              56.224281000
+            ],
+            [
+              10.302794,
+              56.223999
+            ],
+            [
+              10.30257,
+              56.2238
+            ],
+            [
+              10.302274,
+              56.223602
+            ],
+            [
+              10.302132,
+              56.223566000
+            ],
+            [
+              10.302008,
+              56.22345
+            ],
+            [
+              10.301855,
+              56.223267
+            ],
+            [
+              10.301826,
+              56.223233
+            ],
+            [
+              10.301823,
+              56.223228000
+            ],
+            [
+              10.301799,
+              56.2232
+            ],
+            [
+              10.301783,
+              56.22318
+            ],
+            [
+              10.30172,
+              56.223105000
+            ],
+            [
+              10.301627,
+              56.223002000
+            ],
+            [
+              10.301178,
+              56.222503000
+            ],
+            [
+              10.30054,
+              56.221855000
+            ],
+            [
+              10.300487,
+              56.221802000
+            ],
+            [
+              10.300233,
+              56.221552000
+            ],
+            [
+              10.29999,
+              56.221259000
+            ],
+            [
+              10.299967,
+              56.221241
+            ],
+            [
+              10.299883,
+              56.221196
+            ],
+            [
+              10.299884,
+              56.221176
+            ],
+            [
+              10.299889,
+              56.221175000
+            ],
+            [
+              10.299898,
+              56.221173
+            ],
+            [
+              10.299813,
+              56.220988000
+            ],
+            [
+              10.299806,
+              56.220976
+            ],
+            [
+              10.299801,
+              56.220965
+            ],
+            [
+              10.299795,
+              56.220954000
+            ],
+            [
+              10.299791,
+              56.220942
+            ],
+            [
+              10.299789,
+              56.220935000
+            ],
+            [
+              10.299786,
+              56.220928
+            ],
+            [
+              10.299785,
+              56.220921000
+            ],
+            [
+              10.299783,
+              56.220914
+            ],
+            [
+              10.299783,
+              56.220906
+            ],
+            [
+              10.29975,
+              56.220834000
+            ],
+            [
+              10.299686,
+              56.220691000
+            ],
+            [
+              10.29953,
+              56.220473000
+            ],
+            [
+              10.299283,
+              56.220113000
+            ],
+            [
+              10.299067,
+              56.219884
+            ],
+            [
+              10.298854,
+              56.219664000
+            ],
+            [
+              10.298661,
+              56.219475000
+            ],
+            [
+              10.298246,
+              56.219059000
+            ],
+            [
+              10.298033,
+              56.21915
+            ],
+            [
+              10.297973,
+              56.219178
+            ],
+            [
+              10.297899,
+              56.219213000
+            ],
+            [
+              10.297828,
+              56.219246000
+            ],
+            [
+              10.297761,
+              56.219277000
+            ],
+            [
+              10.297686,
+              56.219312000
+            ],
+            [
+              10.297682,
+              56.219314000
+            ],
+            [
+              10.297561,
+              56.219371000
+            ],
+            [
+              10.297353,
+              56.219468
+            ],
+            [
+              10.297698,
+              56.219725000
+            ],
+            [
+              10.297801,
+              56.219802000
+            ],
+            [
+              10.298149,
+              56.220207000
+            ],
+            [
+              10.29816,
+              56.220221000
+            ],
+            [
+              10.298167,
+              56.220226000
+            ],
+            [
+              10.298964,
+              56.220912000
+            ],
+            [
+              10.299026,
+              56.220983000
+            ],
+            [
+              10.298958,
+              56.221006000
+            ],
+            [
+              10.29844,
+              56.221188000
+            ],
+            [
+              10.298383,
+              56.221207
+            ],
+            [
+              10.299855,
+              56.222285
+            ],
+            [
+              10.299882,
+              56.222305000
+            ],
+            [
+              10.300132,
+              56.222512000
+            ],
+            [
+              10.300135,
+              56.222515000
+            ],
+            [
+              10.300497,
+              56.222815000
+            ],
+            [
+              10.300611,
+              56.222911000
+            ],
+            [
+              10.300666,
+              56.222957
+            ],
+            [
+              10.300668,
+              56.22296
+            ],
+            [
+              10.300723,
+              56.223006000
+            ],
+            [
+              10.300982,
+              56.223225
+            ],
+            [
+              10.301021,
+              56.223258000
+            ],
+            [
+              10.301037,
+              56.223271000
+            ],
+            [
+              10.301056,
+              56.223288000
+            ],
+            [
+              10.301076,
+              56.223305000
+            ],
+            [
+              10.301092,
+              56.223319000
+            ],
+            [
+              10.301111,
+              56.223334000
+            ],
+            [
+              10.303054,
+              56.224978
+            ],
+            [
+              10.303643,
+              56.224746000
+            ],
+            [
+              10.303849,
+              56.224666
+            ],
+            [
+              10.303643,
+              56.224549000
+            ],
+            [
+              10.30353,
+              56.224481000
+            ]
+          ]
+        ]
+      },
+      "metadata": {}
+    },
+    "name": {
+      "type": "urn:oc:attributeType:name",
+      "value": "Tålfor Strand",
+      "metadata": {}
+    },
+    "origin": {
+      "type": "urn:oc:attributeType:origin",
+      "value": "Beach areas from Friluftliv Aarhus",
+      "metadata": {
+        "urls": {
+          "type": "urls",
+          "value": "https://www.odaa.dk/dataset/naturarealer-ved-strande"
+        }
+      }
+    }
+  }
+```
+
+### Cultural Events
+[Aarhus](http://api.detskeriaarhus.dk/) maintains a shared database with information on all cultural events from the major cultural institutions in the city.
+
+Example:
+
+```json
+
+    "id": "urn:oc:entity:aarhus:events:12306",
+    "type": "urn:oc:entityType:event",
+    "TimeInstant": {
+      "type": "urn:oc:attributeType:ISO8601",
+      "value": "2016-09-02T22:00:00.000Z",
+      "metadata": {}
+    },
+    "URL": {
+      "type": "urn:oc:attributeType:url",
+      "value": "http://www.aros.dk/moed-kunsten/samlingen/no-man-is-an-island/",
+      "metadata": {}
+    },
+    "city": {
+      "type": "urn:oc:attributeType:city",
+      "value": "Aarhus C",
+      "metadata": {}
+    },
+    "excerpt": {
+      "type": "urn:oc:attributeType:excerpt",
+      "value": "I udstillingen iscenesættes værker fra museets faste samling i nye og uvante relationer, som rejser aktuelle spørgsmål om samtidens globale, sociale og økonomiske udfordringer. ",
+      "metadata": {}
+    },
+    "firstEventTime": {
+      "type": "urn:oc:attributeType:ISO8601",
+      "value": "2016-09-02T22:00:00.000Z",
+      "metadata": {}
+    },
+    "imageURL": {
+      "type": "urn:oc:attributeType:url",
+      "value": "http://api.detskeriaarhus.dk/files/7984c1d907946d31c4b0a9e9ecaff864.jpg",
+      "metadata": {}
+    },
+    "lastEventTime": {
+      "type": "urn:oc:attributeType:ISO8601",
+      "value": "2016-09-02T22:00:00.000Z",
+      "metadata": {}
+    },
+    "location": {
+      "type": "geo:point",
+      "value": "56.154064, 10.19811",
+      "metadata": {}
+    },
+    "name": {
+      "type": "urn:oc:attributeType:name",
+      "value": "No Man is an Island - The Satanic Verses",
+      "metadata": {}
+    },
+    "numberOfOccurrences": {
+      "type": "urn:oc:attributeType:numberOfOccurrences",
+      "value": 1,
+      "metadata": {}
+    },
+    "organizer": {
+      "type": "urn:oc:attributeType:organizer",
+      "value": "Aros",
+      "metadata": {}
+    },
+    "origin": {
+      "type": "urn:oc:attributeType:origin",
+      "value": "Det sker i Aarhus",
+      "metadata": {
+        "urls": {
+          "type": "urls",
+          "value": "http://api.detskeriaarhus.dk/"
+        }
+      }
+    },
+    "postalCode": {
+      "type": "urn:oc:attributeType:postalCode",
+      "value": "8000",
+      "metadata": {}
+    },
+    "streetAddress": {
+      "type": "urn:oc:attributeType:streetAddress",
+      "value": "Aros Alle 2",
+      "metadata": {}
+    },
+    "ticketPriceRange": {
+      "type": "urn:oc:attributeType:ticketPriceRange",
+      "value": null,
+      "metadata": {}
+    },
+    "ticketURL": {
+      "type": "urn:oc:attributeType:url",
+      "value": null,
+      "metadata": {}
+    },
+    "videoURL": {
+      "type": "urn:oc:attributeType:url",
+      "value": null,
+      "metadata": {}
+    }
+  }
+```
+
 
 ## London
 

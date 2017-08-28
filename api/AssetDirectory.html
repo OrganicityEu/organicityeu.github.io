@@ -6,49 +6,40 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="oc.css">
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
-  </script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">
-  </script>
-  <![endif]-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="oc.css">
+    <link rel="stylesheet" href="static/css/common-header/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/common-header/oc.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
+    </script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">
+    </script>
+    <![endif]-->
+
 </head>
 <body>
-  <div id="top" class="container oc-page-wrapper">
-  <div class="row">
-    <nav role="navigation" class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand active" href="http://organicity.eu/">
-            <img src="static/img/oc_logo.png">
-          </a>
-          <button class="navbar-toggle" type="button">
-            <span class="sr-only">Toggle navigation
-            </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-            <span class="icon-bar">
-            </span>
-          </button>
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top yamm" style="margin-bottom: 0">
+        <div class="navbar-header" id="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/api">
+                <img src="images/oc_logo.png" class="logo"/>
+            </a>
         </div>
-        <div class="navbar-collapse collapse" aria-expanded="false">
-          <span class="oc-left-links-wrapper">
-          </span>
-          <ul class="nav navbar-nav navbar-right">
-            <li role="presentation">
-              <a href="index.html" aria-selected="false">Overview
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+        <!-- /.navbar-header -->
+        <div class="navbar-collapse collapse" id="oc-nav"></div>
     </nav>
-  </div>
+</div>
+  <div id="top" class="container oc-page-wrapper">
   <div class="container">
     <h1>Organicity Asset Directory</h1>
     <p><p>This API specifies the API of the OrganiCity Asset Directory.</p>
@@ -662,42 +653,30 @@
                 </div>
     
   </div>
-  
-  <div class="oc-footers">
-    <div class="row oc-footer-large">
-      <h1 class="oc-home-view-title">Follow us
-      </h1>
-      <div class="oc-footer-large-social-links">
-        <a href="https://twitter.com/organicity_eu">
-          <span class="fa fa-twitter">
-          </span>
-        </a>
-        <a href="https://www.facebook.com/OrganiCities">
-          <span class="fa fa-facebook-official">
-          </span>
-        </a>
-      </div>
-      <img class="oc-footer-large-eu-logo" src="static/img/logo_eu.png">
-      </div>
-      <div class="row oc-footer-small">
-        <div class="col-md-2">&copy; OrganiCity 2015
-        </div>
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-4">
-          <a class="oc-link" href="http://organicity.eu/">VISIT ORGANICITY.EU TO FIND OUT MORE
-          </a>
-        </div>
-        <div class="col-md-5">
-          <div>
-            <h4>Contact Us
-            </h4>
-              <a href="mailto:info@organicity.eu">info@organicity.eu
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
+  </div>
+
+<footer class="footer">
+    <div class="container">
+        <hr>
+        <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
+        <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">
+    </div>
+</footer>
+
+<footer class="col-md-12">
+
+</footer>
+
 </body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="static/js/jwt-decode.min.js"></script>
+<script src="static/js/common-navigation.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#oc-nav").organicityNavigation("/oauth/", "/logout", "");
+    });
+</script>
 </html>

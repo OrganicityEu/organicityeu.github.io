@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OrganiCity API</title>
+    <title>OrganiCity API</title>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="oc.css">
     <link rel="stylesheet" href="static/css/common-header/navbar.css" rel="stylesheet">
@@ -38,861 +38,956 @@
         <div class="navbar-collapse collapse" id="oc-nav"></div>
     </nav>
 </div>
-  <div id="top" class="container oc-page-wrapper">
-  <div class="container">
-    <h1>Federation</h1>
-    <p class="sw-info-version">Version: <span>0.1.0-development</span></p>
-    <p><p>This document described the Federation API, which must be used to federate assets to the OrganiCity Platform.</p>
-    <p>This API can only be called by <code>clients</code> with the prefix <code>ocsite-</code>, e.g. <code>ocsite-santander</code> or <code>ocsite-london</code>.</p>
-    <p>The Federation API is implmented by the <a href="https://github.com/OrganicityEu-Platform/oc-proxy/">OC Proxy</a>.</p>
-    <p><a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/HowToOcSite.md">A tutorial can be found here</a>.</p>
-    </p>
-    
-    
-    <p class="sw-default-value">
-        <span class="sw-default-value-header">Schemes:</span>
-        https
-    </p>
-    
-      <p>
-      <span class="sw-default-value-header">Base URL:</span>
-      <a href="https://dev.orion.organicity.eu/v2/">
-      https://dev.orion.organicity.eu/v2/
-      </a>
-      </p>
-    
-    
-    
+<div id="top" class="container oc-page-wrapper">
+    <div class="container">
+        <h1>Federation</h1>
+        <p class="sw-info-version">Version: <span>0.1.0-development</span></p>
+        <p>
+        <p>This document described the Federation API, which must be used to federate assets to the OrganiCity
+            Platform.</p>
+        <p>This API can only be called by <code>clients</code> with the prefix <code>ocsite-</code>, e.g. <code>ocsite-santander</code>
+            or <code>ocsite-london</code>.</p>
+        <p>The Federation API is implmented by the <a href="https://github.com/OrganicityEu-Platform/oc-proxy/">OC
+            Proxy</a>.</p>
+        <p><a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/HowToOcSite.md">A tutorial
+            can be found here</a>.</p>
+        </p>
+
+
+        <p class="sw-default-value">
+            <span class="sw-default-value-header">Schemes:</span>
+            https
+        </p>
+
+        <p>
+            <span class="sw-default-value-header">Base URL:</span>
+            <a href="https://dev.orion.organicity.eu/v2/">
+                https://dev.orion.organicity.eu/v2/
+            </a>
+        </p>
+
+
         <h2 id="swagger--summary-no-tags">Summary</h2>
-        
-            <div class="panel">
-              <div class="panel-body">
-        
-        <table class="table table-condensed swagger--summary">
-            <thead>
-            <tr>
-                <th>Path</th>
-                <th>Operation</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
+
+        <div class="panel">
+            <div class="panel-body">
+
+                <table class="table table-condensed swagger--summary">
+                    <thead>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--entities">/entities</a>
-                            </td>
+                        <th>Path</th>
+                        <th>Operation</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="swagger--summary-path" rowspan="1">
+                            <a href="#path--entities">/entities</a>
+                        </td>
                         <td>
                             <a href="#operation--entities-post">POST</a>
                         </td>
                         <td>
-                            
+
                         </td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--entities--assetId-">/entities/{assetId}</a>
-                            </td>
+                        <td class="swagger--summary-path" rowspan="1">
+                            <a href="#path--entities--assetId-">/entities/{assetId}</a>
+                        </td>
                         <td>
                             <a href="#operation--entities--assetId--delete">DELETE</a>
                         </td>
                         <td>
-                            
+
                         </td>
                     </tr>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="1">
-                                <a href="#path--entities--assetId--attrs">/entities/{assetId}/attrs</a>
-                            </td>
+                        <td class="swagger--summary-path" rowspan="1">
+                            <a href="#path--entities--assetId--attrs">/entities/{assetId}/attrs</a>
+                        </td>
                         <td>
                             <a href="#operation--entities--assetId--attrs-post">POST</a>
                         </td>
                         <td>
-                            
+
                         </td>
                     </tr>
-            </tbody>
-        </table>
-        
-              </div>
+                    </tbody>
+                </table>
+
             </div>
-    
-    
-    <h2>Security</h2>
-    
-    <div id="security-definition-Bearer" class="panel panel-security-definition panel-security-definition-apiKey">
-      <div class="panel-heading">
-        <h3 class="panel-title"><span class="security-name">Bearer</span> <strong><span class="sw-security-definition-apiKey"></span></strong></h3>
-      </div>
-      <div class="panel-body">
-        <section class="sw-security-properties">
-          <dl>
-          </dt>
-          <dl>
-            <dt class="security-property-name">name:</dt>
-            <dd class="security-property-type">
-              Authorization
-            </dd>
-          </dt>
-          <dl>
-            <dt class="security-property-name">in:</dt>
-            <dd class="security-property-type">
-              header
-            </dd>
-          </dt>
-          <dl>
-            <dt class="security-property-name">description:</dt>
-            <dd class="security-property-type">
-              Every API call must be authorized with a Bearer Token in the HTTP header
-    (Authorization: Bearer &lt;TOKEN&gt;) provided by OrganiCity Accounts -
-    https://accounts.organicity.eu
-    
-            </dd>
-          </dt>
-        </section>
-      </div>
-    </div>
-    
-    <h2>Paths</h2>
-    
-        
+        </div>
+
+
+        <h2>Security</h2>
+
+        <div id="security-definition-Bearer" class="panel panel-security-definition panel-security-definition-apiKey">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="security-name">Bearer</span> <strong><span
+                        class="sw-security-definition-apiKey"></span></strong></h3>
+            </div>
+            <div class="panel-body">
+                <section class="sw-security-properties">
+                    <dl>
+                        </dt>
+                        <dl>
+                            <dt class="security-property-name">name:</dt>
+                            <dd class="security-property-type">
+                                Authorization
+                            </dd>
+                            </dt>
+                            <dl>
+                                <dt class="security-property-name">in:</dt>
+                                <dd class="security-property-type">
+                                    header
+                                </dd>
+                                </dt>
+                                <dl>
+                                    <dt class="security-property-name">description:</dt>
+                                    <dd class="security-property-type">
+                                        Every API call must be authorized with a Bearer Token in the HTTP header
+                                        (Authorization: Bearer &lt;TOKEN&gt;) provided by OrganiCity Accounts -
+                                        https://accounts.organicity.eu
+
+                                    </dd>
+                                    </dt>
+                </section>
+            </div>
+        </div>
+
+        <h2>Paths</h2>
+
+
         <span id="path--entities"></span>
-            <div id="operation--entities-post" class="swagger--panel-operation-post panel">
-                <div class="panel-heading">
-                    <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/entities</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                        <p>Role <code>ocsite</code> required.</p>
-            <p>This endpoint must be used to push (e.g. create) new assets into the OC Platform.</p>
-            
-                    </section>
-                        
-                        <section class="sw-request-body">
-                          
-                            <p><span class="label label-default">application/json</span> 
-                        </p>
-                             <p><p>The HTTP body is an asset to be pushed to the OC Platform in JSON format as <a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/AssetDataModel.md">described here</a>.</p>
-                        </p>
-                              <div class="row body-content">
-                               <div class="col-md-6 sw-request-model">
-                                
-                                    <div id="definition-asset" class="panel panel-definition">
-                                        <div class="panel-heading">
-                                          <h3 class="panel-title">
-                                              asset
-                                          </h3>
-                                        </div>
-                                      <div class="panel-body">
-                                              Reference: <a class="json-schema-ref" href="#/definitions/AssetCreation">AssetCreation</a>
-                                      </div>
-                                    </div>
-                               </div>
-                              </div>
-                        </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>
-                                                fiware-service
-                                            <td><p>The API must be called withe HTTP header <code>fiware-service:organicity</code>.</p>
-                                        </td>
-                                            <td>header</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                                    <span class="json-property-required"></span>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                    
-                        <dl>
-                            <dt class="sw-response-201">
-                              201 Created
-                    
-                            </dt>
-                            <dd class="sw-response-201">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>An asset was created successfully. The location header will be set with <code>Location: /v2/entities/{assetId}</code>.</p>
-                                <p>An example:</p>
-                                <p><code>/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo</code></p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                
-                            </dd>
-                            <dt class="sw-response-400">
-                              400 Bad Request
-                    
-                            </dt>
-                            <dd class="sw-response-400">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>An error occured. Examples:</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 sw-response-examples">
-                                      <div class="label label-default">Example for application/json</div>
-                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;No HTTP body provided.&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;InternalServerError&quot;</span><br></span>}
-                                </code></pre>
-                                
-                                    </div>
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div  class="panel panel-definition">
-                                                <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                            <dt class="sw-response-422">
-                              422 Unprocessable Entity
-                    
-                            </dt>
-                            <dd class="sw-response-422">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>This error will be thrown, if the asset with the given <code>id</code> inside the asset already exists.</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 sw-response-examples">
-                                      <div class="label label-default">Example for application/json</div>
-                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Already Exists&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;Unprocessable&quot;</span><br></span>}
-                                </code></pre>
-                                
-                                    </div>
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div  class="panel panel-definition">
-                                                <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                        </dl>
-                      </section>
-                        <section class="sw-request-security">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-request-security-schema"></th>
-                                    <th class="sw-request-security-scopes"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                </div>
-            </div>    
-        <span id="path--entities--assetId-"></span>
-            <div id="operation--entities--assetId--delete" class="swagger--panel-operation-delete panel">
-                <div class="panel-heading">
-                    <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/entities/{assetId}</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                        <p>Role <code>ocsite</code> required.</p>
-            <p>This endpoint must be used to delete an asset from the OC Platform.</p>
-            
-                    </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>
-                                                assetId
-                                            <td><p>The identifier of the asset</p>
-                                        </td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                                    <span class="json-property-required"></span>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                    
-                        <dl>
-                            <dt class="sw-response-204">
-                              204 No Content
-                    
-                            </dt>
-                            <dd class="sw-response-204">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>An empty response sais, that the asset was deleted successfully.</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                
-                            </dd>
-                            <dt class="sw-response-404">
-                              404 Not Found
-                    
-                            </dt>
-                            <dd class="sw-response-404">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>The asset with the given <code>assetId</code> does not exists.</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 sw-response-examples">
-                                      <div class="label label-default">Example for application/json</div>
-                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;The requested entity has not been found. Check type and id&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;NotFound&quot;</span><br></span>}
-                                </code></pre>
-                                
-                                    </div>
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div  class="panel panel-definition">
-                                                <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                        </dl>
-                      </section>
-                        <section class="sw-request-security">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-request-security-schema"></th>
-                                    <th class="sw-request-security-scopes"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                </div>
-            </div>    
-        <span id="path--entities--assetId--attrs"></span>
-            <div id="operation--entities--assetId--attrs-post" class="swagger--panel-operation-post panel">
-                <div class="panel-heading">
-                    <div class="operation-summary"></div>
-                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/entities/{assetId}/attrs</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                        <p>Role <code>ocsite</code> required.</p>
-            <p>This endpoint must be used to update an asset into the OC Platform.</p>
-            
-                    </section>
-                        
-                        <section class="sw-request-body">
-                          
-                             <p><p>The HTTP body is an asset to be updated to the OC Platform in JSON format as <a href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/AssetDataModel.md">described here</a>.</p>
-                        <p>In case of an update, the attributes <code>id</code> and <code>type</code> are not allowed!</p>
-                        </p>
-                              <div class="row body-content">
-                               <div class="col-md-6 sw-request-model">
-                                
-                                    <div id="definition-asset" class="panel panel-definition">
-                                        <div class="panel-heading">
-                                          <h3 class="panel-title">
-                                              asset
-                                          </h3>
-                                        </div>
-                                      <div class="panel-body">
-                                              Reference: <a class="json-schema-ref" href="#/definitions/AssetUpdate">AssetUpdate</a>
-                                      </div>
-                                    </div>
-                               </div>
-                              </div>
-                        </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>
-                                                fiware-service
-                                            <td><p>The API must be called withe HTTP header <code>fiware-service:organicity</code>.</p>
-                                        </td>
-                                            <td>header</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                                    <span class="json-property-required"></span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                assetId
-                                            <td><p>The identifier of the asset</p>
-                                        </td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-                                        
-                                            </td>
-                                            <td>
-                                                    <span class="json-property-required"></span>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                    
-                        <dl>
-                            <dt class="sw-response-204">
-                              204 No Content
-                    
-                            </dt>
-                            <dd class="sw-response-204">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>An empty response sais, that the asset was updated successfully.</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                
-                            </dd>
-                            <dt class="sw-response-400">
-                              400 Bad Request
-                    
-                            </dt>
-                            <dd class="sw-response-400">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>An error occured. Examples:</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 sw-response-examples">
-                                      <div class="label label-default">Example for application/json</div>
-                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;No HTTP body provided.&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;InternalServerError&quot;</span><br></span>}
-                                </code></pre>
-                                
-                                    </div>
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div  class="panel panel-definition">
-                                                <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                            <dt class="sw-response-404">
-                              404 Not Found
-                    
-                            </dt>
-                            <dd class="sw-response-404">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>The asset with the given <code>assetId</code> does not exists.</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 sw-response-examples">
-                                      <div class="label label-default">Example for application/json</div>
-                                      <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;The requested entity has not been found. Check type and id&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;NotFound&quot;</span><br></span>}
-                                </code></pre>
-                                
-                                    </div>
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div  class="panel panel-definition">
-                                                <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                        </dl>
-                      </section>
-                        <section class="sw-request-security">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-request-security-schema"></th>
-                                    <th class="sw-request-security-scopes"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td><a href="#security-definition-Bearer">Bearer</a></td>
-                                            <td>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                </div>
+        <div id="operation--entities-post" class="swagger--panel-operation-post panel">
+            <div class="panel-heading">
+                <div class="operation-summary"></div>
+                <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/entities</strong></h3>
             </div>
-     
-    
-                       
+            <div class="panel-body">
+                <section class="sw-operation-description">
+                    <p>Role <code>ocsite</code> required.</p>
+                    <p>This endpoint must be used to push (e.g. create) new assets into the OC Platform.</p>
+
+                </section>
+
+                <section class="sw-request-body">
+
+                    <p><span class="label label-default">application/json</span>
+                    </p>
+                    <p>
+                    <p>The HTTP body is an asset to be pushed to the OC Platform in JSON format as <a
+                            href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/AssetDataModel.md">described
+                        here</a>.</p>
+                    </p>
+                    <div class="row body-content">
+                        <div class="col-md-6 sw-request-model">
+
+                            <div id="definition-asset" class="panel panel-definition">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        asset
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    Reference: <a class="json-schema-ref" href="#/definitions/AssetCreation">AssetCreation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sw-request-params">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-param-name"></th>
+                            <th class="sw-param-description"></th>
+                            <th class="sw-param-type"></th>
+                            <th class="sw-param-data-type"></th>
+                            <th class="sw-param-annotation"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                fiware-service
+                            <td><p>The API must be called withe HTTP header <code>fiware-service:organicity</code>.</p>
+                            </td>
+                            <td>header</td>
+                            <td><span class="json-property-type">string</span>
+                                <span class="json-property-range" title="Value limits"></span>
+
+                            </td>
+                            <td>
+                                <span class="json-property-required"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="sw-responses">
+
+                    <dl>
+                        <dt class="sw-response-201">
+                            201 Created
+
+                        </dt>
+                        <dd class="sw-response-201">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>An asset was created successfully. The location header will be set with <code>Location:
+                                        /v2/entities/{assetId}</code>.</p>
+                                    <p>An example:</p>
+                                    <p><code>/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo</code>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+
+
+                        </dd>
+                        <dt class="sw-response-400">
+                            400 Bad Request
+
+                        </dt>
+                        <dd class="sw-response-400">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>An error occured. Examples:</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 sw-response-examples">
+                                    <div class="label label-default">Example for application/json</div>
+                                    <pre><code class="lang-json">{<br>    &quot;<span
+                                            class="hljs-attribute">description</span>&quot;: <span
+                                            class="hljs-value"><span class="hljs-string">&quot;No HTTP body provided.&quot;</span></span>,<br>    &quot;<span
+                                            class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span
+                                            class="hljs-string">&quot;InternalServerError&quot;</span><br></span>}
+                                </code></pre>
+
+                                </div>
+                            </div>
+
+                            <div class="row body-content">
+                                <div class="col-md-6 sw-response-model">
+
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">
+                                            Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </dd>
+                        <dt class="sw-response-422">
+                            422 Unprocessable Entity
+
+                        </dt>
+                        <dd class="sw-response-422">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>This error will be thrown, if the asset with the given <code>id</code> inside the
+                                        asset already exists.</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 sw-response-examples">
+                                    <div class="label label-default">Example for application/json</div>
+                                    <pre><code class="lang-json">{<br>    &quot;<span
+                                            class="hljs-attribute">description</span>&quot;: <span
+                                            class="hljs-value"><span
+                                            class="hljs-string">&quot;Already Exists&quot;</span></span>,<br>    &quot;<span
+                                            class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span
+                                            class="hljs-string">&quot;Unprocessable&quot;</span><br></span>}
+                                </code></pre>
+
+                                </div>
+                            </div>
+
+                            <div class="row body-content">
+                                <div class="col-md-6 sw-response-model">
+
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">
+                                            Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </dd>
+                    </dl>
+                </section>
+                <section class="sw-request-security">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-request-security-schema"></th>
+                            <th class="sw-request-security-scopes"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                            <td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+        <span id="path--entities--assetId-"></span>
+        <div id="operation--entities--assetId--delete" class="swagger--panel-operation-delete panel">
+            <div class="panel-heading">
+                <div class="operation-summary"></div>
+                <h3 class="panel-title"><span class="operation-name">DELETE</span> <strong>/entities/{assetId}</strong>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <section class="sw-operation-description">
+                    <p>Role <code>ocsite</code> required.</p>
+                    <p>This endpoint must be used to delete an asset from the OC Platform.</p>
+
+                </section>
+
+                <section class="sw-request-params">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-param-name"></th>
+                            <th class="sw-param-description"></th>
+                            <th class="sw-param-type"></th>
+                            <th class="sw-param-data-type"></th>
+                            <th class="sw-param-annotation"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                assetId
+                            <td><p>The identifier of the asset</p>
+                            </td>
+                            <td>path</td>
+                            <td><span class="json-property-type">string</span>
+                                <span class="json-property-range" title="Value limits"></span>
+
+                            </td>
+                            <td>
+                                <span class="json-property-required"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="sw-responses">
+
+                    <dl>
+                        <dt class="sw-response-204">
+                            204 No Content
+
+                        </dt>
+                        <dd class="sw-response-204">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>An empty response sais, that the asset was deleted successfully.</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+
+
+                        </dd>
+                        <dt class="sw-response-404">
+                            404 Not Found
+
+                        </dt>
+                        <dd class="sw-response-404">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>The asset with the given <code>assetId</code> does not exists.</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 sw-response-examples">
+                                    <div class="label label-default">Example for application/json</div>
+                                    <pre><code class="lang-json">{<br>    &quot;<span
+                                            class="hljs-attribute">description</span>&quot;: <span
+                                            class="hljs-value"><span class="hljs-string">&quot;The requested entity has not been found. Check type and id&quot;</span></span>,<br>    &quot;<span
+                                            class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span
+                                            class="hljs-string">&quot;NotFound&quot;</span><br></span>}
+                                </code></pre>
+
+                                </div>
+                            </div>
+
+                            <div class="row body-content">
+                                <div class="col-md-6 sw-response-model">
+
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">
+                                            Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </dd>
+                    </dl>
+                </section>
+                <section class="sw-request-security">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-request-security-schema"></th>
+                            <th class="sw-request-security-scopes"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                            <td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+        <span id="path--entities--assetId--attrs"></span>
+        <div id="operation--entities--assetId--attrs-post" class="swagger--panel-operation-post panel">
+            <div class="panel-heading">
+                <div class="operation-summary"></div>
+                <h3 class="panel-title"><span class="operation-name">POST</span>
+                    <strong>/entities/{assetId}/attrs</strong></h3>
+            </div>
+            <div class="panel-body">
+                <section class="sw-operation-description">
+                    <p>Role <code>ocsite</code> required.</p>
+                    <p>This endpoint must be used to update an asset into the OC Platform.</p>
+
+                </section>
+
+                <section class="sw-request-body">
+
+                    <p>
+                    <p>The HTTP body is an asset to be updated to the OC Platform in JSON format as <a
+                            href="https://github.com/OrganicityEu/organicityeu.github.io/blob/master/doc/AssetDataModel.md">described
+                        here</a>.</p>
+                    <p>In case of an update, the attributes <code>id</code> and <code>type</code> are not allowed!</p>
+                    </p>
+                    <div class="row body-content">
+                        <div class="col-md-6 sw-request-model">
+
+                            <div id="definition-asset" class="panel panel-definition">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        asset
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    Reference: <a class="json-schema-ref"
+                                                  href="#/definitions/AssetUpdate">AssetUpdate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sw-request-params">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-param-name"></th>
+                            <th class="sw-param-description"></th>
+                            <th class="sw-param-type"></th>
+                            <th class="sw-param-data-type"></th>
+                            <th class="sw-param-annotation"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                fiware-service
+                            <td><p>The API must be called withe HTTP header <code>fiware-service:organicity</code>.</p>
+                            </td>
+                            <td>header</td>
+                            <td><span class="json-property-type">string</span>
+                                <span class="json-property-range" title="Value limits"></span>
+
+                            </td>
+                            <td>
+                                <span class="json-property-required"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                assetId
+                            <td><p>The identifier of the asset</p>
+                            </td>
+                            <td>path</td>
+                            <td><span class="json-property-type">string</span>
+                                <span class="json-property-range" title="Value limits"></span>
+
+                            </td>
+                            <td>
+                                <span class="json-property-required"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="sw-responses">
+
+                    <dl>
+                        <dt class="sw-response-204">
+                            204 No Content
+
+                        </dt>
+                        <dd class="sw-response-204">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>An empty response sais, that the asset was updated successfully.</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+
+
+                        </dd>
+                        <dt class="sw-response-400">
+                            400 Bad Request
+
+                        </dt>
+                        <dd class="sw-response-400">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>An error occured. Examples:</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 sw-response-examples">
+                                    <div class="label label-default">Example for application/json</div>
+                                    <pre><code class="lang-json">{<br>    &quot;<span
+                                            class="hljs-attribute">description</span>&quot;: <span
+                                            class="hljs-value"><span class="hljs-string">&quot;No HTTP body provided.&quot;</span></span>,<br>    &quot;<span
+                                            class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span
+                                            class="hljs-string">&quot;InternalServerError&quot;</span><br></span>}
+                                </code></pre>
+
+                                </div>
+                            </div>
+
+                            <div class="row body-content">
+                                <div class="col-md-6 sw-response-model">
+
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">
+                                            Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </dd>
+                        <dt class="sw-response-404">
+                            404 Not Found
+
+                        </dt>
+                        <dd class="sw-response-404">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>The asset with the given <code>assetId</code> does not exists.</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 sw-response-examples">
+                                    <div class="label label-default">Example for application/json</div>
+                                    <pre><code class="lang-json">{<br>    &quot;<span
+                                            class="hljs-attribute">description</span>&quot;: <span
+                                            class="hljs-value"><span class="hljs-string">&quot;The requested entity has not been found. Check type and id&quot;</span></span>,<br>    &quot;<span
+                                            class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span
+                                            class="hljs-string">&quot;NotFound&quot;</span><br></span>}
+                                </code></pre>
+
+                                </div>
+                            </div>
+
+                            <div class="row body-content">
+                                <div class="col-md-6 sw-response-model">
+
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">
+                                            Reference: <a class="json-schema-ref" href="#/definitions/Error">Error</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </dd>
+                    </dl>
+                </section>
+                <section class="sw-request-security">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-request-security-schema"></th>
+                            <th class="sw-request-security-scopes"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="#security-definition-Bearer">Bearer</a></td>
+                            <td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+
+
         <h2>Schema definitions</h2>
-    
-            
-                <div id="definition-AssetCreation" class="panel panel-definition">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">
-                          <a name="/definitions/AssetCreation"></a>
-                          AssetCreation:
-                          <span class="json-property-type"><span class="json-property-type">object</span>
+
+
+        <div id="definition-AssetCreation" class="panel panel-definition">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a name="/definitions/AssetCreation"></a>
+                    AssetCreation:
+                    <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
                 
                 </span>
-                      </h3>
-                    </div>
-                  <div class="panel-body">
-                          <section class="json-schema-description">
-                              <p>This JSON object represents an asset, if it is created. The minimal required attrbutes are <code>id</code>, <code>type</code> and <code>TimeInstant</code>.</p>
-                      
-                          </section>
-                      
-                              <section class="json-schema-properties">
-                                  <dl>
-                                          <dt data-property-name="id">
-                                              <span class="json-property-name">id:</span>
-                                              <span class="json-property-type">string</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                                  <span class="json-property-required"></span>
-                                          </dt>
-                                          <dd>
-                                              <p>Each entity must have an unique identifier (IDs) in the form of</p>
-                              <p><code>urn:oc:entity:[site]:[service]:[provider]:[group]:[entityName]</code></p>
-                              <p>where:</p>
-                              <ul>
-                              <li><code>urn:oc:entity:[site]:[service]:[provider]:[group]:[entityName]</code> must be unique across the whole OC Facility.</li>
-                              <li><code>[site]</code> is representing the federated OC Site (e.g., London, Santander, Aarhus, Experimenters etc.). During the creation of your experiment you are going to acquire the proper prefixes for your assets.</li>
-                              <li><code>[service]</code> is representing a smart city service/application domain for example parking, garbage, environmental etc.</li>
-                              <li><code>[provider]</code> is the logic separator for which service the asset belongs to. For example, in a city, the bus company and waste management company can use common names for different assets, as they use to work in separate silos. In order to avoid that, the <code>[provider]</code> name allows us to avoid the duplication of <code>[entityNames]</code> within the OC Facility for a particular site.</li>
-                              <li><code>[group]</code>: This is optional. The group part can be used for grouping assets under the same service and provider. It is responsibility of OS sites to maintain proper group keys.</li>
-                              <li><code>[entityName]</code>: The Entity/Device identifier which should be unique at the corresponding OC Site, service and provider. The same applies at the scope of an experiment.</li>
-                              </ul>
-                              
-                                              <div class="json-inner-schema">
-                                                  
-                                                  
-                                              </div>
-                                          </dd>
-                                          <dt data-property-name="type">
-                                              <span class="json-property-name">type:</span>
-                                              <span class="json-property-type">string</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                                  <span class="json-property-required"></span>
-                                          </dt>
-                                          <dd>
-                                              <p>This attribute specifies the type of the asset, e.g., <code>urn:oc:entityType:weatherstation</code></p>
-                              
-                                              <div class="json-inner-schema">
-                                                  
-                                                  
-                                              </div>
-                                          </dd>
-                                          <dt data-property-name="TimeInstant">
-                                              <span class="json-property-name">TimeInstant:</span>
-                                              <span class="json-property-type">object</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                                  <span class="json-property-required"></span>
-                                          </dt>
-                                          <dd>
-                                              <p>This attribute encodes the time that an update to the asset has been performed. It must be added by the asset provider. The type is <code>urn:oc:attributeType:ISO8601</code>, while the format for the value is specified by the ISO8601, where the following format is used (the <code>Z</code> at the end means UTC):</p>
-                              <p><code>YYYY-MM-DDTTHH:mm:ss:SSSZ</code></p>
-                              <p>Since Dec 1st 2016, the OC Platform just accept assets which provide a valid TimeInstant-attribute. For the sake of a good platform function all other time formats will be rejected.</p>
-                              
-                                              <div class="json-inner-schema">
-                                                  
-                                                  
-                                              </div>
-                                          </dd>
-                                  </dl>
-                              </section>
-                      
-                          <section class="json-schema-example">
-                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">TimeInstant</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:ISO8601&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-10-04T13:45:00.000Z&quot;</span><br>    </span>}</span>,<br>    &quot;<span class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entity:london:environmental:hydePark:weatherstation123&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:entityType:weatherstation&quot;</span><br></span>}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <section class="json-schema-description">
+                    <p>This JSON object represents an asset, if it is created. The minimal required attrbutes are <code>id</code>,
+                        <code>type</code> and <code>TimeInstant</code>.</p>
+
+                </section>
+
+                <section class="json-schema-properties">
+                    <dl>
+                        <dt data-property-name="id">
+                            <span class="json-property-name">id:</span>
+                            <span class="json-property-type">string</span>
+                            <span class="json-property-range" title="Value limits"></span>
+
+                            <span class="json-property-required"></span>
+                        </dt>
+                        <dd>
+                            <p>Each entity must have an unique identifier (IDs) in the form of</p>
+                            <p><code>urn:oc:entity:[site]:[service]:[provider]:[group]:[entityName]</code></p>
+                            <p>where:</p>
+                            <ul>
+                                <li><code>urn:oc:entity:[site]:[service]:[provider]:[group]:[entityName]</code> must be
+                                    unique across the whole OC Facility.
+                                </li>
+                                <li><code>[site]</code> is representing the federated OC Site (e.g., London, Santander,
+                                    Aarhus, Experimenters etc.). During the creation of your experiment you are going to
+                                    acquire the proper prefixes for your assets.
+                                </li>
+                                <li><code>[service]</code> is representing a smart city service/application domain for
+                                    example parking, garbage, environmental etc.
+                                </li>
+                                <li><code>[provider]</code> is the logic separator for which service the asset belongs
+                                    to. For example, in a city, the bus company and waste management company can use
+                                    common names for different assets, as they use to work in separate silos. In order
+                                    to avoid that, the <code>[provider]</code> name allows us to avoid the duplication
+                                    of <code>[entityNames]</code> within the OC Facility for a particular site.
+                                </li>
+                                <li><code>[group]</code>: This is optional. The group part can be used for grouping
+                                    assets under the same service and provider. It is responsibility of OS sites to
+                                    maintain proper group keys.
+                                </li>
+                                <li><code>[entityName]</code>: The Entity/Device identifier which should be unique at
+                                    the corresponding OC Site, service and provider. The same applies at the scope of an
+                                    experiment.
+                                </li>
+                            </ul>
+
+                            <div class="json-inner-schema">
+
+
+                            </div>
+                        </dd>
+                        <dt data-property-name="type">
+                            <span class="json-property-name">type:</span>
+                            <span class="json-property-type">string</span>
+                            <span class="json-property-range" title="Value limits"></span>
+
+                            <span class="json-property-required"></span>
+                        </dt>
+                        <dd>
+                            <p>This attribute specifies the type of the asset, e.g., <code>urn:oc:entityType:weatherstation</code>
+                            </p>
+
+                            <div class="json-inner-schema">
+
+
+                            </div>
+                        </dd>
+                        <dt data-property-name="TimeInstant">
+                            <span class="json-property-name">TimeInstant:</span>
+                            <span class="json-property-type">object</span>
+                            <span class="json-property-range" title="Value limits"></span>
+
+                            <span class="json-property-required"></span>
+                        </dt>
+                        <dd>
+                            <p>This attribute encodes the time that an update to the asset has been performed. It must
+                                be added by the asset provider. The type is <code>urn:oc:attributeType:ISO8601</code>,
+                                while the format for the value is specified by the ISO8601, where the following format
+                                is used (the <code>Z</code> at the end means UTC):</p>
+                            <p><code>YYYY-MM-DDTTHH:mm:ss:SSSZ</code></p>
+                            <p>Since Dec 1st 2016, the OC Platform just accept assets which provide a valid
+                                TimeInstant-attribute. For the sake of a good platform function all other time formats
+                                will be rejected.</p>
+
+                            <div class="json-inner-schema">
+
+
+                            </div>
+                        </dd>
+                    </dl>
+                </section>
+
+                <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span
+                                      class="hljs-attribute">TimeInstant</span>&quot;: <span class="hljs-value">{<br>        &quot;<span
+                                      class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;urn:oc:attributeType:ISO8601&quot;</span></span>,<br>        &quot;<span
+                                      class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;2016-10-04T13:45:00.000Z&quot;</span><br>    </span>}</span>,<br>    &quot;<span
+                                      class="hljs-attribute">id</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;urn:oc:entity:london:environmental:hydePark:weatherstation123&quot;</span></span>,<br>    &quot;<span
+                                      class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;urn:oc:entityType:weatherstation&quot;</span><br></span>}
                       </code></pre>
-                      
-                          </section>
-                  </div>
-                </div>
-            
-                <div id="definition-AssetUpdate" class="panel panel-definition">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">
-                          <a name="/definitions/AssetUpdate"></a>
-                          AssetUpdate:
-                          <span class="json-property-type"><span class="json-property-type">object</span>
+
+                </section>
+            </div>
+        </div>
+
+        <div id="definition-AssetUpdate" class="panel panel-definition">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a name="/definitions/AssetUpdate"></a>
+                    AssetUpdate:
+                    <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
                 
                 </span>
-                      </h3>
-                    </div>
-                  <div class="panel-body">
-                          <section class="json-schema-description">
-                              <p>This JSON object represents an asset, if it is updated. The minimal required attrbute is <code>TimeInstant</code>.
-                      To update an asset, it is not allowed to use the attributes <code>id</code> and <code>type</code>.</p>
-                      
-                          </section>
-                      
-                              <section class="json-schema-properties">
-                                  <dl>
-                                          <dt data-property-name="TimeInstant">
-                                              <span class="json-property-name">TimeInstant:</span>
-                                              <span class="json-property-type">object</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                                  <span class="json-property-required"></span>
-                                          </dt>
-                                          <dd>
-                                              <p>This attribute encodes the time that an update to the asset has been performed. It must be added by the asset provider. The type is <code>urn:oc:attributeType:ISO8601</code>, while the format for the value is specified by the ISO8601, where the following format is used (the <code>Z</code> at the end means UTC):</p>
-                              <p><code>YYYY-MM-DDTTHH:mm:ss:SSSZ</code></p>
-                              <p>Since Dec 1st 2016, the OC Platform just accept assets which provide a valid TimeInstant-attribute. For the sake of a good platform function all other time formats will be rejected.</p>
-                              
-                                              <div class="json-inner-schema">
-                                                  
-                                                  
-                                              </div>
-                                          </dd>
-                                  </dl>
-                              </section>
-                      
-                          <section class="json-schema-example">
-                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">TimeInstant</span>&quot;: <span class="hljs-value">{<br>        &quot;<span class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;urn:oc:attributeType:ISO8601&quot;</span></span>,<br>        &quot;<span class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;2016-10-04T13:45:00.000Z&quot;</span><br>    </span>}<br></span>}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <section class="json-schema-description">
+                    <p>This JSON object represents an asset, if it is updated. The minimal required attrbute is <code>TimeInstant</code>.
+                        To update an asset, it is not allowed to use the attributes <code>id</code> and
+                        <code>type</code>.</p>
+
+                </section>
+
+                <section class="json-schema-properties">
+                    <dl>
+                        <dt data-property-name="TimeInstant">
+                            <span class="json-property-name">TimeInstant:</span>
+                            <span class="json-property-type">object</span>
+                            <span class="json-property-range" title="Value limits"></span>
+
+                            <span class="json-property-required"></span>
+                        </dt>
+                        <dd>
+                            <p>This attribute encodes the time that an update to the asset has been performed. It must
+                                be added by the asset provider. The type is <code>urn:oc:attributeType:ISO8601</code>,
+                                while the format for the value is specified by the ISO8601, where the following format
+                                is used (the <code>Z</code> at the end means UTC):</p>
+                            <p><code>YYYY-MM-DDTTHH:mm:ss:SSSZ</code></p>
+                            <p>Since Dec 1st 2016, the OC Platform just accept assets which provide a valid
+                                TimeInstant-attribute. For the sake of a good platform function all other time formats
+                                will be rejected.</p>
+
+                            <div class="json-inner-schema">
+
+
+                            </div>
+                        </dd>
+                    </dl>
+                </section>
+
+                <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span
+                                      class="hljs-attribute">TimeInstant</span>&quot;: <span class="hljs-value">{<br>        &quot;<span
+                                      class="hljs-attribute">type</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;urn:oc:attributeType:ISO8601&quot;</span></span>,<br>        &quot;<span
+                                      class="hljs-attribute">value</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;2016-10-04T13:45:00.000Z&quot;</span><br>    </span>}<br></span>}
                       </code></pre>
-                      
-                          </section>
-                  </div>
-                </div>
-            
-                <div id="definition-Error" class="panel panel-definition">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">
-                          <a name="/definitions/Error"></a>
-                          Error:
-                          <span class="json-property-type"><span class="json-property-type">object</span>
+
+                </section>
+            </div>
+        </div>
+
+        <div id="definition-Error" class="panel panel-definition">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a name="/definitions/Error"></a>
+                    Error:
+                    <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
                 
                 </span>
-                      </h3>
-                    </div>
-                  <div class="panel-body">
-                          <section class="json-schema-description">
-                              <p>These JSON objects are returned when the server encounters an error
-                      on processing a request, and needs to explain further error
-                      details to the requesting client.</p>
-                      <p>Possible errors:</p>
-                      <ul>
-                      <li>Client errors:<ul>
-                      <li>You are not a client.</li>
-                      <li>ClientID wrong.</li>
-                      <li>ClientID wrong. You`re not an OC site.</li>
-                      </ul>
-                      </li>
-                      <li>HTTP Header errors<ul>
-                      <li>HTTP header Content-Type <code>application/xm</code> not acceptable. Please provide application/json.</li>
-                      <li>HTTP header Fiware-Service <code>test</code> not acceptable.</li>
-                      </ul>
-                      </li>
-                      <li>HTTP Body errors<ul>
-                      <li>No HTTP body provided.</li>
-                      <li>HTTP body is not valid JSON.</li>
-                      </ul>
-                      </li>
-                      <li>Asset errors:<ul>
-                      <li>Asset.id prefix wrong.</li>
-                      <li>No Asset ID provided.</li>
-                      <li>asset.type prefix must be <code>urn:oc:entityType:</code></li>
-                      <li>Asset attribute TimeInstant in payload not found.</li>
-                      <li>Asset attribute TimeInstant.value not provided.</li>
-                      <li>Asset attribute TimeInstant.value is not in the required format <code>YYYY-MM-DDTHH:mm:ss.SSSZ</code></li>
-                      </ul>
-                      </li>
-                      <li>Generic errors:<ul>
-                      <li>The site reached the quota!</li>
-                      </ul>
-                      </li>
-                      <li>...</li>
-                      </ul>
-                      
-                          </section>
-                      
-                              <section class="json-schema-properties">
-                                  <dl>
-                                          <dt data-property-name="error">
-                                              <span class="json-property-name">error:</span>
-                                              <span class="json-property-type">string</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                                  <span class="json-property-required"></span>
-                                          </dt>
-                                          <dd>
-                                              <p>The type of th error, e.g., <code>InternalServerError</code></p>
-                              
-                                              <div class="json-inner-schema">
-                                                  
-                                                  
-                                              </div>
-                                          </dd>
-                                          <dt data-property-name="description">
-                                              <span class="json-property-name">description:</span>
-                                              <span class="json-property-type">string</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                                  <span class="json-property-required"></span>
-                                          </dt>
-                                          <dd>
-                                              <p>A detailed explanation on why the request failed.</p>
-                              
-                                              <div class="json-inner-schema">
-                                                  
-                                                  
-                                              </div>
-                                          </dd>
-                                  </dl>
-                              </section>
-                      
-                          <section class="json-schema-example">
-                              <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">description</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;No HTTP body provided.&quot;</span></span>,<br>    &quot;<span class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;InternalServerError&quot;</span><br></span>}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <section class="json-schema-description">
+                    <p>These JSON objects are returned when the server encounters an error
+                        on processing a request, and needs to explain further error
+                        details to the requesting client.</p>
+                    <p>Possible errors:</p>
+                    <ul>
+                        <li>Client errors:
+                            <ul>
+                                <li>You are not a client.</li>
+                                <li>ClientID wrong.</li>
+                                <li>ClientID wrong. You`re not an OC site.</li>
+                            </ul>
+                        </li>
+                        <li>HTTP Header errors
+                            <ul>
+                                <li>HTTP header Content-Type <code>application/xm</code> not acceptable. Please provide
+                                    application/json.
+                                </li>
+                                <li>HTTP header Fiware-Service <code>test</code> not acceptable.</li>
+                            </ul>
+                        </li>
+                        <li>HTTP Body errors
+                            <ul>
+                                <li>No HTTP body provided.</li>
+                                <li>HTTP body is not valid JSON.</li>
+                            </ul>
+                        </li>
+                        <li>Asset errors:
+                            <ul>
+                                <li>Asset.id prefix wrong.</li>
+                                <li>No Asset ID provided.</li>
+                                <li>asset.type prefix must be <code>urn:oc:entityType:</code></li>
+                                <li>Asset attribute TimeInstant in payload not found.</li>
+                                <li>Asset attribute TimeInstant.value not provided.</li>
+                                <li>Asset attribute TimeInstant.value is not in the required format <code>YYYY-MM-DDTHH:mm:ss.SSSZ</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Generic errors:
+                            <ul>
+                                <li>The site reached the quota!</li>
+                            </ul>
+                        </li>
+                        <li>...</li>
+                    </ul>
+
+                </section>
+
+                <section class="json-schema-properties">
+                    <dl>
+                        <dt data-property-name="error">
+                            <span class="json-property-name">error:</span>
+                            <span class="json-property-type">string</span>
+                            <span class="json-property-range" title="Value limits"></span>
+
+                            <span class="json-property-required"></span>
+                        </dt>
+                        <dd>
+                            <p>The type of th error, e.g., <code>InternalServerError</code></p>
+
+                            <div class="json-inner-schema">
+
+
+                            </div>
+                        </dd>
+                        <dt data-property-name="description">
+                            <span class="json-property-name">description:</span>
+                            <span class="json-property-type">string</span>
+                            <span class="json-property-range" title="Value limits"></span>
+
+                            <span class="json-property-required"></span>
+                        </dt>
+                        <dd>
+                            <p>A detailed explanation on why the request failed.</p>
+
+                            <div class="json-inner-schema">
+
+
+                            </div>
+                        </dd>
+                    </dl>
+                </section>
+
+                <section class="json-schema-example">
+                              <pre><code class="lang-json">{<br>    &quot;<span
+                                      class="hljs-attribute">description</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;No HTTP body provided.&quot;</span></span>,<br>    &quot;<span
+                                      class="hljs-attribute">error</span>&quot;: <span class="hljs-value"><span
+                                      class="hljs-string">&quot;InternalServerError&quot;</span><br></span>}
                       </code></pre>
-                      
-                          </section>
-                  </div>
-                </div>
-    
-  </div>
 
-  </div>
+                </section>
+            </div>
+        </div>
 
-  <footer class="footer">
-      <div class="container">
-          <hr>
-          <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
-          <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">
-      </div>
-  </footer>
+    </div>
 
-  <footer class="col-md-12">
+</div>
 
-  </footer>
-
+<footer class="footer">
+    <div class="container">
+        <hr>
+        <div class="col-md-12">
+            <p class="small">This project has received funding from the European Union's Horizon 2020 research and
+                innovation program under the grant agreement No. 645198</p>
+            <img height="100px"
+                 alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198"
+                 src="/images/logo_eu.png">
+        </div>
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</footer>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

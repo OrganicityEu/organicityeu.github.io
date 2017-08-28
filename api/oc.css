@@ -3979,7 +3979,6 @@ fieldset[disabled] a.btn {
     border-color: #adadad;
 }
 
-
 .btn-default:active:hover,
 .btn-default.active:hover,
 .open > .dropdown-toggle.btn-default:hover,
@@ -4650,10 +4649,7 @@ tbody.collapse.in {
     left: auto;
 }
 
-
 .dropup .dropdown-menu,
-
-
 .btn-group,
 .btn-group-vertical {
     position: relative;
@@ -10266,6 +10262,7 @@ ul {
     .apiBlock > h2 {
         text-align: center;
     }
+
     .apiBlock > p {
         text-align: center;
     }

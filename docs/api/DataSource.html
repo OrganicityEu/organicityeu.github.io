@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OrganiCity API</title>
+    <title>OrganiCity API</title>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="oc.css">
     <link rel="stylesheet" href="static/css/common-header/navbar.css" rel="stylesheet">
@@ -38,510 +38,529 @@
         <div class="navbar-collapse collapse" id="oc-nav"></div>
     </nav>
 </div>
-  <div id="top" class="container oc-page-wrapper">
-  <div class="container">
-    <h1>Organicity Datasource API</h1>
-    <p class="sw-info-version">Version: <span>0.1</span></p>
-    <p><p>Organicity Datasource API</p>
-    </p>
-    
-    
-      <p>
-      <span class="sw-default-value-header">Base URL:</span>
-      <a href="data.organicity.eu">
-      data.organicity.eu/
-      </a>
-      </p>
-    
-    
-    
+<div id="top" class="container oc-page-wrapper">
+    <div class="container">
+        <h1>Organicity Datasource API</h1>
+        <p class="sw-info-version">Version: <span>0.1</span></p>
+        <p>
+        <p>Organicity Datasource API</p>
+        </p>
+
+
+        <p>
+            <span class="sw-default-value-header">Base URL:</span>
+            <a href="data.organicity.eu">
+                data.organicity.eu/
+            </a>
+        </p>
+
+
         <h2 id="swagger--summary-no-tags">Summary</h2>
-        
-            <div class="panel">
-              <div class="panel-body">
-        
-        <table class="table table-condensed swagger--summary">
-            <thead>
-            <tr>
-                <th>Path</th>
-                <th>Operation</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
+
+        <div class="panel">
+            <div class="panel-body">
+
+                <table class="table table-condensed swagger--summary">
+                    <thead>
+                    <tr>
+                        <th>Path</th>
+                        <th>Operation</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td class="swagger--summary-path" rowspan="1">
-                          <a href="#path--byasset">/{assetId}/readings</a>
+                            <a href="#path--byasset">/{assetId}/readings</a>
                         </td>
                         <td><a href="#operation--byasset">GET</a></td>
                         <td><p>Get historical values for all the attributes of one asset </p></td>
                     </tr>
                     <tr>
                         <td class="swagger--summary-path" rowspan="1">
-                          <a href="#path--byattr">/{assetId}/{attrId}/readings</a>
+                            <a href="#path--byattr">/{assetId}/{attrId}/readings</a>
                         </td>
                         <td><a href="#operation--byattr">GET</a></td>
                         <td><p>Get historical values for one attribute of one asset</p></td>
                     </tr>
                     <tr>
                         <td class="swagger--summary-path" rowspan="1">
-                          <a href="#path--attrs">/{assetId}/attributes</a>
+                            <a href="#path--attrs">/{assetId}/attributes</a>
                         </td>
                         <td><a href="#operation--attrs">GET</a></td>
                         <td><p>Get attributes </p></td>
                     </tr>
-            </tbody>
-        </table>
-        
-              </div>
+                    </tbody>
+                </table>
+
             </div>
-    
-    
-    
-    <h2>Paths</h2>
-    
-        
+        </div>
+
+
+        <h2>Paths</h2>
+
+
         <span id="path--byasset"></span>
-            <div id="operation--byasset" class="swagger--panel-operation-get panel">
-                <div class="panel-heading">
-                    <div class="operation-summary">datasource</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/{assetId}/readings</strong></h3>
-                        Tags:
-                            <a href="#tag-datasource">datasource</a>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                      To request a list of historical values of all the attributes of an asset. Note that it is necessary to indicate the asset type. The query can be limited by time time and paged by using limit and offset  query parameters. Note that to filter by dates, BOTH limits have to be set, if only one is, the filter is not applied
-                    </section>
-                        <section class="sw-request-body">
-                            <p><span class="label label-default">application/json</span></p>
-                        </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>assetId</td>
-                                            <td><p>Asset identifier</p></td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>from</td>
-                                            <td><p>Starting date of the records in ISO8601 </p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                            <td><span class="json-property-required"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>to</td>
-                                            <td><p>Ending date of the records in ISO8601</p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                            <td><span class="json-property-required"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>limit</td>
-                                            <td><p>Limit of records to retrieve</p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                              <span class="json-property-range" title="Value limits">[1, 1000]</span>
-                                            </td>
-                                            <td><p><span class="label label-default">default: 1000</span></p></td>
-                                        </tr>
-                                        <tr>
-                                            <td>offset</td>
-                                            <td><p>Offset of the records according the query parameters</p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                            <td><span class="label label-default">default: 0</span></td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                          <p><span class="label label-default">*/*</span> 
-                    </p>
-                    
-                        <dl>
-                            <dt class="sw-response-200">
-                              200 OK
-                    
-                            </dt>
-                            <dd class="sw-response-200">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>OK</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div  class="panel panel-definition">
-                                                <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Response">Response</a>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                            <dt class="sw-response-404">
-                              404 Not Found
-                    
-                            </dt>
-                            <dd class="sw-response-404">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>Not Found due to incorrect</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                
-                            </dd>
-                        </dl>
-                      </section>
-                </div>
+        <div id="operation--byasset" class="swagger--panel-operation-get panel">
+            <div class="panel-heading">
+                <div class="operation-summary">datasource</div>
+                <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/{assetId}/readings</strong>
+                </h3>
+                Tags:
+                <a href="#tag-datasource">datasource</a>
             </div>
+            <div class="panel-body">
+                <section class="sw-operation-description">
+                    To request a list of historical values of all the attributes of an asset. Note that it is necessary
+                    to indicate the asset type. The query can be limited by time time and paged by using limit and
+                    offset query parameters. Note that to filter by dates, BOTH limits have to be set, if only one is,
+                    the filter is not applied
+                </section>
+                <section class="sw-request-body">
+                    <p><span class="label label-default">application/json</span></p>
+                </section>
 
-            <span id="path--byattr"></span>
-         <div id="operation--byattr" class="swagger--panel-operation-get panel">
-                <div class="panel-heading">
-                    <div class="operation-summary">datasource</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/{assetId}/{attr}/readings</strong></h3>
-                        Tags:
-                            <a href="#tag-datasource">datasource</a>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                      To request a list of historical values of one asset attribute. Note that it is necessary to indicate the asset type. The query can be limited by time time and paged by using limit and offset  query parameters. Note that to filter by dates, BOTH limits have to be set, if only one is, the filter is not applied
-                    </section>
-                        <section class="sw-request-body">
-                            <p><span class="label label-default">application/json</span></p>
-                        </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>assetId</td>
-                                            <td><p>Asset identifier</p></td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>attr</td>
-                                            <td><p>Attribute name</p></td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>from</td>
-                                            <td><p>Starting date of the records in ISO8601 </p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>to</td>
-                                            <td><p>Ending date of the records in ISO8601</p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>limit</td>
-                                            <td><p>Limit of records to retrieve</p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                              <span class="json-property-range" title="Value limits">[1, 1000]</span>
-                                            </td>
-                                            <td><p><span class="label label-default">default: 1000</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>offset</td>
-                                            <td><p>Offset of the records according the query parameters</p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                            </td>
-                                            <td><p><span class="label label-default">default: 0</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>values</td>
-                                            <td><p>Binary parameter,if set only an array of values is returned</p></td>
-                                            <td>query</td>
-                                            <td><span class="json-property-type">string</span>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                          <p><span class="label label-default">*/*</span> 
+                <section class="sw-request-params">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-param-name"></th>
+                            <th class="sw-param-description"></th>
+                            <th class="sw-param-type"></th>
+                            <th class="sw-param-data-type"></th>
+                            <th class="sw-param-annotation"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>assetId</td>
+                            <td><p>Asset identifier</p></td>
+                            <td>path</td>
+                            <td><span class="json-property-type">string</span></td>
+                        </tr>
+                        <tr>
+                            <td>from</td>
+                            <td><p>Starting date of the records in ISO8601 </p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span></td>
+                            <td><span class="json-property-required"></span></td>
+                        </tr>
+                        <tr>
+                            <td>to</td>
+                            <td><p>Ending date of the records in ISO8601</p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span></td>
+                            <td><span class="json-property-required"></span></td>
+                        </tr>
+                        <tr>
+                            <td>limit</td>
+                            <td><p>Limit of records to retrieve</p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span>
+                                <span class="json-property-range" title="Value limits">[1, 1000]</span>
+                            </td>
+                            <td><p><span class="label label-default">default: 1000</span></p></td>
+                        </tr>
+                        <tr>
+                            <td>offset</td>
+                            <td><p>Offset of the records according the query parameters</p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span></td>
+                            <td><span class="label label-default">default: 0</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="sw-responses">
+                    <p><span class="label label-default">*/*</span>
                     </p>
-                    
-                        <dl>
-                            <dt class="sw-response-200">
-                              200 OK
-                    
-                            </dt>
-                            <dd class="sw-response-200">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
+
+                    <dl>
+                        <dt class="sw-response-200">
+                            200 OK
+
+                        </dt>
+                        <dd class="sw-response-200">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
                                     <p>OK</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                  <div class="row body-content">
-                                    <div class="col-md-6 sw-response-model">
-                                          
-                                              <div  class="panel panel-definition">
-                                                <div class="panel-body">
-                                                        Reference: <a class="json-schema-ref" href="#/definitions/Response">Response</a>
-                                                </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                                
-                            </dd>
-                            <dt class="sw-response-404">
-                              404 Not Found
-                    
-                            </dt>
-                            <dd class="sw-response-404">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <p>Not Found due to incorrect</p>
-                                
-                                  </div>
-                                </div>
-                                <div class="row">
-                                </div>
-                                
-                                
-                            </dd>
-                        </dl>
-                      </section>
-                </div>
-            </div>   
 
-                    <span id="path--attrs"></span>
-         <div id="operation--attrs" class="swagger--panel-operation-get panel">
-                <div class="panel-heading">
-                    <div class="operation-summary">datasource</div>
-                    <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/{assetId}/attributes</strong></h3>
-                        Tags:
-                            <a href="#tag-datasource">datasource</a>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                      To request a list of attributes belonging to one asset that are being recorded.
-                    </section>
-                        <section class="sw-request-body">
-                            <p><span class="label label-default">application/json</span></p>
-                        </section>
-                    
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>assetId</td>
-                                            <td><p>Asset identifier</p></td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span></td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    
-                      <section class="sw-responses">
-                          <p><span class="label label-default">*/*</span> 
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+
+                            <div class="row body-content">
+                                <div class="col-md-6 sw-response-model">
+
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">
+                                            Reference: <a class="json-schema-ref"
+                                                          href="#/definitions/Response">Response</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </dd>
+                        <dt class="sw-response-404">
+                            404 Not Found
+
+                        </dt>
+                        <dd class="sw-response-404">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Not Found due to incorrect</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+
+
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+
+        <span id="path--byattr"></span>
+        <div id="operation--byattr" class="swagger--panel-operation-get panel">
+            <div class="panel-heading">
+                <div class="operation-summary">datasource</div>
+                <h3 class="panel-title"><span class="operation-name">GET</span>
+                    <strong>/{assetId}/{attr}/readings</strong></h3>
+                Tags:
+                <a href="#tag-datasource">datasource</a>
+            </div>
+            <div class="panel-body">
+                <section class="sw-operation-description">
+                    To request a list of historical values of one asset attribute. Note that it is necessary to indicate
+                    the asset type. The query can be limited by time time and paged by using limit and offset query
+                    parameters. Note that to filter by dates, BOTH limits have to be set, if only one is, the filter is
+                    not applied
+                </section>
+                <section class="sw-request-body">
+                    <p><span class="label label-default">application/json</span></p>
+                </section>
+
+                <section class="sw-request-params">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-param-name"></th>
+                            <th class="sw-param-description"></th>
+                            <th class="sw-param-type"></th>
+                            <th class="sw-param-data-type"></th>
+                            <th class="sw-param-annotation"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>assetId</td>
+                            <td><p>Asset identifier</p></td>
+                            <td>path</td>
+                            <td><span class="json-property-type">string</span></td>
+                        </tr>
+                        <tr>
+                            <td>attr</td>
+                            <td><p>Attribute name</p></td>
+                            <td>path</td>
+                            <td><span class="json-property-type">string</span></td>
+                        </tr>
+                        <tr>
+                            <td>from</td>
+                            <td><p>Starting date of the records in ISO8601 </p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span></td>
+                        </tr>
+                        <tr>
+                            <td>to</td>
+                            <td><p>Ending date of the records in ISO8601</p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span></td>
+                        </tr>
+                        <tr>
+                            <td>limit</td>
+                            <td><p>Limit of records to retrieve</p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span>
+                                <span class="json-property-range" title="Value limits">[1, 1000]</span>
+                            </td>
+                            <td><p><span class="label label-default">default: 1000</span></td>
+                        </tr>
+                        <tr>
+                            <td>offset</td>
+                            <td><p>Offset of the records according the query parameters</p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span>
+                            </td>
+                            <td><p><span class="label label-default">default: 0</span></td>
+                        </tr>
+                        <tr>
+                            <td>values</td>
+                            <td><p>Binary parameter,if set only an array of values is returned</p></td>
+                            <td>query</td>
+                            <td><span class="json-property-type">string</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="sw-responses">
+                    <p><span class="label label-default">*/*</span>
                     </p>
-                        <dl>
-                          <dt class="sw-response-200"> 200 OK </dt>
-                          <dd class="sw-response-200">
-                            <div class="row"><div class="col-md-12"><p>OK</p></div></div>
+
+                    <dl>
+                        <dt class="sw-response-200">
+                            200 OK
+
+                        </dt>
+                        <dd class="sw-response-200">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>OK</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+
+                            <div class="row body-content">
+                                <div class="col-md-6 sw-response-model">
+
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">
+                                            Reference: <a class="json-schema-ref"
+                                                          href="#/definitions/Response">Response</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </dd>
+                        <dt class="sw-response-404">
+                            404 Not Found
+
+                        </dt>
+                        <dd class="sw-response-404">
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Not Found due to incorrect</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+
+
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+
+        <span id="path--attrs"></span>
+        <div id="operation--attrs" class="swagger--panel-operation-get panel">
+            <div class="panel-heading">
+                <div class="operation-summary">datasource</div>
+                <h3 class="panel-title"><span class="operation-name">GET</span> <strong>/{assetId}/attributes</strong>
+                </h3>
+                Tags:
+                <a href="#tag-datasource">datasource</a>
+            </div>
+            <div class="panel-body">
+                <section class="sw-operation-description">
+                    To request a list of attributes belonging to one asset that are being recorded.
+                </section>
+                <section class="sw-request-body">
+                    <p><span class="label label-default">application/json</span></p>
+                </section>
+
+                <section class="sw-request-params">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="sw-param-name"></th>
+                            <th class="sw-param-description"></th>
+                            <th class="sw-param-type"></th>
+                            <th class="sw-param-data-type"></th>
+                            <th class="sw-param-annotation"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>assetId</td>
+                            <td><p>Asset identifier</p></td>
+                            <td>path</td>
+                            <td><span class="json-property-type">string</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="sw-responses">
+                    <p><span class="label label-default">*/*</span>
+                    </p>
+                    <dl>
+                        <dt class="sw-response-200"> 200 OK</dt>
+                        <dd class="sw-response-200">
+                            <div class="row">
+                                <div class="col-md-12"><p>OK</p></div>
+                            </div>
                             <div class="row"></div>
                             <div class="row body-content">
-                              <div class="col-md-6 sw-response-model">
-                                <div  class="panel panel-definition">
-                                  <div class="panel-body">Reference: <a class="json-schema-ref" href="#/definitions/Response">Response</a></div>
+                                <div class="col-md-6 sw-response-model">
+                                    <div class="panel panel-definition">
+                                        <div class="panel-body">Reference: <a class="json-schema-ref"
+                                                                              href="#/definitions/Response">Response</a>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-                          </dd>
-                          <dt class="sw-response-404"> 404 Not Found </dt>
-                            <dd class="sw-response-404">
-                              <div class="row">
+                        </dd>
+                        <dt class="sw-response-404"> 404 Not Found</dt>
+                        <dd class="sw-response-404">
+                            <div class="row">
                                 <div class="col-md-12"><p>Not Found due to incorrect</p></div>
-                              </div>
-                              <div class="row"> </div>
-                            </dd>
-                        </dl>
-                      </section>
-                </div>
-            </div>       
-   
+                            </div>
+                            <div class="row"></div>
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+
         <h2>Schema definitions</h2>
-    
-            
-                <div id="definition-Reading" class="panel panel-definition">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">
-                          <a name="/definitions/Reading"></a>
-                          Reading:
-                          <span class="json-property-type"><span class="json-property-type">object</span>
+
+
+        <div id="definition-Reading" class="panel panel-definition">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a name="/definitions/Reading"></a>
+                    Reading:
+                    <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
                 
                 </span>
-                      </h3>
-                    </div>
-                  <div class="panel-body">
-                      
-                              <section class="json-schema-properties">
-                                  <dl>
-                                          <dt data-property-name="recvTime">
-                                              <span class="json-property-name">recvTime:</span>
-                                              <span class="json-property-type">string</span>
-                                          </dt>
-                                              <dt data-property-name="attrName">
-                                              <span class="json-property-name">attrName:</span>
-                                              <span class="json-property-type">string</span>
-                                          </dt>
-                                          <dt data-property-name="attrType">
-                                              <span class="json-property-name">attrType:</span>
-                                              <span class="json-property-type">string</span>
-                                          </dt>
-                                          <dt data-property-name="attrValue">
-                                              <span class="json-property-name">attrValue:</span>
-                                              <span class="json-property-type">string</span>
-                                          </dt>
-                                  </dl>
-                              </section>
-                      
-                  </div>
-                </div>
-            
-                <div id="definition-Response" class="panel panel-definition">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">
-                          <a name="/definitions/Response"></a>
-                          Response:
-                          <span class="json-property-type"><span class="json-property-type">object</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+
+                <section class="json-schema-properties">
+                    <dl>
+                        <dt data-property-name="recvTime">
+                            <span class="json-property-name">recvTime:</span>
+                            <span class="json-property-type">string</span>
+                        </dt>
+                        <dt data-property-name="attrName">
+                            <span class="json-property-name">attrName:</span>
+                            <span class="json-property-type">string</span>
+                        </dt>
+                        <dt data-property-name="attrType">
+                            <span class="json-property-name">attrType:</span>
+                            <span class="json-property-type">string</span>
+                        </dt>
+                        <dt data-property-name="attrValue">
+                            <span class="json-property-name">attrValue:</span>
+                            <span class="json-property-type">string</span>
+                        </dt>
+                    </dl>
+                </section>
+
+            </div>
+        </div>
+
+        <div id="definition-Response" class="panel panel-definition">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a name="/definitions/Response"></a>
+                    Response:
+                    <span class="json-property-type"><span class="json-property-type">object</span>
                           <span class="json-property-range" title="Value limits"></span>
                 
                       </span>
-                      </h3>
-                    </div>
-                  <div class="panel-body">
-                      
-                              <section class="json-schema-properties">
-                                  <dl>
-                                          <dt data-property-name="readings">
-                                              <span class="json-property-name">readings:</span>
-                                              <span class="json-property-type">object[]</span>
-                                              <span class="json-property-range" title="Value limits"></span>
-                                              
-                                          </dt>
-                                          <dd>
-                                              
-                                              <div class="json-inner-schema">
-                                                  
-                                                                  <section class="json-schema-array-items">
-                                                                      <span class="json-property-type">    Reference: <a class="json-schema-ref" href="#/definitions/Reading">Reading</a>
-                                                                      </span>
-                                                                      <span class="json-property-range" title="Value limits"></span>
-                                                                      
-                                                                      <div class="json-inner-schema">
-                                                                          
-                                                                          
-                                                                      </div>
-                                                                  </section>
-                                              </div>
-                                          </dd>
-                                  </dl>
-                              </section>
-                      
-                  </div>
-                </div>
-                <div id="definition-Attrs" class="panel panel-definition">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">
-                          <a name="/definitions/Response"></a>
-                          Response:
-                          <span class="json-property-type"><span class="json-property-type">object</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                
-                      </span>
-                      </h3>
-                    </div>
-                  <div class="panel-body">
-                      <section class="json-schema-properties">
-                      <dl>
+                </h3>
+            </div>
+            <div class="panel-body">
+
+                <section class="json-schema-properties">
+                    <dl>
                         <dt data-property-name="readings">
-                          <span class="json-property-name">attributes:</span>
-                          <span class="json-property-type">String[]</span>
+                            <span class="json-property-name">readings:</span>
+                            <span class="json-property-type">object[]</span>
+                            <span class="json-property-range" title="Value limits"></span>
+
+                        </dt>
+                        <dd>
+
+                            <div class="json-inner-schema">
+
+                                <section class="json-schema-array-items">
+                                                                      <span class="json-property-type">    Reference: <a
+                                                                              class="json-schema-ref"
+                                                                              href="#/definitions/Reading">Reading</a>
+                                                                      </span>
+                                    <span class="json-property-range" title="Value limits"></span>
+
+                                    <div class="json-inner-schema">
+
+
+                                    </div>
+                                </section>
+                            </div>
+                        </dd>
+                    </dl>
+                </section>
+
+            </div>
+        </div>
+        <div id="definition-Attrs" class="panel panel-definition">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a name="/definitions/Response"></a>
+                    Response:
+                    <span class="json-property-type"><span class="json-property-type">object</span>
                           <span class="json-property-range" title="Value limits"></span>
-                          </dt>
-                      </dl>
-                    </section>
-                  </div>
-                </div>
-    
-  </div>
-  </div>
+                
+                      </span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <section class="json-schema-properties">
+                    <dl>
+                        <dt data-property-name="readings">
+                            <span class="json-property-name">attributes:</span>
+                            <span class="json-property-type">String[]</span>
+                            <span class="json-property-range" title="Value limits"></span>
+                        </dt>
+                    </dl>
+                </section>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 <footer class="footer">
     <div class="container">
         <hr>
         <div class="col-md-12">
-            <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
-            <img height="100px" alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">
+            <p class="small">This project has received funding from the European Union's Horizon 2020 research and
+                innovation program under the grant agreement No. 645198</p>
+            <img height="100px"
+                 alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198"
+                 src="/images/logo_eu.png">
         </div>
         <div class="col-md-12">&nbsp;</div>
     </div>

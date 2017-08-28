@@ -1,0 +1,165 @@
+
+body {
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+/**
+ * Diable mobile version
+ * http://stackoverflow.com/a/23536146/605890
+ */
+
+.navbar-collapse.collapse {
+    display: block !important;
+}
+
+.navbar-nav > li, .navbar-nav {
+    float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -15px !important;
+}
+
+.navbar-right {
+    float: right !important;
+}
+
+/**
+ * Organicity
+ */
+
+.navbar {
+    margin-bottom: 20px;
+    border-radius: 0px;
+}
+
+.navbar-default {
+    border-width: 2px;
+}
+
+.navbar .logo {
+    height: 40px;
+    top: -10px;
+    position: relative
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.userCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 44px;
+    height: 44px;
+    padding-top: 11px;
+
+    background: #ef4070;
+    border: 0px;
+    color: #FFF;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    top: 3px;
+    position: relative
+}
+
+/*
+ * Yamm3
+ */
+
+.list-unstyled,
+.list-unstyled ul {
+    min-width: 240px
+}
+
+.navbar .list-unstyled .title {
+    color: #ef4070;
+    font-weight: bold;
+}
+
+.navbar .list-unstyled .subtitle,
+.navbar .list-unstyled .subtitle a {
+    font-weight: bold;
+    padding-top: 10px;
+    color: black;
+}
+
+.navbar .list-unstyled .comment {
+    color: gray;
+    padding-left: 10px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color: #ef4070;
+}
+
+.navbar-default .navbar-nav > li.circle > a:hover,
+.navbar-default .navbar-nav > li.circle > a:focus {
+    color: #ffffff;
+    background-color: white;
+}
+
+.yamm .nav,
+.yamm .collapse,
+.yamm .dropup,
+.yamm .dropdown {
+    position: static;
+}
+
+.yamm .container {
+    position: relative;
+}
+
+.yamm .dropdown-menu {
+    left: auto;
+}
+
+.yamm .yamm-content {
+    padding: 20px 30px;
+}
+
+.yamm .dropdown.yamm-fw .dropdown-menu {
+    left: 0;
+    right: 0;
+}
+
+.subtitle > p {
+    margin-bottom: 0 !important;
+}
+
+.title > p {
+    margin-bottom: 0 !important;
+}
+
+.title > p > a {
+    color: #ef4070;
+}
+
+
+
+
+.notifyjs-foo-base {
+    opacity: 0.85;
+    width: 200px;
+    background: #F5F5F5;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.notifyjs-foo-base .assetUrn .tagUrn .classificationConfig {
+    width: 100px;
+    float: left;
+    margin: 10px 0 0 10px;
+    text-align: right;
+}
+.notifyjs-foo-base a {
+    cursor: pointer;
+}

@@ -222,14 +222,14 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#experimenter-portal">Experimenter Portal</a></li>
-            <li><a href="#a-create-and-edit-experiments">[A] Create and edit experiments</a></li>
-            <li><a href="#b-experiment-credentials">[B] Experiment Credentials</a></li>
-            <li><a href="#c-create-and-edit-applications">[C] Create and edit applications</a></li>
-            <li><a href="#d-manage-assets">[D] Manage assets</a></li>
-            <li><a href="#e-annotations">[E] Annotations</a></li>
-            <li><a href="#f-experiment-area">[F] Experiment area</a></li>
-            <li><a href="#g-experiment-team">[G] Experiment team</a></li>
-            <li><a href="#h-participants">[H] Participants</a></li>
+            <li><a href="#create-and-edit-experiments">Create and edit experiments</a></li>
+            <li><a href="#experiment-credentials">Experiment Credentials</a></li>
+            <li><a href="#create-and-edit-applications">Create and edit applications</a></li>
+            <li><a href="#manage-assets">Manage assets</a></li>
+            <li><a href="#annotations">Annotations</a></li>
+            <li><a href="#experiment-area">Experiment area</a></li>
+            <li><a href="#experiment-team">Experiment team</a></li>
+            <li><a href="#participants">Participants</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -258,64 +258,39 @@
 <li>Experiment Team: you can add other experimenters to your experiment, so that they will see the same as you.</li>
 <li>Participants: this feature allows you to contact people registered within Organicity to engage them into your experiment</li>
 </ul>
-<h2 id="a-create-and-edit-experiments">[A] Create and edit experiments</h2>
-<p>As can be seen in the figure below, an experiment can be created by just defining:</p>
-<ul>
-<li>Name: Name of the experiment</li>
-<li>Description: meaningful and catchy description of the experiment. This description will be used if you decide to invite people to participate in your experiment</li>
-<li>Assets privacy: choose whether or not you want your asstes to be public or private. Note that by doing them private only your experiment will be able to access their data.</li>
-</ul>
+<h2 id="create-and-edit-experiments">Create and edit experiments</h2>
+<p>As can be seen in the figure below, an experiment can be created by just defining:
+<em> Name: Name of the experiment to be shows afterwards
+</em> Description: meaningful and catchy description of the experiment. This description will be used if you decide to invite people to participate in your experiment
+* Assets privacy: choose whether or not you want your asstes to be public or private. Note that by doing them private only your experiment will be able to access their data.</p>
 <p>Besides, if it is necessary you may also define the experiment area, by clinking <strong>EXPERIMENT AREA</strong>. The area is made of regions, that in turn is defined as a polygon with a name, as depicted belor. You can define as many regions you want for your experiment.</p>
 <p>Once you are done, click <strong>FINISH</strong> to complete the experiment creation.</p>
-<p><img alt="alt text" src="./images/newExp.PNG" />
-<strong>Figure 3:</strong> Form to create a new experiment</p>
-<p>You can also edit the experiment information from the view of the experiment (Figure 2), by simple modifying the name or description and clicking <strong>UPDATE</strong>.</p>
-<h2 id="b-experiment-credentials">[B] Experiment Credentials</h2>
-<p>When you create an experiment a new <em>client</em> is created for that experiment under the hood. 
-You may use that client to implement authorization in the applications within the experiment, see <a href="../../HowToAuthenticateAnUser">How To Authenticate An User</a>.</p>
+<h2 id="experiment-credentials">Experiment Credentials</h2>
+<p>When an experiment is created a new <em>client</em> is created for that experiment. You may use that client to implement authorization in the applications within the experiment, see <a href="../../HowToAuthenticateAnUser">How To Authenticate An User</a>.</p>
 <p><img alt="alt text" src="./images/ep3.PNG" />
-<strong>Figure 4:</strong> Experiment credentials view</p>
-<p>From that client, you can define and edit <em>redirect_uris</em> as you need.</p>
-<h2 id="c-create-and-edit-applications">[C] Create and edit applications</h2>
-<p>As mentioned before, to create assets, an experiment does not suffice, but the assets are created by application within your experiment. T
-To create an applciation just go to the <strong>Applications</strong> section of you experiment, as shown in Figure 5. It moves you to the view of applications of your experiment. 
-As you can see in Figure 6, the applications view resembles the experiments view in Figure 1, and you can have as many applications as you need within your experiment.</p>
-<p><img alt="alt text" src="./images/newApp1.PNG" />
-<strong>Figure 5:</strong> Applications menu from main experiment view</p>
-<p><img alt="alt text" src="./images/newApp2.PNG" />
-<strong>Figure 6:</strong> Experiment applications view</p>
-<p>If you click <strong>NEW APPLICATION</strong>, you will get a view as shown in Figure 7, in which you have to fill in a form for the application very much like the one to create 
-an experiment. Remember that you can click the blue information buttons for guidance.</p>
-<p><img alt="alt text" src="./images/newApp3.PNG" />
-<strong>Figure 7:</strong> New application form</p>
-<h2 id="d-manage-assets">[D] Manage assets</h2>
-<p>Based on the interface provided by the <a href="../../AssetDiscoveryService">AssetDiscoveryService</a>, through Experimenter Portal you can see the list of assets created within 
-your experiment, as depicted in Figure 8. You can also create new assets using its graphical editor or even modify existing ones.</p>
+<strong>Figure 3:</strong> Experiment credentials view</p>
+<p>From that client you can define and edit <em>redirect_uris</em> as you need.</p>
+<h2 id="create-and-edit-applications">Create and edit applications</h2>
+<p>As mentioned before, to create assets the experiment does not suffice, but you need to do it through applications within the experiment. To create an applciation just go to the <strong>Applications</strong> section of you experiment <strong>NEW APPLICATION</strong>. To be completed</p>
+<p><img alt="alt text" src="./images/ep4.PNG" />
+<strong>Figure 4:</strong> Main view of experiment applications</p>
+<h2 id="manage-assets">Manage assets</h2>
+<p>Based on the interface provided by the <a href="../../AssetDiscoveryService">AssetDiscoveryService</a>, through Experimenter Portal you can see the list of assets created within your experiment. You can also create new assets using its graphical editor or even modify existing ones.</p>
 <p><img alt="alt text" src="./images/ep5.PNG" />
-<strong>Figure 8:</strong> Main view of assets management</p>
-<p>If you click <strong>ADD ASSET</strong> you will see a graphical editor to edit the JSON of your asset with some minimal information pre-filled. You can obtain more information
-regarding the asset data model <a href="../../AssetDataModel">HERE</a>, you can also edit existing assets by just clicking over them in the table shows in Figure 8. 
-Keep in mind that this editor is just a minimal tool that uses <a href="../../HowToPushAnAssetToTheExperimenterSite">HowToPushAnAssetToTheExperimenterSite</a> and 
-<a href="../../HowToUpdateDeteleAnAsset">HowToUpdateDeteleAnAsset</a></p>
-<h2 id="e-annotations">[E] Annotations</h2>
-<p>Experimenter Portal interacts with Annotation Service to simplify the creation of tags. 
-The explanation of this feature can be found <a href="../../annotations/tutorials/HowToCreateAnnotationTags/">here</a>. From the annotations section of your experiment you can both
-create specific tag domains for your experiment or select existing generic domains to be used by your experiment. For the tag domains you create, you can define your 
-own tags. Besides, when you enter this section just after creating the experiment, you will notice that a default experiment tag domain has been created.</p>
+<strong>Figure 1:</strong> Main view of assets management</p>
+<h2 id="annotations">Annotations</h2>
+<p>Experimenter Portal interacts with Annotation Service to simplify the creation of tags. The explanation of this feature can be found <a href="../../annotations/tutorials/HowToCreateAnnotationTags/">here</a> </p>
 <p><img alt="alt text" src="./images/ep6.PNG" />
-<strong>Figure 9:</strong> View of assets annotations</p>
-<h2 id="f-experiment-area">[F] Experiment area</h2>
-<p>At any time, you can define or edit the area of your experiment by adding, deleting or modifying the experiment regions. It is fairly intuitive and the blue 
-information symbols will guide you.</p>
+<strong>Figure 1:</strong> Main view of assets annotations</p>
+<h2 id="experiment-area">Experiment area</h2>
+<p>At any time, you can define or edit the area of your experiment by adding, deleting or modifying the experiment regions.</p>
 <p><img alt="alt text" src="./images/ep8.PNG" />
-<strong>Figure 10:</strong> Main view of the Experimenter Portal</p>
-<h2 id="g-experiment-team">[G] Experiment team</h2>
-<p>As simple as it looks, you can add experimenter to your experiment team by selecting them and clicking <strong>UPDATE TEAM</strong>. 
-The table will show the user names of all the experimenters registered in Organicity. 
-Note that once an experimenter is part of the experiment team they get access so identifiers and credentials, so ensure that you are inviting the right person.</p>
+<strong>Figure 1:</strong> Main view of the Experimenter Portal</p>
+<h2 id="experiment-team">Experiment team</h2>
+<p>As simple as it looks, you can add experimenter to your experiment team by selecting them and clicking <strong>UPDATE TEAM</strong>. The table will show the user names of all the experimenters registered in Organicity. Note that once an experimenter is part of the experiment team they get access so identifiers and credentials, so ensure that you are inviting the right person.</p>
 <p><img alt="alt text" src="./images/ep7.PNG" />
-<strong>Figure 11:</strong> Experiment team</p>
-<h2 id="h-participants">[H] Participants</h2>
+<strong>Figure 1:</strong> Main view of the Experimenter Portal</p>
+<h2 id="participants">Participants</h2>
 <p>To be completed.</p></div>
         </div>
 
@@ -323,7 +298,7 @@ Note that once an experimenter is part of the experiment team they get access so
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-08-30 10:51:09 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-08-30 13:00:01 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '../..';</script>
         <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>

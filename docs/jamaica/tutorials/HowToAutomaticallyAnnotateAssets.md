@@ -41,6 +41,7 @@ The next screen shows us all the parameters of the Classification Job, including
 Also in the botton of the screen we can see the Training Data available for the Classification Job. In the right hand of the page there is an form to add Training Data to the job.
 
 Lets add some in the following format: 
+
 1. add the value `0` for the tag `urn:oc:tagDomain:IndoorHumidityLevels:dry` 
 1. add the value `40` for the tag `urn:oc:tagDomain:IndoorHumidityLevels:normal` 
 1. add the value `60` for the tag `urn:oc:tagDomain:IndoorHumidityLevels:high` 

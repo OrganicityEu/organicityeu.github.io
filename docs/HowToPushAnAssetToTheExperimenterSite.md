@@ -1,22 +1,39 @@
 # Tutorial: How to push an Assets to the Organicity Experimenter Site
 
-**Precondition**:
+#### Precondition
 
-* To be able to push an asset to the Organicity Experimenter Site (OC-Exp. Site), you need the **experimenter** role. This will be assigned to you by the Organicity team.
+To be able to push an asset to the Organicity Experimenter Site (OC-Exp. Site), you need the **experimenter** role. This will be assigned to you by the Organicity team.
+
+#### Postman
+
+We created a postman file, which contains all steps from this guide:
+
+https://github.com/OrganicityEu/postman/blob/master/Asset-CRUD.json
+
 
 ## Create an Experiment and an Application
 
-First of all, you must create an experiment within the [Experimenter Portal](http://experimenters.organicity.eu). Please log in and click on **[NEW EXPERIMENT]** and follow the instructions. Make sure, the current date is between the the start date and end date.
+First of all, you must create an experiment within the [Experimenter Portal](http://experimenters.organicity.eu). 
+Please log in and click on **[NEW EXPERIMENT]** and follow the instructions.
+After you created an experiment, select the experiment and click on **[Experiment Credentials]**. You will find two parts, for example:
 
-After you created an experiment, you must create an application. Please select the experiment and click on **[APPS]**. After you created the application, please select that application. On top, you will find three IDs, for example:
+* Client ID: `experiment-59f9d6a7a58622c52afcd885`
+* Client Secret: `96a4bddf-25e6-49b0-b47b-37f9dc0c9eea`
+
+Afterwards you must create an application. Please select the experiment and click on **[applications]**.
+After you created the application, please select that application. On top, you will find three IDs, for example:
 
 * **Experimenter ID**: `cf2c1723-3369-4123-8b32-49abe71c0e57`
 * **Experiment ID**: `57e127c010590cb31ca82aa4`
 * **Application ID**: `57e1285a10590cb31ca82aa7`
 
-In the next steps, we need that IDs.
+Go back to the overview and makre sure, that the experiment shows the state `RUNNING`. 
+You can stop it, by clicking on `RUNNING` in the state column. The state is `STOPPED` afterwards.
+If an experiment is not running, you're not able to push assets.
 
-Go back to the **[EXPERIMENTS]** and start the experiment by clicking on `STOPPED` in the state column. The state is `running` afterwards.
+## Authorizaton
+
+All HTTP requests require the `Authorization` header. Please [follow the 'Client Credential Grant'](HowToAuthenticateAnUser#client-credential-grant) to get an Access Token.
 
 ## Push a new asset
 

@@ -6,10 +6,7 @@ To be able to push an asset to the Organicity Experimenter Site (OC-Exp. Site), 
 
 #### Postman
 
-We created a postman file, which contains all steps from this guide:
-
-https://github.com/OrganicityEu/postman/blob/master/Asset-CRUD.json
-
+[We created a postman file](https://github.com/OrganicityEu/postman/blob/master/Asset-CRUD.json), which contains all steps from this guide.
 
 ## Create an Experiment and an Application
 

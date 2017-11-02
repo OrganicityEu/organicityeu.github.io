@@ -159,7 +159,6 @@ This grant is used for browser-based applications (e.g., JavaScript-only applica
 These kind of applications cannot keep the `client_secret` confidential. The Implicit Grant has just one flow, which returns
 the Access Token directly. The Grant is called *implicit*, as no intermediate credentials (such as an authorization code) are issued.
 
-
 For this grant, you must extend the authorization endpoint with the following query parameters:
 
 * `response_type=token`: Here, the response type must be `token` (becaue you'll get an Access Token immediately)
@@ -205,13 +204,12 @@ An example:
 
 ### Client Credential Grant
 
-**HINT:** Per default, this grant ist not enabled for experiments.
+**HINT:** The **Client Credential Grant** is used for applications (e.g, clients), which **act on their own**.
 
-The **Client Credential Grant** is used for applications, which **act on their own**. For this, the *Service Account* of the Client must be enabled.
 
-Service Accounts usually apply for Organicity Accounts, but can also be used by e.g. experiments. To use a Service Account, you perform a simple HTTPS with your `client_id` and `client_secret` call, which will return a suitable Access Token.
+To authorize a client, you perform a simple HTTPS request with your `client_id` and `client_secret`, which will return an [Access Tokens](/HowToAccessToken).
 
- Option A (`client_id` and `client_secret` in the header):
+#### Option A: `client_id` and `client_secret` in the header
 
 ```shell
 POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
@@ -224,7 +222,7 @@ grant_type=client_credentials
 
 The Authorization header contains your `client_id` and `client_secret` encoded with HTTP basic authentication. For details on how to create this field, [see here](https://en.wikipedia.org/wiki/Basic_access_authentication#Client_side).
 
-Option B (`client_id` and `client_secret` in the body):
+#### Option B: `client_id` and `client_secret` in the body
 
 ```
 POST /realms/organicity/protocol/openid-connect/token HTTP/1.1
@@ -249,8 +247,6 @@ An example:
     "expires_in": 300,
 }
 ```
-
-[See here for further details on the Access Tokens](/HowToAccessToken).
 
 ## Libraries
 

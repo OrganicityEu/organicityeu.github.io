@@ -207,7 +207,7 @@ An example:
 **HINT:** The **Client Credential Grant** is used for applications (e.g, clients), which **act on their own**.
 
 
-To authorize a client, you perform a simple HTTPS request with your `client_id` and `client_secret`, which will return an [Access Tokens](/HowToAccessToken).
+To authorize a client, you perform a simple HTTPS request with your `client_id` and `client_secret`, which will return an [Access Token](/HowToAccessToken).
 
 #### Option A: `client_id` and `client_secret` in the header
 

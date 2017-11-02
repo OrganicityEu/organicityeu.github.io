@@ -232,7 +232,9 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
 ```
 
-The call returns a JSON record, which contains the following attributes:
+#### Answer for Option A and Option B
+
+The request returns a JSON record, which contains the following attributes:
 
 * `token_type`: This is usually `Bearer`
 * `access_token`: this is the **Access Token** itself

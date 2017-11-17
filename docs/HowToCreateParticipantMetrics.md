@@ -20,18 +20,19 @@ Metric = weight_1*function_1(parameter_1) + weight_2*function_2(parameter_2) + .
 
 * `#discov-read`, number of assets read
 * `#discov-create`, number of assets created
-* `#annot-create`, number of annotations read
-* `#annot-read`, number of annotations created
+* `#annot-read`, number of annotations read
+* `#annot-create`, number of annotations created
 
 `Max`: Specify the maximum value of each parameter involved in the metric. Only parameter values that are within the range [0, max] will be taken into count for the calculation of the utility.
 
 ## Utility functions
 
-For each utility function, the X-axis corresponds to the normalized value of the parameter to be modeled. The normalized value is calculated as a percentage of the maximum value defined for that parameter. For example, an experimenter has decided to use the #annot-read (number of annotations created) parameter within a metric, and has considered evaluating the generated utilities for a maximum of 500 annotations created. If you want to evaluate the generated utility for 150 annotations created, then you would have to use the normalized value 150/500 = 0.3
+For each utility function, the X-axis corresponds to the normalized value of the parameter to be modeled. The normalized value is calculated as a percentage of the maximum value defined for that parameter. For example, an experimenter has decided to use the #annot-create (number of annotations created) parameter within a metric, and has considered evaluating the generated utilities for a maximum of 500 annotations created. If you want to evaluate the generated utility for 150 annotations created, then you would have to use the normalized parameter value 150/500 = 0.3
 The value corresponding to the Y-axis will depend on the utility function that is used. As can be seen in Figure 1, since the values of X-axis is limited within the range [0, 1], then the values of the Y-axis are also within the same range.
 
- 
-Figure 1. Utility functions
+![Functions](images/UtilityFunctions.png)
+
+**Figure 1\.** Utility functions
 
 The functions that could be used to model the utility of each parameter are the following:
 
@@ -62,8 +63,8 @@ f2(p2) = Linear function
 Due to the characteristics of the experiment, the experimenter also decided to use different weights for both metrics, in such a way that the number of assets consumed are more relevant than those created. To do so, the experimenter assigns a higher weight to the function corresponding to the second parameter.
 
 ```
-w1= 0.4
-w2= 0.6
+w1 = 0.4
+w2 = 0.6
 ```
 
 Finally, taking into account the aforementioned design criteria, the metric would be defined as following:

@@ -74,6 +74,11 @@ Finally, taking into account the aforementioned design criteria, the metric woul
 Metric = w1 * f1(p1) + w2 * f2(p2)
 Metric = 0.4 * LinearFunction(#discov-create) + 0.6 * LinearFunction(#discov-read)
 ```
+The Experimenter Portal provides a panel for metrics creation. Picking up the appropriate options, the previous metric would be defined as shown in Figure 2.
+
+![Metric](images/MetricCreation.png)
+
+**Figure 2\.** Metric creation in Experimenter Portal
 
 Let’s now imagine the experimenter does not want to give more relevance to any of the utility functions corresponding to the parameters; i.e. w1 = w2 = 0.5. Instead, the experimenter decided to use different functions so that an increase in the number of assets created or consumed will generate different increases in the utility function.
 

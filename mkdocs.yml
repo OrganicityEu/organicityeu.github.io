@@ -2,14 +2,14 @@ site_name: Organicity Tech Docs
 
 pages:
   -  Home: index.md
-  -  Architecture:
-      -  Asset CRUD: AssetCRUD.md
+  -  Assets:
       -  Asset Data Model: AssetDataModel.md
+      -  Asset CRUD: AssetCRUD.md
+      -  Federated Data Assets: FederatedDataAssets.md
   -  Services:
       -  Asset Discovery Service: AssetDiscoveryService.md
       -  Asset Annotation Service: annotations/AssetAnnotationService.md
       -  Experimenter Portal: services/experimenter-portal/index.md
-      -  Federated Data Assets: FederatedDataAssets.md
       -  Urban Data Observatory: UrbanDataObservatory.md
       -  Facility Manager: services/facility-manager/index.md
       -  Community Management: services/community-management/index.md
@@ -30,7 +30,7 @@ pages:
       -  OrganiCity API Tester Application: OrganiCityTesterAPI.md
   - Tools:
       -  Eclipse sensiNact: tools/sensinact/index.md
-      -  TSmart: tools/tsmart/tsmart.md
+      -  TSmarT: tools/tsmart/tsmart.md
       -  Smartphone Experimentation: tools/set/index.md
       -  Websockets: tools/websockets/index.md
       -  Scenarios: tools/scenarios/index.md

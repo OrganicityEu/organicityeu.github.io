@@ -1,5 +1,6 @@
 # How to Create Participation Metrics
 
+## Introduction
 Many of the activities that the participant performs within the OrganiCity platform are being tracked. This means that each time the participant uses an element of the platform, e.g., create or read assets, create or read annotations, etc., a OrganiCity component records these interactions. Using this information the experimenter could know the level of activity that each participant has within the experiment.
 
 The measurement of each activity can generate different range of values depending of the level of interaction of the participant with each OrganiCity element. That is, at any given time, a participant could have created 100 assets and read only 10. Therefore, it is necessary to define an evaluation mechanism that allows different types of activities to be included, but, in turn, enables to standardize the contribution produced by each one within the model of evaluation. For this reason, the concept of Engagement Metric is defined using the mathematical model called utility function. This model enable the experimenter to obtain the utility of each element based on the use that the participant makes of it. For example, if a participant creates very few assets, this would mean a little utility to the experimenter.

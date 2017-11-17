@@ -1,4 +1,4 @@
-# Smartphone Experimentation | OrganiCity
+# Smartphone Experimentation
 
 ##Experimenter Guide
 

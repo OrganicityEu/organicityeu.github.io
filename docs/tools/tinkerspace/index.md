@@ -1,4 +1,4 @@
-# Tinkerspace | OrganiCity
+# Tinkerspace
 
 ##Introduction
 

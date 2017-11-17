@@ -12,13 +12,19 @@
     
         
     <url>
+     <loc>/AssetDataModel/</loc>
+     <lastmod>2017-11-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/AssetCRUD/</loc>
      <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/AssetDataModel/</loc>
+     <loc>/FederatedDataAssets/</loc>
      <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -41,12 +47,6 @@
         
     <url>
      <loc>/services/experimenter-portal/</loc>
-     <lastmod>2017-11-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/FederatedDataAssets/</loc>
      <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>

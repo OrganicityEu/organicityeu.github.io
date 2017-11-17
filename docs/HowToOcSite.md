@@ -72,7 +72,7 @@ Edit the `config.js` by applying your `client_id` and `client_secret`.
 For the **Dev-Server**, make sure the following configuration is used:
 
 ```javascript
-config.asset_directory_host = 'dev.orion.organicity.eu';
+config.asset_directory_host = 'orion.organicity.eu';
 config.asset_directory_port = '443';
 config.asset_directory_protocol = 'https'
 ```

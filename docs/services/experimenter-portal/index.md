@@ -30,10 +30,11 @@ Afterwards, you can see your experiment name, description and the options to mak
 * Experiment Team: you can add other experimenters to your experiment, so that they will see the same as you.
 * Participants: this feature allows you to contact people registered within Organicity to engage them into your experiment
 
-## Create and edit experiments
+## [A] Create and edit experiments
 
 As can be seen in the figure below, an experiment can be created by just defining:
-* Name: Name of the experiment to be shows afterwards
+
+* Name: Name of the experiment
 * Description: meaningful and catchy description of the experiment. This description will be used if you decide to invite people to participate in your experiment
 * Assets privacy: choose whether or not you want your asstes to be public or private. Note that by doing them private only your experiment will be able to access their data.
 
@@ -41,48 +42,76 @@ Besides, if it is necessary you may also define the experiment area, by clinking
 
 Once you are done, click **FINISH** to complete the experiment creation.
 
-## Experiment Credentials
+![alt text](images/newExp.PNG)
+**Figure 3:** Form to create a new experiment
 
-When an experiment is created a new *client* is created for that experiment. You may use that client to implement authorization in the applications within the experiment, see [How To Authenticate An User](/HowToAuthenticateAnUser).
+You can also edit the experiment information from the view of the experiment (Figure 2), by simple modifying the name or description and clicking **UPDATE**.
+
+## [B] Experiment Credentials
+
+When you create an experiment a new *client* is created for that experiment under the hood. 
+You may use that client to implement authorization in the applications within the experiment, see [How To Authenticate An User](/HowToAuthenticateAnUser).
 
 ![alt text](images/ep3.PNG)
-**Figure 3:** Experiment credentials view
+**Figure 4:** Experiment credentials view
 
-From that client you can define and edit *redirect_uris* as you need.
+From that client, you can define and edit *redirect_uris* as you need.
 
-## Create and edit applications
+## [C] Create and edit applications
 
-As mentioned before, to create assets the experiment does not suffice, but you need to do it through applications within the experiment. To create an applciation just go to the **Applications** section of you experiment **NEW APPLICATION**. To be completed
+As mentioned before, to create assets, an experiment does not suffice, but the assets are created by application within your experiment. T
+To create an applciation just go to the **Applications** section of you experiment, as shown in Figure 5. It moves you to the view of applications of your experiment. 
+As you can see in Figure 6, the applications view resembles the experiments view in Figure 1, and you can have as many applications as you need within your experiment.
 
-![alt text](images/ep4.PNG)
-**Figure 4:** Main view of experiment applications
+![alt text](images/newApp1.PNG)
+**Figure 5:** Applications menu from main experiment view
 
-## Manage assets
+![alt text](images/newApp2.PNG)
+**Figure 6:** Experiment applications view
 
-Based on the interface provided by the [AssetDiscoveryService](/AssetDiscoveryService), through Experimenter Portal you can see the list of assets created within your experiment. You can also create new assets using its graphical editor or even modify existing ones.
+If you click **NEW APPLICATION**, you will get a view as shown in Figure 7, in which you have to fill in a form for the application very much like the one to create 
+an experiment. Remember that you can click the blue information buttons for guidance.
+
+![alt text](images/newApp3.PNG)
+**Figure 7:** New application form
+
+## [D] Manage assets
+
+Based on the interface provided by the [AssetDiscoveryService](/AssetDiscoveryService), through Experimenter Portal you can see the list of assets created within 
+your experiment, as depicted in Figure 8. You can also create new assets using its graphical editor or even modify existing ones.
 
 ![alt text](images/ep5.PNG)
-**Figure 1:** Main view of assets management
+**Figure 8:** Main view of assets management
 
-## Annotations
+If you click **ADD ASSET** you will see a graphical editor to edit the JSON of your asset with some minimal information pre-filled. You can obtain more information
+regarding the asset data model [HERE](/AssetDataModel), you can also edit existing assets by just clicking over them in the table shows in Figure 8. 
+Keep in mind that this editor is just a minimal tool that uses [HowToPushAnAssetToTheExperimenterSite](/HowToPushAnAssetToTheExperimenterSite) and 
+[HowToUpdateDeteleAnAsset](/HowToUpdateDeteleAnAsset)
 
-Experimenter Portal interacts with Annotation Service to simplify the creation of tags. The explanation of this feature can be found [here](/annotations/tutorials/HowToCreateAnnotationTags/) 
+## [E] Annotations
+Experimenter Portal interacts with Annotation Service to simplify the creation of tags. 
+The explanation of this feature can be found [here](/annotations/tutorials/HowToCreateAnnotationTags/). From the annotations section of your experiment you can both
+create specific tag domains for your experiment or select existing generic domains to be used by your experiment. For the tag domains you create, you can define your 
+own tags. Besides, when you enter this section just after creating the experiment, you will notice that a default experiment tag domain has been created.
 
 ![alt text](images/ep6.PNG)
-**Figure 1:** Main view of assets annotations
+**Figure 9:** View of assets annotations
 
-## Experiment area
-At any time, you can define or edit the area of your experiment by adding, deleting or modifying the experiment regions.
+## [F] Experiment area
+At any time, you can define or edit the area of your experiment by adding, deleting or modifying the experiment regions. It is fairly intuitive and the blue 
+information symbols will guide you.
 
 ![alt text](images/ep8.PNG)
-**Figure 1:** Main view of the Experimenter Portal
+**Figure 10:** Main view of the Experimenter Portal
 
-## Experiment team
+## [G] Experiment team
 
-As simple as it looks, you can add experimenter to your experiment team by selecting them and clicking **UPDATE TEAM**. The table will show the user names of all the experimenters registered in Organicity. Note that once an experimenter is part of the experiment team they get access so identifiers and credentials, so ensure that you are inviting the right person.
+As simple as it looks, you can add experimenter to your experiment team by selecting them and clicking **UPDATE TEAM**. 
+The table will show the user names of all the experimenters registered in Organicity. 
+Note that once an experimenter is part of the experiment team they get access so identifiers and credentials, so ensure that you are inviting the right person.
 
 ![alt text](images/ep7.PNG)
-**Figure 1:** Main view of the Experimenter Portal
+**Figure 11:** Experiment team
 
-## Participants
+## [H] Participants
 To be completed.

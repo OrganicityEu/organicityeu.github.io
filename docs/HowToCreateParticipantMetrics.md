@@ -12,16 +12,16 @@ The metric is the result of a weighted sum of utility functions.
 Metric = weight_1*function_1(parameter_1) + weight_2*function_2(parameter_2) + ...
 ```
 
-`Weight`: When the experimenter includes several utility functions in the metric, could use this value to provide a greater or lesser relevance to each utility function. The sum of all weights must be equal to 1. If the metric have only one utility function, then this value is 1.
+`Weight`: When the experimenter includes several utility functions in the metric, could use this value to provide a greater or lesser relevance to each utility function. The sum of all weights must be equal to 1.0. If the metric have only one utility function, then this value will be 1.0.
 
 `Utility function`: Model the utility that the experimenter wants to provide to an element of OrganiCity platform. The utility value will depend of the function assigned to each parameter by the experimenter but always will be in the range [0, 1]. “Utility functions” section describe more details about the functions that could be used.
 
 `Parameter`: Represent the measurable element of OrganiCity platform. For now, these are the available parameters:
 
-* #discov-read, number of assets read
-* #discov-create, number of assets created
-* #annot-create, number of annotations read
-* #annot-read, number of annotations created
+* `#discov-read`, number of assets read
+* `#discov-create`, number of assets created
+* `#annot-create`, number of annotations read
+* `#annot-read`, number of annotations created
 
 `Max`: Specify the maximum value of each parameter involved in the metric. Only parameter values that are within the range [0, max] will be taken into count for the calculation of the utility.
 
@@ -35,9 +35,9 @@ Figure 1. Utility functions
 
 The functions that could be used to model the utility of each parameter are the following:
 
-* HRstart (High Rate start) which is based on sqrt(x) function
-* HRend (High Rate end) which is based on x^2 function
-* Linear which is based on linear function (y=x)
+* `HRstart` (High Rate start) which is based on sqrt(x) function
+* `HRend` (High Rate end) which is based on x^2 function
+* `Linear` which is based on linear function (y=x)
 
 These three types of functions have been defined to model utility because they have different properties that make it easier for the experimenter to model different scenarios.
 

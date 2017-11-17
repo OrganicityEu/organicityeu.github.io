@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>How To Update Detele An Asset - Organicity Tech Docs</title>
+        <title>How To Create Participation Metrics - Organicity Tech Docs</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -133,8 +133,8 @@
     <a href="../HowToRefreshToken/">How To Refresh Token</a>
 </li>
                             
-<li class="active">
-    <a href="./">How To Update Detele An Asset</a>
+<li >
+    <a href="../HowToUpdateDeteleAnAsset/">How To Update Detele An Asset</a>
 </li>
                             
 <li >
@@ -149,8 +149,8 @@
     <a href="../jamaica/tutorials/HowToAutomaticallyAnnotateAssets/">How To Annotate An Asset using Machine Learning</a>
 </li>
                             
-<li >
-    <a href="../HowToCreateParticipantMetrics/">How To Create Participation Metrics</a>
+<li class="active">
+    <a href="./">How To Create Participation Metrics</a>
 </li>
                             
 <li >
@@ -203,12 +203,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../HowToRefreshToken/">
+                        <a rel="next" href="../jamaica/tutorials/HowToAutomaticallyAnnotateAssets/">
                             <i class="fa fa-arrow-left"></i>
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../annotations/tutorials/HowToCreateAnnotationTags/">
+                        <a rel="prev" href="../OrganiCityTesterAPI/">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -225,120 +225,86 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#tutorial-how-to-update-or-delete-an-assets-to-the-organicity-experimenter-site">Tutorial: How to update or delete an Assets to the Organicity Experimenter Site</a></li>
-            <li><a href="#update-an-asset">Update an asset</a></li>
-            <li><a href="#delete-an-asset">Delete an asset</a></li>
-            <li><a href="#updatedelete-as-an-participant">Update/Delete as an Participant</a></li>
+        <li class="main active"><a href="#how-to-create-participation-metrics">How to Create Participation Metrics</a></li>
+            <li><a href="#metric-definition">Metric definition</a></li>
+        <li class="main "><a href="#discov-read-number-of-assets-read">discov-read, number of assets read</a></li>
+        <li class="main "><a href="#discov-create-number-of-assets-created">discov-create, number of assets created</a></li>
+        <li class="main "><a href="#annot-create-number-of-annotations-read">annot-create, number of annotations read</a></li>
+        <li class="main "><a href="#annot-read-number-of-annotations-created">annot-read, number of annotations created</a></li>
+            <li><a href="#utility-functions">Utility functions</a></li>
+            <li><a href="#examples-of-metric-creation">Examples of metric creation</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="tutorial-how-to-update-or-delete-an-assets-to-the-organicity-experimenter-site">Tutorial: How to update or delete an Assets to the Organicity Experimenter Site</h1>
-<p><strong>Precondition</strong>:</p>
+<h1 id="how-to-create-participation-metrics">How to Create Participation Metrics</h1>
+<p>Many of the activities that the participant performs within the OrganiCity platform are being tracked. This means that each time the participant uses an element of the platform, e.g., create or read assets, create or read annotations, etc., a OrganiCity component records these interactions. Using this information the experimenter could know the level of activity that each participant has within the experiment.</p>
+<p>The measurement of each activity can generate different range of values depending of the level of interaction of the participant with each OrganiCity element. That is, at any given time, a participant could have created 100 assets and read only 10. Therefore, it is necessary to define an evaluation mechanism that allows different types of activities to be included, but, in turn, enables to standardize the contribution produced by each one within the model of evaluation. For this reason, the concept of Engagement Metric is defined using the mathematical model called utility function. This model enable the experimenter to obtain the utility of each element based on the use that the participant makes of it. For example, if a participant creates very few assets, this would mean a little utility to the experimenter.</p>
+<h2 id="metric-definition">Metric definition</h2>
+<p>The metric is the result of a weighted sum of utility functions.</p>
+<pre><code>Metric = weight_1*function_1(parameter_1) + weight_2*function_2(parameter_2) + ...
+</code></pre>
+
+<p><code>Weight</code>: When the experimenter includes several utility functions in the metric, could use this value to provide a greater or lesser relevance to each utility function. The sum of all weights must be equal to 1. If the metric have only one utility function, then this value is 1.</p>
+<p><code>Utility function</code>: Model the utility that the experimenter wants to provide to an element of OrganiCity platform. The utility value will depend of the function assigned to each parameter by the experimenter but always will be in the range [0, 1]. “Utility functions” section describe more details about the functions that could be used.</p>
+<p><code>Parameter</code>: Represent the measurable element of OrganiCity platform. For now, these are the available parameters:</p>
 <ul>
-<li>To be able to update/delete an asset to the Organicity Experimenter Site (OC-Exp. Site), you need the <strong>experimenter</strong> role. This will be assigned to you by the Organicity team.</li>
-<li>You should know <a href="../HowToPushAnAsset">how to push an Asset to the Organicity Platform</a>.</li>
+<li>
+<h1 id="discov-read-number-of-assets-read">discov-read, number of assets read</h1>
+</li>
+<li>
+<h1 id="discov-create-number-of-assets-created">discov-create, number of assets created</h1>
+</li>
+<li>
+<h1 id="annot-create-number-of-annotations-read">annot-create, number of annotations read</h1>
+</li>
+<li>
+<h1 id="annot-read-number-of-annotations-created">annot-read, number of annotations created</h1>
+</li>
 </ul>
-<h2 id="update-an-asset">Update an asset</h2>
-<p>The update of an asset works similar to the creation (with some minor changes):</p>
-<h3 id="_1"></h3>
-<p>To update a new asset, please do an HTTP POST on <code>https://exp.orion.organicity.eu/v2/entities/&lt;AssetID&gt;/attrs</code> with the
-<em>same HTTP headers</em> as in the creation step:</p>
-<pre><code class="shell">Authorization: Bearer &lt;AccessToken&gt;
-X-Organicity-Application: &lt;ApplicationID&gt;
-X-Organicity-Experiment: &lt;ExperimentID&gt;
-Content-Type: application/json
-Accept: application/json
-
-&lt;Asset in JSON&gt;
+<p><code>Max</code>: Specify the maximum value of each parameter involved in the metric. Only parameter values that are within the range [0, max] will be taken into count for the calculation of the utility.</p>
+<h2 id="utility-functions">Utility functions</h2>
+<p>For each utility function, the X-axis corresponds to the normalized value of the parameter to be modeled. The normalized value is calculated as a percentage of the maximum value defined for that parameter. For example, an experimenter has decided to use the #annot-read (number of annotations created) parameter within a metric, and has considered evaluating the generated utilities for a maximum of 500 annotations created. If you want to evaluate the generated utility for 150 annotations created, then you would have to use the normalized value 150/500 = 0.3
+The value corresponding to the Y-axis will depend on the utility function that is used. As can be seen in Figure 1, since the values of X-axis is limited within the range [0, 1], then the values of the Y-axis are also within the same range.</p>
+<p>Figure 1. Utility functions</p>
+<p>The functions that could be used to model the utility of each parameter are the following:</p>
+<ul>
+<li>HRstart (High Rate start) which is based on sqrt(x) function</li>
+<li>HRend (High Rate end) which is based on x^2 function</li>
+<li>Linear which is based on linear function (y=x)</li>
+</ul>
+<p>These three types of functions have been defined to model utility because they have different properties that make it easier for the experimenter to model different scenarios.</p>
+<p>The linear function is the simplest of them. It provides the same increase in the utility value for any increase in the parameter value (see blue arrows in Figure 1). On the contrary, the HRstart and HRend functions show very interesting features. For increments of the parameter value in the lower areas of the X-axis, HRstart provides a greater increase in utility compared to HRend (see green arrows in Figure 1). However, if you look at the higher areas of the X-axis, HRend offers a greater increase in utility compared to HRstart (see red arrows in Figure 1). Depending on the scenario in which the experimenter is involved, it may be convenient to model the utility with one or another function. Below are some examples of the criteria to follow to choose a certain utility function.</p>
+<h2 id="examples-of-metric-creation">Examples of metric creation</h2>
+<p>Let's imagine that an experimenter wants to know who participants are which fed or consumed more data from OrganiCity platform when they have been using the experiment. To this end, the experimenter defines a metric using two parameters: the number of assets that each participant has created, and the number of assets consumed from the platform.</p>
+<pre><code>p1 = Number of assets created (#discov-create)
+p2 = Number of assets consumed (#discov-read)
 </code></pre>
 
-<p><em>Hint</em>: Be aware of the <code>/attrs</code> while updating an asset!</p>
-<h3 id="asset-id">Asset ID</h3>
-<p>Important for the update is, that the <em>same Asset ID</em> is used as during the creation.</p>
-<h3 id="http-body">HTTP body</h3>
-<p>The HTTP body is an asset in JSON format <a href="../AssetDataModel">as described here</a>. To update an asset, you're not allowed to use the JSON attributes
-<code>id</code> and <code>type</code>.</p>
-<p>A simple valid asset for an update could be:</p>
-<pre><code class="json">{
-  &quot;TimeInstant&quot;: {
-    &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
-    &quot;value&quot;: &quot;2016-10-04T13:45:00.000Z&quot;
-  },
- &quot;location&quot;: {
-    &quot;type&quot;: &quot;geo:point&quot;,
-    &quot;value&quot;: &quot;53.83404, 10.704197&quot;
- }
-}
+<p>As part of the design criteria, the experimenter also decides to use linear functions (y = x) to model the utility of each parameter; in this way, an increase in the number of created or consumed assets will provide the same increase in the utility.</p>
+<pre><code>f1(p1) = Linear function
+f2(p2) = Linear function
 </code></pre>
 
-<h3 id="wiring-everything-together">Wiring everything together</h3>
-<p>Next, we wire everthing together: The HTTP headers and the asset:</p>
-<pre><code class="shell">POST https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1/attrs
-
-Authorization: Bearer &lt;AccessToken&gt;
-Content-Type: application/json
-Accept: application/json
-X-Organicity-Application: 57e1285a10590cb31ca82aa7
-X-Organicity-Experiment: 57e127c010590cb31ca82aa4
-
-{
-  &quot;TimeInstant&quot;: {
-    &quot;type&quot;: &quot;urn:oc:attributeType:ISO8601&quot;,
-    &quot;value&quot;: &quot;2016-10-04T13:45:00.000Z&quot;
-  },
- &quot;location&quot;: {
-    &quot;type&quot;: &quot;geo:point&quot;,
-    &quot;value&quot;: &quot;53.83404, 10.704197&quot;
- }
-}
+<p>Due to the characteristics of the experiment, the experimenter also decided to use different weights for both metrics, in such a way that the number of assets consumed are more relevant than those created. To do so, the experimenter assigns a higher weight to the function corresponding to the second parameter.</p>
+<pre><code>w1= 0.4
+w2= 0.6
 </code></pre>
 
-<p>If the asset was created before, you get a <code>404 Not Found</code> which tells you, that the asset does not exixts. Please make sure, that you <a href="../HowToPushAnAsset">pushed the Asset to the Organicity Platform</a>.</p>
-<p>If the asset was created before, and everything else is correct, e.g, HTTP headers, asset format, etc., then the response is a <code>204 No Content</code>, which tells you that asset was updated:</p>
-<pre><code class="shell">Status Code: 204 No Content
-...
-Content-Length: 0
-Content-Type: text/html; charset=utf-8
-Date: Tue, 20 Sep 2016 12:37:07 GMT
-...
-Location: /v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
-X-remainingQuota: 999946
-...
+<p>Finally, taking into account the aforementioned design criteria, the metric would be defined as following:</p>
+<pre><code>Metric = w1 * f1(p1) + w2 * f2(p2)
+Metric = 0.4 * LinearFunction(#discov-create) + 0.6 * LinearFunction(#discov-read)
 </code></pre>
 
-<p>As for the creation, the headers <code>location</code> and <code>X-remainingQuota</code> will be provided.</p>
-<h3 id="validate-that-the-asset-was-updated-successfully-with-the-urban-data-obervatory">Validate, that the asset was updated successfully with the Urban Data Obervatory</h3>
-<p>To verify, that the asset was updated in Organicity Central Site, you must use the <a href="https://organicityeu.github.io/api/AssetDiscovery.html">Asset Discovery Service</a>.
-You can simply do an HTTP GET on the <code>location</code> header returnd by the creation:</p>
-<pre><code class="shell">GET https://discovery.organicity.eu/v0/assets/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1
+<p>Let’s now imagine the experimenter does not want to give more relevance to any of the utility functions corresponding to the parameters; i.e. w1 = w2 = 0.5. Instead, the experimenter decided to use different functions so that an increase in the number of assets created or consumed will generate different increases in the utility function.</p>
+<p>In particular, the experimenter intends to encourage the participant to consume more assets, while not showing special interest in the creation of assets. For the case of the consumed assets, this means that a greater increase in the utility should be produced when the quantity of consumed assets is increasing. To accomplish this requirement, the HRend function would have to be used. On the other hand, in the case of the assets created, the increase in the utility must be the same for any value of asset created, so the linear function would have to be used.</p>
+<pre><code>f1(p1) = Linear function
+f2(p2) = HRend function
 </code></pre>
 
-<p><em>Hint</em>: This only works, if the privacy level of your asset is public.</p>
-<h2 id="delete-an-asset">Delete an asset</h2>
-<p>To delete the asset, you must do an HTTP <strong>DELETE</strong> to the OC-Exp. Site. You must add the <code>Authorization</code>,
-<code>X-Organicity-Application</code> and <code>X-Organicity-Experiment</code> headers as well:</p>
-<pre><code class="shell">DELETE https://exp.orion.organicity.eu/v2/entities/urn:oc:entity:experimenters:cf2c1723-3369-4123-8b32-49abe71c0e57:57e127c010590cb31ca82aa4:1?type=urn:oc:entityType:demo
-
-Authorization: Bearer &lt;AccessToken&gt;
-Accept: application/json
-X-Organicity-Application: 57e1285a10590cb31ca82aa7
-X-Organicity-Experiment: 57e127c010590cb31ca82aa4
-</code></pre>
-
-<p>The response is a <code>204 No Content</code>, which tells you that asset was deleted:</p>
-<pre><code class="shell">Status Code: 204 No Content
-...
-Content-Length: 0
-Content-Type: text/html; charset=utf-8
-Date: Tue, 20 Sep 2016 12:37:07 GMT
-...
-X-remainingQuota: 999946
-</code></pre>
-
-<p>As for the update, the header <code>X-remainingQuota</code> will be provided. It contains the new quota after deleting an asset.</p>
-<h2 id="updatedelete-as-an-participant">Update/Delete as an Participant</h2>
-<p>This is not supported.</p></div>
+<p>Therefore, the new metric would be defined as follows:</p>
+<pre><code>Metric = 0.5 * LinearFunction(#discov-create) + 0.5 * HRendFunction(#discov-read)
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

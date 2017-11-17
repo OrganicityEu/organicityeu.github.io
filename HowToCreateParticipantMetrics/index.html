@@ -227,10 +227,6 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#how-to-create-participation-metrics">How to Create Participation Metrics</a></li>
             <li><a href="#metric-definition">Metric definition</a></li>
-        <li class="main "><a href="#discov-read-number-of-assets-read">discov-read, number of assets read</a></li>
-        <li class="main "><a href="#discov-create-number-of-assets-created">discov-create, number of assets created</a></li>
-        <li class="main "><a href="#annot-create-number-of-annotations-read">annot-create, number of annotations read</a></li>
-        <li class="main "><a href="#annot-read-number-of-annotations-created">annot-read, number of annotations created</a></li>
             <li><a href="#utility-functions">Utility functions</a></li>
             <li><a href="#examples-of-metric-creation">Examples of metric creation</a></li>
     </ul>
@@ -245,22 +241,14 @@
 <pre><code>Metric = weight_1*function_1(parameter_1) + weight_2*function_2(parameter_2) + ...
 </code></pre>
 
-<p><code>Weight</code>: When the experimenter includes several utility functions in the metric, could use this value to provide a greater or lesser relevance to each utility function. The sum of all weights must be equal to 1. If the metric have only one utility function, then this value is 1.</p>
+<p><code>Weight</code>: When the experimenter includes several utility functions in the metric, could use this value to provide a greater or lesser relevance to each utility function. The sum of all weights must be equal to 1.0. If the metric have only one utility function, then this value will be 1.0.</p>
 <p><code>Utility function</code>: Model the utility that the experimenter wants to provide to an element of OrganiCity platform. The utility value will depend of the function assigned to each parameter by the experimenter but always will be in the range [0, 1]. “Utility functions” section describe more details about the functions that could be used.</p>
 <p><code>Parameter</code>: Represent the measurable element of OrganiCity platform. For now, these are the available parameters:</p>
 <ul>
-<li>
-<h1 id="discov-read-number-of-assets-read">discov-read, number of assets read</h1>
-</li>
-<li>
-<h1 id="discov-create-number-of-assets-created">discov-create, number of assets created</h1>
-</li>
-<li>
-<h1 id="annot-create-number-of-annotations-read">annot-create, number of annotations read</h1>
-</li>
-<li>
-<h1 id="annot-read-number-of-annotations-created">annot-read, number of annotations created</h1>
-</li>
+<li><code>#discov-read</code>, number of assets read</li>
+<li><code>#discov-create</code>, number of assets created</li>
+<li><code>#annot-create</code>, number of annotations read</li>
+<li><code>#annot-read</code>, number of annotations created</li>
 </ul>
 <p><code>Max</code>: Specify the maximum value of each parameter involved in the metric. Only parameter values that are within the range [0, max] will be taken into count for the calculation of the utility.</p>
 <h2 id="utility-functions">Utility functions</h2>
@@ -269,9 +257,9 @@ The value corresponding to the Y-axis will depend on the utility function that i
 <p>Figure 1. Utility functions</p>
 <p>The functions that could be used to model the utility of each parameter are the following:</p>
 <ul>
-<li>HRstart (High Rate start) which is based on sqrt(x) function</li>
-<li>HRend (High Rate end) which is based on x^2 function</li>
-<li>Linear which is based on linear function (y=x)</li>
+<li><code>HRstart</code> (High Rate start) which is based on sqrt(x) function</li>
+<li><code>HRend</code> (High Rate end) which is based on x^2 function</li>
+<li><code>Linear</code> which is based on linear function (y=x)</li>
 </ul>
 <p>These three types of functions have been defined to model utility because they have different properties that make it easier for the experimenter to model different scenarios.</p>
 <p>The linear function is the simplest of them. It provides the same increase in the utility value for any increase in the parameter value (see blue arrows in Figure 1). On the contrary, the HRstart and HRend functions show very interesting features. For increments of the parameter value in the lower areas of the X-axis, HRstart provides a greater increase in utility compared to HRend (see green arrows in Figure 1). However, if you look at the higher areas of the X-axis, HRend offers a greater increase in utility compared to HRstart (see red arrows in Figure 1). Depending on the scenario in which the experimenter is involved, it may be convenient to model the utility with one or another function. Below are some examples of the criteria to follow to choose a certain utility function.</p>
@@ -311,7 +299,7 @@ f2(p2) = HRend function
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-11-17 12:43:18 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2017-11-17 12:54:32 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '..';</script>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>

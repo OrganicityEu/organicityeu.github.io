@@ -48,19 +48,18 @@ Smartphone Experimentation Storage Services.
 
 **Development Environment**
 
-Smartphone Experimentation is based on the Ambient Dynamix project and the execution of OSGi plugins inside a
-host Android application. Specific security and privacy checks are performed internally to restrict the usage
-to sensors and interfaces on the phones based on the user's preferences. Information about how to install the
-Ambient Dynamix development environment in is available on the Ambient Dynamix
-<a href="http://ambientdynamix.org/documentation/plug-in-development-guide">Website</a>.
+Smartphone Experimentation is based on the Android platform. It manages and uses multiple background services
+to communicate between the app and both the sensors and experiments running.
 
-In the context of Smartphone Experimentation there are two types of OSGi plugins to be used:
+In the context of Smartphone Experimentation there are two types of Android plugins to be used:
 
 * Sensors and
 * Experiments
 
-Both operate on an async call for a context update and provide data back to the SET wrapper for this request. (calls
-to handleContextRequest )
+Sensors operate on an async call for a context update and provide data back to the SET wrapper for this request. (calls
+to getPluginInfo ).
+Experiments operate on an synchronous call for a context update and provide data back to the SET wrapper for this request. (calls
+to getExperimentResult ).
 
 Experiment Plugins can access data from all Sensor plugins and :
 
@@ -70,8 +69,8 @@ Experiment Plugins can access data from all Sensor plugins and :
 
 Code templates and examples for sensor and experiment plugins are available in the following repositories:
 
-* <a href="https://github.com/OrganicityEu/smartphone-experimentation-plugins">Sensor Plugins</a>
-* <a href="https://github.com/OrganicityEu/smartphone-experimentation-experiments">Experiment Plugins</a>
+* <a href="https://github.com/amaxilat/smartphone-sensors/tree/master/sensors">Sensor Plugins</a>
+* <a href="https://github.com/amaxilat/smartphone-sensors/tree/master/experiments">Experiment Plugins</a>
 
 
 All of them are available to use without the need for any development. If experimenters need to use any of them,

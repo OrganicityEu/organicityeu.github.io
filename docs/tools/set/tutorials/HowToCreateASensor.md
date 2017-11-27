@@ -30,7 +30,7 @@ To setup a new Sensor Plugin you will need to follow these steps:
 
 1.	Download and install <a href="https://developer.android.com/studio/index.html">Android Studio</a>
 2.	Clone the Sensing-on-the-Go repository and especially the <a href="https://github.com/amaxilat/smartphone-sensors/tree/master/sensors/ExampleSensor">ExampleSensor located in the sensors directroy</a>
-3.	Open the *ExampleSensor* project with Android Studio and install and missing packages
+3.	Open the *ExampleSensor* project with Android Studio and install any missing packages
 
 ### Setting up your own Sensor
 
@@ -50,7 +50,7 @@ Initialize your variables and request permissions here. An example is shown belo
 This is the place to unregister receivers, disconnect from services, stop and destroy threads and callbacks.
 *If any object that is references elsewere is not destroyed the services may become a zombie service*.
 
-![Request permissions](./tools/set/images/ondestroy.png?style=centerme)
+![onDestroy](./tools/set/images/ondestroy.png?style=centerme)
 
 **handleMessage** is called whenever Sensing-on-the-Go app requested info from your Sensor Plugin.
 This is the place to add your data to the dataJson and as shown in the example.

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>How To Create A Sensing-on-the-Go Experiment - Organicity Tech Docs</title>
+        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../../css/highlight.css">
+        <link href="../../../../css/extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../..">
+                <img alt="Organicity Tech Docs" src="/images/oc_logo.png">OrganiCity Tech Docs
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../../../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assets <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../../../AssetDataModel/">Asset Data Model</a>
+</li>
+                            
+<li >
+    <a href="../../../../AssetCRUD/">Asset CRUD</a>
+</li>
+                            
+<li >
+    <a href="../../../../FederatedDataAssets/">Federated Data Assets</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../../../AssetDiscoveryService/">Asset Discovery Service</a>
+</li>
+                            
+<li >
+    <a href="../../../../annotations/AssetAnnotationService/">Asset Annotation Service</a>
+</li>
+                            
+<li >
+    <a href="../../../../services/experimenter-portal/">Experimenter Portal</a>
+</li>
+                            
+<li >
+    <a href="../../../../UrbanDataObservatory/">Urban Data Observatory</a>
+</li>
+                            
+<li >
+    <a href="../../../../services/facility-manager/">Facility Manager</a>
+</li>
+                            
+<li >
+    <a href="../../../../services/community-management/">Community Management</a>
+</li>
+                            
+<li >
+    <a href="../../../../services/ReputationService/">Reputation Service</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../../../HowToAccessToken/">How To Access Token</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToAuthenticateAnUser/">How To Authenticate An User</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToOcSite/">How To Be An Oc Site</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToPushAnAsset/">How To Push An Asset</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToPushAnAssetToTheExperimenterSite/">How To Push An Asset To The Experimenter Site</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToPushAnAssetToTheProviderSite/">How To Push An Asset To The Provider Site</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToRefreshToken/">How To Refresh Token</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToUpdateDeteleAnAsset/">How To Update Detele An Asset</a>
+</li>
+                            
+<li >
+    <a href="../../../../annotations/tutorials/HowToCreateAnnotationTags/">How To Create Annotation Tags</a>
+</li>
+                            
+<li >
+    <a href="../../../../annotations/tutorials/HowToAnnotateAnAsset/">How To Annotate An Asset</a>
+</li>
+                            
+<li >
+    <a href="../../../../jamaica/tutorials/HowToAutomaticallyAnnotateAssets/">How To Annotate An Asset using Machine Learning</a>
+</li>
+                            
+<li >
+    <a href="../HowToCreateASensor/">How To Create A Sensing-on-the-Go Sensor</a>
+</li>
+                            
+<li class="active">
+    <a href="./">How To Create A Sensing-on-the-Go Experiment</a>
+</li>
+                            
+<li >
+    <a href="../../../../HowToCreateParticipantMetrics/">How To Create Participation Metrics</a>
+</li>
+                            
+<li >
+    <a href="../../../../OrganiCityTesterAPI/">OrganiCity API Tester Application</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../../sensinact/">Eclipse sensiNact</a>
+</li>
+                            
+<li >
+    <a href="../../../tsmart/tsmart/">TSmarT</a>
+</li>
+                            
+<li >
+    <a href="../../">Smartphone Experimentation</a>
+</li>
+                            
+<li >
+    <a href="../../../websockets/">Websockets</a>
+</li>
+                            
+<li >
+    <a href="../../../scenarios/">Scenarios</a>
+</li>
+                            
+<li >
+    <a href="../../../tinkerspace/">Tinkerspace</a>
+</li>
+                        </ul>
+                    </li>
+                
+                  
+                    <li><a href="/api/">APIS</a></li>
+                  
+                    <li><a href="https://status.organicity.eu/">Status</a></li>
+                  
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../HowToCreateASensor/">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../../../HowToCreateParticipantMetrics/">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/organicityeu">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tutorial-how-to-create-a-new-sensing-on-the-go-experiment">Tutorial: How to create a new Sensing-on-the-Go Experiment</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#organicity-experiments">OrganiCity Experiments</a></li>
+            <li><a href="#development-environement-setup">Development Environement Setup</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<style>
+img[src$="centerme"] {
+  display:block;
+  margin: 0 auto;
+}
+</style>
+
+<h1 id="tutorial-how-to-create-a-new-sensing-on-the-go-experiment">Tutorial: How to create a new Sensing-on-the-Go Experiment</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This guide will go throught the basic setup and development process for creating a new Experiment Plugin for
+Sensing-on-the-Go app.</p>
+<h2 id="organicity-experiments">OrganiCity Experiments</h2>
+<p>OrganiCity provides a set of common <a href="https://github.com/amaxilat/smartphone-sensors/tree/master/experiments">Experiment Plugins</a> to be used. You can find and install all provided 
+Experiments from the <em>Experiments</em> tab.</p>
+<ol>
+<li>Wifi Scanner Experiment</li>
+<li>Noise Level Experiment</li>
+<li>Ble Reader Experiment</li>
+<li>Temperature Experiment</li>
+</ol>
+<h2 id="development-environement-setup">Development Environement Setup</h2>
+<p>To setup a new Experiment Plugin you will need to follow these steps:</p>
+<ol>
+<li>Download and install <a href="https://developer.android.com/studio/index.html">Android Studio</a></li>
+<li>Clone the Sensing-on-the-Go repository and especially the <a href="https://github.com/amaxilat/smartphone-sensors/tree/master/experiments/ExampleExperiment">ExampleExperiment located in the experiments directroy</a></li>
+<li>Open the <em>ExampleExperiment</em> project with Android Studio and install any missing packages</li>
+</ol>
+<h3 id="setting-up-your-own-experiment">Setting up your own Experiment</h3>
+<p>When you open the ExampleExperiment project, navigate and open <em>ExampleExperiment</em>.</p>
+<p><img alt="ExampleExperiment.java" src="../tools/set/images/exampleexperiment.png?style=centerme" /></p>
+<p>As you can see there are multiple <em>TODO</em> comments through out the code.
+Below are listed the key methods you need to pay attention during the development:</p>
+<p><strong>getExperimentResult</strong> is called when Sensing-on-the-Go app requests result from your experiment.
+A description of the method's parameters is found below:</p>
+<ul>
+<li>bundle: a Bundle object containing data collected from all the Sensor Plugins running at that time.</li>
+<li>jsonMessage1: a JsonMessage object that will be used to report the Experiment result back to Sensing-on-the-Go app.</li>
+</ul>
+<p>In the screenshot below you can see a simple example of getting GPS and Noise data from Location Sensor and Noise Level Sensor, respectively, and then add that data to a JSONObject to be used as payload to our <strong>jsonMessage1</strong> object. </p>
+<p><img alt="Experiment result" src="../tools/set/images/experimentresult.png?style=centerme" /></p>
+<p>A list of the <code>CONTEXT_TYPE</code> provided by OrganiCity can be found below:</p>
+<ol>
+<li><code>eu.organicity.set.sensors.location.LocationSensorService</code></li>
+<li><code>eu.organicity.set.sensors.noise.NoiseSensorService</code></li>
+<li><code>eu.organicity.set.sensors.wifi.WifiSensorService</code></li>
+<li><code>eu.organicity.set.sensors.temperature.TemperatureSensorService</code></li>
+<li><code>eu.organicity.set.sensors.ble.BleReaderSensorService</code></li>
+</ol></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
+                  <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
+            <p class="small">Last update 2018-01-10 11:37:57 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../../../..';</script>
+        <script data-main="../../../../mkdocs/js/search.js" src="../../../../mkdocs/js/require.js"></script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../api/static/js/cropbox-min.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

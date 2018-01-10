@@ -150,6 +150,14 @@
 </li>
                             
 <li >
+    <a href="tutorials/HowToCreateASensor/">How To Create A Sensing-on-the-Go Sensor</a>
+</li>
+                            
+<li >
+    <a href="tutorials/HowToCreateAExperiment/">How To Create A Sensing-on-the-Go Experiment</a>
+</li>
+                            
+<li >
     <a href="../../HowToCreateParticipantMetrics/">How To Create Participation Metrics</a>
 </li>
                             
@@ -269,18 +277,17 @@ Any new sensor plugin can be either public or private based on the choice of the
 This is a specific jar file for the experiment and is responsible for preparing the data for upload to the
 Smartphone Experimentation Storage Services.</p>
 <p><strong>Development Environment</strong></p>
-<p>Smartphone Experimentation is based on the Ambient Dynamix project and the execution of OSGi plugins inside a
-host Android application. Specific security and privacy checks are performed internally to restrict the usage
-to sensors and interfaces on the phones based on the user's preferences. Information about how to install the
-Ambient Dynamix development environment in is available on the Ambient Dynamix
-<a href="http://ambientdynamix.org/documentation/plug-in-development-guide">Website</a>.</p>
-<p>In the context of Smartphone Experimentation there are two types of OSGi plugins to be used:</p>
+<p>Smartphone Experimentation is based on the Android platform. It manages and uses multiple background services
+to communicate between the app and both the sensors and experiments running.</p>
+<p>In the context of Smartphone Experimentation there are two types of Android plugins to be used:</p>
 <ul>
 <li>Sensors and</li>
 <li>Experiments</li>
 </ul>
-<p>Both operate on an async call for a context update and provide data back to the SET wrapper for this request. (calls
-to handleContextRequest )</p>
+<p>Sensors operate on an async call for a context update and provide data back to the SET wrapper for this request. (calls
+to getPluginInfo ).
+Experiments operate on an synchronous call for a context update and provide data back to the SET wrapper for this request. (calls
+to getExperimentResult ).</p>
 <p>Experiment Plugins can access data from all Sensor plugins and :</p>
 <ul>
 <li>either simply aggregate them to a single measurement to upload to the server or</li>
@@ -288,8 +295,8 @@ to handleContextRequest )</p>
 </ul>
 <p>Code templates and examples for sensor and experiment plugins are available in the following repositories:</p>
 <ul>
-<li><a href="https://github.com/OrganicityEu/smartphone-experimentation-plugins">Sensor Plugins</a></li>
-<li><a href="https://github.com/OrganicityEu/smartphone-experimentation-experiments">Experiment Plugins</a></li>
+<li><a href="https://github.com/amaxilat/smartphone-sensors/tree/master/sensors">Sensor Plugins</a></li>
+<li><a href="https://github.com/amaxilat/smartphone-sensors/tree/master/experiments">Experiment Plugins</a></li>
 </ul>
 <p>All of them are available to use without the need for any development. If experimenters need to use any of them,
 they simply need to select them during the creation of the experiment.</p></div>
@@ -299,7 +306,7 @@ they simply need to select them during the creation of the experiment.</p></div>
             <hr>
                 <p class="small">This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198</p>
                   <img alt="This project has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 645198" src="/images/logo_eu.png">            
-            <p class="small">Last update 2017-11-17 19:04:05 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p class="small">Last update 2018-01-10 11:37:57 built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '../..';</script>
         <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>

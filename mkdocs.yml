@@ -26,6 +26,8 @@ pages:
       -  How To Create Annotation Tags: annotations/tutorials/HowToCreateAnnotationTags.md
       -  How To Annotate An Asset: annotations/tutorials/HowToAnnotateAnAsset.md
       -  How To Annotate An Asset using Machine Learning: jamaica/tutorials/HowToAutomaticallyAnnotateAssets.md
+      -  How To Create A Sensing-on-the-Go Sensor: tools/set/tutorials/HowToCreateASensor.md
+      -  How To Create A Sensing-on-the-Go Experiment: tools/set/tutorials/HowToCreateAExperiment.md
       -  How To Create Participation Metrics : HowToCreateParticipantMetrics.md
       -  OrganiCity API Tester Application: OrganiCityTesterAPI.md
   - Tools:

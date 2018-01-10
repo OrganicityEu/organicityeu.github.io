@@ -1,21 +1,21 @@
-# Smartphone Experimentation
+# Sensing on the Go
 
 ##Experimenter Guide
 
 
 ###Introduction
 
-This guide will help you understand the functionality provided by the Smartphone Experimentation OrganiCity
+This guide will help you understand the functionality provided by the Sensing on the Go (previously known as Smartphone Experimentation) OrganiCity
 CoCreation tool, its capabilities and all the necessary steps to create, configure, monitor and manage your
 experiment as well as retrieve the data collected.
 
 ###Experimentation as a Service
 
-The Smartphone Experimentation is offered as an Experimentation As A Service tool that you can easily use over
+The Sensing on the Go is offered as an Experimentation As A Service tool that you can easily use over
 via its cloud infrastructures and the provided Android Smartphone Application.
 
 **Experimenter Portal**
-The Smartphone Experimentation cloud interface is tightly integrated with the OrganiCity Experimenter's portal.
+The Sensing on the Go cloud interface is tightly integrated with the OrganiCity Experimenter's portal.
 Most of the functionalities for managing the experimentation flow. In order to configure a new Experiment
 Experimenters need to follow the steps presented bellow:
 
@@ -44,14 +44,14 @@ Any new sensor plugin can be either public or private based on the choice of the
 
 Finally, the experimenter needs to provide the jar file that contains the business logic of the experiment.
 This is a specific jar file for the experiment and is responsible for preparing the data for upload to the
-Smartphone Experimentation Storage Services.
+Sensing on the Go Storage Services.
 
 **Development Environment**
 
-Smartphone Experimentation is based on the Android platform. It manages and uses multiple background services
+Sensing on the Go is based on the Android platform. It manages and uses multiple background services
 to communicate between the app and both the sensors and experiments running.
 
-In the context of Smartphone Experimentation there are two types of Android plugins to be used:
+In the context of Sensing on the Go there are two types of Android plugins to be used:
 
 * Sensors and
 * Experiments
@@ -69,8 +69,8 @@ Experiment Plugins can access data from all Sensor plugins and :
 
 Code templates and examples for sensor and experiment plugins are available in the following repositories:
 
-* <a href="https://github.com/amaxilat/smartphone-sensors/tree/master/sensors">Sensor Plugins</a>
-* <a href="https://github.com/amaxilat/smartphone-sensors/tree/master/experiments">Experiment Plugins</a>
+* <a href="https://github.com/OrganicityEu/sensing-on-the-go/tree/master/sensors">Sensor Plugins</a>
+* <a href="https://github.com/OrganicityEu/sensing-on-the-go/tree/master/experiments">Experiment Plugins</a>
 
 
 All of them are available to use without the need for any development. If experimenters need to use any of them,

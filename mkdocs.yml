@@ -33,7 +33,7 @@ pages:
   - Tools:
       -  Eclipse sensiNact: tools/sensinact/index.md
       -  TSmarT: tools/tsmart/tsmart.md
-      -  Smartphone Experimentation: tools/set/index.md
+      -  Sensing on the Go: tools/set/index.md
       -  Websockets: tools/websockets/index.md
       -  Scenarios: tools/scenarios/index.md
       -  Tinkerspace: tools/tinkerspace/index.md

@@ -6,7 +6,7 @@
 
 **Preconditions**:
 
-* You created an experimen within the [Organicity Experimenter Portal](http://experimenters.organicity.eu/).
+* You created an experiment within the [Organicity Experimenter Portal](http://experimenters.organicity.eu/).
 * The Experimenter Portal provides you a `client_id` and a `client_secret`, both is needed in this tutorial.
 * Additionally, you're experiment needs the role `offline_access` to get Refresh Tokens. This will be assigned to your experiment by the Organicity team.
 

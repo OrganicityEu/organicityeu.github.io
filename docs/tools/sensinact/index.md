@@ -1,5 +1,7 @@
 # Eclipse sensiNact
 
+**IMPORTANT** This page may be outdated! Please browse [the documentation on Eclipse website](https://wiki.eclipse.org/SensiNact).
+
 ## Introduction
 
 [Eclipse sensiNact](https://projects.eclipse.org/projects/technology.sensinact) aims at helping coders working with data streams from deployed “IoT” devices without the need to complex API configuration.

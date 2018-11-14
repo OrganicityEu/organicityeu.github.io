@@ -1,163 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
     <url>
      <loc>/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
     <url>
      <loc>/AssetDataModel/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/AssetCRUD/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/FederatedDataAssets/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
      <loc>/AssetDiscoveryService/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/annotations/AssetAnnotationService/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/services/experimenter-portal/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/UrbanDataObservatory/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/services/facility-manager/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/services/community-management/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/services/ReputationService/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
      <loc>/HowToAccessToken/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToAuthenticateAnUser/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToOcSite/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToPushAnAsset/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToPushAnAssetToTheExperimenterSite/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToPushAnAssetToTheProviderSite/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToRefreshToken/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToUpdateDeteleAnAsset/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/annotations/tutorials/HowToCreateAnnotationTags/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/annotations/tutorials/HowToAnnotateAnAsset/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/jamaica/tutorials/HowToAutomaticallyAnnotateAssets/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/tools/set/tutorials/HowToCreateASensor/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/tools/set/tutorials/HowToCreateAExperiment/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/HowToCreateParticipantMetrics/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/OrganiCityTesterAPI/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
     <url>
      <loc>/tools/sensinact/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/tools/tsmart/tsmart/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/tools/set/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/tools/websockets/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/tools/scenarios/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     <url>
      <loc>/tools/tinkerspace/</loc>
-     <lastmod>2018-07-06</lastmod>
+     <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
 </urlset>
